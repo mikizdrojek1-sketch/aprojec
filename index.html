@@ -1,190 +1,1692 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A-PROJECT | Kozijnen en deuren</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-PROJECT | Premium kozijnen en deuren</title>
+  <meta name="description" content="A-PROJECT levert premium kozijnen en deuren met moderne uitstraling, strakke afwerking en betrouwbare plaatsing." />
+  <style>
+    :root{
+      --bg:#efefef;
+      --bg-soft:#f5f5f3;
+      --white:#ffffff;
+      --text:#121212;
+      --muted:#6e6e73;
+      --dark:#101010;
+      --dark-2:#171717;
+      --line:rgba(18,18,18,.1);
+      --line-light:rgba(255,255,255,.12);
+      --shadow:0 20px 60px rgba(0,0,0,.12);
+      --shadow-dark:0 20px 60px rgba(0,0,0,.28);
+      --radius:22px;
+      --radius-lg:30px;
+      --max:1420px;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#f5f5f5;color:#111}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
 
-/* HEADER */
-header{
-position:fixed;top:0;left:0;width:100%;
-background:#111;color:#fff;
-padding:20px 40px;
-display:flex;justify-content:space-between;align-items:center;
-z-index:1000;
-}
-header img{height:40px}
-nav a{color:#fff;margin:0 15px;text-decoration:none;font-size:14px}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit}
 
-/* HERO */
-.hero{
-height:100vh;
-position:relative;
-overflow:hidden;
-display:flex;align-items:center;
-color:#fff;
-}
-.hero img{
-position:absolute;width:100%;height:100%;
-object-fit:cover;opacity:0;transition:1s;
-}
-.hero img.active{opacity:1}
-.overlay{
-position:absolute;inset:0;background:rgba(0,0,0,0.5)
-}
-.hero-content{
-position:relative;z-index:2;
-padding:100px 40px;
-max-width:600px;
-}
-.hero h1{font-size:48px;margin-bottom:10px}
-.hero p{margin-bottom:20px}
-.buttons a{
-padding:12px 20px;margin-right:10px;
-border-radius:6px;text-decoration:none;font-size:14px;
-}
-.btn-dark{background:#111;color:#fff}
-.btn-light{background:#fff;color:#111}
+    .ap-container{
+      width:min(var(--max),calc(100% - 44px));
+      margin:0 auto;
+    }
 
-/* GALLERY */
-.gallery{
-padding:80px 40px;
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:20px;
-}
-.gallery img{width:100%;height:100%;object-fit:cover}
-.small-grid{
-display:grid;
-grid-template-rows:1fr 1fr;
-gap:20px;
-}
+    .ap-section{
+      padding:96px 0;
+    }
 
-/* SECTIONS */
-.section{padding:80px 40px}
-.section h2{margin-bottom:20px}
+    .ap-kicker{
+      display:inline-block;
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:18px;
+      font-weight:700;
+    }
 
-/* SERVICES */
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-.card{
-background:#fff;padding:20px;border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
-}
+    .ap-title{
+      font-size:clamp(32px,4vw,58px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin:0 0 18px;
+      font-weight:800;
+    }
 
-/* PROJECTS */
-.projects{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-}
-.projects img{height:250px;object-fit:cover}
+    .ap-lead{
+      font-size:18px;
+      line-height:1.75;
+      color:var(--muted);
+      max-width:760px;
+      margin:0;
+    }
 
-/* CONTACT */
-.contact{
-background:#111;color:#fff;
-text-align:center;
-}
-.contact a{color:#fff;display:block;margin:10px 0}
+    /* HEADER */
+    .ap-header{
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      z-index:1000;
+      padding:20px 0 0;
+      pointer-events:none;
+    }
 
-@media(max-width:900px){
-.gallery{grid-template-columns:1fr}
-.services,.projects{grid-template-columns:1fr}
-.hero h1{font-size:32px}
-}
-</style>
+    .ap-header-inner{
+      width:min(var(--max),calc(100% - 44px));
+      margin:0 auto;
+      background:rgba(14,14,14,.88);
+      border:1px solid rgba(255,255,255,.09);
+      backdrop-filter:blur(16px);
+      border-radius:0 0 0 0;
+      box-shadow:var(--shadow-dark);
+      pointer-events:auto;
+    }
+
+    .ap-nav{
+      min-height:82px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:0 26px;
+    }
+
+    .ap-brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+      flex:0 0 auto;
+    }
+
+    .ap-brand-logo{
+      width:64px;
+      height:64px;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+    }
+
+    .ap-brand-logo img{
+      max-width:100%;
+      max-height:100%;
+      object-fit:contain;
+      filter:drop-shadow(0 8px 20px rgba(0,0,0,.28));
+    }
+
+    .ap-brand-name{
+      color:#fff;
+      font-size:16px;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+
+    .ap-menu{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:34px;
+      flex:1 1 auto;
+    }
+
+    .ap-menu a{
+      color:#fff;
+      font-size:16px;
+      opacity:.92;
+      position:relative;
+      transition:.25s ease;
+    }
+
+    .ap-menu a:hover{opacity:1}
+    .ap-menu a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-10px;
+      width:0;
+      height:2px;
+      background:#fff;
+      transition:.25s ease;
+    }
+    .ap-menu a:hover::after{width:100%}
+
+    .ap-header-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex:0 0 auto;
+    }
+
+    .ap-lang{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .ap-lang a{
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      transition:.25s ease;
+    }
+
+    .ap-lang a.active,
+    .ap-lang a:hover{
+      background:#fff;
+      color:#111;
+      border-color:#fff;
+    }
+
+    .ap-mobile-toggle{
+      display:none;
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:transparent;
+      color:#fff;
+      cursor:pointer;
+      font-size:22px;
+    }
+
+    .ap-mobile-drawer{
+      display:none;
+      padding:0 26px 22px;
+    }
+
+    .ap-mobile-links{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .ap-mobile-links a{
+      color:#fff;
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    /* HERO */
+    .ap-hero{
+      position:relative;
+      min-height:100vh;
+      background:#111;
+      overflow:hidden;
+    }
+
+    .ap-hero-slider{
+      position:absolute;
+      inset:0;
+    }
+
+    .ap-hero-slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition:opacity 1.1s ease;
+    }
+
+    .ap-hero-slide.active{opacity:1}
+
+    .ap-hero-slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .ap-hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.42) 30%, rgba(0,0,0,.22) 58%, rgba(0,0,0,.18) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.38) 0%, rgba(0,0,0,.14) 25%, rgba(0,0,0,.18) 100%);
+      z-index:1;
+    }
+
+    .ap-hero-shell{
+      position:relative;
+      z-index:2;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:160px 0 80px;
+    }
+
+    .ap-hero-grid{
+      width:100%;
+      display:grid;
+      grid-template-columns:minmax(0,630px) 1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .ap-hero-copy{
+      color:#fff;
+      padding-left:70px;
+      max-width:620px;
+    }
+
+    .ap-hero-copy h1{
+      font-size:clamp(48px,6vw,88px);
+      line-height:.96;
+      letter-spacing:-.06em;
+      margin:0 0 22px;
+      font-weight:800;
+    }
+
+    .ap-hero-copy h1 span{
+      display:block;
+    }
+
+    .ap-hero-sub{
+      font-size:clamp(24px,2vw,38px);
+      line-height:1.15;
+      margin:0 0 16px;
+      color:rgba(255,255,255,.94);
+      letter-spacing:-.03em;
+    }
+
+    .ap-hero-desc{
+      margin:0 0 30px;
+      font-size:22px;
+      color:rgba(255,255,255,.80);
+      line-height:1.55;
+      max-width:520px;
+    }
+
+    .ap-hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .ap-btn{
+      min-height:60px;
+      padding:0 28px;
+      border-radius:14px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:800;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .ap-btn-dark{
+      background:#141414;
+      color:#fff;
+      box-shadow:0 16px 40px rgba(0,0,0,.28);
+    }
+
+    .ap-btn-dark:hover{
+      transform:translateY(-2px);
+      background:#0c0c0c;
+    }
+
+    .ap-btn-light{
+      background:#fff;
+      color:#111;
+      box-shadow:0 16px 40px rgba(0,0,0,.18);
+    }
+
+    .ap-btn-light:hover{
+      transform:translateY(-2px);
+      background:#f1f1f1;
+    }
+
+    .ap-hero-trust{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .ap-trust-chip{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      padding:12px 15px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      backdrop-filter:blur(10px);
+    }
+
+    /* INTRO GALLERY */
+    .ap-gallery-wrap{
+      position:relative;
+      margin-top:-110px;
+      z-index:5;
+    }
+
+    .ap-gallery-panel{
+      background:var(--bg-soft);
+      border-radius:0;
+      padding:36px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.58);
+    }
+
+    .ap-gallery-grid{
+      display:grid;
+      grid-template-columns:1.15fr .95fr;
+      gap:16px;
+      min-height:640px;
+    }
+
+    .ap-gallery-large{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+    }
+
+    .ap-gallery-large img,
+    .ap-gallery-small img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .ap-gallery-right{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:16px;
+    }
+
+    .ap-gallery-small{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+    }
+
+    .ap-gallery-bottom-row{
+      display:grid;
+      grid-template-columns:1.35fr .75fr;
+      gap:16px;
+    }
+
+    /* DARK INFO BAND */
+    .ap-band{
+      padding:88px 0 40px;
+    }
+
+    .ap-band-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .ap-band-card{
+      background:#171717;
+      color:#fff;
+      border-radius:22px;
+      padding:28px 24px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow-dark);
+    }
+
+    .ap-band-card strong{
+      display:block;
+      font-size:34px;
+      line-height:1;
+      margin-bottom:10px;
+      letter-spacing:-.04em;
+    }
+
+    .ap-band-card span{
+      color:rgba(255,255,255,.78);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    /* ABOUT */
+    .ap-about-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:42px;
+      align-items:start;
+    }
+
+    .ap-about-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .ap-feature-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .ap-feature{
+      padding:22px;
+      border-radius:20px;
+      background:#faf9f7;
+      border:1px solid rgba(18,18,18,.08);
+    }
+
+    .ap-feature h3{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:-.03em;
+    }
+
+    .ap-feature p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .ap-about-image{
+      overflow:hidden;
+      border-radius:28px;
+      min-height:100%;
+      box-shadow:var(--shadow);
+    }
+
+    .ap-about-image img{
+      width:100%;
+      height:100%;
+      min-height:620px;
+      object-fit:cover;
+    }
+
+    /* PRODUCTS */
+    .ap-products-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:34px;
+    }
+
+    .ap-product{
+      background:#fff;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .ap-product-media{
+      aspect-ratio:1.08/1;
+      overflow:hidden;
+    }
+
+    .ap-product-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .6s ease;
+    }
+
+    .ap-product:hover .ap-product-media img{
+      transform:scale(1.04);
+    }
+
+    .ap-product-body{
+      padding:24px;
+    }
+
+    .ap-product-num{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      font-weight:800;
+      margin-bottom:12px;
+      display:block;
+    }
+
+    .ap-product h3{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.1;
+      letter-spacing:-.04em;
+    }
+
+    .ap-product p{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .ap-product ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:10px;
+    }
+
+    .ap-product ul li{
+      position:relative;
+      padding-left:18px;
+      color:#333;
+      font-size:15px;
+    }
+
+    .ap-product ul li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:7px;
+      height:7px;
+      border-radius:999px;
+      background:#111;
+    }
+
+    /* WHY US */
+    .ap-dark-section{
+      background:#121212;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .ap-dark-section .ap-kicker,
+    .ap-dark-section .ap-lead{
+      color:rgba(255,255,255,.72);
+    }
+
+    .ap-why-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:34px;
+      align-items:start;
+      margin-top:34px;
+    }
+
+    .ap-why-cards{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .ap-why-card{
+      background:#1a1a1a;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px;
+      padding:24px;
+    }
+
+    .ap-why-card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-.03em;
+    }
+
+    .ap-why-card p{
+      margin:0;
+      color:rgba(255,255,255,.72);
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    .ap-proof{
+      background:linear-gradient(180deg,#202020,#171717);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow-dark);
+    }
+
+    .ap-proof-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:26px;
+    }
+
+    .ap-proof-top strong{
+      font-size:64px;
+      line-height:.9;
+      letter-spacing:-.06em;
+      display:block;
+    }
+
+    .ap-proof-stars{
+      font-size:20px;
+      letter-spacing:.2em;
+      color:#fff;
+      white-space:nowrap;
+    }
+
+    .ap-proof p{
+      margin:0 0 18px;
+      color:rgba(255,255,255,.74);
+      line-height:1.8;
+    }
+
+    .ap-proof-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .ap-proof-item{
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.06);
+      color:#fff;
+      font-size:15px;
+    }
+
+    /* PROCESS */
+    .ap-process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .ap-step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .ap-step-num{
+      font-size:56px;
+      line-height:.9;
+      letter-spacing:-.06em;
+      color:#111;
+      margin-bottom:14px;
+      font-weight:800;
+    }
+
+    .ap-step h3{
+      margin:0 0 10px;
+      font-size:24px;
+      letter-spacing:-.03em;
+    }
+
+    .ap-step p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+      font-size:15px;
+    }
+
+    /* PROJECTS */
+    .ap-projects-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:30px;
+    }
+
+    .ap-projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .ap-project{
+      position:relative;
+      overflow:hidden;
+      border-radius:24px;
+      min-height:380px;
+      box-shadow:var(--shadow);
+      background:#ddd;
+    }
+
+    .ap-project img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .6s ease;
+    }
+
+    .ap-project:hover img{transform:scale(1.04)}
+
+    .ap-project-overlay{
+      position:absolute;
+      inset:auto 0 0 0;
+      padding:22px;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.74) 100%);
+      color:#fff;
+    }
+
+    .ap-project-overlay h3{
+      margin:0 0 6px;
+      font-size:24px;
+      letter-spacing:-.03em;
+    }
+
+    .ap-project-overlay p{
+      margin:0;
+      color:rgba(255,255,255,.78);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    /* SUBSIDIE */
+    .ap-subsidie{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .ap-subsidie-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:stretch;
+    }
+
+    .ap-subsidie-copy{
+      padding:42px;
+    }
+
+    .ap-subsidie-copy h2{
+      margin:0 0 16px;
+      font-size:46px;
+      line-height:1.02;
+      letter-spacing:-.05em;
+    }
+
+    .ap-subsidie-copy p{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:16px;
+    }
+
+    .ap-subsidie-boxes{
+      display:grid;
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .ap-subsidie-box{
+      padding:18px 18px;
+      border-radius:18px;
+      background:#f7f5f1;
+      border:1px solid rgba(18,18,18,.08);
+    }
+
+    .ap-subsidie-box strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:17px;
+    }
+
+    .ap-subsidie-box span{
+      color:var(--muted);
+      line-height:1.65;
+      font-size:14px;
+    }
+
+    .ap-subsidie-media img{
+      width:100%;
+      height:100%;
+      min-height:100%;
+      object-fit:cover;
+    }
+
+    /* CONTACT */
+    .ap-contact-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .ap-contact-card,
+    .ap-contact-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .ap-contact-items{
+      display:grid;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .ap-contact-item{
+      padding:18px 20px;
+      background:#f9f8f5;
+      border-radius:18px;
+      border:1px solid rgba(18,18,18,.08);
+    }
+
+    .ap-contact-item strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:16px;
+    }
+
+    .ap-contact-item a,
+    .ap-contact-item span{
+      color:#222;
+      line-height:1.7;
+      word-break:break-word;
+    }
+
+    .ap-contact-panel h3{
+      margin:0 0 14px;
+      font-size:34px;
+      letter-spacing:-.04em;
+      line-height:1.04;
+    }
+
+    .ap-contact-panel p{
+      margin:0 0 22px;
+      color:var(--muted);
+      line-height:1.8;
+    }
+
+    .ap-contact-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    /* FOOTER */
+    .ap-footer{
+      background:#101010;
+      color:#fff;
+      margin-top:110px;
+      padding:70px 0 32px;
+    }
+
+    .ap-footer-top{
+      display:grid;
+      grid-template-columns:1.15fr .8fr .8fr .9fr;
+      gap:30px;
+      align-items:start;
+      padding-bottom:34px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .ap-footer-brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .ap-footer-brand img{
+      width:72px;
+      height:72px;
+      object-fit:contain;
+    }
+
+    .ap-footer-brand-text strong{
+      display:block;
+      font-size:18px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:6px;
+    }
+
+    .ap-footer-brand-text span{
+      color:rgba(255,255,255,.66);
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .ap-footer-copy{
+      color:rgba(255,255,255,.70);
+      line-height:1.8;
+      max-width:480px;
+      font-size:15px;
+    }
+
+    .ap-footer-col h4{
+      margin:0 0 16px;
+      font-size:15px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.78);
+    }
+
+    .ap-footer-links{
+      display:grid;
+      gap:12px;
+    }
+
+    .ap-footer-links a,
+    .ap-footer-links span{
+      color:#fff;
+      opacity:.82;
+      font-size:15px;
+      transition:.25s ease;
+    }
+
+    .ap-footer-links a:hover{opacity:1}
+
+    .ap-footer-bottom{
+      padding-top:22px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      color:rgba(255,255,255,.58);
+      font-size:14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px){
+      .ap-menu{gap:22px}
+      .ap-hero-copy{padding-left:34px}
+      .ap-band-grid,
+      .ap-process-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .ap-products-grid,
+      .ap-projects-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .ap-footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width: 980px){
+      .ap-menu,
+      .ap-header-right{
+        display:none;
+      }
+
+      .ap-mobile-toggle{
+        display:grid;
+        place-items:center;
+      }
+
+      .ap-mobile-drawer.show{
+        display:block;
+      }
+
+      .ap-hero-shell{
+        padding:150px 0 80px;
+      }
+
+      .ap-hero-grid,
+      .ap-gallery-grid,
+      .ap-about-grid,
+      .ap-why-grid,
+      .ap-subsidie-grid,
+      .ap-contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .ap-hero-copy{
+        padding-left:10px;
+        max-width:100%;
+      }
+
+      .ap-gallery-wrap{
+        margin-top:-60px;
+      }
+
+      .ap-gallery-panel{
+        padding:18px;
+      }
+
+      .ap-gallery-grid{
+        min-height:auto;
+      }
+
+      .ap-gallery-large{
+        min-height:360px;
+      }
+
+      .ap-gallery-right{
+        grid-template-rows:auto;
+      }
+
+      .ap-gallery-bottom-row{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .ap-feature-list,
+      .ap-why-cards{
+        grid-template-columns:1fr;
+      }
+
+      .ap-about-image img{
+        min-height:460px;
+      }
+    }
+
+    @media (max-width: 700px){
+      .ap-container,
+      .ap-header-inner{
+        width:min(var(--max),calc(100% - 20px));
+      }
+
+      .ap-nav{
+        min-height:78px;
+        padding:0 16px;
+      }
+
+      .ap-brand-logo{
+        width:58px;
+        height:58px;
+      }
+
+      .ap-brand-name{
+        font-size:14px;
+        letter-spacing:.14em;
+      }
+
+      .ap-hero-copy{
+        padding-left:0;
+      }
+
+      .ap-hero-copy h1{
+        font-size:46px;
+      }
+
+      .ap-hero-sub{
+        font-size:24px;
+      }
+
+      .ap-hero-desc{
+        font-size:18px;
+      }
+
+      .ap-section{
+        padding:74px 0;
+      }
+
+      .ap-band-grid,
+      .ap-process-grid,
+      .ap-products-grid,
+      .ap-projects-grid,
+      .ap-footer-top{
+        grid-template-columns:1fr;
+      }
+
+      .ap-project{
+        min-height:300px;
+      }
+
+      .ap-contact-card,
+      .ap-contact-panel,
+      .ap-about-card,
+      .ap-proof,
+      .ap-subsidie-copy{
+        padding:24px;
+      }
+
+      .ap-footer{
+        margin-top:80px;
+      }
+
+      .ap-footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<img src="images/logo.jpg">
-<nav>
-<a href="#about">Over ons</a>
-<a href="#services">Producten</a>
-<a href="#projects">Realisaties</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+  <header class="ap-header">
+    <div class="ap-header-inner">
+      <div class="ap-nav">
+        <a href="#top" class="ap-brand">
+          <div class="ap-brand-logo">
+            <img src="../images/logo.png" alt="A-PROJECT logo">
+          </div>
+          <div class="ap-brand-name">A-PROJECT</div>
+        </a>
 
-<section class="hero">
-<img src="images/hero.jpg" class="active">
-<img src="images/hero1.jpg">
-<img src="images/hero2.jpg">
+        <nav class="ap-menu">
+          <a href="#about">Over ons</a>
+          <a href="#why">Waarom wij?</a>
+          <a href="#projects">Realisaties</a>
+          <a href="#products">Producten</a>
+          <a href="#subsidie">Subsidie</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-<div class="overlay"></div>
+        <div class="ap-header-right">
+          <div class="ap-lang">
+            <a href="../nl/" class="active">NL</a>
+            <a href="../en/">EN</a>
+            <a href="../pl/">PL</a>
+          </div>
+        </div>
 
-<div class="hero-content">
-<h1>Nieuwe ramen & deuren</h1>
-<p>Premium kozijnen en deuren met een moderne uitstraling, strak geplaatst en betrouwbaar afgewerkt.</p>
+        <button class="ap-mobile-toggle" id="apMobileToggle" aria-label="Menu openen">☰</button>
+      </div>
 
-<div class="buttons">
-<a href="mailto:a.project.contact@gmail.com" class="btn-dark">Email</a>
-<a href="tel:+31628255738" class="btn-light">Bel direct</a>
-</div>
-</div>
-</section>
+      <div class="ap-mobile-drawer" id="apMobileDrawer">
+        <div class="ap-mobile-links">
+          <a href="#about">Over ons</a>
+          <a href="#why">Waarom wij?</a>
+          <a href="#projects">Realisaties</a>
+          <a href="#products">Producten</a>
+          <a href="#subsidie">Subsidie</a>
+          <a href="#contact">Contact</a>
+          <a href="../en/">English</a>
+          <a href="../pl/">Polski</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section class="gallery">
-<img src="images/deur1.jpg">
-<div class="small-grid">
-<img src="images/raam.jpg">
-<img src="images/deur2.jpg">
-</div>
-</section>
+  <section class="ap-hero" id="top">
+    <div class="ap-hero-slider">
+      <div class="ap-hero-slide active"><img src="../images/hero.jpg" alt="A-PROJECT hero 1"></div>
+      <div class="ap-hero-slide"><img src="../images/hero1.jpg" alt="A-PROJECT hero 2"></div>
+      <div class="ap-hero-slide"><img src="../images/hero2.jpg" alt="A-PROJECT hero 3"></div>
+    </div>
+    <div class="ap-hero-overlay"></div>
 
-<section id="about" class="section">
-<h2>Over A-PROJECT</h2>
-<p>Wij leveren en plaatsen moderne kozijnen en deuren met focus op kwaliteit, uitstraling en afwerking.</p>
-</section>
+    <div class="ap-container ap-hero-shell">
+      <div class="ap-hero-grid">
+        <div class="ap-hero-copy">
+          <h1>
+            <span>Nieuwe</span>
+            <span>kozijnen & deuren</span>
+            <span>voor een premium woninguitstraling.</span>
+          </h1>
 
-<section id="services" class="section">
-<h2>Producten</h2>
-<div class="services">
-<div class="card">Kozijnen</div>
-<div class="card">Deuren</div>
-<div class="card">Vervanging</div>
-<div class="card">Afwerking</div>
-<div class="card">Upgrade woning</div>
-<div class="card">Service</div>
-</div>
-</section>
+          <p class="ap-hero-sub">Strakke afwerking, moderne lijnen en een resultaat dat direct het verschil maakt.</p>
+          <p class="ap-hero-desc">A-PROJECT levert hoogwaardige kozijnen en deuren met oog voor detail, uitstraling, comfort en een verzorgde afwerking die de volledige woning naar een hoger niveau tilt.</p>
 
-<section id="projects" class="section">
-<h2>Realisaties</h2>
-<div class="projects">
-<img src="images/deur3.jpg">
-<img src="images/deur4.jpg">
-<img src="images/deur5.jpg">
-<img src="images/raam1.jpg">
-<img src="images/raam2.jpg">
-<img src="images/raam4.jpg">
-</div>
-</section>
+          <div class="ap-hero-actions">
+            <a class="ap-btn ap-btn-dark" href="mailto:a.project.contact@gmail.com">Email</a>
+            <a class="ap-btn ap-btn-light" href="tel:+31628255738">Bel direct</a>
+          </div>
 
-<section id="contact" class="section contact">
-<h2>Contact</h2>
-<a href="tel:+31628255738">+31 6 28255738</a>
-<a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
-</section>
+          <div class="ap-hero-trust">
+            <div class="ap-trust-chip">Premium afwerking</div>
+            <div class="ap-trust-chip">Moderne uitstraling</div>
+            <div class="ap-trust-chip">Betrouwbare plaatsing</div>
+            <div class="ap-trust-chip">Direct contact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-let slides = document.querySelectorAll(".hero img");
-let index = 0;
+  <div class="ap-gallery-wrap">
+    <div class="ap-container">
+      <div class="ap-gallery-panel">
+        <div class="ap-gallery-grid">
+          <div class="ap-gallery-large">
+            <img src="../images/raam.jpg" alt="Detail van premium kozijn">
+          </div>
 
-setInterval(()=>{
-slides[index].classList.remove("active");
-index = (index + 1) % slides.length;
-slides[index].classList.add("active");
-},4000);
-</script>
+          <div class="ap-gallery-right">
+            <div class="ap-gallery-small">
+              <img src="../images/deurraam.jpg" alt="Project buitenzijde kozijnen">
+            </div>
 
+            <div class="ap-gallery-bottom-row">
+              <div class="ap-gallery-small">
+                <img src="../images/deur1.jpg" alt="Schuifdeur project">
+              </div>
+              <div class="ap-gallery-small">
+                <img src="../images/raam1.jpg" alt="Zijaanzicht raamproject">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ap-band">
+    <div class="ap-container">
+      <div class="ap-band-grid">
+        <div class="ap-band-card">
+          <strong>100+</strong>
+          <span>Positieve indrukken en sterk vertrouwen in kwaliteit, uitstraling en service.</span>
+        </div>
+        <div class="ap-band-card">
+          <strong>Premium</strong>
+          <span>Moderne kozijnen en deuren met een verzorgde afwerking en een hoogwaardig eindbeeld.</span>
+        </div>
+        <div class="ap-band-card">
+          <strong>Modern</strong>
+          <span>Een strakke, eigentijdse upgrade die de uitstraling van de woning direct versterkt.</span>
+        </div>
+        <div class="ap-band-card">
+          <strong>Direct</strong>
+          <span>Snel bereikbaar via telefoon, email en WhatsApp voor offerte of projectbespreking.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section" id="about">
+    <div class="ap-container">
+      <div class="ap-about-grid">
+        <div>
+          <span class="ap-kicker">Over A-PROJECT</span>
+          <h2 class="ap-title">Kozijnen en deuren die de volledige uitstraling van een woning veranderen.</h2>
+          <p class="ap-lead">A-PROJECT richt zich op premium kozijnen en deuren voor klanten die meer willen dan alleen vervanging. Het draait om een modernere uitstraling, sterke afwerking, nette lijnen en een resultaat dat vanaf de eerste blik kwaliteit uitstraalt.</p>
+
+          <div class="ap-about-card" style="margin-top:28px;">
+            <div class="ap-feature-list">
+              <div class="ap-feature">
+                <h3>Moderne uitstraling</h3>
+                <p>Nieuwe kozijnen en deuren die de woning direct schoner, strakker en actueler laten ogen.</p>
+              </div>
+              <div class="ap-feature">
+                <h3>Precieze afwerking</h3>
+                <p>Oog voor detail, nette aansluiting en een eindresultaat dat verzorgd en professioneel aanvoelt.</p>
+              </div>
+              <div class="ap-feature">
+                <h3>Comfort & vertrouwen</h3>
+                <p>Een oplossing die bijdraagt aan comfort, een veiliger gevoel en een sterkere woonbeleving.</p>
+              </div>
+              <div class="ap-feature">
+                <h3>Kwaliteit voorop</h3>
+                <p>Elke uitvoering is gericht op betrouwbaarheid, presentatie en een standaard die zichtbaar hoger ligt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ap-about-image">
+          <img src="../images/deur2.jpg" alt="A-PROJECT premium deur project">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section" id="products">
+    <div class="ap-container">
+      <span class="ap-kicker">Producten</span>
+      <h2 class="ap-title">Premium oplossingen voor deuren, kozijnen en een sterkere woningpresentatie.</h2>
+      <p class="ap-lead">A-PROJECT combineert hoogwaardige plaatsing met een scherp oog voor design, zodat het eindresultaat modern, verzorgd en premium aanvoelt.</p>
+
+      <div class="ap-products-grid">
+        <article class="ap-product">
+          <div class="ap-product-media">
+            <img src="../images/raam2.jpg" alt="Kozijnen project">
+          </div>
+          <div class="ap-product-body">
+            <span class="ap-product-num">01</span>
+            <h3>Kozijnen</h3>
+            <p>Moderne kozijnoplossingen met aandacht voor uitstraling, afwerking en een strakke integratie in de woning.</p>
+            <ul>
+              <li>Moderne lijnvoering</li>
+              <li>Nette afwerking rondom het frame</li>
+              <li>Sterkere, luxere uitstraling</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ap-product">
+          <div class="ap-product-media">
+            <img src="../images/deur3.jpg" alt="Deuren project">
+          </div>
+          <div class="ap-product-body">
+            <span class="ap-product-num">02</span>
+            <h3>Deuren</h3>
+            <p>Deuren die direct een sterkere eerste indruk geven en de stijl van de woning naar een hoger niveau brengen.</p>
+            <ul>
+              <li>Strakke premium look</li>
+              <li>Modern entreegevoel</li>
+              <li>Verzorgd eindresultaat</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="ap-product">
+          <div class="ap-product-media">
+            <img src="../images/deurraam.jpg" alt="Vervanging kozijnen">
+          </div>
+          <div class="ap-product-body">
+            <span class="ap-product-num">03</span>
+            <h3>Vervanging & upgrade</h3>
+            <p>Oude elementen vervangen door oplossingen die de woning nieuwer, sterker en visueel waardevoller laten voelen.</p>
+            <ul>
+              <li>Oud-naar-nieuw effect</li>
+              <li>Frissere architectonische uitstraling</li>
+              <li>Meer premium woningbeeld</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section ap-dark-section" id="why">
+    <div class="ap-container">
+      <span class="ap-kicker">Waarom wij?</span>
+      <h2 class="ap-title">Een premium resultaat ontstaat wanneer elk detail serieus wordt genomen.</h2>
+      <p class="ap-lead">Nieuwe kozijnen en deuren zijn één van de eerste elementen die opvallen. Wanneer de afwerking klopt en de uitstraling sterk is, voelt de volledige woning moderner, completer en waardevoller aan.</p>
+
+      <div class="ap-why-grid">
+        <div class="ap-why-cards">
+          <div class="ap-why-card">
+            <h3>Visuele transformatie</h3>
+            <p>Projecten die de woning direct een schonere, modernere en sterkere uitstraling geven.</p>
+          </div>
+          <div class="ap-why-card">
+            <h3>Premium afwerking</h3>
+            <p>Niet alleen geplaatst, maar afgewerkt op een manier die strak, verzorgd en hoogwaardig oogt.</p>
+          </div>
+          <div class="ap-why-card">
+            <h3>Betrouwbare kwaliteit</h3>
+            <p>Een consistente standaard met aandacht voor presentatie, nette lijnen en zorgvuldig werk.</p>
+          </div>
+          <div class="ap-why-card">
+            <h3>Direct contact</h3>
+            <p>Snel bereikbaar voor vragen, projectbespreking en een heldere opvolging zonder onnodige omwegen.</p>
+          </div>
+        </div>
+
+        <div class="ap-proof">
+          <div class="ap-proof-top">
+            <div>
+              <strong>100%</strong>
+            </div>
+            <div class="ap-proof-stars">★★★★★</div>
+          </div>
+
+          <p>A-PROJECT staat voor een moderne, minimalistische en zelfverzekerde uitstraling die past bij een premium merk. Vertrouwen, presentatie en kwaliteit vormen de basis van elke uitvoering.</p>
+
+          <div class="ap-proof-list">
+            <div class="ap-proof-item">Sterke eerste indruk met moderne kozijnen en deuren</div>
+            <div class="ap-proof-item">Nette plaatsing met aandacht voor randafwerking en detail</div>
+            <div class="ap-proof-item">Een woningbeeld dat direct luxer en verzorgder aanvoelt</div>
+            <div class="ap-proof-item">Snelle bereikbaarheid via telefoon, WhatsApp en email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section" id="process">
+    <div class="ap-container">
+      <span class="ap-kicker">Proces</span>
+      <h2 class="ap-title">Een helder traject van eerste contact tot premium eindresultaat.</h2>
+      <p class="ap-lead">Een goed resultaat draait niet alleen om het product, maar ook om duidelijke communicatie, een zorgvuldige aanpak en een afwerking die volledig klopt.</p>
+
+      <div class="ap-process-grid">
+        <div class="ap-step">
+          <div class="ap-step-num">1</div>
+          <h3>Contact</h3>
+          <p>Je neemt contact op via telefoon, WhatsApp of email en beschrijft wat je nodig hebt voor jouw woning of project.</p>
+        </div>
+        <div class="ap-step">
+          <div class="ap-step-num">2</div>
+          <h3>Planning</h3>
+          <p>De richting van het project wordt duidelijk besproken zodat uitstraling, functie en afwerking goed aansluiten.</p>
+        </div>
+        <div class="ap-step">
+          <div class="ap-step-num">3</div>
+          <h3>Plaatsing</h3>
+          <p>De uitvoering gebeurt met oog voor nette lijnen, een verzorgde afwerking en een betrouwbaar eindbeeld.</p>
+        </div>
+        <div class="ap-step">
+          <div class="ap-step-num">4</div>
+          <h3>Eindresultaat</h3>
+          <p>Je ontvangt een modern, premium en visueel sterker resultaat dat de woning direct merkbaar verbetert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section" id="projects">
+    <div class="ap-container">
+      <div class="ap-projects-head">
+        <div>
+          <span class="ap-kicker">Realisaties</span>
+          <h2 class="ap-title" style="margin-bottom:0;">Echt werk. Echte details. Een zichtbare premium upgrade.</h2>
+        </div>
+      </div>
+
+      <div class="ap-projects-grid">
+        <article class="ap-project">
+          <img src="../images/deur4.jpg" alt="Realisatie A-PROJECT 1">
+          <div class="ap-project-overlay">
+            <h3>Premium buitenaanzicht</h3>
+            <p>Strakkere lijnen en een modernere woningpresentatie.</p>
+          </div>
+        </article>
+
+        <article class="ap-project">
+          <img src="../images/deur5.jpg" alt="Realisatie A-PROJECT 2">
+          <div class="ap-project-overlay">
+            <h3>Moderne deurafwerking</h3>
+            <p>Een sterkere eerste indruk met een verzorgd eindbeeld.</p>
+          </div>
+        </article>
+
+        <article class="ap-project">
+          <img src="../images/raam4.jpg" alt="Realisatie A-PROJECT 3">
+          <div class="ap-project-overlay">
+            <h3>Strakke raamupgrade</h3>
+            <p>Schoner detailwerk en een luxere visuele standaard.</p>
+          </div>
+        </article>
+
+        <article class="ap-project">
+          <img src="../images/raam5.jpg" alt="Realisatie A-PROJECT 4">
+          <div class="ap-project-overlay">
+            <h3>Minimalistische afwerking</h3>
+            <p>Rustige, moderne lijnen met premium uitstraling.</p>
+          </div>
+        </article>
+
+        <article class="ap-project">
+          <img src="../images/deur6.jpg" alt="Realisatie A-PROJECT 5">
+          <div class="ap-project-overlay">
+            <h3>Woningbeeld versterkt</h3>
+            <p>Nieuwe elementen die de volledige gevel optillen.</p>
+          </div>
+        </article>
+
+        <article class="ap-project">
+          <img src="../images/raam6.jpg" alt="Realisatie A-PROJECT 6">
+          <div class="ap-project-overlay">
+            <h3>Hoogwaardig eindresultaat</h3>
+            <p>Modern design met een scherpe en nette afronding.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section" id="subsidie">
+    <div class="ap-container">
+      <div class="ap-subsidie">
+        <div class="ap-subsidie-grid">
+          <div class="ap-subsidie-copy">
+            <span class="ap-kicker">Subsidie</span>
+            <h2>Informeer naar de mogelijkheden rondom subsidie en woningverbetering.</h2>
+            <p>Bij bepaalde projecten kunnen er mogelijkheden zijn die interessant zijn wanneer je investeert in nieuwe kozijnen of deuren. Een goede keuze draait niet alleen om uitstraling, maar ook om slimme verbetering van de woning.</p>
+            <p>Neem contact op en bespreek jouw situatie. Zo krijg je sneller duidelijkheid over wat past bij jouw project en welke vervolgstappen interessant kunnen zijn.</p>
+
+            <div class="ap-subsidie-boxes">
+              <div class="ap-subsidie-box">
+                <strong>Gericht op woningverbetering</strong>
+                <span>Kozijnen en deuren kunnen deel uitmaken van een bredere upgrade van comfort, uitstraling en woonkwaliteit.</span>
+              </div>
+              <div class="ap-subsidie-box">
+                <strong>Persoonlijk afgestemd</strong>
+                <span>Elke woning is anders, daarom is het verstandig om mogelijkheden op basis van jouw situatie te bespreken.</span>
+              </div>
+              <div class="ap-subsidie-box">
+                <strong>Snel duidelijkheid</strong>
+                <span>Met direct contact krijg je sneller inzicht in wat relevant is voor jouw project en planning.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ap-subsidie-media">
+            <img src="../images/hero3.jpg" alt="Premium kozijnen project A-PROJECT">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-section" id="contact">
+    <div class="ap-container">
+      <span class="ap-kicker">Contact</span>
+      <h2 class="ap-title">Klaar om jouw woning een modernere, sterkere en premium uitstraling te geven?</h2>
+      <p class="ap-lead">Bespreek jouw project eenvoudig en direct met A-PROJECT. Neem contact op voor vragen, mogelijkheden en de volgende stap richting een strak eindresultaat.</p>
+
+      <div class="ap-contact-grid">
+        <div class="ap-contact-card">
+          <div class="ap-contact-items">
+            <div class="ap-contact-item">
+              <strong>Telefoon</strong>
+              <a href="tel:+31628255738">+31 6 28255738</a>
+            </div>
+            <div class="ap-contact-item">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/31628255738" target="_blank" rel="noopener noreferrer">Stuur direct een bericht</a>
+            </div>
+            <div class="ap-contact-item">
+              <strong>Email</strong>
+              <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+            </div>
+            <div class="ap-contact-item">
+              <strong>Vertrouwen</strong>
+              <span>Premium uitstraling, directe communicatie en focus op een verzorgd eindresultaat.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ap-contact-panel">
+          <h3>Direct schakelen voor jouw project?</h3>
+          <p>A-PROJECT helpt je met moderne kozijnen en deuren die niet alleen functioneel zijn, maar vooral ook de uitstraling van jouw woning zichtbaar verbeteren. Neem contact op en bespreek jouw wensen op een snelle en heldere manier.</p>
+          <p>Of het nu gaat om een nieuwe voordeur, een complete raamvervanging of een visuele upgrade van de woning: het draait om kwaliteit, uitstraling en een afwerking die volledig klopt.</p>
+
+          <div class="ap-contact-actions">
+            <a class="ap-btn ap-btn-dark" href="mailto:a.project.contact@gmail.com">Email</a>
+            <a class="ap-btn ap-btn-light" href="tel:+31628255738">Bel direct</a>
+            <a class="ap-btn ap-btn-dark" href="https://wa.me/31628255738" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ap-footer">
+    <div class="ap-container">
+      <div class="ap-footer-top">
+        <div>
+          <div class="ap-footer-brand">
+            <img src="../images/logo.png" alt="A-PROJECT logo">
+            <div class="ap-footer-brand-text">
+              <strong>A-PROJECT</strong>
+              <span>Premium kozijnen & deuren</span>
+            </div>
+          </div>
+          <p class="ap-footer-copy">A-PROJECT levert moderne kozijnen en deuren met focus op uitstraling, strakke afwerking en een resultaat dat de woning direct sterker, schoner en luxer laat ogen.</p>
+        </div>
+
+        <div class="ap-footer-col">
+          <h4>Navigatie</h4>
+          <div class="ap-footer-links">
+            <a href="#about">Over ons</a>
+            <a href="#why">Waarom wij?</a>
+            <a href="#projects">Realisaties</a>
+            <a href="#products">Producten</a>
+            <a href="#subsidie">Subsidie</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="ap-footer-col">
+          <h4>Contact</h4>
+          <div class="ap-footer-links">
+            <a href="tel:+31628255738">+31 6 28255738</a>
+            <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+            <a href="https://wa.me/31628255738" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="ap-footer-col">
+          <h4>Talen</h4>
+          <div class="ap-footer-links">
+            <a href="../nl/">Nederlands</a>
+            <a href="../en/">English</a>
+            <a href="../pl/">Polski</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ap-footer-bottom">
+        <span>© A-PROJECT. Alle rechten voorbehouden.</span>
+        <span>Premium uitstraling • Moderne afwerking • Direct contact</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.ap-hero-slide');
+    let currentSlide = 0;
+
+    if (slides.length > 1) {
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 4200);
+    }
+
+    const mobileToggle = document.getElementById('apMobileToggle');
+    const mobileDrawer = document.getElementById('apMobileDrawer');
+
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('show');
+      });
+
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('show');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
