@@ -1,1 +1,1010 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-PROJECT | Onze diensten</title>
+  <meta name="description" content="Ontdek de diensten van A-PROJECT: ramen en deuren, gevel- en isolatiewerken, complete transformaties, rolluiken, horren en schuifdeuren." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#151617;
+      --bg-2:#111213;
+      --panel:#171819;
+      --panel-2:#1B1C1E;
+      --light:#ECECEE;
+      --white:#FFFFFF;
+      --text:#F7F7F8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.52);
+      --dark-text:#111214;
+      --dark-muted:rgba(17,18,20,.68);
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.22);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.12);
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:18px;
+      --radius-xl:24px;
+      --radius-2xl:28px;
+      --section-max:1520px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#ececef;
+      color:var(--dark-text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .shell{
+      width:min(var(--section-max), calc(100% - 52px));
+      margin:0 auto;
+    }
+
+    .section-block{padding:34px 0 0}
+    .section-pad{padding:24px 0 0}
+
+    .section-card{
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-light{
+      background:#efeff1;
+      color:var(--dark-text);
+    }
+
+    .section-dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+    }
+
+    .section-inner{
+      padding:54px 36px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-light .section-kicker{color:rgba(17,18,20,.48)}
+    .section-dark .section-kicker{color:rgba(255,255,255,.54)}
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+
+    .section-head h1,
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(32px, 3.8vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .section-light .section-head p{color:var(--dark-muted)}
+    .section-dark .section-head p{color:var(--muted)}
+
+    .page-top{
+      background:#ececef;
+      padding:0;
+    }
+
+    .top-shell{
+      width:100%;
+      margin:0;
+      position:relative;
+      border-radius:0;
+      overflow:hidden;
+      background:#111;
+      box-shadow:none;
+    }
+
+    .site-header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:30;
+      padding:0;
+    }
+
+    .header-bar{
+      min-height:78px;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 26px;
+      border-radius:0;
+      background:rgba(18,19,20,.78);
+      border:none;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:none;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:auto;
+      flex-shrink:0;
+    }
+
+    .brand-logo{
+      display:block;
+      width:auto;
+      height:42px;
+      max-width:none;
+      object-fit:contain;
+      flex-shrink:0;
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.11em;
+      white-space:nowrap;
+      line-height:1;
+    }
+
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1.5px solid rgba(255,255,255,.82);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:10px;
+      font-weight:800;
+      line-height:1;
+      text-align:center;
+      letter-spacing:.06em;
+      flex-shrink:0;
+      background:rgba(255,255,255,.02);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:34px;
+      flex:1;
+    }
+
+    .nav a{
+      color:rgba(255,255,255,.94);
+      font-size:14px;
+      font-weight:500;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{opacity:.76}
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:230px;
+      justify-content:flex-end;
+      flex-shrink:0;
+    }
+
+    .lang-link{
+      font-size:22px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:.22s ease;
+    }
+
+    .lang-link:hover{transform:translateY(-1px)}
+
+    .menu-toggle{
+      display:none;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+    }
+
+    .mobile-nav{
+      position:absolute;
+      top:78px;
+      left:0;
+      right:0;
+      z-index:25;
+      display:none;
+      background:rgba(17,18,20,.98);
+      border:none;
+      border-radius:0;
+      padding:14px 16px 16px;
+      box-shadow:none;
+    }
+
+    .mobile-nav.open{display:block}
+
+    .mobile-nav a{
+      display:block;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      padding:13px 8px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .mobile-nav a:last-child{border-bottom:none}
+
+    .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-lang a{
+      border-bottom:none;
+      padding:10px 12px;
+      background:rgba(255,255,255,.07);
+      border-radius:12px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:640px;
+      background:#111;
+      width:100%;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.64) 0%, rgba(0,0,0,.44) 30%, rgba(0,0,0,.18) 58%, rgba(0,0,0,.08) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.16) 0%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.24) 100%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:640px;
+      display:flex;
+      align-items:center;
+      padding:138px 72px 70px;
+    }
+
+    .hero-content{
+      max-width:640px;
+      color:#fff;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(46px,5vw,72px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .hero-text{
+      margin:0 0 28px;
+      font-size:17px;
+      line-height:1.72;
+      color:rgba(255,255,255,.82);
+      max-width:560px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-dark{
+      background:#161719;
+      color:#fff;
+      border-color:#161719;
+      box-shadow:0 12px 22px rgba(0,0,0,.22);
+    }
+
+    .btn-light{
+      background:#f4f4f5;
+      color:#111214;
+      border-color:#f4f4f5;
+      box-shadow:0 12px 22px rgba(0,0,0,.10);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .service-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    .service-media{
+      position:relative;
+      aspect-ratio:16 / 10.2;
+      overflow:hidden;
+      background:#d9d9dc;
+    }
+
+    .service-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .service-card:hover .service-media img{
+      transform:scale(1.035);
+    }
+
+    .service-body{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+
+    .service-label{
+      display:inline-block;
+      margin-bottom:14px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(17,18,20,.48);
+    }
+
+    .service-body h3{
+      margin:0 0 12px;
+      font-size:32px;
+      line-height:1.02;
+      letter-spacing:-.04em;
+      font-weight:800;
+    }
+
+    .service-body p{
+      margin:0 0 22px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--dark-muted);
+      max-width:95%;
+    }
+
+    .service-actions{
+      margin-top:auto;
+    }
+
+    .service-btn{
+      min-height:52px;
+      padding:0 20px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      background:#17181a;
+      color:#fff;
+      border:1px solid #17181a;
+      transition:.22s ease;
+    }
+
+    .service-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .contact-card{
+      background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      padding:38px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .contact-pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .contact-pill{
+      padding:12px 14px;
+      border-radius:12px;
+      background:#17181a;
+      color:#fff;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .site-footer{
+      padding:34px 0 38px;
+      background:#ececef;
+    }
+
+    .footer-shell{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.1fr .8fr .8fr .8fr;
+      gap:24px;
+      padding:38px;
+    }
+
+    .footer-brand p{
+      margin:12px 0 0;
+      font-size:15px;
+      line-height:1.8;
+      color:rgba(255,255,255,.72);
+      max-width:420px;
+    }
+
+    .footer-col h4{
+      margin:0 0 14px;
+      font-size:16px;
+      letter-spacing:-.02em;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a,
+    .footer-links span{
+      color:rgba(255,255,255,.72);
+      font-size:15px;
+      line-height:1.7;
+      transition:.22s ease;
+    }
+
+    .footer-links a:hover{color:#fff}
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:22px 38px 28px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    .footer-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-badge{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#17181a;
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:22px;
+      transition:.22s ease;
+    }
+
+    .whatsapp-float:hover{transform:translateY(-2px)}
+
+    @media (max-width:1320px){
+      .nav{gap:24px}
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:1060px){
+      .nav,
+      .header-right .lang-link{
+        display:none;
+      }
+
+      .menu-toggle{display:flex}
+      .header-right{min-width:auto}
+
+      .hero-inner{padding:132px 34px 56px}
+
+      .services-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .shell{width:min(100%, calc(100% - 22px))}
+      .site-header{padding:0}
+
+      .header-bar{
+        min-height:70px;
+        width:100%;
+        padding:12px 16px;
+        border-radius:0;
+      }
+
+      .brand{gap:10px}
+
+      .brand-logo{
+        height:28px;
+        width:auto;
+      }
+
+      .brand-name{font-size:13px}
+
+      .mobile-nav{
+        top:70px;
+        left:0;
+        right:0;
+        border-radius:0;
+        padding:14px 16px 16px;
+      }
+
+      .hero{
+        min-height:560px;
+      }
+
+      .hero-inner{
+        min-height:560px;
+        padding:116px 22px 42px;
+      }
+
+      .hero h1{font-size:44px}
+      .hero-text{font-size:16px}
+
+      .hero-actions,
+      .contact-actions{
+        width:100%;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn,
+      .service-btn{
+        width:100%;
+      }
+
+      .section-inner,
+      .contact-card,
+      .footer-top{
+        padding:22px;
+      }
+
+      .service-body{
+        padding:22px;
+      }
+
+      .service-body h3{
+        font-size:28px;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom{
+        padding:20px 22px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-top">
+    <div class="top-shell">
+      <header class="site-header">
+        <div class="header-bar">
+          <a href="/aprojec/index.html" class="brand" aria-label="A-PROJECT home">
+            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+            <span class="brand-name">A-PROJECT</span>
+          </a>
+
+          <nav class="nav" aria-label="Hoofdmenu">
+            <a href="/aprojec/index.html#over-ons">Over ons</a>
+            <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
+            <a href="/aprojec/realisaties.html">Realisaties</a>
+            <a href="/aprojec/onze-diensten.html">Onze diensten</a>
+            <a href="/aprojec/producten.html">Producten</a>
+            <a href="/aprojec/index.html#reviews">Reviews</a>
+            <a href="/aprojec/index.html#subsidie">Subsidie</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="header-right">
+            <a class="lang-link" href="/aprojec/onze-diensten.html" aria-label="Nederlandse versie">🇳🇱</a>
+            <a class="lang-link" href="/aprojec/en/services.html" aria-label="Engelse versie">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl/uslugi.html" aria-label="Poolse versie">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-lang">
+          <a href="/aprojec/onze-diensten.html">🇳🇱</a>
+          <a href="/aprojec/en/services.html">🇬🇧</a>
+          <a href="/aprojec/pl/uslugi.html">🇵🇱</a>
+        </div>
+        <a href="/aprojec/index.html#over-ons">Over ons</a>
+        <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
+        <a href="/aprojec/realisaties.html">Realisaties</a>
+        <a href="/aprojec/onze-diensten.html">Onze diensten</a>
+        <a href="/aprojec/producten.html">Producten</a>
+        <a href="/aprojec/index.html#reviews">Reviews</a>
+        <a href="/aprojec/index.html#subsidie">Subsidie</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <main>
+        <section class="hero">
+          <div class="hero-media">
+            <img src="/aprojec/images/hero.jpg" alt="Diensten van A-PROJECT">
+          </div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-inner">
+            <div class="hero-content">
+              <span class="section-kicker" style="color:rgba(255,255,255,.64);">Onze diensten</span>
+              <h1>Oplossingen voor comfort, uitstraling en energiebesparing.</h1>
+              <p class="hero-text">
+                Van ramen en deuren tot complete gevelupgrades en totaalrenovaties:
+                A-PROJECT helpt u met hoogwaardige oplossingen voor een woning die beter presteert én beter oogt.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#diensten" class="btn btn-light">Bekijk onze diensten</a>
+                <a href="#contact" class="btn btn-dark">Neem contact op</a>
+                <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <section class="section-block" id="diensten">
+    <div class="shell">
+      <div class="section-card section-light">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Diensten</span>
+            <h2>Wat wij voor uw woning kunnen realiseren.</h2>
+            <p>Elke dienst is gericht op een strakke afwerking, betere isolatie en een resultaat dat perfect aansluit op de uitstraling van uw huis.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/hero2.jpg" alt="Ramen en deuren">
+              </div>
+              <div class="service-body">
+                <span class="service-label">01 — Ramen en deuren</span>
+                <h3>Levering en montage van ramen en deuren.</h3>
+                <p>
+                  Kies voor duurzame oplossingen die niet alleen modern ogen, maar ook bijdragen aan meer wooncomfort,
+                  minder warmteverlies en een nette, verzorgde uitstraling van uw woning.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/hero3.jpg" alt="Gevelmontage en isolatie">
+              </div>
+              <div class="service-body">
+                <span class="service-label">02 — Isolatie en gevelwerk</span>
+                <h3>Bouwisolatie en gevelmontage voor een sterkere woning.</h3>
+                <p>
+                  Wij combineren energiebesparende verbeteringen met een verzorgde buitenafwerking,
+                  zodat uw woning efficiënter wordt én direct een frissere, modernere uitstraling krijgt.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/deur3.jpg" alt="Complete transformaties van gebouwen">
+              </div>
+              <div class="service-body">
+                <span class="service-label">03 — Totaalprojecten</span>
+                <h3>Volledige en doordachte transformaties van gebouwen.</h3>
+                <p>
+                  Wilt u uw woning echt vernieuwen? Dan zorgen wij voor een complete aanpak waarbij uitstraling,
+                  functionaliteit en afwerking samenkomen in één sterk totaalresultaat.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/deur1.jpg" alt="Rolluiken en horren">
+              </div>
+              <div class="service-body">
+                <span class="service-label">04 — Rolluiken en horren</span>
+                <h3>Praktische extra’s voor meer comfort in huis.</h3>
+                <p>
+                  Rolluiken en horren bieden privacy, gebruiksgemak en bescherming tegen warmte en insecten,
+                  zonder in te leveren op een nette en stijlvolle afwerking van uw woning.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/hero1.jpg" alt="Schuifdeuren">
+              </div>
+              <div class="service-body">
+                <span class="service-label">05 — Schuifdeuren</span>
+                <h3>Schuifdeuren die licht, ruimte en elegantie toevoegen.</h3>
+                <p>
+                  Met de juiste schuifdeur creëert u een open woongevoel en een soepele verbinding tussen binnen en buiten,
+                  met volop lichtinval en een moderne uitstraling als resultaat.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/deurraam.jpg" alt="Advies en maatwerk">
+              </div>
+              <div class="service-body">
+                <span class="service-label">06 — Advies en maatwerk</span>
+                <h3>Persoonlijk advies voor de beste oplossing op maat.</h3>
+                <p>
+                  Niet iedere woning vraagt om dezelfde aanpak. Daarom denken wij mee over stijl, isolatie,
+                  afmetingen en afwerking, zodat het eindresultaat echt past bij uw wensen en situatie.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="shell">
+      <div class="contact-card">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="section-kicker">Contact</span>
+          <h2>Interesse in één van onze diensten?</h2>
+          <p>Neem contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte. Wij helpen u graag met een oplossing die past bij uw woning en wensen.</p>
+        </div>
+
+        <div class="contact-actions">
+          <a href="tel:+31628255738" class="btn btn-dark">Bel: +31 6 28255738</a>
+          <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
+          <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
+        </div>
+
+        <div class="contact-pills">
+          <span class="contact-pill">100+ reviews</span>
+          <span class="contact-pill">Vrijblijvende offerte</span>
+          <span class="contact-pill">Persoonlijk advies</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-shell">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand" style="min-width:auto;">
+              <span class="brand-mark">A<br>PROJECT</span>
+              <span class="brand-name">A-PROJECT</span>
+            </div>
+            <p>
+              A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien
+              met een moderne uitstraling, sterke isolatie en vakkundige montage.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigatie</h4>
+            <div class="footer-links">
+              <a href="/aprojec/index.html#over-ons">Over ons</a>
+              <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
+              <a href="/aprojec/realisaties.html">Realisaties</a>
+              <a href="/aprojec/onze-diensten.html">Onze diensten</a>
+              <a href="/aprojec/producten.html">Producten</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-links">
+              <a href="tel:+31628255738">+31 6 28255738</a>
+              <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+              <span>Serooskerkestraat 50, 5035GH Tilburg</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Bedrijf</h4>
+            <div class="footer-links">
+              <span>KVK: 65884949</span>
+              <span>100+ reviews</span>
+              <span>Kwaliteit, service en afwerking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 A-PROJECT. Alle rechten voorbehouden.</div>
+          <div class="footer-badges">
+            <span class="footer-badge">100+ Reviews</span>
+            <span class="footer-badge">Premium Afwerking</span>
+            <span class="footer-badge">Vrijblijvende Offerte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/31628255738" target="_blank" rel="noopener" aria-label="WhatsApp">
+    ✆
+  </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileNav) mobileNav.classList.remove("open");
+          if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
