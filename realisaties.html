@@ -90,7 +90,7 @@
     .section-dark .section-kicker{color:rgba(255,255,255,.54)}
 
     .section-head{
-      max-width:820px;
+      max-width:860px;
       margin-bottom:28px;
     }
 
@@ -347,6 +347,7 @@
       border:1px solid transparent;
       transition:.22s ease;
       white-space:nowrap;
+      cursor:pointer;
     }
 
     .btn:hover{transform:translateY(-1px)}
@@ -373,20 +374,20 @@
     }
 
     /* PROJECTS */
-    .projects-wrap{
+    .projects-list{
       display:grid;
       gap:24px;
     }
 
     .project-card{
-      border-radius:28px;
+      border-radius:26px;
       overflow:hidden;
       box-shadow:var(--shadow-soft);
       border:1px solid rgba(0,0,0,.06);
     }
 
     .project-card.light{
-      background:#efeff1;
+      background:#f3f3f5;
       color:var(--dark-text);
     }
 
@@ -398,19 +399,19 @@
 
     .project-inner{
       display:grid;
-      grid-template-columns:minmax(320px, 430px) minmax(0, 1fr);
+      grid-template-columns:minmax(320px,420px) minmax(0,1fr);
       gap:24px;
       align-items:start;
-      padding:34px;
+      padding:30px;
     }
 
     .project-card.reverse .project-inner{
-      grid-template-columns:minmax(0, 1fr) minmax(320px, 430px);
+      grid-template-columns:minmax(0,1fr) minmax(320px,420px);
     }
 
     .project-text{
       position:sticky;
-      top:28px;
+      top:24px;
       align-self:start;
     }
 
@@ -422,11 +423,11 @@
       order:1;
     }
 
-    .project-index{
+    .project-number{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:58px;
+      min-width:74px;
       height:34px;
       padding:0 14px;
       border-radius:999px;
@@ -437,20 +438,20 @@
       margin-bottom:16px;
     }
 
-    .project-card.light .project-index{
+    .project-card.light .project-number{
       background:rgba(17,18,20,.08);
-      color:rgba(17,18,20,.62);
+      color:rgba(17,18,20,.6);
     }
 
-    .project-card.dark .project-index{
+    .project-card.dark .project-number{
       background:rgba(255,255,255,.08);
       color:rgba(255,255,255,.68);
     }
 
     .project-title{
       margin:0 0 14px;
-      font-size:clamp(26px, 2.3vw, 42px);
-      line-height:1.05;
+      font-size:clamp(26px,2.3vw,40px);
+      line-height:1.06;
       letter-spacing:-.04em;
       font-weight:800;
     }
@@ -458,17 +459,12 @@
     .project-description{
       margin:0;
       font-size:16px;
-      line-height:1.82;
+      line-height:1.84;
       white-space:pre-line;
     }
 
-    .project-card.light .project-description{
-      color:var(--dark-muted);
-    }
-
-    .project-card.dark .project-description{
-      color:var(--muted);
-    }
+    .project-card.light .project-description{color:var(--dark-muted)}
+    .project-card.dark .project-description{color:var(--muted)}
 
     .project-tags{
       display:flex;
@@ -498,18 +494,19 @@
 
     .project-gallery{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:16px;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
       align-content:start;
     }
 
     .project-photo{
       position:relative;
       overflow:hidden;
-      border-radius:22px;
-      background:#d7d7db;
+      border-radius:20px;
+      background:#d7d8dc;
       box-shadow:var(--shadow-soft);
       aspect-ratio:1 / 1.04;
+      cursor:pointer;
     }
 
     .project-card.dark .project-photo{
@@ -528,15 +525,15 @@
       transform:scale(1.03);
     }
 
-    .project-photo.is-featured{
+    .project-photo.featured{
       grid-column:span 2;
       grid-row:span 2;
-      aspect-ratio:1.15 / 1;
+      aspect-ratio:1.16 / 1;
     }
 
     .project-empty{
-      padding:24px;
-      border-radius:20px;
+      padding:22px;
+      border-radius:18px;
       background:rgba(0,0,0,.04);
       font-size:15px;
       font-weight:600;
@@ -688,8 +685,89 @@
       transform:translateY(0);
     }
 
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      z-index:1200;
+      background:rgba(7,8,10,.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      opacity:0;
+      visibility:hidden;
+      transition:.25s ease;
+    }
+
+    .lightbox.open{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .lightbox-inner{
+      position:relative;
+      width:min(1280px, 100%);
+      max-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox-img{
+      max-width:100%;
+      max-height:85vh;
+      border-radius:18px;
+      box-shadow:0 24px 70px rgba(0,0,0,.4);
+      object-fit:contain;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next{
+      position:absolute;
+      border:none;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      transition:.2s ease;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover{
+      background:rgba(255,255,255,.14);
+    }
+
+    .lightbox-close{
+      top:-14px;
+      right:-14px;
+      width:50px;
+      height:50px;
+      border-radius:14px;
+      font-size:22px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+      top:50%;
+      transform:translateY(-50%);
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      font-size:24px;
+    }
+
+    .lightbox-prev{left:-70px}
+    .lightbox-next{right:-70px}
+
     @media (max-width:1320px){
       .nav{gap:24px}
+
       .project-inner,
       .project-card.reverse .project-inner{
         grid-template-columns:1fr;
@@ -707,6 +785,10 @@
       .footer-top{
         grid-template-columns:1fr 1fr;
       }
+
+      .lightbox-prev{left:12px}
+      .lightbox-next{right:12px}
+      .lightbox-close{top:12px; right:12px}
     }
 
     @media (max-width:1060px){
@@ -721,10 +803,10 @@
       .hero-inner{padding:132px 34px 56px}
 
       .project-gallery{
-        grid-template-columns:repeat(2, minmax(0,1fr));
+        grid-template-columns:repeat(2,minmax(0,1fr));
       }
 
-      .project-photo.is-featured{
+      .project-photo.featured{
         grid-column:span 2;
       }
     }
@@ -757,9 +839,7 @@
         padding:14px 16px 16px;
       }
 
-      .hero{
-        min-height:560px;
-      }
+      .hero{min-height:560px}
 
       .hero-inner{
         min-height:560px;
@@ -779,8 +859,8 @@
         width:100%;
       }
 
-      .project-inner,
       .section-inner,
+      .project-inner,
       .cta-card,
       .footer-top{
         padding:22px;
@@ -792,7 +872,7 @@
       }
 
       .project-photo,
-      .project-photo.is-featured{
+      .project-photo.featured{
         grid-column:span 1;
         grid-row:span 1;
         aspect-ratio:1 / 1;
@@ -804,6 +884,23 @@
 
       .footer-bottom{
         padding:20px 22px 24px;
+      }
+
+      .lightbox{
+        padding:16px;
+      }
+
+      .lightbox-prev,
+      .lightbox-next{
+        width:44px;
+        height:44px;
+        font-size:20px;
+      }
+
+      .lightbox-close{
+        width:44px;
+        height:44px;
+        font-size:20px;
       }
     }
   </style>
@@ -858,7 +955,7 @@
       <main>
         <section class="hero">
           <div class="hero-media">
-            <img src="/aprojec/images/przesuwaneokna.jpg" alt="A-PROJECT realisaties">
+            <img src="./images/przesuwaneokna.jpg" alt="A-PROJECT realisaties">
           </div>
           <div class="hero-overlay"></div>
 
@@ -889,14 +986,14 @@
         <div class="section-inner">
           <div class="section-head">
             <span class="section-kicker">Projecten</span>
-            <h2>Realisaties per project.</h2>
+            <h2>Onze realisaties per project.</h2>
             <p>
-              Hieronder zie je onze realisaties per woning, entree, schuifpui of complete renovatie.
-              Iedere projectkaart laadt automatisch de foto's uit de juiste map.
+              Bekijk per project de uitgevoerde werkzaamheden en foto's.
+              De foto's worden automatisch geladen uit de bijbehorende projectmap.
             </p>
           </div>
 
-          <div class="projects-wrap" id="projectsWrap"></div>
+          <div class="projects-list" id="projectsList"></div>
         </div>
       </div>
     </div>
@@ -932,7 +1029,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="brand" style="min-width:auto;">
-              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <img src="./images/logo.png" class="brand-logo" alt="A-PROJECT logo">
               <span class="brand-name">A-PROJECT</span>
             </div>
             <p>
@@ -988,304 +1085,359 @@
     ✆
   </a>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Sluiten">✕</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Vorige foto">‹</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="Vergrote projectfoto">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Volgende foto">›</button>
+    </div>
+  </div>
+
   <script>
     const projects = [
       {
         id: 1,
         title: "Garagedeur – moderne upgrade",
-        description: "Oude garagedeur vervangen door een nieuwe, design uitvoering.\nDrievoudige beglazing met decoratief Chinchilla-glas zorgt voor meer licht én uitstekende isolatie.\nIn combinatie met de antracietkleur geeft dit een strak en modern eindresultaat.",
-        tags: ["Design uitvoering", "Chinchilla-glas", "Antraciet"]
+        description: `Oude garagedeur vervangen door een nieuwe, design uitvoering.
+Drievoudige beglazing met decoratief Chinchilla-glas zorgt voor meer licht én uitstekende isolatie.
+In combinatie met de antracietkleur geeft dit een strak en modern eindresultaat.`,
+        tags: ["Garagedeur", "Chinchilla-glas", "Antraciet"]
       },
       {
         id: 2,
         title: "Nieuwe ramen – frisse uitstraling",
-        description: "Nieuwe ramen in kleur Brilliant Weiss.\nBetere uitstraling, warmer en stiller in huis.",
-        tags: ["Brilliant Weiss", "Meer comfort", "Frisse look"]
+        description: `Nieuwe ramen in kleur Brilliant Weiss.
+Betere uitstraling, warmer en stiller in huis.`,
+        tags: ["Brilliant Weiss", "Meer comfort", "Frisse uitstraling"]
       },
       {
         id: 3,
         title: "Transformatie in Schijndel",
-        description: "Moderne uitstraling\nWarmer huis\nLagere energiekosten",
-        tags: ["Schijndel", "Moderne uitstraling", "Energiebesparing"]
+        description: `Moderne uitstraling
+Warmer huis
+Lagere energiekosten`,
+        tags: ["Schijndel", "Warmer huis", "Lagere energiekosten"]
       },
       {
         id: 4,
         title: "Jaren ’30 stijl, moderne kwaliteit",
-        description: "Klassieke uitstraling behouden, maar met moderne technologie:\nbetere isolatie, meer comfort en energiebesparing.",
-        tags: ["Jaren '30", "Meer comfort", "Betere isolatie"]
+        description: `Klassieke uitstraling behouden, maar met moderne technologie:
+betere isolatie, meer comfort en energiebesparing.`,
+        tags: ["Jaren ’30", "Meer comfort", "Energiebesparing"]
       },
       {
         id: 5,
         title: "Complete achterzijde renovatie – Apeldoorn",
-        description: "Nieuwe antraciet ramen gecombineerd met isolatie en Keralit gevelbekleding.\nFrisse en samenhangende uitstraling van de woning.",
+        description: `Nieuwe antraciet ramen gecombineerd met isolatie en Keralit gevelbekleding.
+Frisse en samenhangende uitstraling van de woning.`,
         tags: ["Apeldoorn", "Keralit", "Antraciet"]
       },
       {
         id: 6,
         title: "Realisatie Tilburg – Ideal 7000NL",
-        description: "Nieuw raam met HR+++ beglazing.\nUitstekende isolatie in zomer en winter.\nVentilatierooster zorgt voor frisse lucht zonder warmteverlies.",
-        tags: ["Tilburg", "HR+++", "Ideal 7000NL"]
+        description: `Nieuw raam met HR+++ beglazing.
+Uitstekende isolatie in zomer en winter.
+Ventilatierooster zorgt voor frisse lucht zonder warmteverlies.`,
+        tags: ["Tilburg", "Ideal 7000NL", "HR+++"]
       },
       {
         id: 7,
         title: "Moderne entree metamorfose",
-        description: "Nieuwe ramen en deuren in antraciet.\nStrakke look + betere isolatie en comfort.",
+        description: `Nieuwe ramen en deuren in antraciet.
+Strakke look + betere isolatie en comfort.`,
         tags: ["Entree", "Antraciet", "Strakke look"]
       },
       {
         id: 8,
         title: "Before / After – groot verschil",
-        description: "Van verouderde entree naar moderne, strakke gevel.\nBetere uitstraling en isolatie.",
+        description: `Van verouderde entree naar moderne, strakke gevel.
+Betere uitstraling en isolatie.`,
         tags: ["Before / After", "Nieuwe gevel", "Betere isolatie"]
       },
       {
         id: 9,
         title: "Upgrade naar Smart Slide systeem",
-        description: "Oude aluminium schuifdeuren vervangen\nNieuwe Smart Slide oplossing\nSterkere, beter passende deuren",
+        description: `Oude aluminium schuifdeuren vervangen
+Nieuwe Smart Slide oplossing
+Sterkere, beter passende deuren`,
         tags: ["Smart Slide", "Schuifdeuren", "Upgrade"]
       },
       {
         id: 10,
         title: "Ramen vervangen – Schijndel",
-        description: "Nieuwe antraciet ramen geven frisse look.\nVoorzijde compleet afgewerkt.",
+        description: `Nieuwe antraciet ramen geven frisse look.
+Voorzijde compleet afgewerkt.`,
         tags: ["Schijndel", "Antraciet", "Complete afwerking"]
       },
       {
         id: 11,
         title: "Complete raamvervanging",
-        description: "Oude constructies vervangen door moderne antraciet ramen.\nMeer licht, betere isolatie en moderne uitstraling.",
+        description: `Oude constructies vervangen door moderne antraciet ramen.
+Meer licht, betere isolatie en moderne uitstraling.`,
         tags: ["Raamvervanging", "Meer licht", "Moderne uitstraling"]
       },
       {
         id: 12,
         title: "Veghel – compleet vernieuwd",
-        description: "Nieuwe ramen en voordeur geplaatst.",
+        description: `Nieuwe ramen en voordeur geplaatst.`,
         tags: ["Veghel", "Voordeur", "Nieuwe ramen"]
       },
       {
         id: 13,
         title: "Grote renovatie – 11 ramen + 2 deuren",
-        description: "Volledig versleten constructies vervangen.\nResultaat: betere isolatie, meer licht en hoger comfort.",
-        tags: ["Grote renovatie", "11 ramen", "2 deuren"]
+        description: `Volledig versleten constructies vervangen.
+Resultaat: betere isolatie, meer licht en hoger comfort.`,
+        tags: ["11 ramen", "2 deuren", "Hoger comfort"]
       },
       {
         id: 14,
         title: "Entree + bijdeur metamorfose",
-        description: "Nieuwe deuren met zijlicht en moderne details.\nMeer veiligheid en betere uitstraling.",
-        tags: ["Entree", "Zijlicht", "Meer veiligheid"]
+        description: `Nieuwe deuren met zijlicht en moderne details.
+Meer veiligheid en betere uitstraling.`,
+        tags: ["Zijlicht", "Meer veiligheid", "Nieuwe deuren"]
       },
       {
         id: 15,
         title: "Waalwijk – voordeur + wc raam",
-        description: "Nieuwe voordeur en klein raam vervangen.",
-        tags: ["Waalwijk", "Voordeur", "Klein raam"]
+        description: `Nieuwe voordeur en klein raam vervangen.`,
+        tags: ["Waalwijk", "Voordeur", "WC raam"]
       },
       {
         id: 16,
         title: "Voordeur Tilburg",
-        description: "Voordeur volledig vernieuwd.",
+        description: `Voordeur volledig vernieuwd.`,
         tags: ["Tilburg", "Voordeur", "Vernieuwd"]
       },
       {
         id: 17,
         title: "Tilburg – Black Jet mat ramen",
-        description: "Moderne zwarte ramen geven een strak en krachtig effect.",
-        tags: ["Tilburg", "Black Jet mat", "Strak design"]
+        description: `Moderne zwarte ramen geven een strak en krachtig effect.`,
+        tags: ["Tilburg", "Black Jet mat", "Zwarte ramen"]
       },
       {
         id: 18,
         title: "Reeshof project",
-        description: "Nieuwe ramen + 2 sets deuren.\nAntraciet buiten, zwart binnen → luxe uitstraling.",
-        tags: ["Reeshof", "Luxe uitstraling", "2 sets deuren"]
+        description: `Nieuwe ramen + 2 sets deuren.
+Antraciet buiten, zwart binnen → luxe uitstraling.`,
+        tags: ["Reeshof", "2 sets deuren", "Luxe uitstraling"]
       },
       {
         id: 19,
         title: "Complete voorzijde renovatie",
-        description: "Nieuwe ramen + deur met grote glaspartijen.\nMeer licht en elegante uitstraling.",
+        description: `Nieuwe ramen + deur met grote glaspartijen.
+Meer licht en elegante uitstraling.`,
         tags: ["Voorzijde", "Grote glaspartijen", "Elegant"]
       },
       {
         id: 20,
         title: "2 voordeuren – Tilburg",
-        description: "Grijze kleur (niet antraciet) geeft uniek karakter.",
+        description: `Grijze kleur (niet antraciet) geeft uniek karakter.`,
         tags: ["Tilburg", "2 voordeuren", "Uniek karakter"]
       },
       {
         id: 21,
         title: "Helmond project afgerond",
-        description: "Antraciet blijft favoriet.\nStrakke montage en top resultaat.",
-        tags: ["Helmond", "Antraciet", "Strakke montage"]
+        description: `Antraciet blijft favoriet.
+Strakke montage en top resultaat.`,
+        tags: ["Helmond", "Antraciet", "Top resultaat"]
       },
       {
         id: 22,
         title: "Valkenswaard – 4 ramen + deur",
-        description: "HR+++ beglazing voor maximale isolatie.",
+        description: `HR+++ beglazing voor maximale isolatie.`,
         tags: ["Valkenswaard", "4 ramen", "HR+++"]
       },
       {
         id: 23,
         title: "Waalwijk – ramen + balkon deur",
-        description: "1 groot raam voor + 2 achter + balkon deuren.\nAllemaal HR+++.",
-        tags: ["Waalwijk", "Balkondeur", "HR+++"]
+        description: `1 groot raam voor + 2 achter + balkon deuren.
+Allemaal HR+++.`,
+        tags: ["Waalwijk", "Balkondeuren", "HR+++"]
       },
       {
         id: 24,
         title: "Moderne entree upgrade",
-        description: "Oude houten deur vervangen door zwart modern design met zijlicht.",
+        description: `Oude houten deur vervangen door zwart modern design met zijlicht.`,
         tags: ["Zwart design", "Zijlicht", "Entree upgrade"]
       },
       {
         id: 25,
         title: "Klassiek maar modern",
-        description: "Lichte ramen met grote glaspartijen → meer licht en elegante uitstraling.",
+        description: `Lichte ramen met grote glaspartijen → meer licht en elegante uitstraling.`,
         tags: ["Klassiek", "Meer licht", "Elegante uitstraling"]
       },
       {
         id: 26,
         title: "Tilburg – indrukwekkende transformatie",
-        description: "Antraciet kozijnen + hoekraam zorgen voor WOW-effect.\nMeer ruimte en licht.",
+        description: `Antraciet kozijnen + hoekraam zorgen voor WOW-effect.
+Meer ruimte en licht.`,
         tags: ["Tilburg", "Hoekraam", "WOW-effect"]
       },
       {
         id: 27,
         title: "Waalwijk – complete vervanging",
-        description: "Nieuwe witte ramen en deuren.\nFrisse, lichte en tijdloze uitstraling.",
+        description: `Nieuwe witte ramen en deuren.
+Frisse, lichte en tijdloze uitstraling.`,
         tags: ["Waalwijk", "Wit", "Tijdloos"]
       },
       {
         id: 28,
         title: "5 ramen + schuifdeur (Smart Slide)",
-        description: "Moderne witte ramen + schuifsysteem.\nMeer ruimte, licht en comfort.",
-        tags: ["Smart Slide", "5 ramen", "Meer ruimte"]
+        description: `Moderne witte ramen + schuifsysteem.
+Meer ruimte, licht en comfort.`,
+        tags: ["5 ramen", "Smart Slide", "Meer ruimte"]
       },
       {
         id: 29,
         title: "Aluminium → PVC upgrade",
-        description: "Nieuwe witte kozijnen + voordeur.\nBetere isolatie en frisse uitstraling.",
-        tags: ["PVC upgrade", "Witte kozijnen", "Betere isolatie"]
+        description: `Nieuwe witte kozijnen + voordeur.
+Betere isolatie en frisse uitstraling.`,
+        tags: ["PVC upgrade", "Voordeur", "Betere isolatie"]
       },
       {
         id: 30,
         title: "Bedrijfshal deuren",
-        description: "Deuren geplaatst voor gerenommeerd bedrijf.\nTopkwaliteit, vertrouwen van grote partijen.",
+        description: `Deuren geplaatst voor gerenommeerd bedrijf.
+Topkwaliteit, vertrouwen van grote partijen.`,
         tags: ["Bedrijfshal", "Topkwaliteit", "Zakelijk project"]
       },
       {
         id: 31,
         title: "Hoekraam met WOW-effect",
-        description: "Van klein raam naar groot hoekraam.\nMeer licht, open ruimte en modern design.",
-        tags: ["Hoekraam", "Meer licht", "Modern design"]
+        description: `Van klein raam naar groot hoekraam.
+Meer licht, open ruimte en modern design.`,
+        tags: ["Hoekraam", "Open ruimte", "Modern design"]
       },
       {
         id: 32,
         title: "Breda – snelle realisatie",
-        description: "1 raam direct vervangen.",
+        description: `1 raam direct vervangen.`,
         tags: ["Breda", "Snelle realisatie", "Direct vervangen"]
       },
       {
         id: 33,
         title: "Complete woning metamorfose",
-        description: "10 ramen vervangen in 2 fases.\nDonkere afwerking geeft luxe uitstraling.",
+        description: `10 ramen vervangen in 2 fases.
+Donkere afwerking geeft luxe uitstraling.`,
         tags: ["10 ramen", "2 fases", "Luxe uitstraling"]
       },
       {
         id: 34,
         title: "Groot HST schuifsysteem",
-        description: "Zwarte schuifpui verbindt binnen met tuin.\nMeer licht, ruimte en luxe uitstraling.",
-        tags: ["HST", "Schuifpui", "Luxe uitstraling"]
+        description: `Zwarte schuifpui verbindt binnen met tuin.
+Meer licht, ruimte en luxe uitstraling.`,
+        tags: ["HST", "Zwarte schuifpui", "Luxe uitstraling"]
       },
       {
         id: 35,
         title: "Tiel – 5 ramen + voordeur",
-        description: "Complete vervanging.\nModerne look en hoog comfort.",
+        description: `Complete vervanging.
+Moderne look en hoog comfort.`,
         tags: ["Tiel", "5 ramen", "Hoog comfort"]
       },
       {
         id: 36,
         title: "Opfrissing hele woning",
-        description: "Nieuwe lichte kozijnen zorgen voor frisse uitstraling en comfort.",
+        description: `Nieuwe lichte kozijnen zorgen voor frisse uitstraling en comfort.`,
         tags: ["Hele woning", "Lichte kozijnen", "Frisse uitstraling"]
       },
       {
         id: 37,
         title: "Kantoren project",
-        description: "6 ramen + deuren vervangen in 2 kantoren.\nZakelijke topkwaliteit.",
+        description: `6 ramen + deuren vervangen in 2 kantoren.
+Zakelijke topkwaliteit.`,
         tags: ["Kantoren", "6 ramen", "Zakelijke topkwaliteit"]
       },
       {
         id: 38,
         title: "Helmond realisatie",
-        description: "Nieuwe ramen en voordeur in donkere kleur.\nStrakke uitstraling en meer comfort.",
+        description: `Nieuwe ramen en voordeur in donkere kleur.
+Strakke uitstraling en meer comfort.`,
         tags: ["Helmond", "Donkere kleur", "Meer comfort"]
       },
       {
         id: 39,
         title: "Extra realisatie (algemeen)",
-        description: "Nieuwe ramen en deuren zorgen altijd voor:\n✔ betere isolatie\n✔ meer licht\n✔ moderne uitstraling",
-        tags: ["Algemeen", "Meer licht", "Moderne uitstraling"]
+        description: `Nieuwe ramen en deuren zorgen altijd voor:
+✔ betere isolatie
+✔ meer licht
+✔ moderne uitstraling`,
+        tags: ["Algemeen", "Betere isolatie", "Moderne uitstraling"]
       }
     ];
 
-    const projectsWrap = document.getElementById("projectsWrap");
+    const projectsList = document.getElementById("projectsList");
 
-    function createProjectCard(project, index){
-      const article = document.createElement("article");
-      const isDark = index % 2 !== 0;
-      const isReverse = index % 2 !== 0;
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
 
-      article.className = `project-card ${isDark ? "dark" : "light"} ${isReverse ? "reverse" : ""} reveal`;
+    let currentGalleryImages = [];
+    let currentImageIndex = 0;
 
-      const tagsHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join("");
+    function buildProjects() {
+      projects.forEach((project, index) => {
+        const article = document.createElement("article");
+        const isDark = index % 2 !== 0;
+        const isReverse = index % 2 !== 0;
 
-      article.innerHTML = `
-        <div class="project-inner">
-          <div class="project-text">
-            <span class="project-index">Project ${project.id}</span>
-            <h3 class="project-title">${project.title}</h3>
-            <p class="project-description">${project.description}</p>
-            <div class="project-tags">${tagsHTML}</div>
+        article.className = `project-card ${isDark ? "dark" : "light"} ${isReverse ? "reverse" : ""} reveal`;
+
+        const tagsHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join("");
+
+        article.innerHTML = `
+          <div class="project-inner">
+            <div class="project-text">
+              <span class="project-number">Project ${project.id}</span>
+              <h3 class="project-title">${project.title}</h3>
+              <p class="project-description">${project.description}</p>
+              <div class="project-tags">${tagsHTML}</div>
+            </div>
+            <div class="project-gallery" id="gallery-${project.id}">
+              <div class="project-empty">Foto's worden geladen...</div>
+            </div>
           </div>
-          <div class="project-gallery" id="gallery-${project.id}">
-            <div class="project-empty">Foto's worden geladen...</div>
-          </div>
-        </div>
-      `;
+        `;
 
-      projectsWrap.appendChild(article);
-      loadProjectImages(project.id);
+        projectsList.appendChild(article);
+        loadProjectImages(project.id);
+      });
     }
 
-    function loadProjectImages(projectId, maxImages = 12){
+    function loadProjectImages(projectId, maxImages = 12) {
       const gallery = document.getElementById(`gallery-${projectId}`);
-      if(!gallery) return;
+      if (!gallery) return;
 
       const foundImages = [];
       let checked = 0;
 
-      for(let i = 1; i <= maxImages; i++){
+      for (let i = 1; i <= maxImages; i++) {
         const img = new Image();
-const path = `./images/${projectId}/${i}.jpg`;
+        const path = `./images/${projectId}/${i}.jpg`;
 
-        img.onload = function(){
+        img.onload = function () {
           foundImages.push(path);
           checked++;
-          if(checked === maxImages) renderGallery(gallery, foundImages);
+          if (checked === maxImages) renderGallery(gallery, foundImages, projectId);
         };
 
-        img.onerror = function(){
+        img.onerror = function () {
           checked++;
-          if(checked === maxImages) renderGallery(gallery, foundImages);
+          if (checked === maxImages) renderGallery(gallery, foundImages, projectId);
         };
 
         img.src = path;
       }
     }
 
-    function renderGallery(gallery, images){
+    function renderGallery(gallery, images, projectId) {
       gallery.innerHTML = "";
 
-      if(!images.length){
-        gallery.innerHTML = `<div class="project-empty">Geen foto's gevonden in deze projectmap.</div>`;
+      if (!images.length) {
+        gallery.innerHTML = `<div class="project-empty">Geen foto's gevonden in map ./images/${projectId}/</div>`;
         return;
       }
 
@@ -1297,19 +1449,57 @@ const path = `./images/${projectId}/${i}.jpg`;
 
       images.forEach((src, index) => {
         const figure = document.createElement("figure");
-        figure.className = `project-photo ${index === 0 && images.length >= 3 ? "is-featured" : ""}`;
+        figure.className = `project-photo ${index === 0 && images.length >= 3 ? "featured" : ""}`;
 
         const img = document.createElement("img");
         img.src = src;
-        img.alt = `A-PROJECT realisatie ${src.split("/").slice(-2).join(" - ").replace(".jpg","")}`;
+        img.alt = `A-PROJECT project ${projectId} foto ${index + 1}`;
         img.loading = "lazy";
+        img.dataset.gallery = projectId;
+        img.dataset.index = index;
+
+        img.addEventListener("click", () => {
+          openLightbox(images, index);
+        });
 
         figure.appendChild(img);
         gallery.appendChild(figure);
       });
     }
 
-    projects.forEach((project, index) => createProjectCard(project, index));
+    function openLightbox(images, index) {
+      currentGalleryImages = images;
+      currentImageIndex = index;
+      updateLightbox();
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function updateLightbox() {
+      if (!currentGalleryImages.length) return;
+      lightboxImg.src = currentGalleryImages[currentImageIndex];
+    }
+
+    function showPrevImage() {
+      if (!currentGalleryImages.length) return;
+      currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+      updateLightbox();
+    }
+
+    function showNextImage() {
+      if (!currentGalleryImages.length) return;
+      currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+      updateLightbox();
+    }
+
+    buildProjects();
 
     document.addEventListener("DOMContentLoaded", function () {
       const menuToggle = document.getElementById("menuToggle");
@@ -1329,17 +1519,31 @@ const path = `./images/${projectId}/${i}.jpg`;
         });
       });
 
-      const revealItems = document.querySelectorAll(".reveal");
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if(entry.isIntersecting){
+          if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
             revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.1 });
 
-      revealItems.forEach(item => revealObserver.observe(item));
+      document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxPrev.addEventListener("click", showPrevImage);
+      lightboxNext.addEventListener("click", showNextImage);
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") showPrevImage();
+        if (e.key === "ArrowRight") showNextImage();
+      });
     });
   </script>
 </body>
