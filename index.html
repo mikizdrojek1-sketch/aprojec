@@ -980,10 +980,13 @@
     }
 
     @media (max-width:760px){
-      .top-shell,
-      .shell{
-        width:min(100%, calc(100% - 22px));
-      }
+      .top-shell{
+  width:100%;
+}
+
+.shell{
+  width:min(100%, calc(100% - 22px));
+}
       .page-top{
         padding:0;
       }
@@ -1061,6 +1064,19 @@
         right:10px;
       }
     }
+    @media (max-width:760px){
+
+  .site-header{
+    padding:0;
+  }
+
+  .header-bar{
+    border-radius:0;
+    padding:12px 16px;
+    width:100%;
+  }
+
+}
   </style>
 </head>
 <body>
@@ -1074,39 +1090,42 @@
             <span class="brand-name">A-PROJECT</span>
           </a>
 
-          <nav class="nav" aria-label="Hoofdmenu">
-            <a href="#over-ons">Over ons</a>
-            <a href="#waarom-wij">Waarom wij?</a>
-            <a href="#werkwijze">Werkwijze</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#subsidie">Subsidie</a>
-            <a href="#contact">Contact</a>
-          </nav>
+        <nav class="nav" aria-label="Hoofdmenu">
+  <a href="#over-ons">Over ons</a>
+  <a href="#waarom-wij">Waarom wij?</a>
+  <a href="realisaties.html">Realisaties</a>
+  <a href="producten.html">Producten</a>
+  <a href="#werkwijze">Werkwijze</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#subsidie">Subsidie</a>
+  <a href="#contact">Contact</a>
+</nav>
 
           <div class="header-right">
             <a class="lang-link" href="./index.html" aria-label="Nederlandse versie">🇳🇱</a>
             <a class="lang-link" href="./en/" aria-label="Engelse versie">🇬🇧</a>
             <a class="lang-link" href="./pl/" aria-label="Poolse versie">🇵🇱</a>
-            <a class="lang-link" href="./de/" aria-label="Duitse versie">🇩🇪</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
           </div>
         </div>
       </header>
 
-      <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-lang">
-          <a href="./index.html">🇳🇱</a>
-          <a href="./en/">🇬🇧</a>
-          <a href="./pl/">🇵🇱</a>
-          <a href="./de/">🇩🇪</a>
-        </div>
-        <a href="#over-ons">Over ons</a>
-        <a href="#waarom-wij">Waarom wij?</a>
-        <a href="#werkwijze">Werkwijze</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#subsidie">Subsidie</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <div class="mobile-nav" id="mobileNav">
+  <div class="mobile-lang">
+    <a href="./index.html">🇳🇱</a>
+    <a href="./en/">🇬🇧</a>
+    <a href="./pl/">🇵🇱</a>
+ 
+  </div>
+  <a href="#over-ons">Over ons</a>
+  <a href="#waarom-wij">Waarom wij?</a>
+  <a href="realisaties.html">Realisaties</a>
+  <a href="producten.html">Producten</a>
+  <a href="#werkwijze">Werkwijze</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#subsidie">Subsidie</a>
+  <a href="#contact">Contact</a>
+</div>
 
       <main id="top">
         <section class="hero">
