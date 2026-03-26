@@ -10,21 +10,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0b0b;
-      --bg-2:#111111;
-      --bg-3:#171717;
-      --card:#141414;
-      --card-2:#1a1a1a;
-      --line:rgba(255,255,255,.09);
-      --line-strong:rgba(255,255,255,.14);
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.76);
-      --muted-2:rgba(255,255,255,.58);
-      --black:#000000;
-      --white:#ffffff;
-      --shadow:0 20px 60px rgba(0,0,0,.35);
-      --radius:28px;
-      --radius-lg:34px;
+      --bg-dark:#0c0c0c;
+      --bg-dark-2:#131313;
+      --bg-light:#ffffff;
+      --bg-light-2:#f6f6f6;
+      --card-dark:#141414;
+      --card-dark-2:#1c1c1c;
+      --card-light:#ffffff;
+      --text-dark:#0d0d0d;
+      --text-light:#ffffff;
+      --muted-dark:rgba(0,0,0,.68);
+      --muted-dark-2:rgba(0,0,0,.52);
+      --muted-light:rgba(255,255,255,.78);
+      --muted-light-2:rgba(255,255,255,.56);
+      --line-dark:rgba(255,255,255,.09);
+      --line-dark-strong:rgba(255,255,255,.14);
+      --line-light:rgba(0,0,0,.08);
+      --line-light-strong:rgba(0,0,0,.14);
+      --shadow-dark:0 20px 60px rgba(0,0,0,.28);
+      --shadow-light:0 18px 50px rgba(0,0,0,.08);
+      --radius-xs:8px;
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:18px;
+      --radius-xl:22px;
       --max:1360px;
       --left-offset:92px;
       --header-h:92px;
@@ -35,8 +44,8 @@
     body{
       margin:0;
       font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg);
-      color:var(--text);
+      background:var(--bg-dark);
+      color:var(--text-light);
       line-height:1.45;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
@@ -50,6 +59,15 @@
       margin:0 auto;
     }
 
+    #over-ons,
+    #waarom-wij,
+    #werkwijze,
+    #reviews,
+    #subsidie,
+    #contact{
+      scroll-margin-top:120px;
+    }
+
     /* HEADER */
     .site-header{
       position:fixed;
@@ -57,27 +75,27 @@
       left:0;
       width:100%;
       z-index:1000;
-      padding:18px 24px;
+      padding:16px 18px;
       transition:.3s ease;
     }
 
     .site-header.scrolled{
-      padding:14px 20px;
+      padding:10px 14px;
     }
 
     .header-shell{
       width:100%;
-      min-height:64px;
+      min-height:72px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:28px;
-      padding:14px 22px;
+      gap:26px;
+      padding:14px 18px;
       border:1px solid rgba(255,255,255,.1);
-      background:rgba(0,0,0,.52);
+      background:rgba(0,0,0,.54);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
-      border-radius:22px;
+      border-radius:var(--radius-lg);
       box-shadow:0 10px 30px rgba(0,0,0,.25);
     }
 
@@ -86,22 +104,19 @@
       align-items:center;
       gap:14px;
       min-width:220px;
+      flex-shrink:0;
     }
 
     .brand img{
       width:auto;
-      height:50px;
+      height:56px;
       object-fit:contain;
-    }
-
-    .brand-name{
-      display:none;
     }
 
     .nav{
       display:flex;
       align-items:center;
-      gap:34px;
+      gap:32px;
       justify-content:center;
       flex:1;
     }
@@ -121,9 +136,10 @@
     .header-right{
       display:flex;
       align-items:center;
-      gap:14px;
-      min-width:220px;
+      gap:12px;
+      min-width:260px;
       justify-content:flex-end;
+      flex-shrink:0;
     }
 
     .lang-switch{
@@ -133,14 +149,24 @@
     }
 
     .lang-pill{
-      width:36px;
-      height:36px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      font-size:16px;
+      min-width:42px;
+      height:38px;
+      border-radius:var(--radius-sm);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 12px;
+      font-size:15px;
+      font-weight:700;
       background:rgba(255,255,255,.07);
       border:1px solid rgba(255,255,255,.1);
+      color:#fff;
+      transition:.25s ease;
+    }
+
+    .lang-pill:hover{
+      background:rgba(255,255,255,.14);
+      transform:translateY(-1px);
     }
 
     .header-cta{
@@ -148,7 +174,7 @@
       align-items:center;
       justify-content:center;
       padding:12px 18px;
-      border-radius:999px;
+      border-radius:var(--radius-sm);
       background:#fff;
       color:#000;
       font-size:14px;
@@ -165,9 +191,9 @@
 
     .menu-toggle{
       display:none;
-      width:44px;
-      height:44px;
-      border-radius:999px;
+      width:42px;
+      height:42px;
+      border-radius:var(--radius-sm);
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.06);
       color:#fff;
@@ -228,8 +254,8 @@
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding:10px 16px;
-      border-radius:999px;
+      padding:10px 14px;
+      border-radius:var(--radius-sm);
       background:rgba(255,255,255,.07);
       border:1px solid rgba(255,255,255,.11);
       backdrop-filter:blur(8px);
@@ -242,8 +268,8 @@
     }
 
     .hero-kicker .dot{
-      width:9px;
-      height:9px;
+      width:8px;
+      height:8px;
       border-radius:999px;
       background:#fff;
       opacity:.92;
@@ -279,9 +305,9 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:56px;
-      padding:0 24px;
-      border-radius:999px;
+      min-height:54px;
+      padding:0 22px;
+      border-radius:var(--radius-sm);
       font-size:15px;
       font-weight:700;
       transition:.25s ease;
@@ -289,26 +315,27 @@
     }
 
     .btn-primary{
-      background:#000;
+      background:#fff;
+      color:#000;
+      border-color:#fff;
+      box-shadow:0 12px 24px rgba(255,255,255,.12);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      background:#f1f1f1;
+    }
+
+    .btn-secondary{
+      background:#0b0b0b;
       color:#fff;
       border-color:rgba(255,255,255,.18);
       box-shadow:0 10px 26px rgba(0,0,0,.28);
     }
 
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      background:#090909;
-    }
-
-    .btn-secondary{
-      background:#fff;
-      color:#000;
-      border-color:#fff;
-    }
-
     .btn-secondary:hover{
       transform:translateY(-1px);
-      box-shadow:0 12px 24px rgba(255,255,255,.12);
+      background:#101010;
     }
 
     .hero-trust{
@@ -357,7 +384,6 @@
       font-size:13px;
       text-transform:uppercase;
       letter-spacing:.12em;
-      color:rgba(255,255,255,.58);
       font-weight:700;
       margin-bottom:14px;
     }
@@ -372,18 +398,43 @@
 
     .section-head p{
       margin:0;
-      color:var(--muted);
       font-size:17px;
       line-height:1.75;
       max-width:700px;
+    }
+
+    .section-light{
+      background:var(--bg-light);
+      color:var(--text-dark);
+    }
+
+    .section-light .section-kicker{
+      color:rgba(0,0,0,.52);
+    }
+
+    .section-light .section-head p{
+      color:var(--muted-dark);
+    }
+
+    .section-dark{
+      background:var(--bg-dark-2);
+      color:var(--text-light);
+    }
+
+    .section-dark .section-kicker{
+      color:rgba(255,255,255,.58);
+    }
+
+    .section-dark .section-head p{
+      color:var(--muted-light);
     }
 
     /* GALLERY */
     .gallery-section{
       padding:100px 0 22px;
       background:
-        radial-gradient(circle at top right, rgba(255,255,255,.04), transparent 32%),
-        linear-gradient(180deg, #090909 0%, #0e0e0e 100%);
+        radial-gradient(circle at top right, rgba(0,0,0,.035), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
     }
 
     .mosaic{
@@ -416,10 +467,10 @@
     .mosaic-card{
       position:relative;
       overflow:hidden;
-      border-radius:32px;
+      border-radius:var(--radius-xl);
       background:#111;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow:var(--shadow-light);
       min-height:280px;
     }
 
@@ -449,11 +500,10 @@
       letter-spacing:-0.02em;
     }
 
-    /* OVER ONS */
+    /* ABOUT */
     .about-section{
       padding:120px 0 20px;
-      background:
-        linear-gradient(180deg, #0e0e0e 0%, #121212 100%);
+      background:linear-gradient(180deg, #111111 0%, #171717 100%);
     }
 
     .about-grid{
@@ -465,11 +515,11 @@
 
     .about-card,
     .about-image{
-      border-radius:32px;
-      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      border:1px solid var(--line-dark);
       background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
       overflow:hidden;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-dark);
     }
 
     .about-card{
@@ -483,7 +533,7 @@
       margin:0 0 18px;
       font-size:17px;
       line-height:1.8;
-      color:var(--muted);
+      color:var(--muted-light);
     }
 
     .about-badges{
@@ -494,8 +544,8 @@
     }
 
     .about-badge{
-      padding:12px 16px;
-      border-radius:999px;
+      padding:11px 14px;
+      border-radius:var(--radius-sm);
       font-size:13px;
       font-weight:700;
       color:#fff;
@@ -513,7 +563,7 @@
     /* WHY */
     .why-section{
       padding:120px 0 22px;
-      background:#121212;
+      background:#ffffff;
     }
 
     .why-grid{
@@ -523,23 +573,24 @@
     }
 
     .why-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border:1px solid var(--line);
-      border-radius:28px;
+      background:linear-gradient(180deg, #151515, #101010);
+      border:1px solid rgba(0,0,0,.08);
+      color:#fff;
+      border-radius:var(--radius-lg);
       padding:28px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-light);
       transition:.28s ease;
     }
 
     .why-card:hover{
       transform:translateY(-4px);
-      border-color:var(--line-strong);
+      border-color:rgba(0,0,0,.14);
     }
 
     .why-icon{
-      width:54px;
-      height:54px;
-      border-radius:18px;
+      width:52px;
+      height:52px;
+      border-radius:var(--radius-md);
       display:grid;
       place-items:center;
       margin-bottom:18px;
@@ -557,7 +608,7 @@
 
     .why-card p{
       margin:0;
-      color:var(--muted);
+      color:rgba(255,255,255,.76);
       font-size:15px;
       line-height:1.72;
     }
@@ -594,19 +645,19 @@
 
     .process-card{
       background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      border:1px solid var(--line);
-      border-radius:30px;
+      border:1px solid var(--line-dark);
+      border-radius:var(--radius-lg);
       padding:30px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-dark);
       min-height:270px;
     }
 
     .process-num{
-      width:74px;
-      height:74px;
+      width:68px;
+      height:68px;
       display:grid;
       place-items:center;
-      border-radius:999px;
+      border-radius:var(--radius-md);
       margin-bottom:24px;
       background:#fff;
       color:#000;
@@ -626,76 +677,13 @@
       margin:0;
       font-size:15px;
       line-height:1.75;
-      color:var(--muted);
-    }
-
-    /* REALISATIES */
-    .projects-section{
-      padding:120px 0 22px;
-      background:#111111;
-    }
-
-    .projects-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:22px;
-    }
-
-    .project-card{
-      border-radius:30px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#171717;
-      box-shadow:var(--shadow);
-    }
-
-    .project-thumb{
-      aspect-ratio:16/11;
-      overflow:hidden;
-    }
-
-    .project-thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .65s ease;
-    }
-
-    .project-card:hover .project-thumb img{
-      transform:scale(1.05);
-    }
-
-    .project-body{
-      padding:24px;
-    }
-
-    .project-body h3{
-      margin:0 0 10px;
-      font-size:22px;
-      letter-spacing:-0.03em;
-    }
-
-    .project-body p{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.72;
-    }
-
-    .project-link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:14px;
-      font-weight:700;
-      color:#fff;
+      color:var(--muted-light);
     }
 
     /* REVIEWS */
     .reviews-section{
       padding:120px 0 22px;
-      background:
-        linear-gradient(180deg, #111111 0%, #141414 100%);
+      background:linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
     }
 
     .reviews-top{
@@ -708,11 +696,12 @@
 
     .reviews-score{
       min-width:300px;
-      border-radius:28px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(0,0,0,.08);
+      background:linear-gradient(180deg, #151515, #101010);
+      color:#fff;
       padding:24px 26px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-light);
     }
 
     .reviews-score strong{
@@ -725,7 +714,7 @@
 
     .reviews-score p{
       margin:0;
-      color:var(--muted);
+      color:rgba(255,255,255,.74);
       font-size:14px;
       line-height:1.7;
     }
@@ -737,11 +726,12 @@
     }
 
     .review-card{
-      border-radius:28px;
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(0,0,0,.08);
+      background:linear-gradient(180deg, #151515, #101010);
+      color:#fff;
       padding:26px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-light);
     }
 
     .review-stars{
@@ -752,7 +742,7 @@
 
     .review-text{
       margin:0 0 20px;
-      color:var(--muted);
+      color:rgba(255,255,255,.76);
       font-size:15px;
       line-height:1.8;
     }
@@ -766,7 +756,7 @@
     .review-avatar{
       width:44px;
       height:44px;
-      border-radius:999px;
+      border-radius:var(--radius-md);
       display:grid;
       place-items:center;
       background:#fff;
@@ -784,14 +774,14 @@
     .review-author span{
       display:block;
       font-size:13px;
-      color:var(--muted-2);
+      color:rgba(255,255,255,.56);
       margin-top:4px;
     }
 
     /* SUBSIDIE */
     .subsidy-section{
       padding:120px 0 22px;
-      background:#141414;
+      background:#121212;
     }
 
     .subsidy-card{
@@ -799,11 +789,11 @@
       grid-template-columns:1.05fr .95fr;
       gap:30px;
       align-items:stretch;
-      border-radius:36px;
+      border-radius:var(--radius-xl);
       border:1px solid rgba(255,255,255,.1);
       overflow:hidden;
       background:linear-gradient(135deg, #1a1a1a 0%, #101010 100%);
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-dark);
     }
 
     .subsidy-content{
@@ -822,7 +812,7 @@
       margin:0 0 24px;
       font-size:17px;
       line-height:1.8;
-      color:var(--muted);
+      color:var(--muted-light);
       max-width:640px;
     }
 
@@ -845,7 +835,7 @@
       width:24px;
       height:24px;
       min-width:24px;
-      border-radius:999px;
+      border-radius:var(--radius-xs);
       display:grid;
       place-items:center;
       background:#fff;
@@ -865,19 +855,20 @@
     /* CTA */
     .cta-section{
       padding:120px 0 22px;
-      background:#101010;
+      background:#ffffff;
     }
 
     .cta-card{
       position:relative;
       overflow:hidden;
-      border-radius:36px;
-      border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius-xl);
+      border:1px solid rgba(0,0,0,.08);
       padding:48px;
       background:
-        radial-gradient(circle at top right, rgba(255,255,255,.08), transparent 30%),
-        linear-gradient(135deg, #181818 0%, #101010 100%);
-      box-shadow:var(--shadow);
+        radial-gradient(circle at top right, rgba(0,0,0,.04), transparent 30%),
+        linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+      color:#000;
+      box-shadow:var(--shadow-light);
     }
 
     .cta-card h2{
@@ -890,8 +881,8 @@
 
     .cta-card p{
       margin:0;
-      max-width:700px;
-      color:var(--muted);
+      max-width:760px;
+      color:var(--muted-dark);
       font-size:17px;
       line-height:1.8;
     }
@@ -901,6 +892,20 @@
       gap:14px;
       flex-wrap:wrap;
       margin-top:28px;
+    }
+
+    .cta-actions .btn-secondary{
+      background:#0d0d0d;
+      color:#fff;
+      border-color:#0d0d0d;
+      box-shadow:none;
+    }
+
+    .cta-actions .btn-primary{
+      background:#fff;
+      color:#000;
+      border-color:rgba(0,0,0,.12);
+      box-shadow:none;
     }
 
     .contact-pills{
@@ -915,12 +920,43 @@
       align-items:center;
       gap:10px;
       padding:13px 16px;
-      border-radius:999px;
-      background:rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius-sm);
+      background:#121212;
+      border:1px solid rgba(0,0,0,.08);
       font-size:14px;
       font-weight:600;
       color:#fff;
+    }
+
+    .contact-meta{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .contact-meta-card{
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(0,0,0,.08);
+      background:#121212;
+      color:#fff;
+      padding:22px;
+      box-shadow:var(--shadow-light);
+    }
+
+    .contact-meta-card h4{
+      margin:0 0 10px;
+      font-size:15px;
+      letter-spacing:-0.02em;
+    }
+
+    .contact-meta-card p,
+    .contact-meta-card a{
+      margin:0;
+      font-size:15px;
+      line-height:1.75;
+      color:rgba(255,255,255,.76);
+      word-break:break-word;
     }
 
     /* FOOTER */
@@ -930,10 +966,10 @@
     }
 
     .footer-shell{
-      border-radius:36px;
+      border-radius:var(--radius-xl);
       border:1px solid rgba(255,255,255,.08);
       background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-dark);
       overflow:hidden;
     }
 
@@ -953,7 +989,7 @@
 
     .footer-brand p{
       margin:0;
-      color:var(--muted);
+      color:var(--muted-light);
       font-size:15px;
       line-height:1.8;
       max-width:420px;
@@ -972,7 +1008,7 @@
 
     .footer-links a,
     .footer-links span{
-      color:var(--muted);
+      color:var(--muted-light);
       font-size:15px;
       line-height:1.7;
       transition:.22s ease;
@@ -990,7 +1026,7 @@
       flex-wrap:wrap;
       padding:22px 38px 28px;
       border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted-2);
+      color:var(--muted-light-2);
       font-size:13px;
     }
 
@@ -1002,7 +1038,7 @@
 
     .footer-badge{
       padding:10px 14px;
-      border-radius:999px;
+      border-radius:var(--radius-sm);
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.09);
       color:#fff;
@@ -1017,16 +1053,16 @@
       right:18px;
       bottom:18px;
       z-index:999;
-      width:62px;
-      height:62px;
-      border-radius:999px;
+      width:58px;
+      height:58px;
+      border-radius:var(--radius-md);
       display:grid;
       place-items:center;
       background:#fff;
       color:#000;
       border:1px solid rgba(0,0,0,.08);
       box-shadow:0 20px 40px rgba(0,0,0,.3);
-      font-size:26px;
+      font-size:24px;
       transition:.25s ease;
     }
 
@@ -1073,12 +1109,16 @@
         display:flex;
       }
 
+      .header-right{
+        min-width:auto;
+      }
+
       .header-shell{
         padding:12px 16px;
       }
 
       .brand img{
-        height:44px;
+        height:46px;
       }
 
       .hero-inner{
@@ -1092,7 +1132,8 @@
 
       .mosaic,
       .about-grid,
-      .subsidy-card{
+      .subsidy-card,
+      .contact-meta{
         grid-template-columns:1fr;
       }
 
@@ -1108,8 +1149,7 @@
         display:none;
       }
 
-      .process-grid,
-      .projects-grid{
+      .process-grid{
         grid-template-columns:1fr;
       }
 
@@ -1125,7 +1165,7 @@
       }
 
       .site-header{
-        padding:14px;
+        padding:12px;
       }
 
       .hero h1{
@@ -1152,7 +1192,6 @@
       .about-section,
       .why-section,
       .process-section,
-      .projects-section,
       .reviews-section,
       .subsidy-section,
       .cta-section{
@@ -1195,13 +1234,13 @@
     /* MOBILE NAV */
     .mobile-nav{
       position:fixed;
-      inset:88px 14px auto 14px;
+      inset:82px 12px auto 12px;
       z-index:998;
-      background:rgba(8,8,8,.95);
+      background:rgba(8,8,8,.96);
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
       border:1px solid rgba(255,255,255,.08);
-      border-radius:24px;
+      border-radius:var(--radius-lg);
       padding:16px;
       display:none;
       box-shadow:0 18px 40px rgba(0,0,0,.35);
@@ -1223,6 +1262,22 @@
       border-bottom:none;
     }
 
+    .mobile-nav .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-nav .mobile-lang a{
+      border-bottom:none;
+      padding:10px 14px;
+      border-radius:var(--radius-sm);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:14px;
+      font-weight:700;
+    }
+
     .mobile-nav .mobile-cta{
       margin-top:14px;
       display:flex;
@@ -1233,7 +1288,7 @@
     .mobile-nav .mobile-cta a{
       border-bottom:none;
       padding:12px 16px;
-      border-radius:999px;
+      border-radius:var(--radius-sm);
       background:#fff;
       color:#000;
       font-size:14px;
@@ -1253,39 +1308,45 @@
         <a href="#over-ons">Over ons</a>
         <a href="#waarom-wij">Waarom wij</a>
         <a href="#werkwijze">Hoe werken wij?</a>
-        <a href="#realisaties">Realisaties</a>
+        <a href="#reviews">Reviews</a>
         <a href="#subsidie">Subsidie</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="header-right">
         <div class="lang-switch" aria-label="Taalkeuze">
-          <span class="lang-pill">🇳🇱</span>
-          <span class="lang-pill">🇬🇧</span>
+          <a href="/" class="lang-pill" aria-label="Nederlandse versie">NL</a>
+          <a href="/pl" class="lang-pill" aria-label="Poolse versie">PL</a>
+          <a href="/en" class="lang-pill" aria-label="Engelse versie">EN</a>
         </div>
         <a href="#contact" class="header-cta">Vrijblijvende offerte</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menu openen">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
       </div>
     </div>
   </header>
 
   <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-lang">
+      <a href="/">NL</a>
+      <a href="/pl">PL</a>
+      <a href="/en">EN</a>
+    </div>
     <a href="#over-ons">Over ons</a>
     <a href="#waarom-wij">Waarom wij</a>
     <a href="#werkwijze">Hoe werken wij?</a>
-    <a href="#realisaties">Realisaties</a>
+    <a href="#reviews">Reviews</a>
     <a href="#subsidie">Subsidie</a>
     <a href="#contact">Contact</a>
     <div class="mobile-cta">
       <a href="tel:+31628255738">Bel direct</a>
-      <a href="mailto:a.project.contact@gmail.com">Mail ons</a>
+      <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
     </div>
   </div>
 
   <main id="top">
     <section class="hero">
       <div class="hero-media">
-        <img src="images/hero.jpg" alt="Moderne woning met hoogwaardige kozijnen en deuren">
+        <img src="/images/hero.jpg" alt="Moderne woning met hoogwaardige kozijnen en deuren">
       </div>
       <div class="hero-overlay"></div>
 
@@ -1325,12 +1386,12 @@
       </div>
     </section>
 
-    <section class="gallery-section">
+    <section class="gallery-section section-light">
       <div class="container">
         <div class="mosaic reveal">
           <div class="mosaic-left">
             <article class="mosaic-card">
-              <img src="images/deur1.jpg" alt="Strakke voordeur met modern design">
+              <img src="/images/deur1.jpg" alt="Strakke voordeur met modern design" loading="lazy">
               <div class="mosaic-overlay">
                 <h3 class="mosaic-title">Premium deuren met moderne uitstraling</h3>
               </div>
@@ -1339,7 +1400,7 @@
 
           <div class="mosaic-right">
             <article class="mosaic-card">
-              <img src="images/raam1.jpg" alt="Kunststof kozijnen in moderne woning">
+              <img src="/images/deur3.jpg" alt="Kunststof kozijnen in moderne woning" loading="lazy">
               <div class="mosaic-overlay">
                 <h3 class="mosaic-title">Kozijnen die comfort en isolatie verhogen</h3>
               </div>
@@ -1347,14 +1408,14 @@
 
             <div class="mosaic-bottom">
               <article class="mosaic-card">
-                <img src="images/klamka.jpg" alt="Detail van hoogwaardige deurklink">
+                <img src="/images/klamka.jpg" alt="Detail van hoogwaardige deurklink" loading="lazy">
                 <div class="mosaic-overlay">
                   <h3 class="mosaic-title">Hoogwaardige afwerking</h3>
                 </div>
               </article>
 
               <article class="mosaic-card">
-                <img src="images/deurraam.jpg" alt="Combinatie van deur en raam in modern project">
+                <img src="/images/deurraam.jpg" alt="Combinatie van deur en raam in modern project" loading="lazy">
                 <div class="mosaic-overlay">
                   <h3 class="mosaic-title">Maatwerk voor ieder project</h3>
                 </div>
@@ -1365,7 +1426,7 @@
       </div>
     </section>
 
-    <section class="about-section" id="over-ons">
+    <section class="about-section section-dark" id="over-ons">
       <div class="container">
         <div class="about-grid reveal">
           <div class="about-card">
@@ -1392,13 +1453,13 @@
           </div>
 
           <div class="about-image">
-            <img src="images/hero1.jpg" alt="A-PROJECT realisatie met moderne ramen en deuren">
+            <img src="/images/hero1.jpg" alt="A-PROJECT realisatie met moderne ramen en deuren" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="why-section" id="waarom-wij">
+    <section class="why-section section-light" id="waarom-wij">
       <div class="container">
         <div class="section-head reveal">
           <span class="section-kicker">Waarom wij?</span>
@@ -1436,7 +1497,7 @@
       </div>
     </section>
 
-    <section class="process-section" id="werkwijze">
+    <section class="process-section section-dark" id="werkwijze">
       <div class="container">
         <div class="section-head reveal">
           <span class="section-kicker">Hoe werken wij?</span>
@@ -1477,54 +1538,7 @@
       </div>
     </section>
 
-    <section class="projects-section" id="realisaties">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-kicker">Realisaties</span>
-          <h2>Projecten waarin kwaliteit direct zichtbaar is.</h2>
-          <p>
-            Van moderne voordeuren tot complete kozijnprojecten: iedere realisatie laat zien hoe belangrijk afwerking, materiaalkeuze en uitstraling zijn.
-          </p>
-        </div>
-
-        <div class="projects-grid reveal">
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="images/deur2.jpg" alt="Moderne deur realisatie">
-            </div>
-            <div class="project-body">
-              <h3>Moderne voordeuren</h3>
-              <p>Een stijlvolle entree met hoogwaardige afwerking, uitstekende isolatie en een luxe uitstraling die past bij de woning.</p>
-              <span class="project-link">Bekijk project →</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="images/raam6.jpg" alt="Kunststof kozijnen project">
-            </div>
-            <div class="project-body">
-              <h3>Kunststof kozijnen</h3>
-              <p>Duurzame kozijnen die zorgen voor meer comfort, lagere energiekosten en een nette, moderne uitstraling van binnen en buiten.</p>
-              <span class="project-link">Bekijk project →</span>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="images/raam8.jpg" alt="Raampartij in luxe woning">
-            </div>
-            <div class="project-body">
-              <h3>Maatwerk oplossingen</h3>
-              <p>Elke woning is anders. Daarom leveren wij oplossingen die aansluiten op de stijl, afmetingen en wensen van het project.</p>
-              <span class="project-link">Bekijk project →</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="reviews-section">
+    <section class="reviews-section section-light" id="reviews">
       <div class="container">
         <div class="reviews-top reveal">
           <div class="section-head" style="margin:0;">
@@ -1601,7 +1615,7 @@
       </div>
     </section>
 
-    <section class="subsidy-section" id="subsidie">
+    <section class="subsidy-section section-dark" id="subsidie">
       <div class="container">
         <div class="subsidy-card reveal">
           <div class="subsidy-content">
@@ -1626,17 +1640,17 @@
               </div>
             </div>
 
-            <a href="#contact" class="btn btn-secondary" style="width:auto;">Vraag naar de mogelijkheden</a>
+            <a href="#contact" class="btn btn-primary" style="width:auto;">Vraag naar de mogelijkheden</a>
           </div>
 
           <div class="subsidy-image">
-            <img src="images/hero2.jpg" alt="Modern project met ramen en deuren">
+            <img src="/images/hero2.jpg" alt="Modern project met ramen en deuren" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section" id="contact">
+    <section class="cta-section section-light" id="contact">
       <div class="container">
         <div class="cta-card reveal">
           <span class="section-kicker">Contact</span>
@@ -1647,13 +1661,27 @@
 
           <div class="cta-actions">
             <a href="tel:+31628255738" class="btn btn-secondary">Bel: +31 6 28255738</a>
-            <a href="mailto:a.project.contact@gmail.com" class="btn btn-primary">Mail direct</a>
+            <a href="mailto:a.project.contact@gmail.com" class="btn btn-primary">a.project.contact@gmail.com</a>
           </div>
 
           <div class="contact-pills">
             <span class="contact-pill">★★★★★ 100+ reviews</span>
             <span class="contact-pill">Snelle reactie & persoonlijk advies</span>
             <span class="contact-pill">Vrijblijvende offerte op maat</span>
+          </div>
+
+          <div class="contact-meta">
+            <div class="contact-meta-card">
+              <h4>Bedrijfsgegevens</h4>
+              <p>KVK nummer: 65884949</p>
+              <p>Serooskerkestraat 50<br>5035GH Tilburg</p>
+            </div>
+
+            <div class="contact-meta-card">
+              <h4>Direct contact</h4>
+              <p><a href="tel:+31628255738">+31 6 28255738</a></p>
+              <p><a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -1665,7 +1693,7 @@
       <div class="footer-shell reveal">
         <div class="footer-top">
           <div class="footer-brand">
-            <img src="images/logo.png" alt="A-PROJECT logo">
+            <img src="/images/logo.png" alt="A-PROJECT logo">
             <p>
               A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien met een moderne uitstraling, sterke isolatie en vakkundige montage.
             </p>
@@ -1677,8 +1705,9 @@
               <a href="#over-ons">Over ons</a>
               <a href="#waarom-wij">Waarom wij</a>
               <a href="#werkwijze">Hoe werken wij?</a>
-              <a href="#realisaties">Realisaties</a>
+              <a href="#reviews">Reviews</a>
               <a href="#subsidie">Subsidie</a>
+              <a href="#contact">Contact</a>
             </div>
           </div>
 
@@ -1687,14 +1716,14 @@
             <div class="footer-links">
               <a href="tel:+31628255738">+31 6 28255738</a>
               <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
-              <span>Vrijblijvende offerte op aanvraag</span>
+              <span>Serooskerkestraat 50, 5035GH Tilburg</span>
             </div>
           </div>
 
           <div class="footer-col">
-            <h4>Vertrouwen</h4>
+            <h4>Bedrijf</h4>
             <div class="footer-links">
-              <span>100% tevreden klanten</span>
+              <span>KVK: 65884949</span>
               <span>100+ reviews</span>
               <span>Kwaliteit, service en afwerking</span>
             </div>
@@ -1735,13 +1764,15 @@
 
     if (menuToggle) {
       menuToggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('open');
+        const isOpen = mobileNav.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
+        if (mobileNav) mobileNav.classList.remove('open');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
