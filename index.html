@@ -7,36 +7,33 @@
   <meta name="description" content="A-PROJECT levert en monteert hoogwaardige kunststof kozijnen, deuren en schuifpuien. Vraag direct een vrijblijvende offerte aan." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg-dark:#0c0c0c;
-      --bg-dark-2:#131313;
-      --bg-light:#ffffff;
-      --bg-light-2:#f6f6f6;
-      --card-dark:#141414;
-      --card-dark-2:#1c1c1c;
-      --card-light:#ffffff;
-      --text-dark:#0d0d0d;
-      --text-light:#ffffff;
-      --muted-dark:rgba(0,0,0,.68);
-      --muted-dark-2:rgba(0,0,0,.52);
-      --muted-light:rgba(255,255,255,.78);
-      --muted-light-2:rgba(255,255,255,.56);
-      --line-dark:rgba(255,255,255,.09);
-      --line-dark-strong:rgba(255,255,255,.14);
-      --line-light:rgba(0,0,0,.08);
-      --line-light-strong:rgba(0,0,0,.14);
-      --shadow-dark:0 20px 60px rgba(0,0,0,.28);
-      --shadow-light:0 18px 50px rgba(0,0,0,.08);
-      --radius-xs:8px;
+      --bg:#151617;
+      --bg-2:#111213;
+      --panel:#171819;
+      --panel-2:#1B1C1E;
+      --light:#ECECEE;
+      --white:#FFFFFF;
+      --text:#F7F7F8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.52);
+      --dark-text:#111214;
+      --dark-muted:rgba(17,18,20,.68);
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.22);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.12);
       --radius-sm:10px;
       --radius-md:14px;
       --radius-lg:18px;
-      --radius-xl:22px;
-      --max:1360px;
-      --left-offset:92px;
-      --header-h:92px;
+      --radius-xl:24px;
+      --radius-2xl:28px;
+      --hero-max:1500px;
+      --section-max:1520px;
+      --header-h:96px;
     }
 
     *{box-sizing:border-box}
@@ -44,173 +41,254 @@
     body{
       margin:0;
       font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg-dark);
-      color:var(--text-light);
-      line-height:1.45;
+      background:#ececef;
+      color:var(--dark-text);
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
 
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
+    button{font:inherit}
 
-    .container{
-      width:min(var(--max), calc(100% - 48px));
+    .shell{
+      width:min(var(--section-max), calc(100% - 52px));
       margin:0 auto;
     }
 
-    #over-ons,
-    #waarom-wij,
-    #werkwijze,
-    #reviews,
-    #subsidie,
-    #contact{
-      scroll-margin-top:120px;
+    .section-block{
+      padding:34px 0 0;
+    }
+
+    .section-pad{
+      padding:24px 0 0;
+    }
+
+    .section-card{
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-light{
+      background:#efeff1;
+      color:var(--dark-text);
+    }
+
+    .section-dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+    }
+
+    .section-inner{
+      padding:54px 36px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-light .section-kicker{color:rgba(17,18,20,.48)}
+    .section-dark .section-kicker{color:rgba(255,255,255,.54)}
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(32px, 3.8vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .section-light .section-head p{color:var(--dark-muted)}
+    .section-dark .section-head p{color:var(--muted)}
+
+    /* TOP WRAP */
+    .page-top{
+      background:linear-gradient(180deg,#1a1b1d 0%, #1a1b1d 190px, #ececef 190px, #ececef 100%);
+      padding:24px 0 0;
+    }
+
+    .top-shell{
+      width:min(var(--hero-max), calc(100% - 52px));
+      margin:0 auto;
+      position:relative;
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      background:#111;
+      box-shadow:0 26px 90px rgba(0,0,0,.28);
     }
 
     /* HEADER */
     .site-header{
-      position:fixed;
+      position:absolute;
       top:0;
       left:0;
       width:100%;
-      z-index:1000;
-      padding:16px 18px;
-      transition:.3s ease;
+      z-index:20;
+      padding:18px 20px 0;
     }
 
-    .site-header.scrolled{
-      padding:10px 14px;
-    }
-
-    .header-shell{
-      width:100%;
-      min-height:72px;
+    .header-bar{
+      min-height:78px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:26px;
-      padding:14px 18px;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(0,0,0,.54);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
+      gap:18px;
+      padding:14px 22px;
       border-radius:var(--radius-lg);
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      background:rgba(18,19,20,.78);
+      border:1px solid rgba(0,0,0,.38);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:0 12px 30px rgba(0,0,0,.24);
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      min-width:220px;
+      min-width:240px;
       flex-shrink:0;
     }
 
-    .brand img{
-      width:auto;
-      height:56px;
-      object-fit:contain;
+    .brand-mark{
+      width:42px;
+      height:42px;
+      border-radius:999px;
+      border:1.5px solid rgba(255,255,255,.82);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:10px;
+      font-weight:800;
+      line-height:1;
+      text-align:center;
+      letter-spacing:.06em;
+      flex-shrink:0;
+      background:rgba(255,255,255,.02);
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.11em;
+      white-space:nowrap;
     }
 
     .nav{
       display:flex;
       align-items:center;
-      gap:32px;
       justify-content:center;
+      gap:34px;
       flex:1;
     }
 
     .nav a{
+      color:rgba(255,255,255,.94);
       font-size:14px;
       font-weight:500;
-      color:rgba(255,255,255,.9);
-      transition:.25s ease;
+      transition:.22s ease;
+      white-space:nowrap;
     }
 
-    .nav a:hover{
-      color:#fff;
-      opacity:1;
-    }
+    .nav a:hover{opacity:.76}
 
     .header-right{
       display:flex;
       align-items:center;
-      gap:12px;
-      min-width:260px;
+      gap:10px;
+      min-width:230px;
       justify-content:flex-end;
       flex-shrink:0;
     }
 
-    .lang-switch{
-      display:flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .lang-pill{
-      min-width:42px;
-      height:38px;
-      border-radius:var(--radius-sm);
+    .lang-link{
+      font-size:22px;
+      line-height:1;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:0 12px;
-      font-size:15px;
-      font-weight:700;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.1);
-      color:#fff;
-      transition:.25s ease;
+      transition:.22s ease;
     }
 
-    .lang-pill:hover{
-      background:rgba(255,255,255,.14);
-      transform:translateY(-1px);
-    }
-
-    .header-cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 18px;
-      border-radius:var(--radius-sm);
-      background:#fff;
-      color:#000;
-      font-size:14px;
-      font-weight:700;
-      border:1px solid #fff;
-      transition:.25s ease;
-      white-space:nowrap;
-    }
-
-    .header-cta:hover{
-      transform:translateY(-1px);
-      box-shadow:0 10px 22px rgba(255,255,255,.12);
-    }
+    .lang-link:hover{transform:translateY(-1px)}
 
     .menu-toggle{
       display:none;
       width:42px;
       height:42px;
-      border-radius:var(--radius-sm);
+      border-radius:12px;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.06);
       color:#fff;
-      font-size:20px;
       align-items:center;
       justify-content:center;
       cursor:pointer;
+      font-size:20px;
+    }
+
+    .mobile-nav{
+      position:absolute;
+      top:102px;
+      left:16px;
+      right:16px;
+      z-index:25;
+      display:none;
+      background:rgba(17,18,20,.96);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:14px;
+      box-shadow:0 18px 40px rgba(0,0,0,.3);
+    }
+
+    .mobile-nav.open{display:block}
+
+    .mobile-nav a{
+      display:block;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      padding:13px 8px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .mobile-nav a:last-child{border-bottom:none}
+
+    .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-lang a{
+      border-bottom:none;
+      padding:10px 12px;
+      background:rgba(255,255,255,.07);
+      border-radius:12px;
     }
 
     /* HERO */
     .hero{
       position:relative;
-      min-height:100svh;
-      display:flex;
-      align-items:stretch;
-      overflow:hidden;
-      background:#050505;
+      min-height:820px;
+      background:#111;
     }
 
     .hero-media{
@@ -223,528 +301,407 @@
       height:100%;
       object-fit:cover;
       object-position:center center;
-      transform:scale(1.02);
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.58) 28%, rgba(0,0,0,.18) 56%, rgba(0,0,0,.10) 100%),
-        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.28) 100%);
-      z-index:1;
+        linear-gradient(90deg, rgba(0,0,0,.56) 0%, rgba(0,0,0,.42) 28%, rgba(0,0,0,.18) 58%, rgba(0,0,0,.10) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.10) 60%, rgba(0,0,0,.18) 100%);
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
-      width:100%;
+      min-height:820px;
       display:flex;
       align-items:center;
-      padding-top:calc(var(--header-h) + 42px);
-      padding-bottom:72px;
+      padding:140px 72px 80px;
     }
 
     .hero-content{
-      max-width:760px;
-      margin-left:var(--left-offset);
-    }
-
-    .hero-kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:var(--radius-sm);
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.11);
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+      max-width:520px;
       color:#fff;
-      font-size:13px;
-      font-weight:600;
-      letter-spacing:.02em;
-      margin-bottom:20px;
-    }
-
-    .hero-kicker .dot{
-      width:8px;
-      height:8px;
-      border-radius:999px;
-      background:#fff;
-      opacity:.92;
     }
 
     .hero h1{
-      margin:0;
-      font-size:clamp(46px, 6vw, 86px);
+      margin:0 0 16px;
+      font-size:clamp(48px,5.3vw,72px);
       line-height:.98;
-      letter-spacing:-0.045em;
+      letter-spacing:-.055em;
       font-weight:800;
-      max-width:900px;
     }
 
-    .hero-subtext{
-      margin:22px 0 0;
-      max-width:650px;
+    .hero-subtitle{
+      margin:0 0 8px;
       font-size:18px;
-      line-height:1.72;
+      font-weight:500;
+      color:rgba(255,255,255,.9);
+    }
+
+    .hero-text{
+      margin:0;
+      font-size:17px;
+      line-height:1.7;
       color:rgba(255,255,255,.82);
-      font-weight:400;
     }
 
     .hero-actions{
       display:flex;
-      align-items:center;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-top:34px;
+      margin-top:28px;
     }
 
     .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:12px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:54px;
-      padding:0 22px;
-      border-radius:var(--radius-sm);
-      font-size:15px;
+      font-size:16px;
       font-weight:700;
-      transition:.25s ease;
       border:1px solid transparent;
+      transition:.22s ease;
+      white-space:nowrap;
     }
 
-    .btn-primary{
-      background:#fff;
-      color:#000;
-      border-color:#fff;
-      box-shadow:0 12px 24px rgba(255,255,255,.12);
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-dark{
+      background:#161719;
+      color:#fff;
+      border-color:#161719;
+      box-shadow:0 12px 22px rgba(0,0,0,.22);
     }
 
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      background:#f1f1f1;
+    .btn-light{
+      background:#f4f4f5;
+      color:#111214;
+      border-color:#f4f4f5;
+      box-shadow:0 12px 22px rgba(0,0,0,.10);
     }
 
-    .btn-secondary{
-      background:#0b0b0b;
+    .btn-outline-light{
+      background:transparent;
       color:#fff;
       border-color:rgba(255,255,255,.18);
-      box-shadow:0 10px 26px rgba(0,0,0,.28);
     }
 
-    .btn-secondary:hover{
-      transform:translateY(-1px);
-      background:#101010;
+    .btn-outline-dark{
+      background:transparent;
+      color:#111214;
+      border-color:rgba(17,18,20,.14);
     }
 
-    .hero-trust{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      margin-top:28px;
-      color:rgba(255,255,255,.88);
-      font-size:14px;
-      font-weight:600;
+    /* GALLERY EXACT FEEL */
+    .gallery-wrap{
+      padding:38px 0 0;
     }
 
-    .stars{
-      display:flex;
-      gap:4px;
-      letter-spacing:.12em;
-      font-size:15px;
+    .gallery-card{
+      background:#e8e8ea;
+      border-radius:var(--radius-2xl);
+      padding:34px;
+      box-shadow:var(--shadow-soft);
     }
 
-    .trust-item{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .trust-sep{
-      width:6px;
-      height:6px;
-      border-radius:999px;
-      background:rgba(255,255,255,.35);
-    }
-
-    /* SECTION BASE */
-    section{
-      position:relative;
-    }
-
-    .section-head{
-      max-width:760px;
-      margin-bottom:34px;
-    }
-
-    .section-kicker{
-      display:inline-block;
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-weight:700;
-      margin-bottom:14px;
-    }
-
-    .section-head h2{
-      margin:0 0 14px;
-      font-size:clamp(34px, 4vw, 54px);
-      line-height:1.02;
-      letter-spacing:-0.04em;
-      font-weight:800;
-    }
-
-    .section-head p{
-      margin:0;
-      font-size:17px;
-      line-height:1.75;
-      max-width:700px;
-    }
-
-    .section-light{
-      background:var(--bg-light);
-      color:var(--text-dark);
-    }
-
-    .section-light .section-kicker{
-      color:rgba(0,0,0,.52);
-    }
-
-    .section-light .section-head p{
-      color:var(--muted-dark);
-    }
-
-    .section-dark{
-      background:var(--bg-dark-2);
-      color:var(--text-light);
-    }
-
-    .section-dark .section-kicker{
-      color:rgba(255,255,255,.58);
-    }
-
-    .section-dark .section-head p{
-      color:var(--muted-light);
-    }
-
-    /* GALLERY */
-    .gallery-section{
-      padding:100px 0 22px;
-      background:
-        radial-gradient(circle at top right, rgba(0,0,0,.035), transparent 32%),
-        linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
-    }
-
-    .mosaic{
+    .gallery-grid{
       display:grid;
-      grid-template-columns:1.18fr .96fr;
-      gap:22px;
+      grid-template-columns:1.16fr .96fr;
+      gap:14px;
       align-items:stretch;
     }
 
-    .mosaic-left,
-    .mosaic-right{
+    .gallery-left,
+    .gallery-right{
       display:grid;
-      gap:22px;
+      gap:14px;
     }
 
-    .mosaic-left{
-      grid-template-rows:minmax(640px, 1fr);
+    .gallery-left{
+      grid-template-rows:minmax(640px,1fr);
     }
 
-    .mosaic-right{
+    .gallery-right{
       grid-template-rows:1fr auto;
     }
 
-    .mosaic-bottom{
+    .gallery-bottom{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:22px;
+      gap:14px;
     }
 
-    .mosaic-card{
+    .gallery-item{
       position:relative;
       overflow:hidden;
-      border-radius:var(--radius-xl);
-      background:#111;
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow:var(--shadow-light);
-      min-height:280px;
+      background:#d9d9dc;
+      min-height:220px;
+      border-radius:0;
     }
 
-    .mosaic-card img{
+    .gallery-item img{
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:transform .7s ease;
+      transition:transform .5s ease;
     }
 
-    .mosaic-card:hover img{
-      transform:scale(1.04);
-    }
-
-    .mosaic-overlay{
-      position:absolute;
-      inset:auto 0 0 0;
-      padding:22px;
-      background:linear-gradient(180deg, transparent 0%, rgba(0,0,0,.72) 100%);
-      color:#fff;
-    }
-
-    .mosaic-title{
-      margin:0;
-      font-size:18px;
-      font-weight:700;
-      letter-spacing:-0.02em;
-    }
+    .gallery-item:hover img{transform:scale(1.03)}
 
     /* ABOUT */
-    .about-section{
-      padding:120px 0 20px;
-      background:linear-gradient(180deg, #111111 0%, #171717 100%);
-    }
-
     .about-grid{
       display:grid;
       grid-template-columns:1.02fr .98fr;
-      gap:30px;
+      gap:20px;
       align-items:stretch;
     }
 
-    .about-card,
-    .about-image{
-      border-radius:var(--radius-xl);
-      border:1px solid var(--line-dark);
-      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      overflow:hidden;
-      box-shadow:var(--shadow-dark);
-    }
-
     .about-card{
-      padding:38px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      border-radius:22px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      padding:34px;
+      box-shadow:var(--shadow);
     }
 
     .about-card p{
-      margin:0 0 18px;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted-light);
+      margin:0 0 16px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--muted);
     }
 
-    .about-badges{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
+    .about-card p:last-child{margin-bottom:0}
 
-    .about-badge{
-      padding:11px 14px;
-      border-radius:var(--radius-sm);
-      font-size:13px;
-      font-weight:700;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.04);
+    .about-image{
+      border-radius:22px;
+      overflow:hidden;
+      min-height:100%;
+      border:1px solid var(--line);
+      background:#111;
+      box-shadow:var(--shadow);
     }
 
     .about-image img{
       width:100%;
       height:100%;
-      min-height:100%;
       object-fit:cover;
+      min-height:100%;
+    }
+
+    .about-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .about-badge{
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
     }
 
     /* WHY */
-    .why-section{
-      padding:120px 0 22px;
-      background:#ffffff;
-    }
-
     .why-grid{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:22px;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
     }
 
     .why-card{
-      background:linear-gradient(180deg, #151515, #101010);
-      border:1px solid rgba(0,0,0,.08);
+      background:linear-gradient(180deg,#1a1b1d 0%, #141517 100%);
       color:#fff;
-      border-radius:var(--radius-lg);
+      border-radius:20px;
       padding:28px;
-      box-shadow:var(--shadow-light);
-      transition:.28s ease;
-    }
-
-    .why-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(0,0,0,.14);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow-soft);
     }
 
     .why-icon{
-      width:52px;
-      height:52px;
-      border-radius:var(--radius-md);
+      width:50px;
+      height:50px;
+      border-radius:14px;
       display:grid;
       place-items:center;
-      margin-bottom:18px;
       background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.1);
-      font-size:21px;
+      border:1px solid rgba(255,255,255,.08);
+      font-size:20px;
+      margin-bottom:18px;
     }
 
     .why-card h3{
       margin:0 0 10px;
-      font-size:21px;
-      font-weight:700;
-      letter-spacing:-0.03em;
+      font-size:22px;
+      line-height:1.08;
+      letter-spacing:-.03em;
     }
 
     .why-card p{
       margin:0;
-      color:rgba(255,255,255,.76);
+      font-size:15px;
+      line-height:1.74;
+      color:rgba(255,255,255,.74);
+    }
+
+    /* PRODUCTS */
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .product-card{
+      background:#f5f5f6;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .product-media{
+      aspect-ratio:16/11;
+      overflow:hidden;
+      background:#dadade;
+    }
+
+    .product-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+
+    .product-card:hover .product-media img{transform:scale(1.04)}
+
+    .product-body{
+      padding:22px;
+    }
+
+    .product-body h3{
+      margin:0 0 8px;
+      font-size:22px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+
+    .product-body p{
+      margin:0;
+      color:var(--dark-muted);
       font-size:15px;
       line-height:1.72;
     }
 
     /* PROCESS */
-    .process-section{
-      padding:120px 0 22px;
-      background:
-        radial-gradient(circle at center, rgba(255,255,255,.03), transparent 40%),
-        #101010;
-    }
-
-    .process-wrap{
-      position:relative;
-    }
-
-    .process-line{
-      position:absolute;
-      top:52px;
-      left:16.5%;
-      right:16.5%;
-      height:1px;
-      background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.16), rgba(255,255,255,.16), rgba(255,255,255,0));
-      z-index:0;
-    }
-
     .process-grid{
-      position:relative;
-      z-index:1;
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:22px;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
     }
 
     .process-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.012));
-      border:1px solid var(--line-dark);
-      border-radius:var(--radius-lg);
-      padding:30px;
-      box-shadow:var(--shadow-dark);
-      min-height:270px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:var(--shadow);
     }
 
     .process-num{
-      width:68px;
-      height:68px;
+      width:62px;
+      height:62px;
+      border-radius:14px;
+      background:#f4f4f5;
+      color:#111214;
       display:grid;
       place-items:center;
-      border-radius:var(--radius-md);
-      margin-bottom:24px;
-      background:#fff;
-      color:#000;
       font-size:22px;
       font-weight:800;
-      letter-spacing:-0.04em;
+      margin-bottom:18px;
     }
 
     .process-card h3{
-      margin:0 0 12px;
+      margin:0 0 10px;
       font-size:24px;
-      line-height:1.08;
-      letter-spacing:-0.03em;
+      line-height:1.06;
+      letter-spacing:-.03em;
     }
 
     .process-card p{
       margin:0;
       font-size:15px;
-      line-height:1.75;
-      color:var(--muted-light);
+      line-height:1.76;
+      color:var(--muted);
     }
 
     /* REVIEWS */
-    .reviews-section{
-      padding:120px 0 22px;
-      background:linear-gradient(180deg, #ffffff 0%, #f8f8f8 100%);
-    }
-
     .reviews-top{
       display:flex;
       justify-content:space-between;
-      gap:26px;
+      gap:20px;
       align-items:end;
-      margin-bottom:34px;
+      margin-bottom:20px;
     }
 
     .reviews-score{
-      min-width:300px;
-      border-radius:var(--radius-lg);
-      border:1px solid rgba(0,0,0,.08);
-      background:linear-gradient(180deg, #151515, #101010);
+      min-width:310px;
+      background:#17181a;
       color:#fff;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:20px;
       padding:24px 26px;
-      box-shadow:var(--shadow-light);
+      box-shadow:var(--shadow-soft);
     }
 
     .reviews-score strong{
       display:block;
       font-size:44px;
       line-height:1;
-      letter-spacing:-0.05em;
+      letter-spacing:-.05em;
       margin-bottom:8px;
     }
 
     .reviews-score p{
       margin:0;
-      color:rgba(255,255,255,.74);
       font-size:14px;
-      line-height:1.7;
+      line-height:1.72;
+      color:rgba(255,255,255,.72);
     }
 
     .reviews-grid{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:22px;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
     }
 
     .review-card{
-      border-radius:var(--radius-lg);
-      border:1px solid rgba(0,0,0,.08);
-      background:linear-gradient(180deg, #151515, #101010);
+      background:#17181a;
       color:#fff;
-      padding:26px;
-      box-shadow:var(--shadow-light);
+      border-radius:20px;
+      padding:24px;
+      border:1px solid rgba(255,255,255,.06);
+      box-shadow:var(--shadow-soft);
     }
 
     .review-stars{
       font-size:15px;
-      letter-spacing:.12em;
-      margin-bottom:14px;
+      letter-spacing:.14em;
+      margin-bottom:12px;
     }
 
     .review-text{
-      margin:0 0 20px;
-      color:rgba(255,255,255,.76);
+      margin:0 0 18px;
       font-size:15px;
-      line-height:1.8;
+      line-height:1.82;
+      color:rgba(255,255,255,.74);
     }
 
     .review-author{
@@ -756,11 +713,11 @@
     .review-avatar{
       width:44px;
       height:44px;
-      border-radius:var(--radius-md);
+      border-radius:12px;
       display:grid;
       place-items:center;
-      background:#fff;
-      color:#000;
+      background:#f4f4f5;
+      color:#111214;
       font-size:14px;
       font-weight:800;
     }
@@ -773,53 +730,45 @@
 
     .review-author span{
       display:block;
+      margin-top:3px;
       font-size:13px;
-      color:rgba(255,255,255,.56);
-      margin-top:4px;
+      color:rgba(255,255,255,.52);
     }
 
     /* SUBSIDIE */
-    .subsidy-section{
-      padding:120px 0 22px;
-      background:#121212;
-    }
-
-    .subsidy-card{
+    .subsidy-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:30px;
+      grid-template-columns:1.02fr .98fr;
+      gap:18px;
       align-items:stretch;
-      border-radius:var(--radius-xl);
-      border:1px solid rgba(255,255,255,.1);
-      overflow:hidden;
-      background:linear-gradient(135deg, #1a1a1a 0%, #101010 100%);
-      box-shadow:var(--shadow-dark);
     }
 
-    .subsidy-content{
-      padding:42px;
+    .subsidy-panel{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:34px;
+      box-shadow:var(--shadow);
     }
 
-    .subsidy-content h2{
-      margin:0 0 16px;
-      font-size:clamp(34px, 4vw, 56px);
+    .subsidy-panel h2{
+      margin:0 0 14px;
+      font-size:clamp(30px, 3.5vw, 54px);
       line-height:1.02;
-      letter-spacing:-0.04em;
-      font-weight:800;
+      letter-spacing:-.045em;
     }
 
-    .subsidy-content p{
-      margin:0 0 24px;
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted-light);
-      max-width:640px;
+    .subsidy-panel p{
+      margin:0 0 20px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--muted);
     }
 
     .subsidy-list{
       display:grid;
       gap:12px;
-      margin-bottom:28px;
+      margin-bottom:24px;
     }
 
     .subsidy-item{
@@ -827,22 +776,30 @@
       align-items:flex-start;
       gap:12px;
       font-size:15px;
-      color:rgba(255,255,255,.88);
-      line-height:1.7;
+      line-height:1.72;
+      color:#fff;
     }
 
     .subsidy-check{
       width:24px;
       height:24px;
       min-width:24px;
-      border-radius:var(--radius-xs);
       display:grid;
       place-items:center;
-      background:#fff;
-      color:#000;
+      border-radius:8px;
+      background:#f4f4f5;
+      color:#111214;
       font-size:13px;
       font-weight:800;
-      margin-top:2px;
+      margin-top:1px;
+    }
+
+    .subsidy-image{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      background:#111;
     }
 
     .subsidy-image img{
@@ -852,181 +809,161 @@
       min-height:100%;
     }
 
-    /* CTA */
-    .cta-section{
-      padding:120px 0 22px;
-      background:#ffffff;
-    }
-
-    .cta-card{
-      position:relative;
-      overflow:hidden;
-      border-radius:var(--radius-xl);
+    /* CONTACT */
+    .contact-card{
+      background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
       border:1px solid rgba(0,0,0,.08);
-      padding:48px;
-      background:
-        radial-gradient(circle at top right, rgba(0,0,0,.04), transparent 30%),
-        linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-      color:#000;
-      box-shadow:var(--shadow-light);
+      border-radius:24px;
+      padding:38px;
+      box-shadow:var(--shadow-soft);
     }
 
-    .cta-card h2{
-      margin:0 0 14px;
-      font-size:clamp(34px, 4vw, 58px);
-      line-height:1.02;
-      letter-spacing:-0.04em;
-      max-width:760px;
-    }
-
-    .cta-card p{
-      margin:0;
-      max-width:760px;
-      color:var(--muted-dark);
-      font-size:17px;
-      line-height:1.8;
-    }
-
-    .cta-actions{
+    .contact-actions{
       display:flex;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-top:28px;
-    }
-
-    .cta-actions .btn-secondary{
-      background:#0d0d0d;
-      color:#fff;
-      border-color:#0d0d0d;
-      box-shadow:none;
-    }
-
-    .cta-actions .btn-primary{
-      background:#fff;
-      color:#000;
-      border-color:rgba(0,0,0,.12);
-      box-shadow:none;
+      margin-top:26px;
     }
 
     .contact-pills{
       display:flex;
-      gap:12px;
+      gap:10px;
       flex-wrap:wrap;
-      margin-top:22px;
+      margin-top:18px;
     }
 
     .contact-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:13px 16px;
-      border-radius:var(--radius-sm);
-      background:#121212;
-      border:1px solid rgba(0,0,0,.08);
+      padding:12px 14px;
+      border-radius:12px;
+      background:#17181a;
+      color:#fff;
       font-size:14px;
       font-weight:600;
-      color:#fff;
     }
 
     .contact-meta{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:16px;
-      margin-top:28px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin-top:24px;
     }
 
     .contact-meta-card{
-      border-radius:var(--radius-lg);
-      border:1px solid rgba(0,0,0,.08);
-      background:#121212;
+      background:#17181a;
       color:#fff;
-      padding:22px;
-      box-shadow:var(--shadow-light);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
     }
 
     .contact-meta-card h4{
       margin:0 0 10px;
       font-size:15px;
-      letter-spacing:-0.02em;
+      letter-spacing:-.02em;
     }
 
     .contact-meta-card p,
     .contact-meta-card a{
       margin:0;
       font-size:15px;
-      line-height:1.75;
-      color:rgba(255,255,255,.76);
+      line-height:1.76;
+      color:rgba(255,255,255,.74);
       word-break:break-word;
     }
 
+    /* REALISATIES */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .project-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      background:#d8d8dc;
+      aspect-ratio:1/1;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .project-item.wide{
+      grid-column:span 2;
+      aspect-ratio:2/1.12;
+    }
+
+    .project-item.tall{
+      aspect-ratio:1/1.25;
+    }
+
+    .project-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+
+    .project-item:hover img{transform:scale(1.04)}
+
     /* FOOTER */
     .site-footer{
-      padding:110px 0 34px;
-      background:#090909;
+      padding:34px 0 38px;
+      background:#ececef;
     }
 
     .footer-shell{
-      border-radius:var(--radius-xl);
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      box-shadow:var(--shadow-dark);
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border-radius:28px;
       overflow:hidden;
+      box-shadow:var(--shadow);
     }
 
     .footer-top{
       display:grid;
-      grid-template-columns:1.2fr .8fr .8fr .8fr;
+      grid-template-columns:1.1fr .8fr .8fr .8fr;
       gap:24px;
       padding:38px;
     }
 
-    .footer-brand img{
-      height:56px;
-      width:auto;
-      object-fit:contain;
-      margin-bottom:18px;
-    }
-
     .footer-brand p{
-      margin:0;
-      color:var(--muted-light);
+      margin:12px 0 0;
       font-size:15px;
       line-height:1.8;
+      color:rgba(255,255,255,.72);
       max-width:420px;
     }
 
     .footer-col h4{
-      margin:0 0 16px;
+      margin:0 0 14px;
       font-size:16px;
-      letter-spacing:-0.02em;
+      letter-spacing:-.02em;
     }
 
     .footer-links{
       display:grid;
-      gap:12px;
+      gap:10px;
     }
 
     .footer-links a,
     .footer-links span{
-      color:var(--muted-light);
+      color:rgba(255,255,255,.72);
       font-size:15px;
       line-height:1.7;
       transition:.22s ease;
     }
 
-    .footer-links a:hover{
-      color:#fff;
-    }
+    .footer-links a:hover{color:#fff}
 
     .footer-bottom{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      gap:20px;
+      gap:14px;
       flex-wrap:wrap;
       padding:22px 38px 28px;
       border-top:1px solid rgba(255,255,255,.08);
-      color:var(--muted-light-2);
+      color:rgba(255,255,255,.5);
       font-size:13px;
     }
 
@@ -1037,17 +974,16 @@
     }
 
     .footer-badge{
-      padding:10px 14px;
-      border-radius:var(--radius-sm);
+      padding:10px 12px;
+      border-radius:12px;
       background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.08);
       color:#fff;
       font-size:12px;
       font-weight:700;
-      letter-spacing:.04em;
     }
 
-    /* WHATSAPP FLOAT */
+    /* WHATSAPP */
     .whatsapp-float{
       position:fixed;
       right:18px;
@@ -1055,20 +991,18 @@
       z-index:999;
       width:58px;
       height:58px;
-      border-radius:var(--radius-md);
+      border-radius:16px;
       display:grid;
       place-items:center;
-      background:#fff;
-      color:#000;
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow:0 20px 40px rgba(0,0,0,.3);
-      font-size:24px;
-      transition:.25s ease;
+      background:#17181a;
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:22px;
+      transition:.22s ease;
     }
 
-    .whatsapp-float:hover{
-      transform:translateY(-3px) scale(1.02);
-    }
+    .whatsapp-float:hover{transform:translateY(-2px)}
 
     /* REVEAL */
     .reveal{
@@ -1083,619 +1017,594 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1200px){
-      :root{
-        --left-offset:48px;
-      }
-
+    @media (max-width:1320px){
+      .nav{gap:24px}
       .why-grid,
+      .products-grid,
       .reviews-grid{
-        grid-template-columns:repeat(2, 1fr);
+        grid-template-columns:repeat(2,1fr);
       }
-
       .footer-top{
         grid-template-columns:1fr 1fr;
       }
     }
 
-    @media (max-width: 980px){
+    @media (max-width:1060px){
       .nav,
-      .header-right .lang-switch,
-      .header-right .header-cta{
+      .header-right .lang-link{
         display:none;
       }
-
-      .menu-toggle{
-        display:flex;
-      }
-
-      .header-right{
-        min-width:auto;
-      }
-
-      .header-shell{
-        padding:12px 16px;
-      }
-
-      .brand img{
-        height:46px;
-      }
-
-      .hero-inner{
-        padding-top:150px;
-      }
-
-      .hero-content{
-        margin-left:26px;
-        margin-right:26px;
-      }
-
-      .mosaic,
+      .menu-toggle{display:flex}
+      .header-right{min-width:auto}
+      .hero-inner{padding:138px 34px 56px}
+      .gallery-grid,
       .about-grid,
-      .subsidy-card,
+      .subsidy-grid,
       .contact-meta{
         grid-template-columns:1fr;
       }
-
-      .mosaic-left{
+      .gallery-left{
         grid-template-rows:auto;
       }
-
-      .mosaic-card{
-        min-height:340px;
+      .gallery-item{
+        min-height:300px;
       }
-
-      .process-line{
-        display:none;
-      }
-
       .process-grid{
         grid-template-columns:1fr;
       }
-
       .reviews-top{
         flex-direction:column;
         align-items:flex-start;
       }
+      .projects-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
     }
 
-    @media (max-width: 680px){
-      :root{
-        --header-h:82px;
+    @media (max-width:760px){
+      .page-top{
+        background:linear-gradient(180deg,#1a1b1d 0%, #1a1b1d 150px, #ececef 150px, #ececef 100%);
+        padding-top:14px;
       }
-
+      .top-shell,
+      .shell{
+        width:min(100%, calc(100% - 22px));
+      }
       .site-header{
-        padding:12px;
+        padding:12px 12px 0;
       }
-
+      .header-bar{
+        min-height:70px;
+        padding:12px 14px;
+      }
+      .brand-name{
+        font-size:13px;
+      }
+      .hero{
+        min-height:720px;
+      }
+      .hero-inner{
+        min-height:720px;
+        padding:120px 22px 42px;
+      }
       .hero h1{
-        font-size:42px;
+        font-size:48px;
       }
-
-      .hero-subtext{
+      .hero-subtitle,
+      .hero-text{
         font-size:16px;
       }
-
-      .btn{
-        width:100%;
-      }
-
       .hero-actions{
         width:100%;
       }
-
       .hero-actions .btn{
-        flex:1 1 100%;
+        width:100%;
       }
-
-      .gallery-section,
-      .about-section,
-      .why-section,
-      .process-section,
-      .reviews-section,
-      .subsidy-section,
-      .cta-section{
-        padding-top:84px;
+      .gallery-card,
+      .section-inner,
+      .contact-card,
+      .footer-top{
+        padding:22px;
       }
-
       .why-grid,
-      .reviews-grid{
+      .products-grid,
+      .reviews-grid,
+      .projects-grid{
         grid-template-columns:1fr;
       }
-
-      .mosaic-bottom{
+      .project-item.wide{
+        grid-column:span 1;
+        aspect-ratio:1/1;
+      }
+      .gallery-bottom{
         grid-template-columns:1fr;
       }
-
-      .about-card,
-      .subsidy-content,
-      .cta-card,
-      .footer-top{
-        padding:24px;
+      .reviews-score{
+        min-width:0;
+        width:100%;
       }
-
-      .footer-top{
-        grid-template-columns:1fr;
+      .contact-actions .btn{
+        width:100%;
       }
-
-      .footer-bottom{
-        padding:20px 24px 24px;
-      }
-
       .contact-pills{
         flex-direction:column;
       }
-
       .contact-pill{
         width:100%;
       }
-    }
-
-    /* MOBILE NAV */
-    .mobile-nav{
-      position:fixed;
-      inset:82px 12px auto 12px;
-      z-index:998;
-      background:rgba(8,8,8,.96);
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius-lg);
-      padding:16px;
-      display:none;
-      box-shadow:0 18px 40px rgba(0,0,0,.35);
-    }
-
-    .mobile-nav.open{
-      display:block;
-    }
-
-    .mobile-nav a{
-      display:block;
-      padding:14px 8px;
-      color:#fff;
-      font-weight:600;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .mobile-nav a:last-child{
-      border-bottom:none;
-    }
-
-    .mobile-nav .mobile-lang{
-      display:flex;
-      gap:10px;
-      margin-bottom:10px;
-    }
-
-    .mobile-nav .mobile-lang a{
-      border-bottom:none;
-      padding:10px 14px;
-      border-radius:var(--radius-sm);
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.08);
-      font-size:14px;
-      font-weight:700;
-    }
-
-    .mobile-nav .mobile-cta{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .mobile-nav .mobile-cta a{
-      border-bottom:none;
-      padding:12px 16px;
-      border-radius:var(--radius-sm);
-      background:#fff;
-      color:#000;
-      font-size:14px;
-      font-weight:700;
+      .footer-top{
+        grid-template-columns:1fr;
+      }
+      .footer-bottom{
+        padding:20px 22px 24px;
+      }
+      .mobile-nav{
+        top:92px;
+        left:10px;
+        right:10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header class="site-header" id="siteHeader">
-    <div class="header-shell">
-      <a href="#top" class="brand" aria-label="A-PROJECT home">
-        <img src="images/logo.png" alt="A-PROJECT logo">
-      </a>
+  <div class="page-top">
+    <div class="top-shell reveal">
+      <header class="site-header">
+        <div class="header-bar">
+          <a href="#top" class="brand" aria-label="A-PROJECT home">
+            <span class="brand-mark">A<br>PROJECT</span>
+            <span class="brand-name">A-PROJECT</span>
+          </a>
 
-      <nav class="nav" aria-label="Hoofdmenu">
+          <nav class="nav" aria-label="Hoofdmenu">
+            <a href="#over-ons">Over ons</a>
+            <a href="#waarom-wij">Waarom wij?</a>
+            <a href="#realisaties-top">Realisaties</a>
+            <a href="#producten">Producten</a>
+            <a href="#subsidie">Subsidie</a>
+          </nav>
+
+          <div class="header-right">
+            <a class="lang-link" href="./index.html" aria-label="Nederlandse versie">🇳🇱</a>
+            <a class="lang-link" href="./en/" aria-label="Engelse versie">🇬🇧</a>
+            <a class="lang-link" href="./pl/" aria-label="Poolse versie">🇵🇱</a>
+            <a class="lang-link" href="./de/" aria-label="Duitse versie">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-lang">
+          <a href="./index.html">🇳🇱</a>
+          <a href="./en/">🇬🇧</a>
+          <a href="./pl/">🇵🇱</a>
+          <a href="./de/">🇵🇱</a>
+        </div>
         <a href="#over-ons">Over ons</a>
-        <a href="#waarom-wij">Waarom wij</a>
-        <a href="#werkwijze">Hoe werken wij?</a>
-        <a href="#reviews">Reviews</a>
+        <a href="#waarom-wij">Waarom wij?</a>
+        <a href="#realisaties-top">Realisaties</a>
+        <a href="#producten">Producten</a>
         <a href="#subsidie">Subsidie</a>
         <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="header-right">
-        <div class="lang-switch" aria-label="Taalkeuze">
-          <a href="./index.html" class="lang-pill" aria-label="Nederlandse versie">NL</a>
-          <a href="./pl/" class="lang-pill" aria-label="Poolse versie">PL</a>
-          <a href="./en/" class="lang-pill" aria-label="Engelse versie">EN</a>
-        </div>
-        <a href="#contact" class="header-cta">Vrijblijvende offerte</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
       </div>
-    </div>
-  </header>
 
-  <div class="mobile-nav" id="mobileNav">
-    <div class="mobile-lang">
-      <a href="/">NL</a>
-      <a href="/pl">PL</a>
-      <a href="/en">EN</a>
+      <main id="top">
+        <section class="hero">
+          <div class="hero-media">
+            <img src="images/hero.jpg" alt="Moderne woning met zwarte kozijnen en grote schuifpui">
+          </div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-inner">
+            <div class="hero-content">
+              <h1>Your new windows &amp; doors are here!</h1>
+              <p class="hero-subtitle">Kozijnen vervangen in Tilburg</p>
+              <p class="hero-text">Snel, professioneel en betrouwbaar. A-PROJECT levert en monteert hoogwaardige kunststof kozijnen, deuren en schuifpuien met een strakke afwerking en moderne uitstraling.</p>
+
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-dark">Offerte aanvragen</a>
+                <a href="tel:+31628255738" class="btn btn-light">Bel direct</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-    <a href="#over-ons">Over ons</a>
-    <a href="#waarom-wij">Waarom wij</a>
-    <a href="#werkwijze">Hoe werken wij?</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#subsidie">Subsidie</a>
-    <a href="#contact">Contact</a>
-    <div class="mobile-cta">
-      <a href="tel:+31628255738">Bel direct</a>
-      <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
-    </div>
+
+    <section class="gallery-wrap" id="realisaties-top">
+      <div class="shell reveal">
+        <div class="gallery-card">
+          <div class="gallery-grid">
+            <div class="gallery-left">
+              <article class="gallery-item">
+                <img src="images/deur1.jpg" alt="Detail van modern zwart kozijn" loading="lazy">
+              </article>
+            </div>
+
+            <div class="gallery-right">
+              <article class="gallery-item">
+                <img src="images/deur3.jpg" alt="Zwarte kozijnen in modern project" loading="lazy">
+              </article>
+
+              <div class="gallery-bottom">
+                <article class="gallery-item">
+                  <img src="images/hero1.jpg" alt="Grote schuifpui in moderne woning" loading="lazy">
+                </article>
+                <article class="gallery-item">
+                  <img src="images/deurraam.jpg" alt="Ramen in gevel van moderne woning" loading="lazy">
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-media">
-        <img src="images/hero.jpg" alt="Moderne woning met hoogwaardige kozijnen en deuren">
-      </div>
-      <div class="hero-overlay"></div>
-
-      <div class="hero-inner">
-        <div class="hero-content reveal">
-          <div class="hero-kicker">
-            <span class="dot"></span>
-            Kunststof kozijnen, deuren & schuifpuien op maat
+  <section class="section-block">
+    <div class="shell">
+      <div class="section-card section-dark reveal" id="over-ons">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Over ons</span>
+            <h2>Vakmanschap, kwaliteit en een strakke oplevering.</h2>
+            <p>A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien die uitstraling, comfort en isolatie direct verbeteren. Wij combineren persoonlijk advies met een nette montage en een resultaat dat perfect aansluit op uw woning.</p>
           </div>
 
-          <h1>Hoogwaardige kozijnen en deuren voor elke woning.</h1>
+          <div class="about-grid">
+            <div class="about-card">
+              <p>Bij ons draait het niet alleen om mooie producten, maar ook om de complete afwerking. Van eerste contact tot montage werken wij helder, zorgvuldig en zonder onnodige complicaties.</p>
+              <p>Wij denken mee over uitstraling, isolatie, gebruiksgemak en de beste oplossing voor uw woning. Daardoor krijgt u niet zomaar nieuwe kozijnen of deuren, maar een totaalresultaat dat direct zichtbaar en voelbaar is.</p>
+              <p>Klanten kiezen voor A-PROJECT omdat wij kwaliteit leveren met een moderne look, duidelijke communicatie en een werkwijze die vertrouwen geeft.</p>
 
-          <p class="hero-subtext">
-            A-PROJECT levert en monteert stijlvolle, duurzame en perfect afgewerkte kunststof oplossingen die comfort, uitstraling en isolatie direct verbeteren.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Vraag een offerte aan</a>
-            <a href="tel:+31628255738" class="btn btn-secondary">Bel direct</a>
-          </div>
-
-          <div class="hero-trust">
-            <div class="trust-item">
-              <div class="stars">★★★★★</div>
-              <span>100% tevreden klanten</span>
+              <div class="about-badges">
+                <span class="about-badge">Duurzame materialen</span>
+                <span class="about-badge">Strakke montage</span>
+                <span class="about-badge">Persoonlijk contact</span>
+                <span class="about-badge">100+ reviews</span>
+              </div>
             </div>
-            <span class="trust-sep"></span>
-            <div class="trust-item">
-              <span>100+ reviews</span>
-            </div>
-            <span class="trust-sep"></span>
-            <div class="trust-item">
-              <span>Persoonlijk advies & vakkundige montage</span>
+
+            <div class="about-image">
+              <img src="images/hero2.jpg" alt="Modern project van A-PROJECT" loading="lazy">
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="gallery-section section-light">
-      <div class="container">
-        <div class="mosaic reveal">
-          <div class="mosaic-left">
-            <article class="mosaic-card">
-              <img src="images/deur1.jpg" alt="Strakke voordeur met modern design" loading="lazy">
-              <div class="mosaic-overlay">
-                <h3 class="mosaic-title">Premium deuren met moderne uitstraling</h3>
+  <section class="section-pad">
+    <div class="shell">
+      <div class="section-card section-light reveal" id="waarom-wij">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Waarom wij?</span>
+            <h2>Waarom klanten kiezen voor A-PROJECT.</h2>
+            <p>Niet alleen vanwege het eindresultaat, maar ook vanwege de manier waarop wij werken: duidelijk, professioneel en met focus op kwaliteit in elk detail.</p>
+          </div>
+
+          <div class="why-grid">
+            <article class="why-card">
+              <div class="why-icon">✓</div>
+              <h3>Hoogwaardige kwaliteit</h3>
+              <p>Wij werken met duurzame oplossingen die zorgen voor een luxe uitstraling, betere isolatie en een lange levensduur.</p>
+            </article>
+
+            <article class="why-card">
+              <div class="why-icon">⏱</div>
+              <h3>Duidelijke communicatie</h3>
+              <p>U weet vooraf waar u aan toe bent. Heldere afspraken, een transparante offerte en korte lijnen tijdens het hele traject.</p>
+            </article>
+
+            <article class="why-card">
+              <div class="why-icon">◆</div>
+              <h3>Strakke afwerking</h3>
+              <p>Wij letten op de details. Een nette montage en verzorgde oplevering zijn voor ons vanzelfsprekend.</p>
+            </article>
+
+            <article class="why-card">
+              <div class="why-icon">★</div>
+              <h3>Bewezen tevredenheid</h3>
+              <p>Met 100+ reviews en een sterke reputatie kiezen klanten voor zekerheid, service en een resultaat dat direct zichtbaar is.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="producten">
+    <div class="shell">
+      <div class="section-card section-light reveal">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Producten</span>
+            <h2>De producten waar wij mee werken.</h2>
+            <p>Wij leveren oplossingen die passen bij moderne woningen, renovaties en complete upgrades van de gevel. Altijd met focus op uitstraling, duurzaamheid en isolatie.</p>
+          </div>
+
+          <div class="products-grid">
+            <article class="product-card">
+              <div class="product-media">
+                <img src="images/deur1.jpg" alt="Kunststof kozijnen" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3>Kunststof kozijnen</h3>
+                <p>Strakke profielen, sterke isolatie en een moderne uitstraling die jarenlang mooi blijft.</p>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="images/deurraam.jpg" alt="Voordeuren" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3>Voordeuren</h3>
+                <p>Stijlvolle deuren die veiligheid, design en gebruiksgemak perfect combineren.</p>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="images/hero1.jpg" alt="Schuifpuien" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3>Schuifpuien</h3>
+                <p>Grote glaspartijen voor meer licht, luxe uitstraling en een naadloze verbinding met buiten.</p>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="images/klamka.jpg" alt="Afwerking en beslag" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3>Afwerking &amp; beslag</h3>
+                <p>Hoogwaardige details en nette afwerking die het verschil maken in uitstraling en kwaliteit.</p>
               </div>
             </article>
           </div>
-
-          <div class="mosaic-right">
-            <article class="mosaic-card">
-              <img src="images/deur3.jpg" alt="Kunststof kozijnen in moderne woning" loading="lazy">
-              <div class="mosaic-overlay">
-                <h3 class="mosaic-title">Kozijnen die comfort en isolatie verhogen</h3>
-              </div>
-            </article>
-
-            <div class="mosaic-bottom">
-              <article class="mosaic-card">
-                <img src="images/klamka.jpg" alt="Detail van hoogwaardige deurklink" loading="lazy">
-                <div class="mosaic-overlay">
-                  <h3 class="mosaic-title">Hoogwaardige afwerking</h3>
-                </div>
-              </article>
-
-              <article class="mosaic-card">
-                <img src="images/deurraam.jpg" alt="Combinatie van deur en raam in modern project" loading="lazy">
-                <div class="mosaic-overlay">
-                  <h3 class="mosaic-title">Maatwerk voor ieder project</h3>
-                </div>
-              </article>
-            </div>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="about-section section-dark" id="over-ons">
-      <div class="container">
-        <div class="about-grid reveal">
-          <div class="about-card">
-            <div>
-              <span class="section-kicker">Over ons</span>
-              <h2 style="margin:0 0 18px;font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-0.04em;">Vakmanschap, kwaliteit en een strakke oplevering.</h2>
-              <p>
-                Bij A-PROJECT draait alles om hoogwaardige kunststof kozijnen, deuren en schuifpuien die niet alleen mooi ogen, maar ook jarenlang topprestaties leveren.
-              </p>
-              <p>
-                Wij combineren persoonlijk advies met een nette werkwijze en oog voor detail. Van het eerste contact tot de uiteindelijke montage werken wij helder, zorgvuldig en zonder onnodige complicaties.
-              </p>
-              <p>
-                Het resultaat is een woning die beter isoleert, moderner oogt en direct meer comfort biedt in het dagelijks gebruik.
-              </p>
-            </div>
-
-            <div class="about-badges">
-              <span class="about-badge">Duurzame materialen</span>
-              <span class="about-badge">Strakke montage</span>
-              <span class="about-badge">Persoonlijk contact</span>
-              <span class="about-badge">100+ tevreden klanten</span>
-            </div>
+  <section class="section-pad">
+    <div class="shell">
+      <div class="section-card section-dark reveal" id="werkwijze">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Hoe werken wij?</span>
+            <h2>Een duidelijk proces van eerste contact tot oplevering.</h2>
+            <p>Wij houden het traject overzichtelijk en efficiënt, zodat u precies weet wat u kunt verwachten en het eindresultaat perfect aansluit op uw woning.</p>
           </div>
 
-          <div class="about-image">
-            <img src="images/hero1.jpg" alt="A-PROJECT realisatie met moderne ramen en deuren" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-section section-light" id="waarom-wij">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-kicker">Waarom wij?</span>
-          <h2>Waarom klanten kiezen voor A-PROJECT.</h2>
-          <p>
-            Niet alleen vanwege het eindresultaat, maar ook vanwege de manier waarop wij werken: duidelijk, professioneel en met focus op kwaliteit in elk detail.
-          </p>
-        </div>
-
-        <div class="why-grid reveal">
-          <article class="why-card">
-            <div class="why-icon">✓</div>
-            <h3>Hoogwaardige kwaliteit</h3>
-            <p>Wij werken met duurzame oplossingen die zorgen voor een luxe uitstraling, betere isolatie en een lange levensduur.</p>
-          </article>
-
-          <article class="why-card">
-            <div class="why-icon">⏱</div>
-            <h3>Duidelijke communicatie</h3>
-            <p>U weet vooraf waar u aan toe bent. Heldere afspraken, een transparante offerte en korte lijnen tijdens het hele traject.</p>
-          </article>
-
-          <article class="why-card">
-            <div class="why-icon">◆</div>
-            <h3>Strakke afwerking</h3>
-            <p>Wij letten op de details. Een nette montage en verzorgde oplevering zijn voor ons vanzelfsprekend.</p>
-          </article>
-
-          <article class="why-card">
-            <div class="why-icon">★</div>
-            <h3>Bewezen tevredenheid</h3>
-            <p>Met 100+ reviews en een sterke reputatie kiezen klanten voor zekerheid, service en een resultaat dat direct zichtbaar is.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-section section-dark" id="werkwijze">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-kicker">Hoe werken wij?</span>
-          <h2>Een duidelijk proces van eerste contact tot oplevering.</h2>
-          <p>
-            Wij houden het traject overzichtelijk en efficiënt, zodat u precies weet wat u kunt verwachten en het eindresultaat perfect aansluit op uw woning.
-          </p>
-        </div>
-
-        <div class="process-wrap reveal">
-          <div class="process-line"></div>
           <div class="process-grid">
             <article class="process-card">
               <div class="process-num">01</div>
               <h3>Neem contact op</h3>
-              <p>
-                U vertelt ons wat uw wensen zijn. Wij luisteren, denken mee en bekijken welke oplossing het beste past bij uw woning en stijl.
-              </p>
+              <p>U vertelt ons wat uw wensen zijn. Wij luisteren, denken mee en bekijken welke oplossing het beste past bij uw woning en stijl.</p>
             </article>
 
             <article class="process-card">
               <div class="process-num">02</div>
               <h3>Vrijblijvende offerte</h3>
-              <p>
-                U ontvangt een duidelijke offerte met heldere informatie over de mogelijkheden, planning en uitvoering. Geen onduidelijkheden, wel overzicht.
-              </p>
+              <p>U ontvangt een duidelijke offerte met heldere informatie over de mogelijkheden, planning en uitvoering. Geen onduidelijkheden, wel overzicht.</p>
             </article>
 
             <article class="process-card">
               <div class="process-num">03</div>
-              <h3>Montage & oplevering</h3>
-              <p>
-                Na akkoord zorgen wij voor een professionele montage en nette afwerking, zodat u direct geniet van comfort, isolatie en uitstraling.
-              </p>
+              <h3>Montage &amp; oplevering</h3>
+              <p>Na akkoord zorgen wij voor een professionele montage en nette afwerking, zodat u direct geniet van comfort, isolatie en uitstraling.</p>
             </article>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="reviews-section section-light" id="reviews">
-      <div class="container">
-        <div class="reviews-top reveal">
-          <div class="section-head" style="margin:0;">
-            <span class="section-kicker">Reviews</span>
-            <h2>Meer dan 100 tevreden klanten.</h2>
-            <p>
-              Klanten waarderen onze nette werkwijze, heldere communicatie en de kwaliteit van het eindresultaat. Dat vertrouwen bouwen wij project voor project op.
-            </p>
+  <section class="section-pad">
+    <div class="shell">
+      <div class="section-card section-light reveal" id="reviews">
+        <div class="section-inner">
+          <div class="reviews-top">
+            <div class="section-head" style="margin:0;">
+              <span class="section-kicker">Reviews</span>
+              <h2>Meer dan 100 tevreden klanten.</h2>
+              <p>Klanten waarderen onze nette werkwijze, heldere communicatie en de kwaliteit van het eindresultaat. Dat vertrouwen bouwen wij project voor project op.</p>
+            </div>
+
+            <div class="reviews-score">
+              <strong>5.0/5</strong>
+              <p>100% tevreden klanten op basis van 100+ reviews en aanbevelingen.</p>
+            </div>
           </div>
 
-          <div class="reviews-score">
-            <strong>5.0/5</strong>
-            <p>100% tevreden klanten op basis van 100+ reviews en aanbevelingen.</p>
-          </div>
-        </div>
-
-        <div class="reviews-grid reveal">
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              Zeer professioneel bedrijf. Alles werd netjes uitgelegd, de montage was strak en het eindresultaat is echt prachtig geworden.
-            </p>
-            <div class="review-author">
-              <div class="review-avatar">MV</div>
-              <div>
-                <strong>Mark Verhoeven</strong>
-                <span>Tevreden klant</span>
+          <div class="reviews-grid">
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">Zeer professioneel bedrijf. Alles werd netjes uitgelegd, de montage was strak en het eindresultaat is echt prachtig geworden.</p>
+              <div class="review-author">
+                <div class="review-avatar">MV</div>
+                <div>
+                  <strong>Mark Verhoeven</strong>
+                  <span>Tevreden klant</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              Snelle communicatie, duidelijke offerte en topkwaliteit. Onze nieuwe kozijnen maken echt een enorm verschil in uitstraling en comfort.
-            </p>
-            <div class="review-author">
-              <div class="review-avatar">SL</div>
-              <div>
-                <strong>Sanne de Leeuw</strong>
-                <span>Tevreden klant</span>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">Snelle communicatie, duidelijke offerte en topkwaliteit. Onze nieuwe kozijnen maken echt een enorm verschil in uitstraling en comfort.</p>
+              <div class="review-author">
+                <div class="review-avatar">SL</div>
+                <div>
+                  <strong>Sanne de Leeuw</strong>
+                  <span>Tevreden klant</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              Afspraken werden perfect nagekomen en alles is ontzettend netjes afgewerkt. Absoluut een bedrijf dat wij zonder twijfel aanbevelen.
-            </p>
-            <div class="review-author">
-              <div class="review-avatar">JB</div>
-              <div>
-                <strong>Jeroen Bakker</strong>
-                <span>Tevreden klant</span>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">Afspraken werden perfect nagekomen en alles is ontzettend netjes afgewerkt. Absoluut een bedrijf dat wij zonder twijfel aanbevelen.</p>
+              <div class="review-author">
+                <div class="review-avatar">JB</div>
+                <div>
+                  <strong>Jeroen Bakker</strong>
+                  <span>Tevreden klant</span>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="review-card">
-            <div class="review-stars">★★★★★</div>
-            <p class="review-text">
-              Van advies tot oplevering liep alles soepel. Mooie producten, nette mensen en vooral veel aandacht voor detail. Erg tevreden.
-            </p>
-            <div class="review-author">
-              <div class="review-avatar">ND</div>
-              <div>
-                <strong>Naomi Dijkstra</strong>
-                <span>Tevreden klant</span>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">Van advies tot oplevering liep alles soepel. Mooie producten, nette mensen en vooral veel aandacht voor detail. Erg tevreden.</p>
+              <div class="review-author">
+                <div class="review-avatar">ND</div>
+                <div>
+                  <strong>Naomi Dijkstra</strong>
+                  <span>Tevreden klant</span>
+                </div>
               </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="subsidy-section section-dark" id="subsidie">
-      <div class="container">
-        <div class="subsidy-card reveal">
-          <div class="subsidy-content">
-            <span class="section-kicker">Subsidie</span>
-            <h2>Mogelijk profiteren van subsidie op isolerende verbeteringen.</h2>
-            <p>
-              In veel situaties kunnen nieuwe isolerende kozijnen of deuren bijdragen aan energiebesparing en mogelijk in aanmerking komen binnen bestaande regelingen. Wij denken graag met u mee over de mogelijkheden.
-            </p>
-
-            <div class="subsidy-list">
-              <div class="subsidy-item">
-                <span class="subsidy-check">✓</span>
-                <span>Advies over isolerende oplossingen die passen bij uw woning.</span>
-              </div>
-              <div class="subsidy-item">
-                <span class="subsidy-check">✓</span>
-                <span>Inzicht in welke verbeteringen relevant kunnen zijn voor energiebesparing.</span>
-              </div>
-              <div class="subsidy-item">
-                <span class="subsidy-check">✓</span>
-                <span>Heldere begeleiding richting een passende keuze en offerte.</span>
-              </div>
-            </div>
-
-            <a href="#contact" class="btn btn-primary" style="width:auto;">Vraag naar de mogelijkheden</a>
-          </div>
-
-          <div class="subsidy-image">
-            <img src="images/hero2.jpg" alt="Modern project met ramen en deuren" loading="lazy">
+            </article>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="cta-section section-light" id="contact">
-      <div class="container">
-        <div class="cta-card reveal">
+  <section class="section-pad">
+    <div class="shell">
+      <div class="section-card section-dark reveal" id="subsidie">
+        <div class="section-inner">
+          <div class="subsidy-grid">
+            <div class="subsidy-panel">
+              <span class="section-kicker">Subsidie</span>
+              <h2>Mogelijk profiteren van subsidie op isolerende verbeteringen.</h2>
+              <p>In veel situaties kunnen nieuwe isolerende kozijnen of deuren bijdragen aan energiebesparing en mogelijk in aanmerking komen binnen bestaande regelingen. Wij denken graag met u mee over de mogelijkheden.</p>
+
+              <div class="subsidy-list">
+                <div class="subsidy-item">
+                  <span class="subsidy-check">✓</span>
+                  <span>Advies over isolerende oplossingen die passen bij uw woning.</span>
+                </div>
+                <div class="subsidy-item">
+                  <span class="subsidy-check">✓</span>
+                  <span>Inzicht in welke verbeteringen relevant kunnen zijn voor energiebesparing.</span>
+                </div>
+                <div class="subsidy-item">
+                  <span class="subsidy-check">✓</span>
+                  <span>Heldere begeleiding richting een passende keuze en offerte.</span>
+                </div>
+              </div>
+
+              <a href="#contact" class="btn btn-light">Vraag naar de mogelijkheden</a>
+            </div>
+
+            <div class="subsidy-image">
+              <img src="images/hero3.jpg" alt="Project met moderne ramen en deuren" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="shell">
+      <div class="contact-card reveal">
+        <div class="section-head" style="margin-bottom:0;">
           <span class="section-kicker">Contact</span>
           <h2>Klaar voor een stijlvolle upgrade van uw woning?</h2>
-          <p>
-            Neem vandaag nog contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte. Wij helpen u graag met een oplossing die past bij uw woning, wensen en budget.
-          </p>
+          <p>Neem vandaag nog contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte. Wij helpen u graag met een oplossing die past bij uw woning, wensen en budget.</p>
+        </div>
 
-          <div class="cta-actions">
-            <a href="tel:+31628255738" class="btn btn-secondary">Bel: +31 6 28255738</a>
-            <a href="mailto:a.project.contact@gmail.com" class="btn btn-primary">a.project.contact@gmail.com</a>
+        <div class="contact-actions">
+          <a href="tel:+31628255738" class="btn btn-dark">Bel: +31 6 28255738</a>
+          <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
+        </div>
+
+        <div class="contact-pills">
+          <span class="contact-pill">★★★★★ 100+ reviews</span>
+          <span class="contact-pill">Snelle reactie &amp; persoonlijk advies</span>
+          <span class="contact-pill">Vrijblijvende offerte op maat</span>
+        </div>
+
+        <div class="contact-meta">
+          <div class="contact-meta-card">
+            <h4>Bedrijfsgegevens</h4>
+            <p>KVK nummer: 65884949</p>
+            <p>Serooskerkestraat 50<br>5035GH Tilburg</p>
           </div>
 
-          <div class="contact-pills">
-            <span class="contact-pill">★★★★★ 100+ reviews</span>
-            <span class="contact-pill">Snelle reactie & persoonlijk advies</span>
-            <span class="contact-pill">Vrijblijvende offerte op maat</span>
-          </div>
-
-          <div class="contact-meta">
-            <div class="contact-meta-card">
-              <h4>Bedrijfsgegevens</h4>
-              <p>KVK nummer: 65884949</p>
-              <p>Serooskerkestraat 50<br>5035GH Tilburg</p>
-            </div>
-
-            <div class="contact-meta-card">
-              <h4>Direct contact</h4>
-              <p><a href="tel:+31628255738">+31 6 28255738</a></p>
-              <p><a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a></p>
-            </div>
+          <div class="contact-meta-card">
+            <h4>Direct contact</h4>
+            <p><a href="tel:+31628255738">+31 6 28255738</a></p>
+            <p><a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a></p>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="shell">
+      <div class="section-card section-light reveal" id="realisaties">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Realisaties / Projecten</span>
+            <h2>Bekijk onze projecten en gerealiseerde werken.</h2>
+            <p>Hieronder ziet u projecten en details in precies de volgorde waarin ze zijn aangeleverd. Deze galerij is volledig full width opgebouwd en sluit visueel aan op de rest van de pagina.</p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-item wide"><img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/650014125_849312224836597_7134893195629296560_n.jpg?stp=cp6_dst-jpegr_tt6&_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=6KJgDt2364QQ7kNvwGS8X9y&_nc_oc=Adr9xzRBznREPpalhdOfYkGPvPF-Uh1ZZrah4DnogNMd32o-owiT4VORVCrRk_khWyI&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-1.fna&_nc_gid=MhO26OvWs8_qnoy7es2eAA&_nc_ss=7a32e&oh=00_Afy1dvqzeXnFdiHkpg2EwBGgrLKOiPw_67uzi4EPuTJ5fw&oe=69CB1AB3" alt="Realisatie 1" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/650207294_849312158169937_229551188785625448_n.jpg?stp=dst-jpegr_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=6-Y3Dmw5fWsQ7kNvwEFbPSn&_nc_oc=AdrxK2T3gXH1FFl5kcmI-x6XB8586tihwl30IQ5XberrJ20bTYiAPk04oVFl3ujlfMM&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-1.fna&_nc_gid=ibhwPAZc7qxmK15V2QuNzQ&_nc_ss=7a3a8&oh=00_AfwAJd1REVmBrfyiCagOFy-Jc6uYkBaFmm7QnZnkr2uqJg&oe=69CB0E79" alt="Realisatie 2" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/650377132_849312114836608_1282541063248702908_n.jpg?stp=dst-jpegr_tt6&_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=lPgWxBf1tnkQ7kNvwHfZ42_&_nc_oc=Adogea1mTy1LLpdMuyHDXYP-BJZ7snUUeHwa_-vjV3P8V7jvYm3GtcwWVbyIWiQvPRc&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=a7jmwh6aiLSnnHH-7dmliQ&_nc_ss=7a32e&oh=00_Afynt1rvj_vsMdOc3p-V6IPiB6RPW0m9nznIvPY556jp1g&oe=69CB11AA" alt="Realisatie 3" loading="lazy"></article>
+            <article class="project-item tall"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/651058743_849312058169947_6720644668140100460_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_ohc=bte0HS1noFQQ7kNvwFy6t56&_nc_oc=Adp1w1JPEKP4hZ7O5QeZQne3J7wgeuDIVcPMZzPbmOctttyFXIG6k0PNkt55-D1W_Kg&_nc_zt=23&_nc_ht=scontent.frtm1-3.fna&_nc_gid=6eR9uGDCVXIMgeykx2zD8A&_nc_ss=7a32e&oh=00_AfzTZZk3t6iR6vW9mI33g87tqLmYlybyUJdsGzWzn4eRbw&oe=69CAFD7A" alt="Realisatie 4" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/650318800_849312001503286_736947092589523280_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=gG3CDDn8A7MQ7kNvwEEOlxr&_nc_oc=AdrJhjcNTc_2dBhtfy_crqbOpl9Ibrw583xQgw6tn1qyHiLpFDrSqu6xIGOKpmspO-s&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=JT3GKDSHKMhVO-YmxhMoLw&_nc_ss=7a32e&oh=00_AfwSUHAIMrL1eXSZRBHSQdDqccm7kOwFIA9DA-tULoso2Q&oe=69CAF7BD" alt="Realisatie 5" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/649973936_849311934836626_3939235369338034863_n.jpg?stp=dst-jpegr_tt6&_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_ohc=Dx_8j-ir7Y8Q7kNvwELf5FK&_nc_oc=AdrwH3DIUQE5T5BY5NqnngvsLUI-OcmXkBCJZpDgGUyWJb59K5d3DHMmxP3_FEjVwwQ&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=vpqekBLsJIQqY4_XxBxJ3g&_nc_ss=7a3a8&oh=00_AfyUGUNgD_y8H8cGMfrOjaa-atK0W1oZLJStcoghpsQJcg&oe=69CB1B84" alt="Realisatie 6" loading="lazy"></article>
+            <article class="project-item wide"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/650113091_849311881503298_4470393853173051383_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=bIZqmwusrR8Q7kNvwEOqsbx&_nc_oc=Adquzoe9sHDy0gLNMptu9mAdUjdA1ur2D7BY6B5LPVu22c0S_mTFm4ZhTpHUAuXoAqU&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=4QyREu6P473tpggSaM899Q&_nc_ss=7a32e&oh=00_AfxjjcrGddHZ6WYnXOaKYaQFGA0GH8ST8jWAtOVyb7CGsQ&oe=69CB11D7" alt="Realisatie 7" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/649292134_849311831503303_6689888170885185450_n.jpg?stp=dst-jpegr_tt6&_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=q48mqwBEEp8Q7kNvwHbNU3J&_nc_oc=AdpzUUaswngTiqfya29DTOyvTVfYxwAnKbLibEKnBajyxJqoiIHEFN-lBONy3qwQKEw&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-1.fna&_nc_gid=xIQThhv2Ky3Xid-1gDchAg&_nc_ss=7a32e&oh=00_Afzcpr0PzpDZxgDDEED_pD6kFTxrp41SJD3L5rJGIHpURw&oe=69CB12A6" alt="Realisatie 8" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/650232493_849311794836640_3700327728506899240_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=13d280&_nc_ohc=lbHsx-ZYdnoQ7kNvwHAjRHu&_nc_oc=AdobpyhWAywVR1gIXEh6Sc-tWhdntDpvnWGcmEPGvT24d5pE2d2V2H1uJ9FfiD7yeKc&_nc_zt=23&_nc_ht=scontent.frtm1-2.fna&_nc_gid=gVuEXVbL5R1nfHhp8KlW8g&_nc_ss=7a32e&oh=00_AfxIZxQf7tApFPha95FWCUOqxr9sE9KeRnDHwZKhbRqQkA&oe=69CB1CCB" alt="Realisatie 9" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/650350475_849311761503310_3700900811278625161_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=chQHkEtjLgEQ7kNvwE_KiNA&_nc_oc=AdqtKeyDrC7ESbuZVtYtJcSCnZIWLBPxm-3bcwDr28zQtBkyIHOnDBwUurRBvuFzq4E&_nc_zt=23&_nc_ht=scontent.frtm1-2.fna&_nc_gid=QIwOLxfZUqtGyS0G4MLQSQ&_nc_ss=7a32e&oh=00_AfzyZqTke0Y6SvneaSrwGn1td7vHsrRQD1bHFBiWfCrKNA&oe=69CAF67B" alt="Realisatie 10" loading="lazy"></article>
+            <article class="project-item tall"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/651038306_849311724836647_5197849746495387399_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=13d280&_nc_ohc=s-2jaXqTJZMQ7kNvwEeLLlK&_nc_oc=Adq-N3xpnMEyI37WBpQpoV4eFFVYwdnh3XWQy2auYQ5dvIdaIm1LLP8iTILBrnypjFM&_nc_zt=23&_nc_ht=scontent.frtm1-2.fna&_nc_gid=kBAnxms827zrrlJoZXXC0A&_nc_ss=7a32e&oh=00_AfziRNzVBz9lCoYeE4okJ56Mncr_NJH3mQr-9UPmzAjUew&oe=69CB0419" alt="Realisatie 11" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/650141578_849311688169984_1825277416485636166_n.jpg?stp=dst-jpegr_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=ac3-VYyJ-70Q7kNvwG9Fp6i&_nc_oc=Adr5iB9X0f383EApzjU4xM-nAvK13uK6fu31cU4Tmz58PN8st8kSgABt7wlRNwnU6N4&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-1.fna&_nc_gid=TCbtX6ign910XeZEiMkD_A&_nc_ss=7a32e&oh=00_AfzqPvUYtxRteLVcGhv-TaRdrNianXVGzUQzlLWdb5wRMw&oe=69CAF02E" alt="Realisatie 12" loading="lazy"></article>
+            <article class="project-item wide"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/649839500_849311631503323_6610769742291662098_n.jpg?stp=dst-jpegr_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=FtIH8lItEN0Q7kNvwEEvEsC&_nc_oc=Adqi4engyy5ri8Z106gyB2FnPZLhxxJmzhfdGOr4I3bqHJ7GTdXNsyiWtZdlVgEv70U&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=asxtFsqt00hxe1f51pmw6g&_nc_ss=7a32e&oh=00_AfzFLj4-CpOb8DeLNFqbULaJhmq_fBzXix8CdePTW7It6g&oe=69CAE7A5" alt="Realisatie 13" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/639837831_836769596090860_7731106536118256915_n.jpg?stp=dst-jpegr_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=6E28vXeuafcQ7kNvwFP61kz&_nc_oc=AdpXhGZLrb8eKlqST3jFtwlWhTUM1zn_vtTcXnOIIU_wbhkrRjcD2ZCqw5tXEhrJaC4&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=C230B1oABAGGvu5Tq3aUug&_nc_ss=7a32e&oh=00_Afyo6L8hnZutCbNYVJijeZvRIwJZmwl2K-ChWz9qT_Wl3Q&oe=69CAF488" alt="Realisatie 14" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/641375167_836769546090865_9204649550838227595_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=PVusMTaWp-gQ7kNvwHD7waz&_nc_oc=Adp7Fwf_wHP2SoW7Lg8Xt-ae3vzFboxz6V2hvAWCzsZClKsgZUIxWACSwp8rDEg9dRM&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=h_JApmC5_TCGXb_UXqeI-Q&_nc_ss=7a32e&oh=00_AfwclquaDPuteaz1gRuYSIIuIiEVG-v8MyHlV6_Kk43lNg&oe=69CB0413" alt="Realisatie 15" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/639313419_836769506090869_2904151097182416765_n.jpg?stp=dst-jpegr_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=bIBTPQqB_BIQ7kNvwH_Au9C&_nc_oc=AdpDjvKQYaViz5Gy5yrnL98IhPpN54e3SNFbkB88bJVvUDSYdQ8qM0X8keNNloFsL7M&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=RYgSkjt3kP8Bz9tKeXNRdg&_nc_ss=7a32e&oh=00_AfxHONe6LgSIWrq9F1hBa7XBaGqkQU9ujS6jllqik9ko6Q&oe=69CAFF91" alt="Realisatie 16" loading="lazy"></article>
+            <article class="project-item wide"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/641416536_836769459424207_3165403405097645930_n.jpg?stp=dst-jpegr_tt6&_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=iFOCroQQr9oQ7kNvwE5jUdB&_nc_oc=AdpoQd-tDJi5hq1V2ydx5XAQm4OIXws9V69_H17uIuthumno_hutg51ksm_aI5WfKu8&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=I3ghLd4BCjyZnAFR7mg35g&_nc_ss=7a3a8&oh=00_AfyIt47nrBRJH40OHH-y9O0VW44oWg_0Wt2eYUo7mkZmug&oe=69CAFD68" alt="Realisatie 17" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/639209033_836769352757551_6846961777511061905_n.jpg?stp=dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=HNXn3MVDcAcQ7kNvwFkchnm&_nc_oc=AdrpPxzQD7sbWzSCsvhJHIfHYF8p8pjbLZaa4P1wOecwzQDTp7HHWrXcX5_RP4B-_Uk&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=4ngVP6IknPQG674yBrvO1Q&_nc_ss=7a32e&oh=00_Afx7lre7ZbI9Ii7D7RC7_ZDYDsx0ySMuZWwOgGRs2d1CZw&oe=69CAF03A" alt="Realisatie 18" loading="lazy"></article>
+            <article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/639174976_832520636515756_769331782211473645_n.jpg?stp=dst-jpegr_tt6&_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=IuPGq8TkOEwQ7kNvwHyP-7_&_nc_oc=Adq6SDVvg_jXU0WFz6WjUU7pTlM4XLpap65lXzPZnASvhAoXSxzm_H5Ibnsxw-pSw3U&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=bqWxh4iUyjcY31Sh0YX6OA&_nc_ss=7a32e&oh=00_Afz4OcQsHZKL-BNec7yw1LQ86G4eDmPvqxL95j9dolbWJQ&oe=69CAF5F0" alt="Realisatie 19" loading="lazy"></article>
+           <article class="project-item tall"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/638873483_832520509849102_7166008522218242265_n.jpg?stp=dst-jpegr_tt6&_nc_cat=100&ccb=1-7&_nc_sid=13d280&_nc_ohc=strXYK2PGw0Q7kNvwEdm6jC&_nc_oc=AdpBjUUqtq681oJ1j8KXiB2UiGd8Pj_SP6wzOQqOUMnOzXvf45QmWzJxJ37qfA1MBfo&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=oJ38z3QdYOcShomubBkNZw&_nc_ss=7a3a8&oh=00_AfzlNcHyvN4EjAVfxNBkXN5Q9Pcv7ajMwFF2pRMawpcH7w&oe=69CB07ED" alt="Realisatie 20" loading="lazy"></article>
+<article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/638301202_832520439849109_6022192433199458103_n.jpg?stp=dst-jpegr_tt6&_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=XlWHGTom5XsQ7kNvwFy1Vmv&_nc_oc=AdphDBV-hD1VHtRl9JDr8NCJYiZ3toBo-ou7u0nt1mHnTrgEEiZQiKaT3b--T-c-tuc&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-2.fna&_nc_gid=LGmjczCGynCnx5pmyqOqrA&_nc_ss=7a32e&oh=00_AfwwRXeVgP4SW-NWUQwfu31c7o33VU7hghSvaDG24ajs5Q&oe=69CB18A3" alt="Realisatie 21" loading="lazy"></article>
+<article class="project-item"><img src="https://scontent.frtm1-2.fna.fbcdn.net/v/t39.30808-6/633381803_824473680653785_314555304502817301_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=mgrbxIwvjzsQ7kNvwEvD-KW&_nc_oc=AdopzulDh6GpEbj-pTWF2W5Jo4VVlo6rxYxlBSTpEJeNhSdkrbHjmYuWDRaBKCKT3ds&_nc_zt=23&_nc_ht=scontent.frtm1-2.fna&_nc_gid=iQW64DBq6IBU_8RYwZqi8w&_nc_ss=7a3a8&oh=00_AfwNyH3rU1IFqnTH808L7gOdSwCwqzAtBQPNwWB-SIfTkA&oe=69CB0C5B" alt="Realisatie 22" loading="lazy"></article>
+<article class="project-item wide"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/638285592_832520266515793_3087173715849546749_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_ohc=Mm72aWr74X8Q7kNvwG_2Ax9&_nc_oc=AdoKnIhWJ_WIET6lBVZoo-NB1sPRD1HZ1PVMkv0meG16KjfklqGUY6BP2nfoMV7P1QY&_nc_zt=23&_nc_ht=scontent.frtm1-3.fna&_nc_gid=M0j3pNV4f7G3r-NohfY36Q&_nc_ss=7a32e&oh=00_AfxWyPaWGSEvRbN2iAo-p6Y0GHADj0pqDy8HgIROC0ty-Q&oe=69CB1B08" alt="Realisatie 23" loading="lazy"></article>
+<article class="project-item"><img src="https://scontent.frtm1-3.fna.fbcdn.net/v/t39.30808-6/629625070_824473650653788_9100440772143829518_n.jpg?stp=cp6_dst-jpegr_tt6&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=gnEoXZ098uIQ7kNvwFs1ff5&_nc_oc=AdpzmtaqPZXa_K_QN0ojCseGan59a9_m_wVlR5oaGur6cb8KXYXFXeZmkEA5e2ToQa8&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-3.fna&_nc_gid=O3avSj4d-kNNYoJCpRTARw&_nc_ss=7a32e&oh=00_AfwTno_Pn0cTi6ji8xYkkWeKJrudhMzLOr1S4h2g3II7wA&oe=69CAFB10" alt="Realisatie 24" loading="lazy"></article>
+<article class="project-item"><img src="https://scontent.frtm1-1.fna.fbcdn.net/v/t39.30808-6/632584803_824473593987127_8025904517852937806_n.jpg?stp=cp6_dst-jpegr_tt6&_nc_cat=111&ccb=1-7&_nc_sid=13d280&_nc_ohc=5bVgyenZsZcQ7kNvwHGaxCF&_nc_oc=AdoazRGTxMYgIf_IeuDckVhfK3-NY-2UQSrNiXFM0KdeimxoMAoqfexoAGCNcdCHOR4&_nc_zt=23&se=-1&_nc_ht=scontent.frtm1-1.fna&_nc_gid=i0WSC2BeRPQsmmJEi77fQQ&_nc_ss=7a32e&oh=00_Afyj9zkaeERlKydp7Rh7VsSf1Cj3kS5Sl207XhBj3iLkFw&oe=69CAE779" alt="Realisatie 25" loading="lazy"></article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="shell">
       <div class="footer-shell reveal">
         <div class="footer-top">
           <div class="footer-brand">
-            <img src="images/logo.png" alt="A-PROJECT logo">
+            <div class="brand" style="min-width:auto;">
+              <span class="brand-mark">A<br>PROJECT</span>
+              <span class="brand-name">A-PROJECT</span>
+            </div>
             <p>
-              A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien met een moderne uitstraling, sterke isolatie en vakkundige montage.
+              A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien
+              met een moderne uitstraling, sterke isolatie en vakkundige montage.
             </p>
           </div>
 
@@ -1703,11 +1612,11 @@
             <h4>Navigatie</h4>
             <div class="footer-links">
               <a href="#over-ons">Over ons</a>
-              <a href="#waarom-wij">Waarom wij</a>
-              <a href="#werkwijze">Hoe werken wij?</a>
+              <a href="#waarom-wij">Waarom wij?</a>
+              <a href="#producten">Producten</a>
+              <a href="#werkwijze">Werkwijze</a>
               <a href="#reviews">Reviews</a>
-              <a href="#subsidie">Subsidie</a>
-              <a href="#contact">Contact</a>
+              <a href="#realisaties">Realisaties</a>
             </div>
           </div>
 
@@ -1747,22 +1656,10 @@
   </a>
 
   <script>
-    const header = document.getElementById('siteHeader');
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
 
-    const handleHeader = () => {
-      if (window.scrollY > 18) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    };
-
-    handleHeader();
-    window.addEventListener('scroll', handleHeader);
-
-    if (menuToggle) {
+    if (menuToggle && mobileNav) {
       menuToggle.addEventListener('click', () => {
         const isOpen = mobileNav.classList.toggle('open');
         menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -1778,7 +1675,7 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
+        if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
