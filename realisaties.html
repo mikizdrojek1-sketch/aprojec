@@ -1434,38 +1434,43 @@ Strakke uitstraling en meer comfort.`,
     }
 
     function renderGallery(gallery, images, projectId) {
-      gallery.innerHTML = "";
+  gallery.innerHTML = "";
 
-      if (!images.length) {
-        gallery.innerHTML = `<div class="project-empty">Geen foto's gevonden in map ./images/${projectId}/</div>`;
-        return;
-      }
+  if (!images.length) {
+    gallery.innerHTML = `<div class="project-empty">Geen foto's gevonden in map ./images/${projectId}/</div>`;
+    return;
+  }
 
-      images.sort((a, b) => {
-        const aNum = parseInt(a.match(/\/(\d+)\.jpg$/)?.[1] || "0", 10);
-        const bNum = parseInt(b.match(/\/(\d+)\.jpg$/)?.[1] || "0", 10);
-        return aNum - bNum;
-      });
+  const getImageNumber = (path) => {
+    return parseInt(path.match(/\/(\d+)\.jpe?g$/i)?.[1] || "0", 10);
+  };
 
-      images.forEach((src, index) => {
-        const figure = document.createElement("figure");
-        figure.className = `project-photo ${index === 0 && images.length >= 3 ? "featured" : ""}`;
+  const imageOne = images.find(src => getImageNumber(src) === 1);
+  const otherImages = images
+    .filter(src => getImageNumber(src) !== 1)
+    .sort((a, b) => getImageNumber(b) - getImageNumber(a));
 
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = `A-PROJECT project ${projectId} foto ${index + 1}`;
-        img.loading = "lazy";
-        img.dataset.gallery = projectId;
-        img.dataset.index = index;
+  const orderedImages = imageOne ? [imageOne, ...otherImages] : otherImages;
 
-        img.addEventListener("click", () => {
-          openLightbox(images, index);
-        });
+  orderedImages.forEach((src, index) => {
+    const figure = document.createElement("figure");
+    figure.className = `project-photo ${index === 0 && orderedImages.length >= 3 ? "featured" : ""}`;
 
-        figure.appendChild(img);
-        gallery.appendChild(figure);
-      });
-    }
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `A-PROJECT project ${projectId} foto ${index + 1}`;
+    img.loading = "lazy";
+    img.dataset.gallery = projectId;
+    img.dataset.index = index;
+
+    img.addEventListener("click", () => {
+      openLightbox(orderedImages, index);
+    });
+
+    figure.appendChild(img);
+    gallery.appendChild(figure);
+  });
+}
 
     function openLightbox(images, index) {
       currentGalleryImages = images;
