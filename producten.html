@@ -1,1 +1,1161 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-PROJECT | Producten</title>
+  <meta name="description" content="Bekijk en download productbrochures van A-PROJECT in het Nederlands, Engels en Pools. Ontdek de producten en systemen waarmee wij werken." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#151617;
+      --bg-2:#111213;
+      --panel:#171819;
+      --panel-2:#1B1C1E;
+      --light:#ECECEE;
+      --white:#FFFFFF;
+      --text:#F7F7F8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.52);
+      --dark-text:#111214;
+      --dark-muted:rgba(17,18,20,.68);
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.22);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.12);
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:18px;
+      --radius-xl:24px;
+      --radius-2xl:28px;
+      --section-max:1520px;
+    }
 
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#ececef;
+      color:var(--dark-text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .shell{
+      width:min(var(--section-max), calc(100% - 52px));
+      margin:0 auto;
+    }
+
+    .section-block{padding:34px 0 0}
+    .section-pad{padding:24px 0 0}
+
+    .section-card{
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-light{
+      background:#efeff1;
+      color:var(--dark-text);
+    }
+
+    .section-dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+    }
+
+    .section-inner{
+      padding:54px 36px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-light .section-kicker{color:rgba(17,18,20,.48)}
+    .section-dark .section-kicker{color:rgba(255,255,255,.54)}
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+
+    .section-head h1,
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(32px, 3.8vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .section-light .section-head p{color:var(--dark-muted)}
+    .section-dark .section-head p{color:var(--muted)}
+
+    .page-top{
+      background:#ececef;
+      padding:0;
+    }
+
+    .top-shell{
+      width:100%;
+      margin:0;
+      position:relative;
+      border-radius:0;
+      overflow:hidden;
+      background:#111;
+      box-shadow:none;
+    }
+
+    .site-header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:30;
+      padding:0;
+    }
+
+    .header-bar{
+      min-height:78px;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 26px;
+      border-radius:0;
+      background:rgba(18,19,20,.78);
+      border:none;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:none;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:auto;
+      flex-shrink:0;
+    }
+
+    .brand-logo{
+      display:block;
+      width:auto;
+      height:42px;
+      max-width:none;
+      object-fit:contain;
+      flex-shrink:0;
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.11em;
+      white-space:nowrap;
+      line-height:1;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:34px;
+      flex:1;
+    }
+
+    .nav a{
+      color:rgba(255,255,255,.94);
+      font-size:14px;
+      font-weight:500;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{opacity:.76}
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:230px;
+      justify-content:flex-end;
+      flex-shrink:0;
+    }
+
+    .lang-link{
+      font-size:22px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:.22s ease;
+    }
+
+    .lang-link:hover{transform:translateY(-1px)}
+
+    .menu-toggle{
+      display:none;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+    }
+
+    .mobile-nav{
+      position:absolute;
+      top:78px;
+      left:0;
+      right:0;
+      z-index:25;
+      display:none;
+      background:rgba(17,18,20,.98);
+      border:none;
+      border-radius:0;
+      padding:14px 16px 16px;
+      box-shadow:none;
+    }
+
+    .mobile-nav.open{display:block}
+
+    .mobile-nav a{
+      display:block;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      padding:13px 8px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .mobile-nav a:last-child{border-bottom:none}
+
+    .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-lang a{
+      border-bottom:none;
+      padding:10px 12px;
+      background:rgba(255,255,255,.07);
+      border-radius:12px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:420px;
+      background:#111;
+      width:100%;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.46) 34%, rgba(0,0,0,.18) 62%, rgba(0,0,0,.08) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.16) 65%, rgba(0,0,0,.28) 100%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:420px;
+      display:flex;
+      align-items:center;
+      padding:132px 72px 56px;
+    }
+
+    .hero-content{
+      max-width:700px;
+      color:#fff;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(40px,4.5vw,64px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .hero-text{
+      margin:0 0 24px;
+      font-size:17px;
+      line-height:1.72;
+      color:rgba(255,255,255,.82);
+      max-width:620px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.22s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-dark{
+      background:#161719;
+      color:#fff;
+      border-color:#161719;
+      box-shadow:0 12px 22px rgba(0,0,0,.22);
+    }
+
+    .btn-light{
+      background:#f4f4f5;
+      color:#111214;
+      border-color:#f4f4f5;
+      box-shadow:0 12px 22px rgba(0,0,0,.10);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+
+    .lang-sections{
+      display:grid;
+      gap:24px;
+    }
+
+    .lang-block{
+      border-radius:26px;
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .lang-block.light{
+      background:#f3f3f5;
+      color:var(--dark-text);
+    }
+
+    .lang-block.dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+      border-color:rgba(255,255,255,.06);
+    }
+
+    .lang-top{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
+      padding:30px 30px 0;
+      flex-wrap:wrap;
+    }
+
+    .lang-title{
+      margin:0;
+      font-size:clamp(24px,2.2vw,36px);
+      line-height:1.04;
+      letter-spacing:-.04em;
+      font-weight:800;
+    }
+
+    .lang-sub{
+      margin:10px 0 0;
+      font-size:15px;
+      line-height:1.7;
+    }
+
+    .lang-block.light .lang-sub{color:var(--dark-muted)}
+    .lang-block.dark .lang-sub{color:var(--muted)}
+
+    .lang-badge{
+      padding:12px 14px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:800;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .lang-block.light .lang-badge{
+      background:#17181a;
+      color:#fff;
+    }
+
+    .lang-block.dark .lang-badge{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+    }
+
+    .pdf-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      padding:24px 30px 30px;
+    }
+
+    .pdf-card{
+      border-radius:22px;
+      overflow:hidden;
+      position:relative;
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .lang-block.light .pdf-card{
+      background:#ffffff;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .lang-block.dark .pdf-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .pdf-card-top{
+      padding:24px 24px 18px;
+    }
+
+    .pdf-icon{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      font-weight:800;
+      margin-bottom:16px;
+    }
+
+    .lang-block.light .pdf-icon{
+      background:#17181a;
+      color:#fff;
+    }
+
+    .lang-block.dark .pdf-icon{
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .pdf-title{
+      margin:0 0 10px;
+      font-size:22px;
+      line-height:1.12;
+      letter-spacing:-.03em;
+      font-weight:800;
+    }
+
+    .pdf-text{
+      margin:0;
+      font-size:15px;
+      line-height:1.74;
+    }
+
+    .lang-block.light .pdf-text{color:var(--dark-muted)}
+    .lang-block.dark .pdf-text{color:var(--muted)}
+
+    .pdf-meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .pdf-pill{
+      padding:10px 12px;
+      border-radius:12px;
+      font-size:12px;
+      font-weight:700;
+      line-height:1;
+    }
+
+    .lang-block.light .pdf-pill{
+      background:#f1f1f3;
+      color:#111214;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .lang-block.dark .pdf-pill{
+      background:rgba(255,255,255,.05);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .pdf-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:0 24px 24px;
+      margin-top:auto;
+    }
+
+    .pdf-actions .btn{
+      min-height:48px;
+      padding:0 18px;
+      font-size:14px;
+      flex:1 1 160px;
+    }
+
+    .cta-card{
+      background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      padding:38px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .cta-pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .cta-pill{
+      padding:12px 14px;
+      border-radius:12px;
+      background:#17181a;
+      color:#fff;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .site-footer{
+      padding:34px 0 38px;
+      background:#ececef;
+    }
+
+    .footer-shell{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.1fr .8fr .8fr .8fr;
+      gap:24px;
+      padding:38px;
+    }
+
+    .footer-brand p{
+      margin:12px 0 0;
+      font-size:15px;
+      line-height:1.8;
+      color:rgba(255,255,255,.72);
+      max-width:420px;
+    }
+
+    .footer-col h4{
+      margin:0 0 14px;
+      font-size:16px;
+      letter-spacing:-.02em;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a,
+    .footer-links span{
+      color:rgba(255,255,255,.72);
+      font-size:15px;
+      line-height:1.7;
+      transition:.22s ease;
+    }
+
+    .footer-links a:hover{color:#fff}
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:22px 38px 28px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    .footer-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-badge{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#17181a;
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:22px;
+      transition:.22s ease;
+    }
+
+    .whatsapp-float:hover{transform:translateY(-2px)}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width:1320px){
+      .nav{gap:24px}
+      .footer-top{grid-template-columns:1fr 1fr}
+      .pdf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+
+    @media (max-width:1060px){
+      .nav,
+      .header-right .lang-link{
+        display:none;
+      }
+
+      .menu-toggle{display:flex}
+      .header-right{min-width:auto}
+      .hero-inner{padding:132px 34px 56px}
+    }
+
+    @media (max-width:760px){
+      .shell{width:min(100%, calc(100% - 22px))}
+      .site-header{padding:0}
+
+      .header-bar{
+        min-height:70px;
+        width:100%;
+        padding:12px 16px;
+        border-radius:0;
+      }
+
+      .brand{gap:10px}
+
+      .brand-logo{
+        height:28px;
+        width:auto;
+      }
+
+      .brand-name{font-size:13px}
+
+      .mobile-nav{
+        top:70px;
+        left:0;
+        right:0;
+        border-radius:0;
+        padding:14px 16px 16px;
+      }
+
+      .hero{
+        min-height:360px;
+      }
+
+      .hero-inner{
+        min-height:360px;
+        padding:116px 22px 42px;
+      }
+
+      .hero h1{font-size:42px}
+      .hero-text{font-size:16px}
+
+      .hero-actions,
+      .cta-actions{
+        width:100%;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn{
+        width:100%;
+      }
+
+      .section-inner,
+      .cta-card,
+      .footer-top,
+      .lang-top,
+      .pdf-grid{
+        padding-left:22px;
+        padding-right:22px;
+      }
+
+      .section-inner,
+      .cta-card,
+      .footer-top{
+        padding-top:22px;
+        padding-bottom:22px;
+      }
+
+      .lang-top{
+        padding-top:22px;
+      }
+
+      .pdf-grid{
+        grid-template-columns:1fr;
+        padding-top:18px;
+        padding-bottom:22px;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom{
+        padding:20px 22px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-top">
+    <div class="top-shell">
+      <header class="site-header">
+        <div class="header-bar">
+          <a href="/aprojec/index.html" class="brand" aria-label="A-PROJECT home">
+            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+            <span class="brand-name">A-PROJECT</span>
+          </a>
+
+          <nav class="nav" aria-label="Hoofdmenu">
+            <a href="/aprojec/index.html#over-ons">Over ons</a>
+            <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
+            <a href="/aprojec/realisaties.html">Realisaties</a>
+            <a href="/aprojec/onzediensten.html">Onze Diensten</a>
+            <a href="/aprojec/producten.html">Producten</a>
+            <a href="/aprojec/index.html#werkwijze">Werkwijze</a>
+            <a href="/aprojec/index.html#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="header-right">
+            <a class="lang-link" href="/aprojec/producten.html" aria-label="Nederlandse versie">🇳🇱</a>
+            <a class="lang-link" href="/aprojec/en/products.html" aria-label="Engelse versie">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl/produkty.html" aria-label="Poolse versie">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-lang">
+          <a href="/aprojec/producten.html">🇳🇱</a>
+          <a href="/aprojec/en/products.html">🇬🇧</a>
+          <a href="/aprojec/pl/produkty.html">🇵🇱</a>
+        </div>
+        <a href="/aprojec/index.html#over-ons">Over ons</a>
+        <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
+        <a href="/aprojec/realisaties.html">Realisaties</a>
+        <a href="/aprojec/onzediensten.html">Onze Diensten</a>
+        <a href="/aprojec/producten.html">Producten</a>
+        <a href="/aprojec/index.html#werkwijze">Werkwijze</a>
+        <a href="/aprojec/index.html#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <main>
+        <section class="hero">
+          <div class="hero-media">
+            <img src="./images/producten-hero.jpg" alt="A-PROJECT producten en brochures">
+          </div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-inner">
+            <div class="hero-content">
+              <span class="section-kicker" style="color:rgba(255,255,255,.64);">Producten</span>
+              <h1>Bekijk de producten waarmee wij werken.</h1>
+              <p class="hero-text">
+                Ontdek onze systemen, oplossingen en afwerkingen. Op deze pagina kun je per taal
+                de productbestanden bekijken en direct als PDF downloaden.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#producten-overzicht" class="btn btn-light">Bekijk bestanden</a>
+                <a href="#contact" class="btn btn-dark">Advies aanvragen</a>
+                <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <section class="section-block" id="producten-overzicht">
+    <div class="shell">
+      <div class="section-card section-light">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Bestanden</span>
+            <h2>PDF brochures per taal.</h2>
+            <p>
+              Alle documenten zijn overzichtelijk gesorteerd per taal.
+              Klik op bekijken om het bestand te openen of download het direct als PDF.
+            </p>
+          </div>
+
+          <div class="lang-sections" id="langSections"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="shell">
+      <div class="cta-card">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="section-kicker">Contact</span>
+          <h2>Vragen over een product of systeem?</h2>
+          <p>Neem contact op met A-PROJECT voor persoonlijk advies, mogelijkheden en een vrijblijvende offerte.</p>
+        </div>
+
+        <div class="cta-actions">
+          <a href="tel:+31628255738" class="btn btn-dark">Bel: +31 6 28255738</a>
+          <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
+          <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
+        </div>
+
+        <div class="cta-pills">
+          <span class="cta-pill">PDF brochures</span>
+          <span class="cta-pill">Persoonlijk advies</span>
+          <span class="cta-pill">Vrijblijvende offerte</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-shell">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand" style="min-width:auto;">
+              <img src="./images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <span class="brand-name">A-PROJECT</span>
+            </div>
+            <p>
+              A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien
+              met een moderne uitstraling, sterke isolatie en vakkundige montage.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigatie</h4>
+            <div class="footer-links">
+              <a href="/aprojec/index.html#over-ons">Over ons</a>
+              <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
+              <a href="/aprojec/realisaties.html">Realisaties</a>
+              <a href="/aprojec/onzediensten.html">Onze Diensten</a>
+              <a href="/aprojec/producten.html">Producten</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-links">
+              <a href="tel:+31628255738">+31 6 28255738</a>
+              <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+              <span>Serooskerkestraat 50, 5035GH Tilburg</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Bedrijf</h4>
+            <div class="footer-links">
+              <span>KVK: 65884949</span>
+              <span>100+ reviews</span>
+              <span>Kwaliteit, service en afwerking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 A-PROJECT. Alle rechten voorbehouden.</div>
+          <div class="footer-badges">
+            <span class="footer-badge">PDF Downloads</span>
+            <span class="footer-badge">Premium Kwaliteit</span>
+            <span class="footer-badge">Vrijblijvende Offerte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/31628255738" target="_blank" rel="noopener" aria-label="WhatsApp">
+    ✆
+  </a>
+
+  <script>
+    const productFiles = {
+      nl: [
+        {
+          title: "Kozijnen brochure",
+          text: "Bekijk de productinformatie, afwerkingen en mogelijkheden van onze kozijnsystemen.",
+          size: "PDF",
+          category: "Kozijnen",
+          view: "./pdf/nl/kozijnen-brochure.pdf",
+          download: "./pdf/nl/kozijnen-brochure.pdf"
+        },
+        {
+          title: "Deuren brochure",
+          text: "Ontdek moderne deuren, stijlen, kleuren en technische mogelijkheden.",
+          size: "PDF",
+          category: "Deuren",
+          view: "./pdf/nl/deuren-brochure.pdf",
+          download: "./pdf/nl/deuren-brochure.pdf"
+        },
+        {
+          title: "Schuifpuien brochure",
+          text: "Bekijk onze schuifdeuren en systemen voor meer licht, ruimte en comfort.",
+          size: "PDF",
+          category: "Schuifpuien",
+          view: "./pdf/nl/schuifpuien-brochure.pdf",
+          download: "./pdf/nl/schuifpuien-brochure.pdf"
+        }
+      ],
+      en: [
+        {
+          title: "Window brochure",
+          text: "Explore product details, finishes and possibilities of our window systems.",
+          size: "PDF",
+          category: "Windows",
+          view: "./pdf/en/window-brochure.pdf",
+          download: "./pdf/en/window-brochure.pdf"
+        },
+        {
+          title: "Door brochure",
+          text: "Discover modern door designs, colours and technical specifications.",
+          size: "PDF",
+          category: "Doors",
+          view: "./pdf/en/door-brochure.pdf",
+          download: "./pdf/en/door-brochure.pdf"
+        },
+        {
+          title: "Sliding systems brochure",
+          text: "See our sliding door solutions for light, space and everyday comfort.",
+          size: "PDF",
+          category: "Sliding systems",
+          view: "./pdf/en/sliding-systems-brochure.pdf",
+          download: "./pdf/en/sliding-systems-brochure.pdf"
+        }
+      ],
+      pl: [
+        {
+          title: "Broszura okien",
+          text: "Sprawdź informacje o systemach okiennych, wykończeniach i dostępnych możliwościach.",
+          size: "PDF",
+          category: "Okna",
+          view: "./pdf/pl/broszura-okien.pdf",
+          download: "./pdf/pl/broszura-okien.pdf"
+        },
+        {
+          title: "Broszura drzwi",
+          text: "Poznaj nowoczesne drzwi, style, kolory i możliwości techniczne.",
+          size: "PDF",
+          category: "Drzwi",
+          view: "./pdf/pl/broszura-drzwi.pdf",
+          download: "./pdf/pl/broszura-drzwi.pdf"
+        },
+        {
+          title: "Broszura systemów przesuwnych",
+          text: "Zobacz systemy przesuwne zapewniające więcej światła, przestrzeni i komfortu.",
+          size: "PDF",
+          category: "Systemy przesuwne",
+          view: "./pdf/pl/broszura-systemow-przesuwnych.pdf",
+          download: "./pdf/pl/broszura-systemow-przesuwnych.pdf"
+        }
+      ]
+    };
+
+    const languageMeta = [
+      {
+        key: "nl",
+        title: "Nederlands",
+        sub: "Nederlandstalige productbestanden en brochures.",
+        badge: "NL",
+        theme: "light"
+      },
+      {
+        key: "en",
+        title: "English",
+        sub: "English product files and downloadable brochures.",
+        badge: "EN",
+        theme: "dark"
+      },
+      {
+        key: "pl",
+        title: "Polski",
+        sub: "Polskie katalogi produktowe i pliki do pobrania.",
+        badge: "PL",
+        theme: "light"
+      }
+    ];
+
+    const langSections = document.getElementById("langSections");
+
+    function buildProductSections() {
+      languageMeta.forEach((lang, index) => {
+        const files = productFiles[lang.key] || [];
+
+        const section = document.createElement("article");
+        section.className = `lang-block ${lang.theme} reveal`;
+
+        const cards = files.map(file => `
+          <div class="pdf-card">
+            <div class="pdf-card-top">
+              <div class="pdf-icon">PDF</div>
+              <h3 class="pdf-title">${file.title}</h3>
+              <p class="pdf-text">${file.text}</p>
+              <div class="pdf-meta">
+                <span class="pdf-pill">${file.category}</span>
+                <span class="pdf-pill">${file.size}</span>
+              </div>
+            </div>
+            <div class="pdf-actions">
+              <a class="btn ${lang.theme === "dark" ? "btn-light" : "btn-dark"}" href="${file.view}" target="_blank" rel="noopener">Bekijken</a>
+              <a class="btn ${lang.theme === "dark" ? "btn-ghost" : "btn-light"}" href="${file.download}" download>Download PDF</a>
+            </div>
+          </div>
+        `).join("");
+
+        section.innerHTML = `
+          <div class="lang-top">
+            <div>
+              <h3 class="lang-title">${lang.title}</h3>
+              <p class="lang-sub">${lang.sub}</p>
+            </div>
+            <span class="lang-badge">${lang.badge}</span>
+          </div>
+          <div class="pdf-grid">
+            ${cards}
+          </div>
+        `;
+
+        langSections.appendChild(section);
+      });
+    }
+
+    buildProductSections();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileNav) mobileNav.classList.remove("open");
+          if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
+    });
+  </script>
+</body>
+</html>
