@@ -976,86 +976,54 @@
   </a>
 
   <script>
-    const productFiles = {
-      nl: [
-        {
-          title: "Kozijnen brochure",
-          text: "Bekijk de productinformatie, afwerkingen en mogelijkheden van onze kozijnsystemen.",
-          size: "PDF",
-          category: "Kozijnen",
-          view: "./pdf/nl/kozijnen-brochure.pdf",
-          download: "./pdf/nl/kozijnen-brochure.pdf"
-        },
-        {
-          title: "Deuren brochure",
-          text: "Ontdek moderne deuren, stijlen, kleuren en technische mogelijkheden.",
-          size: "PDF",
-          category: "Deuren",
-          view: "./pdf/nl/deuren-brochure.pdf",
-          download: "./pdf/nl/deuren-brochure.pdf"
-        },
-        {
-          title: "Schuifpuien brochure",
-          text: "Bekijk onze schuifdeuren en systemen voor meer licht, ruimte en comfort.",
-          size: "PDF",
-          category: "Schuifpuien",
-          view: "./pdf/nl/schuifpuien-brochure.pdf",
-          download: "./pdf/nl/schuifpuien-brochure.pdf"
-        }
-      ],
-      en: [
-        {
-          title: "Window brochure",
-          text: "Explore product details, finishes and possibilities of our window systems.",
-          size: "PDF",
-          category: "Windows",
-          view: "./pdf/en/window-brochure.pdf",
-          download: "./pdf/en/window-brochure.pdf"
-        },
-        {
-          title: "Door brochure",
-          text: "Discover modern door designs, colours and technical specifications.",
-          size: "PDF",
-          category: "Doors",
-          view: "./pdf/en/door-brochure.pdf",
-          download: "./pdf/en/door-brochure.pdf"
-        },
-        {
-          title: "Sliding systems brochure",
-          text: "See our sliding door solutions for light, space and everyday comfort.",
-          size: "PDF",
-          category: "Sliding systems",
-          view: "./pdf/en/sliding-systems-brochure.pdf",
-          download: "./pdf/en/sliding-systems-brochure.pdf"
-        }
-      ],
-      pl: [
-        {
-          title: "Broszura okien",
-          text: "Sprawdź informacje o systemach okiennych, wykończeniach i dostępnych możliwościach.",
-          size: "PDF",
-          category: "Okna",
-          view: "./pdf/pl/broszura-okien.pdf",
-          download: "./pdf/pl/broszura-okien.pdf"
-        },
-        {
-          title: "Broszura drzwi",
-          text: "Poznaj nowoczesne drzwi, style, kolory i możliwości techniczne.",
-          size: "PDF",
-          category: "Drzwi",
-          view: "./pdf/pl/broszura-drzwi.pdf",
-          download: "./pdf/pl/broszura-drzwi.pdf"
-        },
-        {
-          title: "Broszura systemów przesuwnych",
-          text: "Zobacz systemy przesuwne zapewniające więcej światła, przestrzeni i komfortu.",
-          size: "PDF",
-          category: "Systemy przesuwne",
-          view: "./pdf/pl/broszura-systemow-przesuwnych.pdf",
-          download: "./pdf/pl/broszura-systemow-przesuwnych.pdf"
-        }
-      ]
-    };
+   const allFiles = [
+  "Aluplast.colourPL.pdf",
+  "Aluprof.colourENG.pdf",
+  "Buitendeuren.pdf",
+  "Drzwi.pdf",
+  "Entrance-door_EN.pdf",
+  "Gealan.colourPL.pdf",
+  "PVC.alles.NL.pdf",
+  "PVC.and.all.enEN.pdf",
+  "PVC.and.ALL.pl.pdf",
+  "Rolety_PL.pdf",
+  "Roller-shutter_EN.pdf",
+  "Rolluiken_NL.pdf"
+];
+
+function detectLang(file) {
+  if (file.toLowerCase().includes("pl")) return "pl";
+  if (file.toLowerCase().includes("en")) return "en";
+  if (file.toLowerCase().includes("nl")) return "nl";
+  return "nl";
+}
+
+function formatTitle(file) {
+  return file
+    .replace(".pdf", "")
+    .replace(/[_\.]/g, " ")
+    .replace(/\b(pl|en|nl)\b/gi, "")
+    .trim();
+}
+
+const productFiles = {
+  nl: [],
+  en: [],
+  pl: []
+};
+
+allFiles.forEach(file => {
+  const lang = detectLang(file);
+
+  productFiles[lang].push({
+    title: formatTitle(file),
+    text: "Bekijk productinformatie en specificaties.",
+    size: "PDF",
+    category: "Product",
+    view: `./pdf/${file}`,
+    download: `./pdf/${file}`
+  });
+});
 
     const languageMeta = [
       {
