@@ -1,1 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-PROJECT | Projects</title>
+  <meta name="description" content="Explore A-PROJECT projects: PVC windows, doors and sliding systems with premium finishing and a modern look." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#151617;
+      --bg-2:#111213;
+      --panel:#171819;
+      --panel-2:#1B1C1E;
+      --light:#ECECEE;
+      --white:#FFFFFF;
+      --text:#F7F7F8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.52);
+      --dark-text:#111214;
+      --dark-muted:rgba(17,18,20,.68);
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.22);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.12);
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:18px;
+      --radius-xl:24px;
+      --radius-2xl:28px;
+      --section-max:1520px;
+    }
 
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#ececef;
+      color:var(--dark-text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .shell{
+      width:min(var(--section-max), calc(100% - 52px));
+      margin:0 auto;
+    }
+
+    .section-block{padding:34px 0 0}
+    .section-pad{padding:24px 0 0}
+
+    .section-card{
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-light{
+      background:#efeff1;
+      color:var(--dark-text);
+    }
+
+    .section-dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+    }
+
+    .section-inner{
+      padding:54px 36px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-light .section-kicker{color:rgba(17,18,20,.48)}
+    .section-dark .section-kicker{color:rgba(255,255,255,.54)}
+
+    .section-head{
+      max-width:860px;
+      margin-bottom:28px;
+    }
+
+    .section-head h1,
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(32px, 3.8vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .section-light .section-head p{color:var(--dark-muted)}
+    .section-dark .section-head p{color:var(--muted)}
+
+    .page-top{
+      background:#ececef;
+      padding:0;
+    }
+
+    .top-shell{
+      width:100%;
+      margin:0;
+      position:relative;
+      border-radius:0;
+      overflow:hidden;
+      background:#111;
+      box-shadow:none;
+    }
+
+    /* HEADER */
+    .site-header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:30;
+      padding:0;
+    }
+
+    .header-bar{
+      min-height:78px;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 26px;
+      border-radius:0;
+      background:rgba(18,19,20,.78);
+      border:none;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:none;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:auto;
+      flex-shrink:0;
+    }
+
+    .brand-logo{
+      display:block;
+      width:auto;
+      height:42px;
+      max-width:none;
+      object-fit:contain;
+      flex-shrink:0;
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.11em;
+      white-space:nowrap;
+      line-height:1;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:34px;
+      flex:1;
+    }
+
+    .nav a{
+      color:rgba(255,255,255,.94);
+      font-size:14px;
+      font-weight:500;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{opacity:.76}
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:230px;
+      justify-content:flex-end;
+      flex-shrink:0;
+    }
+
+    .lang-link{
+      font-size:22px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:.22s ease;
+    }
+
+    .lang-link:hover{transform:translateY(-1px)}
+
+    .menu-toggle{
+      display:none;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+    }
+
+    .mobile-nav{
+      position:absolute;
+      top:78px;
+      left:0;
+      right:0;
+      z-index:25;
+      display:none;
+      background:rgba(17,18,20,.98);
+      border:none;
+      border-radius:0;
+      padding:14px 16px 16px;
+      box-shadow:none;
+    }
+
+    .mobile-nav.open{display:block}
+
+    .mobile-nav a{
+      display:block;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      padding:13px 8px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .mobile-nav a:last-child{border-bottom:none}
+
+    .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-lang a{
+      border-bottom:none;
+      padding:10px 12px;
+      background:rgba(255,255,255,.07);
+      border-radius:12px;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      min-height:620px;
+      background:#111;
+      width:100%;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.66) 0%, rgba(0,0,0,.44) 30%, rgba(0,0,0,.18) 58%, rgba(0,0,0,.08) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.16) 0%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.24) 100%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:620px;
+      display:flex;
+      align-items:center;
+      padding:138px 72px 70px;
+    }
+
+    .hero-content{
+      max-width:640px;
+      color:#fff;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(46px,5vw,72px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .hero-text{
+      margin:0 0 28px;
+      font-size:17px;
+      line-height:1.72;
+      color:rgba(255,255,255,.82);
+      max-width:560px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.22s ease;
+      white-space:nowrap;
+      cursor:pointer;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-dark{
+      background:#161719;
+      color:#fff;
+      border-color:#161719;
+      box-shadow:0 12px 22px rgba(0,0,0,.22);
+    }
+
+    .btn-light{
+      background:#f4f4f5;
+      color:#111214;
+      border-color:#f4f4f5;
+      box-shadow:0 12px 22px rgba(0,0,0,.10);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+
+    /* PROJECTS */
+    .projects-list{
+      display:grid;
+      gap:24px;
+    }
+
+    .project-card{
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .project-card.light{
+      background:#f3f3f5;
+      color:var(--dark-text);
+    }
+
+    .project-card.dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+      border-color:rgba(255,255,255,.06);
+    }
+
+    .project-inner{
+      display:grid;
+      grid-template-columns:minmax(320px,420px) minmax(0,1fr);
+      gap:24px;
+      align-items:start;
+      padding:30px;
+    }
+
+    .project-card.reverse .project-inner{
+      grid-template-columns:minmax(0,1fr) minmax(320px,420px);
+    }
+
+    .project-text{
+      position:sticky;
+      top:24px;
+      align-self:start;
+    }
+
+    .project-card.reverse .project-text{
+      order:2;
+    }
+
+    .project-card.reverse .project-gallery{
+      order:1;
+    }
+
+    .project-number{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:74px;
+      height:34px;
+      padding:0 14px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .project-card.light .project-number{
+      background:rgba(17,18,20,.08);
+      color:rgba(17,18,20,.6);
+    }
+
+    .project-card.dark .project-number{
+      background:rgba(255,255,255,.08);
+      color:rgba(255,255,255,.68);
+    }
+
+    .project-title{
+      margin:0 0 14px;
+      font-size:clamp(26px,2.3vw,40px);
+      line-height:1.06;
+      letter-spacing:-.04em;
+      font-weight:800;
+    }
+
+    .project-description{
+      margin:0;
+      font-size:16px;
+      line-height:1.84;
+      white-space:pre-line;
+    }
+
+    .project-card.light .project-description{color:var(--dark-muted)}
+    .project-card.dark .project-description{color:var(--muted)}
+
+    .project-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .project-tag{
+      padding:10px 12px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:700;
+      line-height:1;
+    }
+
+    .project-card.light .project-tag{
+      background:#17181a;
+      color:#fff;
+    }
+
+    .project-card.dark .project-tag{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+    }
+
+    .project-gallery{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      align-content:start;
+    }
+
+    .project-photo{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      background:#d7d8dc;
+      box-shadow:var(--shadow-soft);
+      aspect-ratio:1 / 1.04;
+      cursor:pointer;
+    }
+
+    .project-card.dark .project-photo{
+      background:#202225;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .project-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .project-photo:hover img{
+      transform:scale(1.03);
+    }
+
+    .project-photo.featured{
+      grid-column:span 2;
+      grid-row:span 2;
+      aspect-ratio:1.16 / 1;
+    }
+
+    .project-empty{
+      padding:22px;
+      border-radius:18px;
+      background:rgba(0,0,0,.04);
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .project-card.dark .project-empty{
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.78);
+    }
+
+    /* CTA */
+    .cta-card{
+      background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      padding:38px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .cta-pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .cta-pill{
+      padding:12px 14px;
+      border-radius:12px;
+      background:#17181a;
+      color:#fff;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    /* FOOTER */
+    .site-footer{
+      padding:34px 0 38px;
+      background:#ececef;
+    }
+
+    .footer-shell{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.1fr .8fr .8fr .8fr;
+      gap:24px;
+      padding:38px;
+    }
+
+    .footer-brand p{
+      margin:12px 0 0;
+      font-size:15px;
+      line-height:1.8;
+      color:rgba(255,255,255,.72);
+      max-width:420px;
+    }
+
+    .footer-col h4{
+      margin:0 0 14px;
+      font-size:16px;
+      letter-spacing:-.02em;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a,
+    .footer-links span{
+      color:rgba(255,255,255,.72);
+      font-size:15px;
+      line-height:1.7;
+      transition:.22s ease;
+    }
+
+    .footer-links a:hover{color:#fff}
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:22px 38px 28px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    .footer-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-badge{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#17181a;
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:22px;
+      transition:.22s ease;
+    }
+
+    .whatsapp-float:hover{transform:translateY(-2px)}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      z-index:1200;
+      background:rgba(7,8,10,.92);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px;
+      opacity:0;
+      visibility:hidden;
+      transition:.25s ease;
+    }
+
+    .lightbox.open{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .lightbox-inner{
+      position:relative;
+      width:min(1280px, 100%);
+      max-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox-img{
+      max-width:100%;
+      max-height:85vh;
+      border-radius:18px;
+      box-shadow:0 24px 70px rgba(0,0,0,.4);
+      object-fit:contain;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next{
+      position:absolute;
+      border:none;
+      cursor:pointer;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      background:rgba(255,255,255,.08);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+      transition:.2s ease;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover{
+      background:rgba(255,255,255,.14);
+    }
+
+    .lightbox-close{
+      top:-14px;
+      right:-14px;
+      width:50px;
+      height:50px;
+      border-radius:14px;
+      font-size:22px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+      top:50%;
+      transform:translateY(-50%);
+      width:52px;
+      height:52px;
+      border-radius:14px;
+      font-size:24px;
+    }
+
+    .lightbox-prev{left:-70px}
+    .lightbox-next{right:-70px}
+
+    @media (max-width:1320px){
+      .nav{gap:24px}
+
+      .project-inner,
+      .project-card.reverse .project-inner{
+        grid-template-columns:1fr;
+      }
+
+      .project-text{
+        position:static;
+      }
+
+      .project-card.reverse .project-text,
+      .project-card.reverse .project-gallery{
+        order:initial;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .lightbox-prev{left:12px}
+      .lightbox-next{right:12px}
+      .lightbox-close{top:12px; right:12px}
+    }
+
+    @media (max-width:1060px){
+      .nav,
+      .header-right .lang-link{
+        display:none;
+      }
+
+      .menu-toggle{display:flex}
+      .header-right{min-width:auto}
+
+      .hero-inner{padding:132px 34px 56px}
+
+      .project-gallery{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .project-photo.featured{
+        grid-column:span 2;
+      }
+    }
+
+    @media (max-width:760px){
+      .shell{width:min(100%, calc(100% - 22px))}
+      .site-header{padding:0}
+
+      .header-bar{
+        min-height:70px;
+        width:100%;
+        padding:12px 16px;
+        border-radius:0;
+      }
+
+      .brand{gap:10px}
+
+      .brand-logo{
+        height:28px;
+        width:auto;
+      }
+
+      .brand-name{font-size:13px}
+
+      .mobile-nav{
+        top:70px;
+        left:0;
+        right:0;
+        border-radius:0;
+        padding:14px 16px 16px;
+      }
+
+      .hero{min-height:560px}
+
+      .hero-inner{
+        min-height:560px;
+        padding:116px 22px 42px;
+      }
+
+      .hero h1{font-size:44px}
+      .hero-text{font-size:16px}
+
+      .hero-actions,
+      .cta-actions{
+        width:100%;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn{
+        width:100%;
+      }
+
+      .section-inner,
+      .project-inner,
+      .cta-card,
+      .footer-top{
+        padding:22px;
+      }
+
+      .project-gallery{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .project-photo,
+      .project-photo.featured{
+        grid-column:span 1;
+        grid-row:span 1;
+        aspect-ratio:1 / 1;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom{
+        padding:20px 22px 24px;
+      }
+
+      .lightbox{
+        padding:16px;
+      }
+
+      .lightbox-prev,
+      .lightbox-next{
+        width:44px;
+        height:44px;
+        font-size:20px;
+      }
+
+      .lightbox-close{
+        width:44px;
+        height:44px;
+        font-size:20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-top">
+    <div class="top-shell">
+      <header class="site-header">
+        <div class="header-bar">
+          <a href="/aprojec/en/index.html" class="brand" aria-label="A-PROJECT home">
+            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+            <span class="brand-name">A-PROJECT</span>
+          </a>
+
+          <nav class="nav" aria-label="Main menu">
+            <a href="/aprojec/en/index.html#about-us">About us</a>
+            <a href="/aprojec/en/index.html#why-us">Why us?</a>
+            <a href="/aprojec/en/projects.html">Projects</a>
+            <a href="/aprojec/en/services.html">Our Services</a>
+            <a href="/aprojec/en/products.html">Products</a>
+            <a href="/aprojec/en/index.html#reviews">Reviews</a>
+            <a href="/aprojec/en/index.html#subsidy">Subsidy</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="header-right">
+            <a class="lang-link" href="/aprojec/realisaties.html" aria-label="Dutch version">🇳🇱</a>
+            <a class="lang-link" href="/aprojec/en/projects.html" aria-label="English version">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl/realisacje.html" aria-label="Polish version">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-lang">
+          <a href="/aprojec/realisaties.html">🇳🇱</a>
+          <a href="/aprojec/en/projects.html">🇬🇧</a>
+          <a href="/aprojec/pl/realisacje.html">🇵🇱</a>
+        </div>
+        <a href="/aprojec/en/index.html#about-us">About us</a>
+        <a href="/aprojec/en/index.html#why-us">Why us?</a>
+        <a href="/aprojec/en/projects.html">Projects</a>
+        <a href="/aprojec/en/services.html">Our Services</a>
+        <a href="/aprojec/en/products.html">Products</a>
+        <a href="/aprojec/en/index.html#reviews">Reviews</a>
+        <a href="/aprojec/en/index.html#subsidy">Subsidy</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <main>
+        <section class="hero">
+          <div class="hero-media">
+            <img src="/aprojec/images/przesuwaneokna.jpg" alt="A-PROJECT projects">
+          </div>
+          <div class="hero-overlay"></div>
+
+          <div class="hero-inner">
+            <div class="hero-content">
+              <span class="section-kicker" style="color:rgba(255,255,255,.64);">Projects</span>
+              <h1>Explore our projects.</h1>
+              <p class="hero-text">
+                From front doors and windows to complete transformations with sliding systems:
+                discover how A-PROJECT gives homes a modern appearance, better insulation and more comfort.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-light">View projects</a>
+                <a href="#contact" class="btn btn-dark">Request a quote</a>
+                <a href="https://www.facebook.com/aprojectaprojectaproject" target="_blank" rel="noopener" class="btn btn-ghost">More photos on Facebook</a>
+                <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <section class="section-block" id="projects">
+    <div class="shell">
+      <div class="section-card section-light">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Projects</span>
+            <h2>Our work project by project.</h2>
+            <p>
+              View the completed work and photos for each project.
+              The images are automatically loaded from the matching project folder.
+            </p>
+          </div>
+
+          <div class="projects-list" id="projectsList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="shell">
+      <div class="cta-card">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="section-kicker">Contact</span>
+          <h2>Interested in new windows or doors?</h2>
+          <p>Contact A-PROJECT for personal advice and a free quote.</p>
+        </div>
+
+        <div class="cta-actions">
+          <a href="tel:+31628255738" class="btn btn-dark">Call: +31 6 28255738</a>
+          <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
+          <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
+        </div>
+
+        <div class="cta-pills">
+          <span class="cta-pill">100+ reviews</span>
+          <span class="cta-pill">Free quote</span>
+          <span class="cta-pill">Personal advice</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-shell">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand" style="min-width:auto;">
+              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <span class="brand-name">A-PROJECT</span>
+            </div>
+            <p>
+              A-PROJECT stands for high-quality PVC windows, doors and sliding systems
+              with a modern look, strong insulation and professional installation.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <div class="footer-links">
+              <a href="/aprojec/en/index.html#about-us">About us</a>
+              <a href="/aprojec/en/index.html#why-us">Why us?</a>
+              <a href="/aprojec/en/projects.html">Projects</a>
+              <a href="/aprojec/en/services.html">Our Services</a>
+              <a href="/aprojec/en/products.html">Products</a>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-links">
+              <a href="tel:+31628255738">+31 6 28255738</a>
+              <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+              <span>Serooskerkestraat 50, 5035GH Tilburg</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <div class="footer-links">
+              <span>KVK: 65884949</span>
+              <span>100+ reviews</span>
+              <span>Quality, service and finishing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 A-PROJECT. All rights reserved.</div>
+          <div class="footer-badges">
+            <span class="footer-badge">100+ Reviews</span>
+            <span class="footer-badge">Premium Finish</span>
+            <span class="footer-badge">Free Quote</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/31628255738" target="_blank" rel="noopener" aria-label="WhatsApp">
+    ✆
+  </a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged project photo">
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next photo">›</button>
+    </div>
+  </div>
+
+  <script>
+   const projects = [
+  {
+    id: 39,
+    title: "Helmond project",
+    description: `New windows and a front door in a dark finish that perfectly highlights the character of the house.
+A modern appearance and more everyday comfort.`,
+    tags: ["Helmond", "Dark finish", "More comfort"]
+  },
+  {
+    id: 38,
+    title: "Commercial project – offices",
+    description: `Large companies trust our quality.
+3 windows replaced in office 1 and 3 windows + doors in a second office.
+Professional finishing and durable solutions.`,
+    tags: ["Offices", "Commercial", "Top quality"]
+  },
+  {
+    id: 37,
+    title: "Complete building refresh",
+    description: `New windows that give the entire building a fresh look.
+More light, a modern appearance and improved living comfort.`,
+    tags: ["Refresh", "More light", "Modern"]
+  },
+  {
+    id: 36,
+    title: "Tiel – 5 windows + front door",
+    description: `Complete replacement of 5 windows and a front door.
+The dark modern finish creates a luxury appearance and better insulation.`,
+    tags: ["Tiel", "5 windows", "Front door"]
+  },
+  {
+    id: 35,
+    title: "Large HST sliding door",
+    description: `Black HST sliding doors create maximum light and space.
+A perfect connection between home and garden.
+Luxury appearance and optimum ease of use.`,
+    tags: ["HST", "Sliding door", "Luxury"]
+  },
+  {
+    id: 34,
+    title: "Complete home transformation",
+    description: `10 windows replaced in 2 phases.
+The dark finish gives a modern and elegant appearance and increases comfort.`,
+    tags: ["10 windows", "2 phases", "Transformation"]
+  },
+  {
+    id: 33,
+    title: "Fast Breda project",
+    description: `Immediate replacement of 1 window.
+Quickly completed with a clean final result.`,
+    tags: ["Breda", "Fast service", "Direct result"]
+  },
+  {
+    id: 32,
+    title: "Corner window – WOW effect",
+    description: `Old window replaced by a modern corner window.
+More light, open space and a strong visual impact.`,
+    tags: ["Corner window", "WOW effect", "More light"]
+  },
+  {
+    id: 31,
+    title: "Industrial hall doors",
+    description: `Installation of doors for a well-known company.
+Top quality and trust from major clients.`,
+    tags: ["Industrial hall", "Commercial", "Top quality"]
+  },
+  {
+    id: 30,
+    title: "Aluminium → PVC upgrade",
+    description: `Old aluminium frames replaced with modern PVC solutions.
+Better insulation, more light and a fresh appearance.`,
+    tags: ["PVC", "Upgrade", "Insulation"]
+  },
+  {
+    id: 29,
+    title: "5 windows + Smart Slide",
+    description: `Modern white windows combined with sliding doors.
+More light, space and comfort at home.`,
+    tags: ["Smart Slide", "5 windows", "Comfort"]
+  },
+  {
+    id: 28,
+    title: "Waalwijk – complete replacement",
+    description: `New white windows and doors give the home a fresh and timeless appearance.`,
+    tags: ["Waalwijk", "White", "Timeless"]
+  },
+  {
+    id: 27,
+    title: "Tilburg – impressive transformation",
+    description: `Anthracite frames and a corner window create a strong WOW effect.
+More light and a better feeling of space.`,
+    tags: ["Tilburg", "Corner window", "WOW"]
+  },
+  {
+    id: 26,
+    title: "Classic with a modern twist",
+    description: `Light-coloured frames with large glass surfaces provide maximum daylight and an elegant appearance.`,
+    tags: ["Classic", "More light", "Elegant"]
+  },
+  {
+    id: 25,
+    title: "Modern entrance upgrade",
+    description: `Old wooden door replaced with a sleek black design including a sidelight.
+Modern appearance and better security.`,
+    tags: ["Black", "Sidelight", "Entrance"]
+  },
+  {
+    id: 24,
+    title: "Waalwijk – windows + doors",
+    description: `Replacement of windows and balcony doors with HR+++ glass.
+Maximum insulation and comfort.`,
+    tags: ["Waalwijk", "HR+++", "Balcony doors"]
+  },
+  {
+    id: 23,
+    title: "Valkenswaard – 4 windows + door",
+    description: `Modern anthracite frames with HR+++ glazing.
+Excellent insulation and clean finishing.`,
+    tags: ["Valkenswaard", "HR+++", "Anthracite"]
+  },
+  {
+    id: 22,
+    title: "Helmond project",
+    description: `Anthracite remains a favourite.
+Perfect installation and a clean final result.`,
+    tags: ["Helmond", "Anthracite", "Top result"]
+  },
+  {
+    id: 21,
+    title: "2 front doors Tilburg",
+    description: `Grey front doors give the house a unique character.`,
+    tags: ["Tilburg", "Front door", "Unique"]
+  },
+  {
+    id: 20,
+    title: "Complete front facade renovation",
+    description: `New windows and a door with large glass sections bring in more light and create an elegant appearance.`,
+    tags: ["Front facade", "Glass", "Elegant"]
+  },
+  {
+    id: 19,
+    title: "Reeshof project",
+    description: `New windows and 2 sets of doors.
+Anthracite outside and black inside create a luxurious look.`,
+    tags: ["Reeshof", "Luxury", "Doors"]
+  },
+  {
+    id: 18,
+    title: "Tilburg – Black Jet matt",
+    description: `Black windows create a strong and modern appearance.`,
+    tags: ["Tilburg", "Black", "Modern"]
+  },
+  {
+    id: 17,
+    title: "Front door Tilburg",
+    description: `Front door fully renewed with a clean final result.`,
+    tags: ["Tilburg", "Front door", "Renewed"]
+  },
+  {
+    id: 16,
+    title: "Waalwijk – front door + window",
+    description: `New front door and window installed.
+Fresh and neat appearance.`,
+    tags: ["Waalwijk", "Front door", "Window"]
+  },
+  {
+    id: 15,
+    title: "Entrance transformation",
+    description: `New doors with sidelights improve appearance and security.`,
+    tags: ["Sidelight", "Security", "Entrance"]
+  },
+  {
+    id: 14,
+    title: "11 windows + 2 doors",
+    description: `Complete replacement of outdated constructions.
+More light, better insulation and higher comfort.`,
+    tags: ["11 windows", "2 doors", "Comfort"]
+  },
+  {
+    id: 13,
+    title: "Veghel project",
+    description: `New windows and front door installed.`,
+    tags: ["Veghel", "Front door", "Windows"]
+  },
+  {
+    id: 12,
+    title: "Complete window replacement",
+    description: `Modern anthracite frames provide better insulation and a fresh appearance.`,
+    tags: ["Windows", "Anthracite", "Insulation"]
+  },
+  {
+    id: 10,
+    title: "Schijndel – window replacement",
+    description: `New windows give the home a fresh appearance and improve comfort.`,
+    tags: ["Schijndel", "Windows", "Comfort"]
+  },
+  {
+    id: 9,
+    title: "Smart Slide upgrade",
+    description: `Old sliding doors replaced with a modern Smart Slide system.
+Stronger, better and more beautiful.`,
+    tags: ["Smart Slide", "Upgrade", "Sliding doors"]
+  },
+  {
+    id: 8,
+    title: "Before / After",
+    description: `From an old entrance to a modern facade.
+Better appearance and insulation.`,
+    tags: ["Before/After", "Facade", "Insulation"]
+  },
+  {
+    id: 7,
+    title: "Modern entrance",
+    description: `New anthracite windows and doors create a sleek and modern look.`,
+    tags: ["Entrance", "Anthracite", "Modern"]
+  },
+  {
+    id: 6,
+    title: "Tilburg – Ideal 7000NL",
+    description: `New window with HR+++ glass and ventilation.
+Perfect insulation in summer and winter.`,
+    tags: ["Tilburg", "HR+++", "Ventilation"]
+  },
+  {
+    id: 5,
+    title: "Apeldoorn renovation",
+    description: `New anthracite windows with Keralit facade cladding create a modern appearance.`,
+    tags: ["Apeldoorn", "Keralit", "Modern"]
+  },
+  {
+    id: 4,
+    title: "1930s style",
+    description: `A classic appearance combined with modern technology and insulation.`,
+    tags: ["1930s", "Insulation", "Comfort"]
+  },
+  {
+    id: 3,
+    title: "Schijndel transformation",
+    description: `Modern look, warmer home and lower energy costs.`,
+    tags: ["Schijndel", "Energy", "Warmth"]
+  },
+  {
+    id: 2,
+    title: "New windows",
+    description: `Brilliant Weiss windows provide a better appearance and more comfort.`,
+    tags: ["Windows", "Comfort", "Style"]
+  },
+  {
+    id: 1,
+    title: "Garage door upgrade",
+    description: `New designer garage door with Chinchilla glass.
+More light and excellent insulation.`,
+    tags: ["Garage door", "Chinchilla", "Anthracite"]
+  }
+];
+
+    const projectsList = document.getElementById("projectsList");
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+    const lightboxPrev = document.getElementById("lightboxPrev");
+    const lightboxNext = document.getElementById("lightboxNext");
+
+    let currentGalleryImages = [];
+    let currentImageIndex = 0;
+
+    function buildProjects() {
+      projects.forEach((project, index) => {
+        const article = document.createElement("article");
+        const isDark = index % 2 !== 0;
+        const isReverse = index % 2 !== 0;
+
+        article.className = `project-card ${isDark ? "dark" : "light"} ${isReverse ? "reverse" : ""} reveal`;
+
+        const tagsHTML = project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join("");
+
+        article.innerHTML = `
+          <div class="project-inner">
+            <div class="project-text">
+              <span class="project-number">Project ${project.id}</span>
+              <h3 class="project-title">${project.title}</h3>
+              <p class="project-description">${project.description}</p>
+              <div class="project-tags">${tagsHTML}</div>
+            </div>
+            <div class="project-gallery" id="gallery-${project.id}">
+              <div class="project-empty">Photos are loading...</div>
+            </div>
+          </div>
+        `;
+
+        projectsList.appendChild(article);
+        loadProjectImages(project.id);
+      });
+    }
+
+    function loadProjectImages(projectId, maxImages = 12) {
+      const gallery = document.getElementById(`gallery-${projectId}`);
+      if (!gallery) return;
+
+      const foundImages = [];
+      let checked = 0;
+
+      for (let i = 1; i <= maxImages; i++) {
+        const img = new Image();
+        const path = `/aprojec/images/${projectId}/${i}.jpeg`;
+
+        img.onload = function () {
+          foundImages.push(path);
+          checked++;
+          if (checked === maxImages) renderGallery(gallery, foundImages, projectId);
+        };
+
+        img.onerror = function () {
+          checked++;
+          if (checked === maxImages) renderGallery(gallery, foundImages, projectId);
+        };
+
+        img.src = path;
+      }
+    }
+
+    function renderGallery(gallery, images, projectId) {
+      gallery.innerHTML = "";
+
+      if (!images.length) {
+        gallery.innerHTML = `<div class="project-empty">No photos found in folder /aprojec/images/${projectId}/</div>`;
+        return;
+      }
+
+      const getImageNumber = (path) => {
+        return parseInt(path.match(/\/(\d+)\.jpe?g$/i)?.[1] || "0", 10);
+      };
+
+      const imageOne = images.find(src => getImageNumber(src) === 1);
+      const otherImages = images
+        .filter(src => getImageNumber(src) !== 1)
+        .sort((a, b) => getImageNumber(b) - getImageNumber(a));
+
+      const orderedImages = imageOne ? [imageOne, ...otherImages] : otherImages;
+
+      orderedImages.forEach((src, index) => {
+        const figure = document.createElement("figure");
+        figure.className = `project-photo ${index === 0 && orderedImages.length >= 3 ? "featured" : ""}`;
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `A-PROJECT project ${projectId} photo ${index + 1}`;
+        img.loading = "lazy";
+        img.dataset.gallery = projectId;
+        img.dataset.index = index;
+
+        img.addEventListener("click", () => {
+          openLightbox(orderedImages, index);
+        });
+
+        figure.appendChild(img);
+        gallery.appendChild(figure);
+      });
+    }
+
+    function openLightbox(images, index) {
+      currentGalleryImages = images;
+      currentImageIndex = index;
+      updateLightbox();
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function updateLightbox() {
+      if (!currentGalleryImages.length) return;
+      lightboxImg.src = currentGalleryImages[currentImageIndex];
+    }
+
+    function showPrevImage() {
+      if (!currentGalleryImages.length) return;
+      currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+      updateLightbox();
+    }
+
+    function showNextImage() {
+      if (!currentGalleryImages.length) return;
+      currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+      updateLightbox();
+    }
+
+    buildProjects();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileNav) mobileNav.classList.remove("open");
+          if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxPrev.addEventListener("click", showPrevImage);
+      lightboxNext.addEventListener("click", showNextImage);
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") showPrevImage();
+        if (e.key === "ArrowRight") showNextImage();
+      });
+    });
+  </script>
+</body>
+</html>
