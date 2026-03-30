@@ -3,1197 +3,1380 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A-PROJECT | Okna plastikowe, drzwi i drzwi przesuwne</title>
-  <meta name="description" content="A-PROJECT dostarcza i montuje wysokiej jakości okna plastikowe, drzwi oraz drzwi przesuwne. Poproś o niezobowiązującą wycenę." />
+  <title>A-PROJECT | Okna plastikowe, drzwi, drzwi przesuwne, rolety i moskitiery</title>
+  <meta name="description" content="A-PROJECT specjalizuje się w kompleksowej wymianie okien, drzwi, systemów przesuwnych, rolet i moskitier. Indywidualne doradztwo, wysokiej jakości produkty i fachowy montaż zgodny ze standardami rynku holenderskiego." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-  :root{
-  --bg:#151617;
-  --bg-2:#111213;
-  --panel:#171819;
-  --panel-2:#1B1C1E;
-  --light:#ECECEE;
-  --white:#FFFFFF;
-  --text:#F7F7F8;
-  --muted:rgba(255,255,255,.72);
-  --muted-2:rgba(255,255,255,.52);
-  --dark-text:#111214;
-  --dark-muted:rgba(17,18,20,.68);
-  --line:rgba(255,255,255,.10);
-  --line-2:rgba(255,255,255,.14);
-  --line-dark:rgba(0,0,0,.10);
-  --shadow:0 24px 70px rgba(0,0,0,.22);
-  --shadow-soft:0 16px 40px rgba(0,0,0,.12);
-  --radius-sm:10px;
-  --radius-md:14px;
-  --radius-lg:18px;
-  --radius-xl:24px;
-  --radius-2xl:28px;
-  --section-max:1520px;
-  --header-h:96px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#ececef;
-  color:var(--dark-text);
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-}
-
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-button{font:inherit}
-
-.shell{
-  width:min(var(--section-max), calc(100% - 52px));
-  margin:0 auto;
-}
-
-.section-block{
-  padding:34px 0 0;
-}
-
-.section-pad{
-  padding:24px 0 0;
-}
-
-.section-card{
-  border-radius:var(--radius-2xl);
-  overflow:hidden;
-  box-shadow:var(--shadow-soft);
-}
-
-.section-light{
-  background:#efeff1;
-  color:var(--dark-text);
-}
-
-.section-dark{
-  background:linear-gradient(180deg,#161719 0%, #111214 100%);
-  color:var(--text);
-}
-
-.section-inner{
-  padding:54px 36px;
-}
-
-.section-kicker{
-  display:inline-block;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  margin-bottom:14px;
-}
-
-.section-light .section-kicker{color:rgba(17,18,20,.48)}
-.section-dark .section-kicker{color:rgba(255,255,255,.54)}
-
-.section-head{
-  max-width:860px;
-  margin-bottom:28px;
-}
-
-.section-head h2{
-  margin:0 0 12px;
-  font-size:clamp(32px, 3.8vw, 58px);
-  line-height:1.02;
-  letter-spacing:-.045em;
-  font-weight:800;
-}
-
-.section-head p{
-  margin:0;
-  font-size:17px;
-  line-height:1.78;
-}
-
-.section-light .section-head p{color:var(--dark-muted)}
-.section-dark .section-head p{color:var(--muted)}
-
-.page-top{
-  background:#ececef;
-  padding:0;
-}
-
-.top-shell{
-  width:100%;
-  margin:0;
-  position:relative;
-  border-radius:0;
-  overflow:hidden;
-  background:#111;
-  box-shadow:none;
-}
-
-/* HEADER */
-.site-header{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:20;
-  padding:0;
-}
-
-.header-bar{
-  min-height:78px;
-  width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding:14px 26px;
-  border-radius:0;
-  background:rgba(18,19,20,.78);
-  border:none;
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  box-shadow:none;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width:auto;
-  flex-shrink:0;
-}
-
-.brand-logo{
-  display:block;
-  width:auto;
-  height:42px;
-  max-width:none;
-  object-fit:contain;
-  flex-shrink:0;
-}
-
-.brand-name{
-  color:#fff;
-  font-size:15px;
-  font-weight:700;
-  letter-spacing:.11em;
-  white-space:nowrap;
-  line-height:1;
-}
-
-/* zostawione tylko jeśli gdzieś jeszcze używasz starego znaku */
-.brand-mark{
-  width:42px;
-  height:42px;
-  border-radius:999px;
-  border:1.5px solid rgba(255,255,255,.82);
-  display:grid;
-  place-items:center;
-  color:#fff;
-  font-size:10px;
-  font-weight:800;
-  line-height:1;
-  text-align:center;
-  letter-spacing:.06em;
-  flex-shrink:0;
-  background:rgba(255,255,255,.02);
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:34px;
-  flex:1;
-}
-
-.nav a{
-  color:rgba(255,255,255,.94);
-  font-size:14px;
-  font-weight:500;
-  transition:.22s ease;
-  white-space:nowrap;
-}
-
-.nav a:hover{opacity:.76}
-
-.header-right{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  min-width:230px;
-  justify-content:flex-end;
-  flex-shrink:0;
-}
-
-.lang-link{
-  font-size:22px;
-  line-height:1;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition:.22s ease;
-}
-
-.lang-link:hover{transform:translateY(-1px)}
-
-.menu-toggle{
-  display:none;
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.12);
-  background:rgba(255,255,255,.06);
-  color:#fff;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  font-size:20px;
-}
-
-.mobile-nav{
-  position:absolute;
-  top:78px;
-  left:0;
-  right:0;
-  z-index:25;
-  display:none;
-  background:rgba(17,18,20,.98);
-  border:none;
-  border-radius:0;
-  padding:14px 16px 16px;
-  box-shadow:none;
-}
-
-.mobile-nav.open{display:block}
-
-.mobile-nav a{
-  display:block;
-  color:#fff;
-  font-size:15px;
-  font-weight:600;
-  padding:13px 8px;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.mobile-nav a:last-child{border-bottom:none}
-
-.mobile-lang{
-  display:flex;
-  gap:10px;
-  margin-bottom:10px;
-}
-
-.mobile-lang a{
-  border-bottom:none;
-  padding:10px 12px;
-  background:rgba(255,255,255,.07);
-  border-radius:12px;
-}
-
-/* HERO */
-.hero{
-  position:relative;
-  min-height:820px;
-  background:#111;
-  width:100%;
-}
-
-.hero-media{
-  position:absolute;
-  inset:0;
-}
-
-.hero-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center center;
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.60) 0%, rgba(0,0,0,.44) 26%, rgba(0,0,0,.20) 56%, rgba(0,0,0,.10) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.14) 0%, rgba(0,0,0,.10) 60%, rgba(0,0,0,.20) 100%);
-}
-
-.hero-inner{
-  position:relative;
-  z-index:2;
-  min-height:820px;
-  display:flex;
-  align-items:center;
-  padding:140px 72px 80px;
-}
-
-.hero-content{
-  max-width:620px;
-  color:#fff;
-}
-
-.hero h1{
-  margin:0 0 14px;
-  font-size:clamp(48px,5.3vw,72px);
-  line-height:.98;
-  letter-spacing:-.055em;
-  font-weight:800;
-}
-
-.hero-subtitle{
-  margin:0 0 10px;
-  font-size:18px;
-  font-weight:600;
-  color:rgba(255,255,255,.92);
-}
-
-.hero-text{
-  margin:0 0 18px;
-  font-size:17px;
-  line-height:1.7;
-  color:rgba(255,255,255,.82);
-}
-
-.hero-questions{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  margin:0 0 28px;
-}
-
-.hero-question{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:rgba(255,255,255,.9);
-  font-size:15px;
-  font-weight:600;
-}
-
-.hero-question::before{
-  content:"•";
-  color:#fff;
-  font-size:18px;
-  line-height:1;
-}
-
-.hero-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:0;
-}
-
-.btn{
-  min-height:54px;
-  padding:0 22px;
-  border-radius:12px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:16px;
-  font-weight:700;
-  border:1px solid transparent;
-  transition:.22s ease;
-  white-space:nowrap;
-}
-
-.btn:hover{transform:translateY(-1px)}
-
-.btn-dark{
-  background:#161719;
-  color:#fff;
-  border-color:#161719;
-  box-shadow:0 12px 22px rgba(0,0,0,.22);
-}
-
-.btn-light{
-  background:#f4f4f5;
-  color:#111214;
-  border-color:#f4f4f5;
-  box-shadow:0 12px 22px rgba(0,0,0,.10);
-}
-
-.btn-whatsapp{
-  background:transparent;
-  color:#fff;
-  border-color:rgba(255,255,255,.18);
-  box-shadow:none;
-}
-
-.gallery-wrap{
-  padding:18px 26px 0;
-}
-
-.gallery-card{
-  background:#e8e8ea;
-  border-radius:28px;
-  padding:34px;
-  box-shadow:var(--shadow-soft);
-}
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:1.16fr .96fr;
-  gap:14px;
-  align-items:stretch;
-}
-
-.gallery-left, .gallery-right{
-  display:grid;
-  gap:14px;
-}
-
-.gallery-left{
-  grid-template-rows:minmax(640px,1fr);
-}
-
-.gallery-right{
-  grid-template-rows:1fr auto;
-}
-
-.gallery-bottom{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.gallery-item{
-  position:relative;
-  overflow:hidden;
-  background:#d9d9dc;
-  min-height:220px;
-  border-radius:0;
-}
-
-.gallery-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .5s ease;
-}
-
-.gallery-item:hover img{transform:scale(1.03)}
-
-.about-grid{
-  display:grid;
-  grid-template-columns:1.02fr .98fr;
-  gap:20px;
-  align-items:stretch;
-}
-
-.about-card{
-  border-radius:22px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--line);
-  padding:34px;
-  box-shadow:var(--shadow);
-}
-
-.about-card p{
-  margin:0 0 16px;
-  font-size:16px;
-  line-height:1.82;
-  color:var(--muted);
-}
-
-.about-card p:last-child{margin-bottom:0}
-
-.about-image{
-  border-radius:22px;
-  overflow:hidden;
-  min-height:100%;
-  border:1px solid var(--line);
-  background:#111;
-  box-shadow:var(--shadow);
-}
-
-.about-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  min-height:100%;
-}
-
-.about-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:22px;
-}
-
-.about-badge{
-  padding:11px 14px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.04);
-  color:#fff;
-  font-size:13px;
-  font-weight:700;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.why-card{
-  background:linear-gradient(180deg,#1a1b1d 0%, #141517 100%);
-  color:#fff;
-  border-radius:20px;
-  padding:28px;
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:var(--shadow-soft);
-}
-
-.why-icon{
-  width:50px;
-  height:50px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  font-size:20px;
-  margin-bottom:18px;
-}
-
-.why-card h3{
-  margin:0 0 10px;
-  font-size:22px;
-  line-height:1.08;
-  letter-spacing:-.03em;
-}
-
-.why-card p{
-  margin:0;
-  font-size:15px;
-  line-height:1.74;
-  color:rgba(255,255,255,.74);
-}
-
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
-.process-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px;
-  padding:28px;
-  box-shadow:var(--shadow);
-}
-
-.process-num{
-  width:62px;
-  height:62px;
-  border-radius:14px;
-  background:#f4f4f5;
-  color:#111214;
-  display:grid;
-  place-items:center;
-  font-size:22px;
-  font-weight:800;
-  margin-bottom:18px;
-}
-
-.process-card h3{
-  margin:0 0 10px;
-  font-size:24px;
-  line-height:1.06;
-  letter-spacing:-.03em;
-}
-
-.process-card p{
-  margin:0;
-  font-size:15px;
-  line-height:1.76;
-  color:var(--muted);
-}
-
-.reviews-top{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  align-items:end;
-  margin-bottom:20px;
-}
-
-.reviews-score{
-  min-width:310px;
-  background:#17181a;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.06);
-  border-radius:20px;
-  padding:24px 26px;
-  box-shadow:var(--shadow-soft);
-}
-
-.reviews-score strong{
-  display:block;
-  font-size:44px;
-  line-height:1;
-  letter-spacing:-.05em;
-  margin-bottom:8px;
-}
-
-.reviews-score p{
-  margin:0;
-  font-size:14px;
-  line-height:1.72;
-  color:rgba(255,255,255,.72);
-}
-
-.reviews-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.review-card{
-  background:#17181a;
-  color:#fff;
-  border-radius:20px;
-  padding:24px;
-  border:1px solid rgba(255,255,255,.06);
-  box-shadow:var(--shadow-soft);
-}
-
-.review-stars{
-  font-size:15px;
-  letter-spacing:.14em;
-  margin-bottom:12px;
-}
-
-.review-text{
-  margin:0 0 18px;
-  font-size:15px;
-  line-height:1.82;
-  color:rgba(255,255,255,.74);
-}
-
-.review-author{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.review-avatar{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-  display:grid;
-  place-items:center;
-  background:#f4f4f5;
-  color:#111214;
-  font-size:14px;
-  font-weight:800;
-}
-
-.review-author strong{
-  display:block;
-  font-size:15px;
-  font-weight:700;
-}
-
-.review-author span{
-  display:block;
-  margin-top:3px;
-  font-size:13px;
-  color:rgba(255,255,255,.52);
-}
-
-.subsidy-grid{
-  display:grid;
-  grid-template-columns:1.02fr .98fr;
-  gap:18px;
-  align-items:stretch;
-}
-
-.subsidy-panel{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:22px;
-  padding:34px;
-  box-shadow:var(--shadow);
-}
-
-.subsidy-panel h2{
-  margin:0 0 14px;
-  font-size:clamp(30px, 3.5vw, 54px);
-  line-height:1.02;
-  letter-spacing:-.045em;
-}
-
-.subsidy-panel p{
-  margin:0 0 20px;
-  font-size:16px;
-  line-height:1.82;
-  color:var(--muted);
-}
-
-.subsidy-list{
-  display:grid;
-  gap:12px;
-  margin-bottom:24px;
-}
-
-.subsidy-item{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
-  font-size:15px;
-  line-height:1.72;
-  color:#fff;
-}
-
-.subsidy-check{
-  width:24px;
-  height:24px;
-  min-width:24px;
-  display:grid;
-  place-items:center;
-  border-radius:8px;
-  background:#f4f4f5;
-  color:#111214;
-  font-size:13px;
-  font-weight:800;
-  margin-top:1px;
-}
-
-.subsidy-image{
-  border-radius:22px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
-  box-shadow:var(--shadow);
-  background:#111;
-}
-
-.subsidy-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  min-height:100%;
-}
-
-.contact-card{
-  background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:24px;
-  padding:38px;
-  box-shadow:var(--shadow-soft);
-}
-
-.contact-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:26px;
-}
-
-.contact-pills{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-.contact-pill{
-  padding:12px 14px;
-  border-radius:12px;
-  background:#17181a;
-  color:#fff;
-  font-size:14px;
-  font-weight:600;
-}
-
-.contact-meta{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-  margin-top:24px;
-}
-
-.contact-meta-card{
-  background:#17181a;
-  color:#fff;
-  border-radius:20px;
-  padding:24px;
-  box-shadow:var(--shadow-soft);
-}
-
-.contact-meta-card h4{
-  margin:0 0 10px;
-  font-size:15px;
-  letter-spacing:-.02em;
-}
-
-.contact-meta-card p, .contact-meta-card a{
-  margin:0;
-  font-size:15px;
-  line-height:1.76;
-  color:rgba(255,255,255,.74);
-  word-break:break-word;
-}
-
-.site-footer{
-  padding:34px 0 38px;
-  background:#ececef;
-}
-
-.footer-shell{
-  background:linear-gradient(180deg,#17181a 0%, #111214 100%);
-  color:#fff;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-
-.footer-top{
-  display:grid;
-  grid-template-columns:1.1fr .8fr .8fr .8fr;
-  gap:24px;
-  padding:38px;
-}
-
-.footer-brand p{
-  margin:12px 0 0;
-  font-size:15px;
-  line-height:1.8;
-  color:rgba(255,255,255,.72);
-  max-width:420px;
-}
-
-.footer-col h4{
-  margin:0 0 14px;
-  font-size:16px;
-  letter-spacing:-.02em;
-}
-
-.footer-links{
-  display:grid;
-  gap:10px;
-}
-
-.footer-links a, .footer-links span{
-  color:rgba(255,255,255,.72);
-  font-size:15px;
-  line-height:1.7;
-  transition:.22s ease;
-}
-
-.footer-links a:hover{color:#fff}
-
-.footer-bottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  padding:22px 38px 28px;
-  border-top:1px solid rgba(255,255,255,.08);
-  color:rgba(255,255,255,.5);
-  font-size:13px;
-}
-
-.footer-badges{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.footer-badge{
-  padding:10px 12px;
-  border-radius:12px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  color:#fff;
-  font-size:12px;
-  font-weight:700;
-}
-
-.whatsapp-float{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:999;
-  width:58px;
-  height:58px;
-  border-radius:16px;
-  display:grid;
-  place-items:center;
-  background:#17181a;
-  color:#fff;
-  box-shadow:0 16px 36px rgba(0,0,0,.28);
-  border:1px solid rgba(255,255,255,.08);
-  font-size:22px;
-  transition:.22s ease;
-}
-
-.whatsapp-float:hover{transform:translateY(-2px)}
-
-.reveal{
-  opacity:0;
-  transform:translateY(26px);
-  transition:opacity .8s ease, transform .8s ease;
-}
-
-.reveal.is-visible{
-  opacity:1;
-  transform:translateY(0);
-}
-
-@media (max-width:1320px){
-  .nav{gap:24px}
-  .why-grid,
-  .reviews-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-  .footer-top{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media (max-width:1060px){
-  .nav,
-  .header-right .lang-link{
-    display:none;
-  }
-
-  .menu-toggle{
-    display:flex;
-  }
-
-  .header-right{
-    min-width:auto;
-  }
-
-  .hero-inner{
-    padding:138px 34px 56px;
-  }
-
-  .gallery-grid,
-  .about-grid,
-  .subsidy-grid,
-  .contact-meta{
-    grid-template-columns:1fr;
-  }
-
-  .gallery-left{
-    grid-template-rows:auto;
-  }
-
-  .gallery-item{
-    min-height:300px;
-  }
-
-  .process-grid{
-    grid-template-columns:1fr;
-  }
-
-  .reviews-top{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-}
-
-@media (max-width:760px){
-  .top-shell{
-    width:100%;
-  }
-
-  .shell{
-    width:min(100%, calc(100% - 22px));
-  }
-
-  .page-top{
-    padding:0;
-  }
-
-  .site-header{
-    padding:0;
-  }
-
-  .header-bar{
-    min-height:70px;
-    width:100%;
-    padding:12px 16px;
-    border-radius:0;
-  }
-
-  .brand{
-    gap:10px;
-  }
-
-  .brand-logo{
-    height:28px;
-    width:auto;
-  }
-
-  .brand-name{
-    font-size:13px;
-  }
-
-  .mobile-nav{
-    top:70px;
-    left:0;
-    right:0;
-    border-radius:0;
-    padding:14px 16px 16px;
-  }
-
-  .hero{
-    min-height:760px;
-  }
-
-  .hero-inner{
-    min-height:760px;
-    padding:120px 22px 42px;
-  }
-
-  .hero h1{
-    font-size:46px;
-  }
-
-  .hero-subtitle,
-  .hero-text{
-    font-size:16px;
-  }
-
-  .hero-question{
-    font-size:14px;
-  }
-
-  .hero-actions{
-    width:100%;
-  }
-
-  .hero-actions .btn{
-    width:100%;
-  }
-
-  .gallery-wrap{
-    padding:14px 10px 0;
-  }
-
-  .gallery-card,
-  .section-inner,
-  .contact-card,
-  .footer-top{
-    padding:22px;
-  }
-
-  .why-grid,
-  .reviews-grid{
-    grid-template-columns:1fr;
-  }
-
-  .gallery-bottom{
-    grid-template-columns:1fr;
-  }
-
-  .reviews-score{
-    min-width:0;
-    width:100%;
-  }
-
-  .contact-actions .btn{
-    width:100%;
-  }
-
-  .contact-pills{
-    flex-direction:column;
-  }
-
-  .contact-pill{
-    width:100%;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr;
-  }
-
-  .footer-bottom{
-    padding:20px 22px 24px;
-  }
-}
+    :root{
+      --bg:#151617;
+      --bg-2:#111213;
+      --panel:#171819;
+      --panel-2:#1B1C1E;
+      --light:#ECECEE;
+      --light-2:#F4F4F5;
+      --white:#FFFFFF;
+      --text:#F7F7F8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.52);
+      --dark-text:#111214;
+      --dark-muted:rgba(17,18,20,.68);
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.22);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.12);
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:18px;
+      --radius-xl:24px;
+      --radius-2xl:28px;
+      --section-max:1520px;
+      --header-h:96px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#ececef;
+      color:var(--dark-text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .shell{
+      width:min(var(--section-max), calc(100% - 52px));
+      margin:0 auto;
+    }
+
+    .section-block{
+      padding:34px 0 0;
+    }
+
+    .section-pad{
+      padding:24px 0 0;
+    }
+
+    .section-card{
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-light{
+      background:#efeff1;
+      color:var(--dark-text);
+    }
+
+    .section-dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+    }
+
+    .section-inner{
+      padding:54px 36px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-light .section-kicker{color:rgba(17,18,20,.48)}
+    .section-dark .section-kicker{color:rgba(255,255,255,.54)}
+
+    .section-head{
+      max-width:920px;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(32px, 3.8vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .section-light .section-head p{color:var(--dark-muted)}
+    .section-dark .section-head p{color:var(--muted)}
+
+    .page-top{
+      background:#ececef;
+      padding:0;
+    }
+
+    .top-shell{
+      width:100%;
+      margin:0;
+      position:relative;
+      border-radius:0;
+      overflow:hidden;
+      background:#111;
+      box-shadow:none;
+    }
+
+    .site-header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:30;
+      padding:0;
+    }
+
+    .header-bar{
+      min-height:78px;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 26px;
+      border-radius:0;
+      background:rgba(18,19,20,.78);
+      border:none;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:none;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:auto;
+      flex-shrink:0;
+    }
+
+    .brand-logo{
+      display:block;
+      width:auto;
+      height:42px;
+      max-width:none;
+      object-fit:contain;
+      flex-shrink:0;
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.11em;
+      white-space:nowrap;
+      line-height:1;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:34px;
+      flex:1;
+    }
+
+    .nav a{
+      color:rgba(255,255,255,.94);
+      font-size:14px;
+      font-weight:500;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{opacity:.76}
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:230px;
+      justify-content:flex-end;
+      flex-shrink:0;
+    }
+
+    .lang-link{
+      font-size:22px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:.22s ease;
+    }
+
+    .lang-link:hover{transform:translateY(-1px)}
+
+    .menu-toggle{
+      display:none;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+    }
+
+    .mobile-nav{
+      position:absolute;
+      top:78px;
+      left:0;
+      right:0;
+      z-index:25;
+      display:none;
+      background:rgba(17,18,20,.98);
+      border:none;
+      border-radius:0;
+      padding:14px 16px 16px;
+      box-shadow:none;
+    }
+
+    .mobile-nav.open{display:block}
+
+    .mobile-nav a{
+      display:block;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      padding:13px 8px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .mobile-nav a:last-child{border-bottom:none}
+
+    .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-lang a{
+      border-bottom:none;
+      padding:10px 12px;
+      background:rgba(255,255,255,.07);
+      border-radius:12px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:820px;
+      background:#111;
+      width:100%;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.60) 0%, rgba(0,0,0,.44) 26%, rgba(0,0,0,.20) 56%, rgba(0,0,0,.10) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.14) 0%, rgba(0,0,0,.10) 60%, rgba(0,0,0,.20) 100%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:820px;
+      display:flex;
+      align-items:center;
+      padding:140px 72px 80px;
+    }
+
+    .hero-content{
+      max-width:650px;
+      color:#fff;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(48px,5.3vw,72px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .hero-subtitle{
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:600;
+      color:rgba(255,255,255,.92);
+    }
+
+    .hero-text{
+      margin:0 0 18px;
+      font-size:17px;
+      line-height:1.7;
+      color:rgba(255,255,255,.82);
+    }
+
+    .hero-questions{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin:0 0 28px;
+    }
+
+    .hero-question{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(255,255,255,.9);
+      font-size:15px;
+      font-weight:600;
+    }
+
+    .hero-question::before{
+      content:"•";
+      color:#fff;
+      font-size:18px;
+      line-height:1;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:0;
+    }
+
+    .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-dark{
+      background:#161719;
+      color:#fff;
+      border-color:#161719;
+      box-shadow:0 12px 22px rgba(0,0,0,.22);
+    }
+
+    .btn-light{
+      background:#f4f4f5;
+      color:#111214;
+      border-color:#f4f4f5;
+      box-shadow:0 12px 22px rgba(0,0,0,.10);
+    }
+
+    .btn-whatsapp{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+
+    .gallery-wrap{
+      padding:18px 26px 0;
+    }
+
+    .gallery-card{
+      background:#e8e8ea;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .gallery-feature{
+      min-height:760px;
+    }
+
+    .gallery-right-stack{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:14px;
+    }
+
+    .gallery-half{
+      min-height:373px;
+    }
+
+    .gallery-bottom{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      background:#d9d9dc;
+      border-radius:0;
+    }
+
+    .gallery-item::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.12) 100%);
+      pointer-events:none;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+
+    .gallery-item:hover img{transform:scale(1.03)}
+
+    .gallery-small{
+      min-height:240px;
+    }
+
+    .quick-offer-wrap{
+      padding:24px 0 0;
+    }
+
+    .quick-offer-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+
+    .quick-offer-card::before{
+      content:"";
+      position:absolute;
+      top:-140px;
+      right:-120px;
+      width:360px;
+      height:360px;
+      border-radius:50%;
+      background:radial-gradient(circle at center, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 70%);
+      pointer-events:none;
+    }
+
+    .quick-offer-inner{
+      position:relative;
+      z-index:2;
+      padding:38px 34px;
+      display:grid;
+      grid-template-columns:1.2fr auto;
+      gap:20px;
+      align-items:center;
+    }
+
+    .quick-offer-copy{
+      max-width:900px;
+    }
+
+    .quick-offer-label{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:14px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.56);
+    }
+
+    .quick-offer-badge{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:#f4f4f5;
+      color:#111214;
+      font-size:18px;
+      font-weight:800;
+      box-shadow:0 10px 22px rgba(0,0,0,.18);
+    }
+
+    .quick-offer-copy h2{
+      margin:0 0 10px;
+      font-size:clamp(30px, 3.4vw, 50px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .quick-offer-copy p{
+      margin:0;
+      font-size:16px;
+      line-height:1.78;
+      color:rgba(255,255,255,.74);
+      max-width:760px;
+    }
+
+    .quick-offer-actions{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .quick-offer-actions .btn{
+      min-width:220px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .about-card{
+      border-radius:22px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-card p{
+      margin:0 0 16px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--muted);
+    }
+
+    .about-card p:last-child{margin-bottom:0}
+
+    .about-image{
+      border-radius:22px;
+      overflow:hidden;
+      min-height:100%;
+      border:1px solid var(--line);
+      background:#111;
+      box-shadow:var(--shadow);
+    }
+
+    .about-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      min-height:100%;
+    }
+
+    .about-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .about-badge{
+      padding:11px 14px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      color:#fff;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .why-card{
+      background:linear-gradient(180deg,#1a1b1d 0%, #141517 100%);
+      color:#fff;
+      border-radius:20px;
+      padding:28px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .why-icon{
+      width:50px;
+      height:50px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:20px;
+      margin-bottom:18px;
+    }
+
+    .why-card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+
+    .why-card p{
+      margin:0;
+      font-size:15px;
+      line-height:1.74;
+      color:rgba(255,255,255,.74);
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .process-card{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+
+    .process-num{
+      width:62px;
+      height:62px;
+      border-radius:14px;
+      background:#f4f4f5;
+      color:#111214;
+      display:grid;
+      place-items:center;
+      font-size:22px;
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .process-card h3{
+      margin:0 0 10px;
+      font-size:24px;
+      line-height:1.06;
+      letter-spacing:-.03em;
+    }
+
+    .process-card p{
+      margin:0 0 14px;
+      font-size:15px;
+      line-height:1.76;
+      color:var(--muted);
+    }
+
+    .process-card p:last-of-type{
+      margin-bottom:0;
+    }
+
+    .process-contact{
+      margin-top:auto;
+      padding-top:18px;
+      font-size:14px;
+      line-height:1.6;
+      color:#fff;
+      font-weight:700;
+    }
+
+    .process-contact a{
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.2);
+    }
+
+    .reviews-top{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:end;
+      margin-bottom:20px;
+    }
+
+    .reviews-score{
+      min-width:310px;
+      background:#17181a;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:20px;
+      padding:24px 26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .reviews-score strong{
+      display:block;
+      font-size:44px;
+      line-height:1;
+      letter-spacing:-.05em;
+      margin-bottom:8px;
+    }
+
+    .reviews-score p{
+      margin:0;
+      font-size:14px;
+      line-height:1.72;
+      color:rgba(255,255,255,.72);
+    }
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .review-card{
+      background:#17181a;
+      color:#fff;
+      border-radius:20px;
+      padding:24px;
+      border:1px solid rgba(255,255,255,.06);
+      box-shadow:var(--shadow-soft);
+    }
+
+    .review-stars{
+      font-size:15px;
+      letter-spacing:.14em;
+      margin-bottom:12px;
+    }
+
+    .review-text{
+      margin:0 0 18px;
+      font-size:15px;
+      line-height:1.82;
+      color:rgba(255,255,255,.74);
+    }
+
+    .review-author{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .review-avatar{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:#f4f4f5;
+      color:#111214;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .review-author strong{
+      display:block;
+      font-size:15px;
+      font-weight:700;
+    }
+
+    .review-author span{
+      display:block;
+      margin-top:3px;
+      font-size:13px;
+      color:rgba(255,255,255,.52);
+    }
+
+    .subsidy-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .subsidy-panel{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;
+      padding:34px;
+      box-shadow:var(--shadow);
+    }
+
+    .subsidy-panel h2{
+      margin:0 0 14px;
+      font-size:clamp(30px, 3.5vw, 54px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+
+    .subsidy-panel p{
+      margin:0 0 20px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--muted);
+    }
+
+    .subsidy-list{
+      display:grid;
+      gap:12px;
+      margin-bottom:24px;
+    }
+
+    .subsidy-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      font-size:15px;
+      line-height:1.72;
+      color:#fff;
+    }
+
+    .subsidy-check{
+      width:24px;
+      height:24px;
+      min-width:24px;
+      display:grid;
+      place-items:center;
+      border-radius:8px;
+      background:#f4f4f5;
+      color:#111214;
+      font-size:13px;
+      font-weight:800;
+      margin-top:1px;
+    }
+
+    .subsidy-image{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      background:#111;
+    }
+
+    .subsidy-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      min-height:100%;
+    }
+
+    .contact-card{
+      background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      padding:38px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .contact-pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .contact-pill{
+      padding:12px 14px;
+      border-radius:12px;
+      background:#17181a;
+      color:#fff;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .contact-meta{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin-top:24px;
+    }
+
+    .contact-meta-card{
+      background:#17181a;
+      color:#fff;
+      border-radius:20px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-meta-card h4{
+      margin:0 0 10px;
+      font-size:15px;
+      letter-spacing:-.02em;
+    }
+
+    .contact-meta-card p,
+    .contact-meta-card a{
+      margin:0;
+      font-size:15px;
+      line-height:1.76;
+      color:rgba(255,255,255,.74);
+      word-break:break-word;
+    }
+
+    .site-footer{
+      padding:34px 0 38px;
+      background:#ececef;
+    }
+
+    .footer-shell{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.1fr .8fr .8fr .8fr;
+      gap:24px;
+      padding:38px;
+    }
+
+    .footer-brand p{
+      margin:12px 0 0;
+      font-size:15px;
+      line-height:1.8;
+      color:rgba(255,255,255,.72);
+      max-width:420px;
+    }
+
+    .footer-col h4{
+      margin:0 0 14px;
+      font-size:16px;
+      letter-spacing:-.02em;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a,
+    .footer-links span{
+      color:rgba(255,255,255,.72);
+      font-size:15px;
+      line-height:1.7;
+      transition:.22s ease;
+    }
+
+    .footer-links a:hover{color:#fff}
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:22px 38px 28px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    .footer-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-badge{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#17181a;
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:22px;
+      transition:.22s ease;
+    }
+
+    .whatsapp-float:hover{transform:translateY(-2px)}
+
+    .reveal{
+      opacity:0;
+      transform:translateY(26px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media (max-width:1360px){
+      .nav{gap:24px}
+      .why-grid,
+      .reviews-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:1180px){
+      .gallery-feature{
+        min-height:640px;
+      }
+
+      .gallery-half{
+        min-height:313px;
+      }
+
+      .gallery-bottom{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .quick-offer-inner{
+        grid-template-columns:1fr;
+        align-items:flex-start;
+      }
+
+      .quick-offer-actions{
+        justify-content:flex-start;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:1060px){
+      .nav,
+      .header-right .lang-link{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:flex;
+      }
+
+      .header-right{
+        min-width:auto;
+      }
+
+      .hero-inner{
+        padding:138px 34px 56px;
+      }
+
+      .gallery-grid,
+      .about-grid,
+      .subsidy-grid,
+      .contact-meta{
+        grid-template-columns:1fr;
+      }
+
+      .gallery-right-stack{
+        grid-template-rows:auto;
+        grid-template-columns:1fr 1fr;
+      }
+
+      .gallery-feature{
+        min-height:520px;
+      }
+
+      .gallery-half{
+        min-height:300px;
+      }
+
+      .why-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .reviews-top{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media (max-width:760px){
+      .top-shell{
+        width:100%;
+      }
+
+      .shell{
+        width:min(100%, calc(100% - 22px));
+      }
+
+      .page-top{
+        padding:0;
+      }
+
+      .site-header{
+        padding:0;
+      }
+
+      .header-bar{
+        min-height:70px;
+        width:100%;
+        padding:12px 16px;
+        border-radius:0;
+      }
+
+      .brand{
+        gap:10px;
+      }
+
+      .brand-logo{
+        height:28px;
+        width:auto;
+      }
+
+      .brand-name{
+        font-size:13px;
+      }
+
+      .mobile-nav{
+        top:70px;
+        left:0;
+        right:0;
+        border-radius:0;
+        padding:14px 16px 16px;
+      }
+
+      .hero{
+        min-height:760px;
+      }
+
+      .hero-inner{
+        min-height:760px;
+        padding:120px 22px 42px;
+      }
+
+      .hero h1{
+        font-size:46px;
+      }
+
+      .hero-subtitle,
+      .hero-text{
+        font-size:16px;
+      }
+
+      .hero-question{
+        font-size:14px;
+      }
+
+      .hero-actions{
+        width:100%;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .gallery-wrap{
+        padding:14px 10px 0;
+      }
+
+      .gallery-card,
+      .section-inner,
+      .contact-card,
+      .footer-top{
+        padding:22px;
+      }
+
+      .gallery-grid{
+        gap:12px;
+      }
+
+      .gallery-right-stack{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .gallery-feature{
+        min-height:380px;
+      }
+
+      .gallery-half{
+        min-height:240px;
+      }
+
+      .gallery-bottom{
+        margin-top:12px;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .gallery-small{
+        min-height:220px;
+      }
+
+      .quick-offer-inner{
+        padding:24px 22px;
+      }
+
+      .quick-offer-copy h2{
+        font-size:34px;
+      }
+
+      .quick-offer-actions .btn{
+        width:100%;
+        min-width:0;
+      }
+
+      .why-grid,
+      .reviews-grid{
+        grid-template-columns:1fr;
+      }
+
+      .reviews-score{
+        min-width:0;
+        width:100%;
+      }
+
+      .contact-actions .btn{
+        width:100%;
+      }
+
+      .contact-pills{
+        flex-direction:column;
+      }
+
+      .contact-pill{
+        width:100%;
+      }
+
+      .footer-top{
+        grid-template-columns:1fr;
+      }
+
+      .footer-bottom{
+        padding:20px 22px 24px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="page-top">
     <div class="top-shell reveal">
-     <header class="site-header">
-  <div class="header-bar">
-    <a href="#top" class="brand" aria-label="Strona główna A-PROJECT">
-      <img src="../images/logo.png" class="brand-logo" alt="A-PROJECT logo">
-      <span class="brand-name">A-PROJECT</span>
-    </a>
+      <header class="site-header">
+        <div class="header-bar">
+          <a href="#top" class="brand" aria-label="A-PROJECT strona główna">
+            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+            <span class="brand-name">A-PROJECT</span>
+          </a>
 
-    <nav class="nav" aria-label="Menu główne">
-      <a href="#over-ons">O nas</a>
-      <a href="#waarom-wij">Dlaczego my?</a>
-      <a href="./realizacje.html">Realizacje</a>
-      <a href="./naszeuslugi.html">Nasze usługi</a>
-      <a href="./produkty.html">Produkty</a>
-      <a href="#reviews">Opinie</a>
-      <a href="#subsidie">Dotacje</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
+          <nav class="nav" aria-label="Menu główne">
+            <a href="#over-ons">O nas</a>
+            <a href="#waarom-wij">Dlaczego my?</a>
+            <a href="./realizacje.html">Realizacje</a>
+            <a href="./naszeuslugi.html">Nasze usługi</a>
+            <a href="./produkty.html">Produkty</a>
+            <a href="#reviews">Opinie</a>
+            <a href="#subsidie">Dofinansowanie</a>
+            <a href="#contact">Kontakt</a>
+          </nav>
 
-    <div class="header-right">
-      <a class="lang-link" href="../index.html" aria-label="Wersja niderlandzka">🇳🇱</a>
-      <a class="lang-link" href="../en/" aria-label="Wersja angielska">🇬🇧</a>
-      <a class="lang-link" href="./" aria-label="Wersja polska">🇵🇱</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
-    </div>
-  </div>
-</header>
+          <div class="header-right">
+            <a class="lang-link" href="../index.html" aria-label="Wersja niderlandzka">🇳🇱</a>
+            <a class="lang-link" href="../en/index.html" aria-label="Wersja angielska">🇬🇧</a>
+            <a class="lang-link" href="./index.html" aria-label="Wersja polska">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+          </div>
+        </div>
+      </header>
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-lang">
           <a href="../index.html">🇳🇱</a>
-          <a href="../en/">🇬🇧</a>
-          <a href="./">🇵🇱</a>
+          <a href="../en/index.html">🇬🇧</a>
+          <a href="./index.html">🇵🇱</a>
         </div>
         <a href="#over-ons">O nas</a>
-  <a href="#waarom-wij">Dlaczego my?</a>
-  <a href="./realizacje.html">Realizacje</a>
-  <a href="./naszeuslugi.html">Nasze usługi</a>
-  <a href="./produkty.html">Produkty</a>
-  <a href="#reviews">Opinie</a>
-  <a href="#subsidie">Dotacje</a>
-  <a href="#contact">Kontakt</a>
+        <a href="#waarom-wij">Dlaczego my?</a>
+        <a href="./realizacje.html">Realizacje</a>
+        <a href="./naszeuslugi.html">Nasze usługi</a>
+        <a href="./produkty.html">Produkty</a>
+        <a href="#reviews">Opinie</a>
+        <a href="#subsidie">Dofinansowanie</a>
+        <a href="#contact">Kontakt</a>
       </div>
 
       <main id="top">
         <section class="hero">
           <div class="hero-media">
-            <img src="../images/przesuwaneokna.jpg" alt="Nowoczesny dom z czarnymi oknami i dużymi drzwiami przesuwnymi">
+            <img src="/aprojec/images/przesuwaneokna.jpg" alt="Nowoczesny dom z czarnymi oknami i dużym systemem przesuwnym">
           </div>
           <div class="hero-overlay"></div>
 
           <div class="hero-inner">
             <div class="hero-content">
-              <h1>Twoje nowe okna i drzwi są już tutaj!</h1>
+              <h1>Twoje nowe okna i drzwi są na wyciągnięcie ręki!</h1>
               <p class="hero-subtitle">Wymiana okien w Tilburg</p>
-              <p class="hero-text">Szybko, profesjonalnie i rzetelnie.</p>
+              <p class="hero-text">Szybko, profesjonalnie i solidnie.</p>
 
               <div class="hero-questions">
-                <div class="hero-question">Czas na nowe okna o nowoczesnym wyglądzie?</div>
-                <div class="hero-question">Chcesz lepiej izolować dom i oszczędzać na rachunkach za energię?</div>
-                <div class="hero-question">Szukasz sprawdzonego fachowca, który pracuje dokładnie i schludnie?</div>
+                <div class="hero-question">Chcesz wymienić okna na nowoczesne i estetyczne?</div>
+                <div class="hero-question">Lepiej zaizolować dom i obniżyć koszty energii?</div>
+                <div class="hero-question">Szukasz sprawdzonej firmy, która pracuje dokładnie i terminowo?</div>
               </div>
 
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-dark">Poproś o wycenę</a>
+                <a href="#contact" class="btn btn-dark">Poproś o ofertę</a>
                 <a href="tel:+31628255738" class="btn btn-light">Zadzwoń teraz</a>
                 <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
               </div>
@@ -1207,31 +1390,59 @@ button{font:inherit}
       <div class="reveal">
         <div class="gallery-card">
           <div class="gallery-grid">
-            <div class="gallery-left">
-              <article class="gallery-item">
-                <img src="../images/deur1.jpg" alt="Detal nowoczesnego czarnego okna" loading="lazy">
+            <article class="gallery-item gallery-feature">
+              <img src="/aprojec/images/glowna1.jpeg" alt="Realizacja A-PROJECT z nowoczesnymi oknami i drzwiami" loading="lazy">
+            </article>
+
+            <div class="gallery-right-stack">
+              <article class="gallery-item gallery-half">
+                <img src="/aprojec/images/glowna2.jpeg" alt="Nowoczesna realizacja okien A-PROJECT" loading="lazy">
+              </article>
+              <article class="gallery-item gallery-half">
+                <img src="/aprojec/images/glowna3.jpeg" alt="Wykończenie okien i drzwi przez A-PROJECT" loading="lazy">
               </article>
             </div>
+          </div>
 
-            <div class="gallery-right">
-              <article class="gallery-item">
-                <img src="../images/deur3.jpg" alt="Czarne okna w nowoczesnym projekcie" loading="lazy">
-              </article>
-
-              <div class="gallery-bottom">
-                <article class="gallery-item">
-                  <img src="../images/hero1.jpg" alt="Duże drzwi przesuwne w nowoczesnym domu" loading="lazy">
-                </article>
-                <article class="gallery-item">
-                  <img src="../images/deurraam.jpg" alt="Okna w elewacji nowoczesnego domu" loading="lazy">
-                </article>
-              </div>
-            </div>
+          <div class="gallery-bottom">
+            <article class="gallery-item gallery-small">
+              <img src="/aprojec/images/glowna4.jpeg" alt="Nowoczesne drzwi przesuwne w domu" loading="lazy">
+            </article>
+            <article class="gallery-item gallery-small">
+              <img src="/aprojec/images/glowna5.jpeg" alt="Nowe okna i ramy w domu" loading="lazy">
+            </article>
+            <article class="gallery-item gallery-small">
+              <img src="/aprojec/images/glowna6.jpeg" alt="Precyzyjny montaż i premium wykończenie" loading="lazy">
+            </article>
+            <article class="gallery-item gallery-small">
+              <img src="/aprojec/images/glowna7.jpeg" alt="Okna i drzwi zgodne ze standardem rynku holenderskiego" loading="lazy">
+            </article>
           </div>
         </div>
       </div>
     </section>
   </div>
+
+  <section class="quick-offer-wrap">
+    <div class="shell">
+      <div class="quick-offer-card reveal">
+        <div class="quick-offer-inner">
+          <div class="quick-offer-copy">
+            <div class="quick-offer-label">
+              <span class="quick-offer-badge">3</span>
+              <span>Szybka oferta</span>
+            </div>
+            <h2>Szybka oferta w 3 krokach.</h2>
+            <p>Wyślij zdjęcia i orientacyjne wymiary, opisz swoje oczekiwania i umów spotkanie. Dzięki temu szybko otrzymasz indywidualną ofertę bez zbędnej wymiany wiadomości.</p>
+          </div>
+
+          <div class="quick-offer-actions">
+            <a href="#werkwijze" class="btn btn-light">Zobacz jak to działa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section-block">
     <div class="shell">
@@ -1239,26 +1450,26 @@ button{font:inherit}
         <div class="section-inner">
           <div class="section-head">
             <span class="section-kicker">O nas</span>
-            <h2>Rzemiosło, jakość i perfekcyjne wykończenie.</h2>
-            <p>A-PROJECT to wysokiej jakości okna plastikowe, drzwi i drzwi przesuwne, które natychmiast poprawiają wygląd, komfort i izolację. Łączymy indywidualne doradztwo z estetycznym montażem i efektem, który idealnie pasuje do Twojego domu.</p>
+            <h2>Jakość, precyzja i indywidualne podejście.</h2>
+            <p>A-PROJECT to jakość, na której możesz polegać. Specjalizujemy się w kompleksowej wymianie okien, drzwi, systemów przesuwnych, rolet i moskitier, oferując rozwiązania dopasowane do standardów rynku holenderskiego.</p>
           </div>
 
           <div class="about-grid">
             <div class="about-card">
-              <p>U nas liczą się nie tylko piękne produkty, ale także całościowe wykończenie. Od pierwszego kontaktu po montaż działamy jasno, starannie i bez zbędnych komplikacji.</p>
-              <p>Doradzamy w kwestii wyglądu, izolacji, wygody użytkowania i najlepszego rozwiązania dla Twojego domu. Dzięki temu otrzymujesz nie tylko nowe okna czy drzwi, ale kompletny efekt, który od razu widać i czuć.</p>
-              <p>Klienci wybierają A-PROJECT, ponieważ dostarczamy jakość, nowoczesny wygląd, przejrzystą komunikację i sposób pracy, który budzi zaufanie.</p>
+              <p>Stawiamy wyłącznie na wysokiej jakości produkty i materiały, połączone z precyzyjnym montażem. Dzięki temu efekt końcowy nie tylko wygląda estetycznie, ale przede wszystkim zapewnia maksymalną izolację, komfort i trwałość na długie lata.</p>
+              <p>Do każdego projektu podchodzimy indywidualnie. Od pierwszego doradztwa i przygotowania oferty, przez zamówienie, dostawę i profesjonalny montaż, aż po końcowe wykończenie — pomagamy dobrać najlepsze rozwiązanie do Twojego domu.</p>
+              <p>W A-PROJECT nie otrzymujesz standardowego schematu, ale realizację dopasowaną do Twoich oczekiwań, stylu budynku i efektu, jaki chcesz osiągnąć.</p>
 
               <div class="about-badges">
-                <span class="about-badge">Trwałe materiały</span>
+                <span class="about-badge">Indywidualne podejście</span>
+                <span class="about-badge">Wysokiej jakości produkty</span>
                 <span class="about-badge">Precyzyjny montaż</span>
-                <span class="about-badge">Bezpośredni kontakt</span>
-                <span class="about-badge">100+ opinii</span>
+                <span class="about-badge">Standard rynku holenderskiego</span>
               </div>
             </div>
 
             <div class="about-image">
-              <img src="../images/hero2.jpg" alt="Nowoczesna realizacja A-PROJECT" loading="lazy">
+              <img src="/aprojec/images/overons.jpeg" alt="Nowoczesna realizacja A-PROJECT" loading="lazy">
             </div>
           </div>
         </div>
@@ -1273,32 +1484,32 @@ button{font:inherit}
           <div class="section-head">
             <span class="section-kicker">Dlaczego my?</span>
             <h2>Dlaczego klienci wybierają A-PROJECT.</h2>
-            <p>Nie tylko ze względu na efekt końcowy, ale również sposób, w jaki pracujemy: jasno, profesjonalnie i z naciskiem na jakość w każdym detalu.</p>
+            <p>Jakość produktów, precyzja montażu i indywidualne podejście od początku do końca. Właśnie za to cenią nas nasi klienci.</p>
           </div>
 
           <div class="why-grid">
             <article class="why-card">
               <div class="why-icon">✓</div>
               <h3>Wysoka jakość</h3>
-              <p>Pracujemy na trwałych rozwiązaniach, które zapewniają elegancki wygląd, lepszą izolację i długą żywotność.</p>
+              <p>Pracujemy wyłącznie na wysokiej klasy oknach, drzwiach i materiałach, które zapewniają elegancki wygląd, bardzo dobrą izolację oraz trwałość na długie lata użytkowania.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">⏱</div>
               <h3>Jasna komunikacja</h3>
-              <p>Od początku wiesz, czego się spodziewać. Jasne ustalenia, przejrzysta oferta i szybki kontakt przez cały proces.</p>
+              <p>Dbamy o przejrzysty i uporządkowany proces. Wiesz, czego się spodziewać, otrzymujesz uczciwe doradztwo i możesz liczyć na sprawny kontakt na każdym etapie realizacji.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">◆</div>
-              <h3>Perfekcyjne wykończenie</h3>
-              <p>Zwracamy uwagę na szczegóły. Estetyczny montaż i schludne oddanie realizacji to dla nas standard.</p>
+              <h3>Precyzyjne wykończenie</h3>
+              <p>Zwracamy uwagę na każdy detal. Liczy się nie tylko sam produkt, ale także montaż, wykończenie i końcowy efekt, który idealnie pasuje do Twojego domu.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">★</div>
-              <h3>Sprawdzone zadowolenie</h3>
-              <p>Dzięki 100+ opiniom i silnej reputacji klienci wybierają pewność, obsługę i efekt, który od razu robi wrażenie.</p>
+              <h3>Zadowolenie klientów</h3>
+              <p>Mamy wielu zadowolonych klientów, którzy chętnie polecają nasze usługi dalej. Na życzenie możesz również zapytać o ich doświadczenia, bo wierzymy w jakość, która broni się sama.</p>
             </article>
           </div>
         </div>
@@ -1312,27 +1523,40 @@ button{font:inherit}
         <div class="section-inner">
           <div class="section-head">
             <span class="section-kicker">Jak pracujemy?</span>
-            <h2>Przejrzysty proces od pierwszego kontaktu do oddania realizacji.</h2>
-            <p>Dbamy o to, aby cały proces był prosty i przejrzysty, dzięki czemu dokładnie wiesz, czego się spodziewać, a końcowy efekt idealnie pasuje do Twojego domu.</p>
+            <h2>Przejrzysty proces od pierwszego kontaktu do realizacji.</h2>
+            <p>Dbamy o jasną i sprawną współpracę, abyś dokładnie wiedział, czego się spodziewać, a efekt końcowy idealnie pasował do Twojego domu.</p>
+          </div>
+
+          <div class="section-head" style="margin-top:-4px; margin-bottom:28px;">
+            <p><strong>Otrzymaj ofertę w 3 prostych krokach:</strong></p>
           </div>
 
           <div class="process-grid">
             <article class="process-card">
               <div class="process-num">01</div>
-              <h3>Skontaktuj się z nami</h3>
-              <p>Powiedz nam, czego potrzebujesz. Słuchamy, doradzamy i sprawdzamy, jakie rozwiązanie najlepiej pasuje do Twojego domu i stylu.</p>
+              <h3>Wyślij zdjęcia i wymiary</h3>
+              <p>Wyślij zdjęcia obecnych okien, drzwi lub systemów przesuwnych wraz z orientacyjnymi wymiarami. Dzięki temu od razu otrzymamy dobry wstępny obraz Twojej sytuacji.</p>
+              <p>Dokładny pomiar wykonujemy zawsze przed finalnym zamówieniem, aby wszystko było perfekcyjnie dopasowane.</p>
+              <div class="process-contact">
+                📩 <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+              </div>
             </article>
 
             <article class="process-card">
               <div class="process-num">02</div>
-              <h3>Niezobowiązująca oferta</h3>
-              <p>Otrzymasz jasną ofertę z przejrzystymi informacjami o możliwościach, planowaniu i realizacji. Bez niejasności, za to z pełnym obrazem sytuacji.</p>
+              <h3>Opisz swoje oczekiwania</h3>
+              <p>Daj nam znać, jakie zmiany chcesz wprowadzić: układ okien, kolor od zewnątrz i od wewnątrz oraz ewentualne dodatki, takie jak rolety czy moskitiery.</p>
+              <p>Dzięki temu od razu przygotujemy ofertę dopasowaną do Twojego domu, stylu i oczekiwań.</p>
             </article>
 
             <article class="process-card">
               <div class="process-num">03</div>
-              <h3>Montaż i oddanie realizacji</h3>
-              <p>Po akceptacji zapewniamy profesjonalny montaż i estetyczne wykończenie, abyś od razu mógł cieszyć się komfortem, izolacją i nowym wyglądem.</p>
+              <h3>Umów spotkanie</h3>
+              <p>Umawiamy spotkanie, aby wspólnie omówić wszystkie szczegóły, doradzić najlepsze rozwiązania i dopracować ofertę do konkretnej, dobrze dopasowanej propozycji.</p>
+              <p>Stawiamy na bezpośredni kontakt, abyś mógł podjąć decyzję z pełnym przekonaniem.</p>
+              <div class="process-contact">
+                📞 <a href="tel:+31628255738">+31 6 28255738</a>
+              </div>
             </article>
           </div>
         </div>
@@ -1348,19 +1572,19 @@ button{font:inherit}
             <div class="section-head" style="margin:0;">
               <span class="section-kicker">Opinie</span>
               <h2>Ponad 100 zadowolonych klientów.</h2>
-              <p>Klienci doceniają nasz schludny sposób pracy, jasną komunikację i jakość efektu końcowego. To zaufanie budujemy projekt po projekcie.</p>
+              <p>Klienci doceniają nas za estetyczną pracę, jasną komunikację i wysoką jakość końcowego efektu. Tak właśnie budujemy zaufanie — realizacja po realizacji.</p>
             </div>
 
             <div class="reviews-score">
               <strong>5.0/5</strong>
-              <p>100% zadowolonych klientów na podstawie 100+ opinii i rekomendacji.</p>
+              <p>100% zadowolonych klientów na podstawie 100+ opinii i poleceń.</p>
             </div>
           </div>
 
           <div class="reviews-grid">
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Bardzo profesjonalna firma. Wszystko zostało dokładnie wyjaśnione, montaż był wykonany perfekcyjnie, a efekt końcowy jest naprawdę piękny.</p>
+              <p class="review-text">Bardzo profesjonalna firma. Wszystko zostało dokładnie wyjaśnione, montaż był estetyczny, a efekt końcowy naprawdę robi wrażenie.</p>
               <div class="review-author">
                 <div class="review-avatar">MV</div>
                 <div>
@@ -1372,7 +1596,7 @@ button{font:inherit}
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Szybki kontakt, przejrzysta oferta i najwyższa jakość. Nasze nowe okna naprawdę robią ogromną różnicę pod względem wyglądu i komfortu.</p>
+              <p class="review-text">Szybki kontakt, przejrzysta oferta i świetna jakość. Nasze nowe okna naprawdę zrobiły ogromną różnicę pod względem wyglądu i komfortu.</p>
               <div class="review-author">
                 <div class="review-avatar">SL</div>
                 <div>
@@ -1384,7 +1608,7 @@ button{font:inherit}
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Wszystkie ustalenia zostały dotrzymane, a całość wykończona bardzo estetycznie. Zdecydowanie firma, którą polecamy bez wahania.</p>
+              <p class="review-text">Wszystkie ustalenia zostały dotrzymane, a wykończenie wykonano bardzo starannie. Zdecydowanie firma, którą bez wahania polecamy.</p>
               <div class="review-author">
                 <div class="review-avatar">JB</div>
                 <div>
@@ -1396,7 +1620,7 @@ button{font:inherit}
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Od doradztwa po oddanie realizacji wszystko przebiegło sprawnie. Piękne produkty, porządni ludzie i duża dbałość o detale. Jesteśmy bardzo zadowoleni.</p>
+              <p class="review-text">Od doradztwa po finalny montaż wszystko przebiegło sprawnie. Świetne produkty, porządna ekipa i duża dbałość o szczegóły. Jesteśmy bardzo zadowoleni.</p>
               <div class="review-author">
                 <div class="review-avatar">ND</div>
                 <div>
@@ -1417,9 +1641,9 @@ button{font:inherit}
         <div class="section-inner">
           <div class="subsidy-grid">
             <div class="subsidy-panel">
-              <span class="section-kicker">Dotacje</span>
-              <h2>Możliwość skorzystania z dotacji na poprawę izolacji.</h2>
-              <p>W wielu przypadkach nowe, izolujące okna lub drzwi mogą przyczynić się do oszczędności energii i kwalifikować się do istniejących programów. Chętnie pomożemy Ci sprawdzić możliwości.</p>
+              <span class="section-kicker">Dofinansowanie</span>
+              <h2>Możesz skorzystać z dofinansowania na rozwiązania poprawiające izolację.</h2>
+              <p>W wielu przypadkach nowe, dobrze izolujące okna lub drzwi mogą przyczynić się do oszczędności energii i kwalifikować się do istniejących programów wsparcia. Chętnie pomożemy Ci sprawdzić dostępne możliwości.</p>
 
               <div class="subsidy-list">
                 <div class="subsidy-item">
@@ -1428,7 +1652,7 @@ button{font:inherit}
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Wgląd w to, które ulepszenia mogą być istotne dla oszczędności energii.</span>
+                  <span>Lepszy wgląd w to, które ulepszenia mogą realnie wpłynąć na oszczędność energii.</span>
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
@@ -1440,7 +1664,7 @@ button{font:inherit}
             </div>
 
             <div class="subsidy-image">
-              <img src="../images/hero3.jpg" alt="Projekt z nowoczesnymi oknami i drzwiami" loading="lazy">
+              <img src="/aprojec/images/hero3.jpg" alt="Realizacja z nowoczesnymi oknami i drzwiami" loading="lazy">
             </div>
           </div>
         </div>
@@ -1454,7 +1678,7 @@ button{font:inherit}
         <div class="section-head" style="margin-bottom:0;">
           <span class="section-kicker">Kontakt</span>
           <h2>Gotowy na stylową metamorfozę swojego domu?</h2>
-          <p>Skontaktuj się już dziś z A-PROJECT, aby uzyskać indywidualne doradztwo i niezobowiązującą wycenę. Chętnie pomożemy Ci znaleźć rozwiązanie dopasowane do Twojego domu, oczekiwań i budżetu.</p>
+          <p>Skontaktuj się z A-PROJECT już dziś, aby otrzymać indywidualne doradztwo i niezobowiązującą ofertę. Chętnie pomożemy Ci dobrać rozwiązanie dopasowane do domu, oczekiwań i budżetu.</p>
         </div>
 
         <div class="contact-actions">
@@ -1466,13 +1690,13 @@ button{font:inherit}
         <div class="contact-pills">
           <span class="contact-pill">★★★★★ 100+ opinii</span>
           <span class="contact-pill">Szybka odpowiedź i indywidualne doradztwo</span>
-          <span class="contact-pill">Niezobowiązująca oferta szyta na miarę</span>
+          <span class="contact-pill">Niezobowiązująca oferta na miarę</span>
         </div>
 
         <div class="contact-meta">
           <div class="contact-meta-card">
             <h4>Dane firmy</h4>
-            <p>Numer KVK: 65884949</p>
+            <p>KVK numer: 65884949</p>
             <p>Serooskerkestraat 50<br>5035GH Tilburg</p>
           </div>
 
@@ -1492,26 +1716,26 @@ button{font:inherit}
         <div class="footer-top">
           <div class="footer-brand">
             <div class="brand" style="min-width:auto;">
-              <img src="../images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
               <span class="brand-name">A-PROJECT</span>
             </div>
             <p>
-              A-PROJECT to wysokiej jakości okna plastikowe, drzwi i drzwi przesuwne
-              o nowoczesnym wyglądzie, świetnej izolacji i profesjonalnym montażu.
+              A-PROJECT to wysokiej jakości okna, drzwi, drzwi przesuwne, rolety i moskitiery
+              o nowoczesnym wyglądzie, wysokiej izolacyjności i fachowym montażu.
             </p>
           </div>
 
           <div class="footer-col">
             <h4>Nawigacja</h4>
             <div class="footer-links">
-         <a href="#over-ons">O nas</a>
-  <a href="#waarom-wij">Dlaczego my?</a>
-  <a href="./realizacje.html">Realizacje</a>
-  <a href="./naszeuslugi.html">Nasze usługi</a>
-  <a href="./produkty.html">Produkty</a>
-  <a href="#reviews">Opinie</a>
-  <a href="#subsidie">Dotacje</a>
-  <a href="#contact">Kontakt</a>
+              <a href="#over-ons">O nas</a>
+              <a href="#waarom-wij">Dlaczego my?</a>
+              <a href="./realizacje.html">Realizacje</a>
+              <a href="./naszeuslugi.html">Nasze usługi</a>
+              <a href="./produkty.html">Produkty</a>
+              <a href="#reviews">Opinie</a>
+              <a href="#subsidie">Dofinansowanie</a>
+              <a href="#contact">Kontakt</a>
             </div>
           </div>
 
@@ -1529,7 +1753,7 @@ button{font:inherit}
             <div class="footer-links">
               <span>KVK: 65884949</span>
               <span>100+ opinii</span>
-              <span>Jakość, obsługa i wykończenie</span>
+              <span>Jakość, serwis i wykończenie</span>
             </div>
           </div>
         </div>
@@ -1537,9 +1761,9 @@ button{font:inherit}
         <div class="footer-bottom">
           <div>© 2026 A-PROJECT. Wszelkie prawa zastrzeżone.</div>
           <div class="footer-badges">
-            <span class="footer-badge">100+ opinii</span>
-            <span class="footer-badge">Premium wykończenie</span>
-            <span class="footer-badge">Niezobowiązująca wycena</span>
+            <span class="footer-badge">100+ Opinii</span>
+            <span class="footer-badge">Premium Wykończenie</span>
+            <span class="footer-badge">Niezobowiązująca Oferta</span>
           </div>
         </div>
       </div>
