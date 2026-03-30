@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A-PROJECT | Onze diensten</title>
-  <meta name="description" content="Ontdek de diensten van A-PROJECT: ramen en deuren, gevel- en isolatiewerken, complete transformaties, rolluiken, horren en schuifdeuren." />
+  <meta name="description" content="Ontdek de diensten van A-PROJECT: advies op maat, bestelling en levering, ramen en deuren, voordeuren, schuifdeuren, totaalmetamorfoses, rolluiken, horren en meer." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -91,7 +90,7 @@
     .section-dark .section-kicker{color:rgba(255,255,255,.54)}
 
     .section-head{
-      max-width:860px;
+      max-width:900px;
       margin-bottom:28px;
     }
 
@@ -177,23 +176,6 @@
       letter-spacing:.11em;
       white-space:nowrap;
       line-height:1;
-    }
-
-    .brand-mark{
-      width:42px;
-      height:42px;
-      border-radius:999px;
-      border:1.5px solid rgba(255,255,255,.82);
-      display:grid;
-      place-items:center;
-      color:#fff;
-      font-size:10px;
-      font-weight:800;
-      line-height:1;
-      text-align:center;
-      letter-spacing:.06em;
-      flex-shrink:0;
-      background:rgba(255,255,255,.02);
     }
 
     .nav{
@@ -311,8 +293,8 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.64) 0%, rgba(0,0,0,.44) 30%, rgba(0,0,0,.18) 58%, rgba(0,0,0,.08) 100%),
-        linear-gradient(180deg, rgba(0,0,0,.16) 0%, rgba(0,0,0,.12) 62%, rgba(0,0,0,.24) 100%);
+        linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.46) 30%, rgba(0,0,0,.20) 58%, rgba(0,0,0,.10) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.14) 62%, rgba(0,0,0,.26) 100%);
     }
 
     .hero-inner{
@@ -325,7 +307,7 @@
     }
 
     .hero-content{
-      max-width:640px;
+      max-width:700px;
       color:#fff;
     }
 
@@ -342,7 +324,7 @@
       font-size:17px;
       line-height:1.72;
       color:rgba(255,255,255,.82);
-      max-width:560px;
+      max-width:590px;
     }
 
     .hero-actions{
@@ -449,15 +431,19 @@
     }
 
     .service-body p{
-      margin:0 0 22px;
+      margin:0 0 18px;
       font-size:16px;
       line-height:1.82;
       color:var(--dark-muted);
-      max-width:95%;
+      max-width:96%;
     }
 
     .service-actions{
       margin-top:auto;
+      padding-top:6px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
     }
 
     .service-btn{
@@ -479,6 +465,60 @@
 
     .service-btn:hover{
       transform:translateY(-1px);
+    }
+
+    .service-btn-light{
+      background:#f3f3f4;
+      color:#111214;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .service-thumbs{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+      margin-bottom:6px;
+    }
+
+    .service-thumb{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      aspect-ratio:1.12 / 1;
+      background:#e4e4e6;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .service-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+
+    .service-thumb:hover img{
+      transform:scale(1.04);
+    }
+
+    .service-card.facebook-card{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .facebook-card .service-label{
+      color:rgba(255,255,255,.56);
+    }
+
+    .facebook-card .service-body p{
+      color:rgba(255,255,255,.74);
+    }
+
+    .facebook-card .service-btn{
+      background:#fff;
+      color:#111214;
+      border-color:#fff;
     }
 
     .contact-card{
@@ -679,7 +719,8 @@
 
       .hero-actions .btn,
       .contact-actions .btn,
-      .service-btn{
+      .service-btn,
+      .service-btn-light{
         width:100%;
       }
 
@@ -695,6 +736,10 @@
 
       .service-body h3{
         font-size:28px;
+      }
+
+      .service-thumbs{
+        grid-template-columns:1fr 1fr;
       }
 
       .footer-top{
@@ -731,8 +776,8 @@
 
           <div class="header-right">
             <a class="lang-link" href="/aprojec/onzediensten.html" aria-label="Nederlandse versie">🇳🇱</a>
-            <a class="lang-link" href="/aprojec/en/index.html" aria-label="Engelse versie">🇬🇧</a>
-            <a class="lang-link" href="/aprojec/pl/index.html" aria-label="Poolse versie">🇵🇱</a>
+            <a class="lang-link" href="/aprojec/en/services.html" aria-label="Engelse versie">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl/uslugi.html" aria-label="Poolse versie">🇵🇱</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
           </div>
         </div>
@@ -764,10 +809,10 @@
           <div class="hero-inner">
             <div class="hero-content">
               <span class="section-kicker" style="color:rgba(255,255,255,.64);">Onze diensten</span>
-              <h1>Oplossingen voor comfort, uitstraling en energiebesparing.</h1>
+              <h1>Doordachte oplossingen voor comfort, uitstraling en duurzaamheid.</h1>
               <p class="hero-text">
-                Van ramen en deuren tot complete gevelupgrades en totaalrenovaties:
-                A-PROJECT helpt u met hoogwaardige oplossingen voor een woning die beter presteert én beter oogt.
+                Van persoonlijk advies en levering tot ramen, deuren, schuifdeuren, rolluiken en complete metamorfoses:
+                A-PROJECT helpt u met hoogwaardige oplossingen die uw woning mooier, comfortabeler en efficiënter maken.
               </p>
 
               <div class="hero-actions">
@@ -789,20 +834,59 @@
           <div class="section-head">
             <span class="section-kicker">Diensten</span>
             <h2>Wat wij voor uw woning kunnen realiseren.</h2>
-            <p>Elke dienst is gericht op een strakke afwerking, betere isolatie en een resultaat dat perfect aansluit op de uitstraling van uw huis.</p>
+            <p>
+              Elke oplossing is gericht op een nette afwerking, sterke isolatie, meer dagelijks comfort
+              en een uitstraling die perfect past bij uw woning.
+            </p>
           </div>
 
           <div class="services-grid">
             <article class="service-card">
               <div class="service-media">
-                <img src="/aprojec/images/hero2.jpg" alt="Ramen en deuren">
+                <img src="/aprojec/images/onzediensten1.jpeg" alt="Advies en oplossingen op maat">
               </div>
               <div class="service-body">
-                <span class="service-label">01 — Ramen en deuren</span>
-                <h3>Levering en montage van ramen en deuren.</h3>
+                <span class="service-label">01 — Advies en oplossingen op maat</span>
+                <h3>Persoonlijk advies voor de beste oplossing die bij u past.</h3>
                 <p>
-                  Kies voor duurzame oplossingen die niet alleen modern ogen, maar ook bijdragen aan meer wooncomfort,
-                  minder warmteverlies en een nette, verzorgde uitstraling van uw woning.
+                  Niet iedere woning vraagt om dezelfde aanpak. Daarom adviseren wij u over stijl,
+                  isolatie, afmetingen en afwerking, zodat het eindresultaat perfect aansluit op uw wensen,
+                  uw woning en uw situatie.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Neem contact op</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten2.jpeg" alt="Bestelling en levering">
+              </div>
+              <div class="service-body">
+                <span class="service-label">02 — Bestelling en levering</span>
+                <h3>Van offerte tot bestelling en tijdige levering.</h3>
+                <p>
+                  Wij bieden een complete service: van een passende offerte en duidelijke begeleiding
+                  tot het plaatsen van de bestelling en een tijdige levering. Transparantie,
+                  hoge kwaliteit en een vlotte uitvoering staan bij ons centraal.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Vraag een offerte aan</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten3.jpeg" alt="Ramen en deuren">
+              </div>
+              <div class="service-body">
+                <span class="service-label">03 — Ramen en deuren</span>
+                <h3>Montage van ramen en deuren.</h3>
+                <p>
+                  Kies voor duurzame oplossingen die er modern uitzien, het wooncomfort verhogen,
+                  warmteverlies beperken en uw woning een elegante en verzorgde uitstraling geven.
                 </p>
                 <div class="service-actions">
                   <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
@@ -812,14 +896,15 @@
 
             <article class="service-card">
               <div class="service-media">
-                <img src="/aprojec/images/hero3.jpg" alt="Gevelmontage en isolatie">
+                <img src="/aprojec/images/onzediensten4.jpeg" alt="Voordeuren">
               </div>
               <div class="service-body">
-                <span class="service-label">02 — Isolatie en gevelwerk</span>
-                <h3>Bouwisolatie en gevelmontage voor een sterkere woning.</h3>
+                <span class="service-label">04 — Voordeuren</span>
+                <h3>Voordeuren die design, veiligheid en duurzaamheid combineren.</h3>
                 <p>
-                  Wij combineren energiebesparende verbeteringen met een verzorgde buitenafwerking,
-                  zodat uw woning efficiënter wordt én direct een frissere, modernere uitstraling krijgt.
+                  Uw voordeur is het visitekaartje van uw woning. Daarom moet die niet alleen sterk ogen,
+                  maar ook een hoog veiligheidsniveau en langdurige kwaliteit bieden. Wij kiezen oplossingen
+                  die esthetiek combineren met functionaliteit en dagelijks gebruiksgemak.
                 </p>
                 <div class="service-actions">
                   <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
@@ -829,48 +914,43 @@
 
             <article class="service-card">
               <div class="service-media">
-                <img src="/aprojec/images/deur3.jpg" alt="Complete transformaties van gebouwen">
-              </div>
-              <div class="service-body">
-                <span class="service-label">03 — Totaalprojecten</span>
-                <h3>Volledige en doordachte transformaties van gebouwen.</h3>
-                <p>
-                  Wilt u uw woning echt vernieuwen? Dan zorgen wij voor een complete aanpak waarbij uitstraling,
-                  functionaliteit en afwerking samenkomen in één sterk totaalresultaat.
-                </p>
-                <div class="service-actions">
-                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-media">
-                <img src="/aprojec/images/deur1.jpg" alt="Rolluiken en horren">
-              </div>
-              <div class="service-body">
-                <span class="service-label">04 — Rolluiken en horren</span>
-                <h3>Praktische extra’s voor meer comfort in huis.</h3>
-                <p>
-                  Rolluiken en horren bieden privacy, gebruiksgemak en bescherming tegen warmte en insecten,
-                  zonder in te leveren op een nette en stijlvolle afwerking van uw woning.
-                </p>
-                <div class="service-actions">
-                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-media">
-                <img src="/aprojec/images/hero1.jpg" alt="Schuifdeuren">
+                <img src="/aprojec/images/onzediensten5.jpeg" alt="Schuifdeuren">
               </div>
               <div class="service-body">
                 <span class="service-label">05 — Schuifdeuren</span>
                 <h3>Schuifdeuren die licht, ruimte en elegantie toevoegen.</h3>
                 <p>
-                  Met de juiste schuifdeur creëert u een open woongevoel en een soepele verbinding tussen binnen en buiten,
-                  met volop lichtinval en een moderne uitstraling als resultaat.
+                  Met de juiste schuifdeuren creëert u een open en ruimtelijk interieur
+                  en een vloeiende verbinding tussen woning en tuin. Het resultaat is meer natuurlijk licht
+                  en een moderne, hoogwaardige uitstraling.
+                </p>
+
+                <div class="service-thumbs">
+                  <div class="service-thumb">
+                    <img src="/aprojec/images/onzediensten51.jpeg" alt="Schuifdeur detail 1">
+                  </div>
+                  <div class="service-thumb">
+                    <img src="/aprojec/images/onzediensten52.jpeg" alt="Schuifdeur detail 2">
+                  </div>
+                </div>
+
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten6.jpeg" alt="Totale metamorfose">
+              </div>
+              <div class="service-body">
+                <span class="service-label">06 — Totale metamorfose</span>
+                <h3>Nieuwe ramen, nieuwe isolatie, nieuwe gevel.</h3>
+                <p>
+                  Panelen van KERALIT en TRESPA hebben de uitstraling van deze woning volledig veranderd.
+                  Wij combineren energiezuinige oplossingen met een esthetische afwerking, zodat uw woning
+                  efficiënter wordt en tegelijk een moderne en frisse uitstraling krijgt.
                 </p>
                 <div class="service-actions">
                   <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
@@ -880,17 +960,35 @@
 
             <article class="service-card">
               <div class="service-media">
-                <img src="/aprojec/images/deurraam.jpg" alt="Advies en maatwerk">
+                <img src="/aprojec/images/onzediensten7.jpeg" alt="Rolluiken en horren">
               </div>
               <div class="service-body">
-                <span class="service-label">06 — Advies en maatwerk</span>
-                <h3>Persoonlijk advies voor de beste oplossing op maat.</h3>
+                <span class="service-label">07 — Rolluiken en horren</span>
+                <h3>Ook voor uw dagelijkse comfort zorgen wij.</h3>
                 <p>
-                  Niet iedere woning vraagt om dezelfde aanpak. Daarom denken wij mee over stijl, isolatie,
-                  afmetingen en afwerking, zodat het eindresultaat echt past bij uw wensen en situatie.
+                  Horren beschermen uw interieur effectief tegen insecten, terwijl rolluiken controle geven
+                  over lichtinval en bescherming bieden tegen overmatige zon. Functionaliteit en esthetiek,
+                  perfect afgestemd op uw woning.
                 </p>
                 <div class="service-actions">
-                  <a href="#contact" class="service-btn">Bekijk ons aanbod</a>
+                  <a href="#contact" class="service-btn">Neem contact op</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card facebook-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten8.jpeg" alt="Volg A-PROJECT op Facebook">
+              </div>
+              <div class="service-body">
+                <span class="service-label">08 — Follow us on Facebook</span>
+                <h3>Blijf op de hoogte van onze nieuwste realisaties en inspiratie.</h3>
+                <p>
+                  Volg ons op Facebook en ontdek onze meest recente projecten, ideeën en updates.
+                  Zo blijft u altijd op de hoogte van nieuwe realisaties en inspirerende oplossingen voor uw woning.
+                </p>
+                <div class="service-actions">
+                  <a href="https://www.facebook.com/share/18RQeJhjci" target="_blank" rel="noopener" class="service-btn">Volg ons op Facebook</a>
                 </div>
               </div>
             </article>
@@ -906,7 +1004,10 @@
         <div class="section-head" style="margin-bottom:0;">
           <span class="section-kicker">Contact</span>
           <h2>Interesse in één van onze diensten?</h2>
-          <p>Neem contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte. Wij helpen u graag met een oplossing die past bij uw woning en wensen.</p>
+          <p>
+            Neem contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte.
+            Wij helpen u graag met een oplossing die past bij uw woning en wensen.
+          </p>
         </div>
 
         <div class="contact-actions">
@@ -930,9 +1031,9 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="brand" style="min-width:auto;">
-  <img src="images/logo.png" class="brand-logo" alt="A-PROJECT logo">
-  <span class="brand-name">A-PROJECT</span>
-</div>
+              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <span class="brand-name">A-PROJECT</span>
+            </div>
             <p>
               A-PROJECT staat voor hoogwaardige kunststof kozijnen, deuren en schuifpuien
               met een moderne uitstraling, sterke isolatie en vakkundige montage.
