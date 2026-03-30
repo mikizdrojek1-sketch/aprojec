@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A-PROJECT | Producten</title>
-  <meta name="description" content="Bekijk en download productbrochures van A-PROJECT in het Nederlands, Engels en Pools. Ontdek de producten en systemen waarmee wij werken." />
+  <meta name="description" content="Ontdek de producten van A-PROJECT: PVC en aluminium kozijnen, schuifsystemen, rolluiken en hoogwaardige oplossingen voor comfort, uitstraling en isolatie." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@
     .section-dark .section-kicker{color:rgba(255,255,255,.54)}
 
     .section-head{
-      max-width:860px;
+      max-width:920px;
       margin-bottom:28px;
     }
 
@@ -272,7 +272,7 @@
 
     .hero{
       position:relative;
-      min-height:420px;
+      min-height:640px;
       background:#111;
       width:100%;
     }
@@ -293,17 +293,17 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.46) 34%, rgba(0,0,0,.18) 62%, rgba(0,0,0,.08) 100%),
-        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.16) 65%, rgba(0,0,0,.28) 100%);
+        linear-gradient(90deg, rgba(0,0,0,.70) 0%, rgba(0,0,0,.48) 30%, rgba(0,0,0,.18) 58%, rgba(0,0,0,.10) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.14) 62%, rgba(0,0,0,.28) 100%);
     }
 
     .hero-inner{
       position:relative;
       z-index:2;
-      min-height:420px;
+      min-height:640px;
       display:flex;
       align-items:center;
-      padding:132px 72px 56px;
+      padding:138px 72px 70px;
     }
 
     .hero-content{
@@ -313,18 +313,18 @@
 
     .hero h1{
       margin:0 0 14px;
-      font-size:clamp(40px,4.5vw,64px);
+      font-size:clamp(46px,5vw,72px);
       line-height:.98;
       letter-spacing:-.055em;
       font-weight:800;
     }
 
     .hero-text{
-      margin:0 0 24px;
+      margin:0 0 28px;
       font-size:17px;
       line-height:1.72;
       color:rgba(255,255,255,.82);
-      max-width:620px;
+      max-width:590px;
     }
 
     .hero-actions{
@@ -345,7 +345,6 @@
       border:1px solid transparent;
       transition:.22s ease;
       white-space:nowrap;
-      cursor:pointer;
     }
 
     .btn:hover{transform:translateY(-1px)}
@@ -371,189 +370,174 @@
       box-shadow:none;
     }
 
-    .lang-sections{
+    .products-grid{
       display:grid;
-      gap:24px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
     }
 
-    .lang-block{
-      border-radius:26px;
+    .product-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
       overflow:hidden;
-      border:1px solid rgba(0,0,0,.06);
       box-shadow:var(--shadow-soft);
-    }
-
-    .lang-block.light{
-      background:#f3f3f5;
-      color:var(--dark-text);
-    }
-
-    .lang-block.dark{
-      background:linear-gradient(180deg,#161719 0%, #111214 100%);
-      color:var(--text);
-      border-color:rgba(255,255,255,.06);
-    }
-
-    .lang-top{
       display:flex;
-      align-items:end;
-      justify-content:space-between;
-      gap:20px;
-      padding:30px 30px 0;
-      flex-wrap:wrap;
+      flex-direction:column;
+      min-height:100%;
     }
 
-    .lang-title{
-      margin:0;
-      font-size:clamp(24px,2.2vw,36px);
-      line-height:1.04;
+    .product-media{
+      position:relative;
+      aspect-ratio:16 / 10.2;
+      overflow:hidden;
+      background:#d9d9dc;
+    }
+
+    .product-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .product-card:hover .product-media img{
+      transform:scale(1.035);
+    }
+
+    .product-body{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+
+    .product-label{
+      display:inline-block;
+      margin-bottom:14px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(17,18,20,.48);
+    }
+
+    .product-body h3{
+      margin:0 0 12px;
+      font-size:32px;
+      line-height:1.02;
       letter-spacing:-.04em;
       font-weight:800;
     }
 
-    .lang-sub{
-      margin:10px 0 0;
-      font-size:15px;
-      line-height:1.7;
+    .product-body p{
+      margin:0 0 18px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--dark-muted);
+      max-width:96%;
     }
 
-    .lang-block.light .lang-sub{color:var(--dark-muted)}
-    .lang-block.dark .lang-sub{color:var(--muted)}
+    .product-actions{
+      margin-top:auto;
+      padding-top:8px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
 
-    .lang-badge{
-      padding:12px 14px;
+    .product-btn{
+      min-height:52px;
+      padding:0 20px;
       border-radius:12px;
-      font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
       font-weight:800;
-      line-height:1;
-      white-space:nowrap;
-    }
-
-    .lang-block.light .lang-badge{
+      letter-spacing:.03em;
+      text-transform:uppercase;
       background:#17181a;
       color:#fff;
+      border:1px solid #17181a;
+      transition:.22s ease;
     }
 
-    .lang-block.dark .lang-badge{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      color:#fff;
+    .product-btn:hover{
+      transform:translateY(-1px);
     }
 
-    .pdf-grid{
+    .downloads-grid{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:18px;
-      padding:24px 30px 30px;
+      gap:16px;
+      margin-top:30px;
     }
 
-    .pdf-card{
+    .download-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
       border-radius:22px;
-      overflow:hidden;
-      position:relative;
-      min-height:100%;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
-      box-shadow:var(--shadow-soft);
+      gap:16px;
+      min-height:100%;
     }
 
-    .lang-block.light .pdf-card{
-      background:#ffffff;
-      border:1px solid rgba(0,0,0,.06);
-    }
-
-    .lang-block.dark .pdf-card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .pdf-card-top{
-      padding:24px 24px 18px;
-    }
-
-    .pdf-icon{
-      width:56px;
-      height:56px;
+    .download-icon{
+      width:52px;
+      height:52px;
       border-radius:16px;
       display:grid;
       place-items:center;
-      font-size:22px;
-      font-weight:800;
-      margin-bottom:16px;
-    }
-
-    .lang-block.light .pdf-icon{
       background:#17181a;
       color:#fff;
+      font-size:22px;
+      font-weight:800;
+      box-shadow:0 12px 24px rgba(0,0,0,.12);
     }
 
-    .lang-block.dark .pdf-icon{
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .pdf-title{
-      margin:0 0 10px;
+    .download-card h3{
+      margin:0;
       font-size:22px;
       line-height:1.12;
       letter-spacing:-.03em;
       font-weight:800;
+      color:var(--dark-text);
     }
 
-    .pdf-text{
+    .download-card p{
       margin:0;
       font-size:15px;
-      line-height:1.74;
+      line-height:1.75;
+      color:var(--dark-muted);
     }
 
-    .lang-block.light .pdf-text{color:var(--dark-muted)}
-    .lang-block.dark .pdf-text{color:var(--muted)}
-
-    .pdf-meta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:18px;
-    }
-
-    .pdf-pill{
-      padding:10px 12px;
-      border-radius:12px;
-      font-size:12px;
-      font-weight:700;
-      line-height:1;
-    }
-
-    .lang-block.light .pdf-pill{
-      background:#f1f1f3;
-      color:#111214;
-      border:1px solid rgba(0,0,0,.06);
-    }
-
-    .lang-block.dark .pdf-pill{
-      background:rgba(255,255,255,.05);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .pdf-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      padding:0 24px 24px;
+    .download-btn{
       margin-top:auto;
-    }
-
-    .pdf-actions .btn{
       min-height:48px;
       padding:0 18px;
-      font-size:14px;
-      flex:1 1 160px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      background:#17181a;
+      color:#fff;
+      border:1px solid #17181a;
+      transition:.22s ease;
     }
 
-    .cta-card{
+    .download-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .contact-card{
       background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
       border:1px solid rgba(0,0,0,.08);
       border-radius:24px;
@@ -561,21 +545,21 @@
       box-shadow:var(--shadow-soft);
     }
 
-    .cta-actions{
+    .contact-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
       margin-top:26px;
     }
 
-    .cta-pills{
+    .contact-pills{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       margin-top:18px;
     }
 
-    .cta-pill{
+    .contact-pill{
       padding:12px 14px;
       border-radius:12px;
       background:#17181a;
@@ -681,21 +665,14 @@
 
     .whatsapp-float:hover{transform:translateY(-2px)}
 
-    .reveal{
-      opacity:0;
-      transform:translateY(26px);
-      transition:opacity .8s ease, transform .8s ease;
-    }
-
-    .reveal.is-visible{
-      opacity:1;
-      transform:translateY(0);
-    }
-
     @media (max-width:1320px){
       .nav{gap:24px}
-      .footer-top{grid-template-columns:1fr 1fr}
-      .pdf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+      .downloads-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
     }
 
     @media (max-width:1060px){
@@ -706,7 +683,16 @@
 
       .menu-toggle{display:flex}
       .header-right{min-width:auto}
+
       .hero-inner{padding:132px 34px 56px}
+
+      .products-grid{
+        grid-template-columns:1fr;
+      }
+
+      .downloads-grid{
+        grid-template-columns:1fr 1fr;
+      }
     }
 
     @media (max-width:760px){
@@ -738,51 +724,45 @@
       }
 
       .hero{
-        min-height:360px;
+        min-height:560px;
       }
 
       .hero-inner{
-        min-height:360px;
+        min-height:560px;
         padding:116px 22px 42px;
       }
 
-      .hero h1{font-size:42px}
+      .hero h1{font-size:44px}
       .hero-text{font-size:16px}
 
       .hero-actions,
-      .cta-actions{
+      .contact-actions{
         width:100%;
       }
 
       .hero-actions .btn,
-      .cta-actions .btn{
+      .contact-actions .btn,
+      .product-btn,
+      .download-btn{
         width:100%;
       }
 
       .section-inner,
-      .cta-card,
-      .footer-top,
-      .lang-top,
-      .pdf-grid{
-        padding-left:22px;
-        padding-right:22px;
-      }
-
-      .section-inner,
-      .cta-card,
+      .contact-card,
       .footer-top{
-        padding-top:22px;
-        padding-bottom:22px;
+        padding:22px;
       }
 
-      .lang-top{
-        padding-top:22px;
+      .product-body{
+        padding:22px;
       }
 
-      .pdf-grid{
+      .product-body h3{
+        font-size:28px;
+      }
+
+      .downloads-grid{
         grid-template-columns:1fr;
-        padding-top:18px;
-        padding-bottom:22px;
       }
 
       .footer-top{
@@ -810,10 +790,10 @@
             <a href="/aprojec/index.html#over-ons">Over ons</a>
             <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
             <a href="/aprojec/realisaties.html">Realisaties</a>
-            <a href="/aprojec/onzediensten.html">Onze Diensten</a>
+            <a href="/aprojec/onzediensten.html">Onze diensten</a>
             <a href="/aprojec/producten.html">Producten</a>
-            <a href="/aprojec/index.html#werkwijze">Werkwijze</a>
             <a href="/aprojec/index.html#reviews">Reviews</a>
+            <a href="/aprojec/index.html#subsidie">Subsidie</a>
             <a href="#contact">Contact</a>
           </nav>
 
@@ -835,32 +815,32 @@
         <a href="/aprojec/index.html#over-ons">Over ons</a>
         <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
         <a href="/aprojec/realisaties.html">Realisaties</a>
-        <a href="/aprojec/onzediensten.html">Onze Diensten</a>
+        <a href="/aprojec/onzediensten.html">Onze diensten</a>
         <a href="/aprojec/producten.html">Producten</a>
-        <a href="/aprojec/index.html#werkwijze">Werkwijze</a>
         <a href="/aprojec/index.html#reviews">Reviews</a>
+        <a href="/aprojec/index.html#subsidie">Subsidie</a>
         <a href="#contact">Contact</a>
       </div>
 
       <main>
         <section class="hero">
           <div class="hero-media">
-            <img src="./images/producten-hero.jpg" alt="A-PROJECT producten en brochures">
+            <img src="/aprojec/images/hero2.jpg" alt="Producten van A-PROJECT">
           </div>
           <div class="hero-overlay"></div>
 
           <div class="hero-inner">
             <div class="hero-content">
               <span class="section-kicker" style="color:rgba(255,255,255,.64);">Producten</span>
-              <h1>Bekijk de producten waarmee wij werken.</h1>
+              <h1>Hoogwaardige systemen voor comfort, uitstraling en isolatie.</h1>
               <p class="hero-text">
-                Ontdek onze systemen, oplossingen en afwerkingen. Op deze pagina kun je per taal
-                de productbestanden bekijken en direct als PDF downloaden.
+                Ontdek onze selectie van PVC- en aluminium systemen, schuifoplossingen,
+                rolluiken en moderne productoplossingen die perfect aansluiten op uw woning en wensen.
               </p>
 
               <div class="hero-actions">
-                <a href="#producten-overzicht" class="btn btn-light">Bekijk bestanden</a>
-                <a href="#contact" class="btn btn-dark">Advies aanvragen</a>
+                <a href="#producten" class="btn btn-light">Bekijk producten</a>
+                <a href="#downloads" class="btn btn-dark">Downloads</a>
                 <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
               </div>
             </div>
@@ -870,20 +850,255 @@
     </div>
   </div>
 
-  <section class="section-block" id="producten-overzicht">
+  <section class="section-block" id="producten">
     <div class="shell">
       <div class="section-card section-light">
         <div class="section-inner">
           <div class="section-head">
-            <span class="section-kicker">Bestanden</span>
-            <h2>PDF brochures per taal.</h2>
+            <span class="section-kicker">Assortiment</span>
+            <h2>Producten die techniek, design en prestaties combineren.</h2>
             <p>
-              Alle documenten zijn overzichtelijk gesorteerd per taal.
-              Klik op bekijken om het bestand te openen of download het direct als PDF.
+              Onze productselectie is gericht op duurzaamheid, isolatie, dagelijks comfort
+              en een hoogwaardige afwerking die perfect aansluit op zowel renovatie als nieuwbouw.
             </p>
           </div>
 
-          <div class="lang-sections" id="langSections"></div>
+          <div class="products-grid">
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/aluplastideal7000.jpeg" alt="Aluplast Ideal 7000 NL">
+              </div>
+              <div class="product-body">
+                <span class="product-label">01 — PVC systeem</span>
+                <h3>Aluplast Ideal 7000 NL</h3>
+                <p>
+                  Aluplast Ideal 7000 NL is een PVC-profielsysteem voor ramen en deuren in blokuitvoering,
+                  speciaal ontwikkeld voor de Nederlandse markt met een inbouwdiepte van 120 mm.
+                  Het systeem biedt een zeer goede thermische isolatie, hoge stijfheid en een klassieke
+                  uitstraling die doet denken aan houten kozijnen.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/gealans9000.jpeg" alt="Gealan S9000NL">
+              </div>
+              <div class="product-body">
+                <span class="product-label">02 — PVC systeem</span>
+                <h3>Gealan S9000NL</h3>
+                <p>
+                  Gealan S9000NL is een blokprofielsysteem van 120 mm voor de Nederlandse markt.
+                  Dankzij het 3-dichtingssysteem (MD) biedt het een zeer hoge luchtdichtheid,
+                  sterke thermische isolatie en extra bescherming tegen wind en vocht.
+                  Dit systeem wordt vaak toegepast in energiezuinige woningen en renovatieprojecten.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/rehau.jpeg" alt="REHAU Synego">
+              </div>
+              <div class="product-body">
+                <span class="product-label">03 — PVC systeem</span>
+                <h3>REHAU Synego</h3>
+                <p>
+                  REHAU Synego is een PVC-raamsysteem van 120 mm in blokuitvoering, ontworpen
+                  met focus op comfort, duurzaamheid en geluidsisolatie. De verfijnde REHAU-constructie,
+                  waaronder de gladde HDF-oppervlakken, zorgt voor een hoogwaardige afwerking
+                  en een uitstekende balans tussen isolatie en profielstabiliteit.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/aluprofmb79n.jpeg" alt="Aluprof MB-79N">
+              </div>
+              <div class="product-body">
+                <span class="product-label">04 — Aluminium systeem</span>
+                <h3>Aluprof MB-79N</h3>
+                <p>
+                  Aluprof MB-79N is een aluminium raam- en deursysteem met een slanke,
+                  moderne uitstraling en zeer goede isolerende eigenschappen.
+                  Het is een eigentijdse en economische oplossing die geschikt is
+                  voor zowel woningen als commerciële projecten.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/roletask90.jpeg" alt="SK90 rolluik">
+              </div>
+              <div class="product-body">
+                <span class="product-label">05 — Rolluiksysteem</span>
+                <h3>Roleta adaptacyjna SK90</h3>
+                <p>
+                  SK90 is een opbouwrolluik voor buiten met een strakke, vierkante omkasting in 90°-vorm.
+                  Dit systeem is vooral bedoeld voor bestaande gebouwen en heeft een moderne,
+                  robuuste uitstraling. Het grote voordeel is de eenvoudige montage zonder
+                  ingrijpende aanpassingen aan het kozijn.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/smartslidesystem.jpeg" alt="Smart Slide">
+              </div>
+              <div class="product-body">
+                <span class="product-label">06 — Schuifsysteem</span>
+                <h3>Smart Slide</h3>
+                <p>
+                  Smart Slide is een PVC-schuifdeursysteem dat de voordelen van PSK en HST combineert.
+                  Het systeem is licht in gebruik, goed afsluitend en economischer dan veel andere
+                  schuifoplossingen. Daardoor is het ideaal als terrasdeur met grote glasoppervlakken.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-media">
+                <img src="/aprojec/images/hst.jpeg" alt="HST hefschuifdeur">
+              </div>
+              <div class="product-body">
+                <span class="product-label">07 — Terrassysteem</span>
+                <h3>HST</h3>
+                <p>
+                  HST staat voor hefschuifdeuren: grote terrasdeuren waarbij het deurblad eerst
+                  wordt opgetild en daarna soepel openschuift. Dit systeem maakt zeer grote
+                  glaspartijen mogelijk en biedt tegelijk een hoge dichtheid, veel gebruikscomfort
+                  en een luxe uitstraling.
+                </p>
+                <div class="product-actions">
+                  <a href="#contact" class="product-btn">Meer informatie</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="downloads">
+    <div class="shell">
+      <div class="section-card section-light">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Downloads</span>
+            <h2>Brochures, technische fiches en productdocumentatie.</h2>
+            <p>
+              Hieronder vindt u ruimte voor 12 PDF-bestanden. Zodra de website op hosting staat,
+              kunnen deze downloadknoppen direct gekoppeld worden aan de definitieve documenten.
+            </p>
+          </div>
+
+          <div class="downloads-grid">
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 01</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-01.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 02</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-02.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 03</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-03.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 04</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-04.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 05</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-05.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 06</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-06.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 07</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-07.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 08</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-08.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 09</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-09.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 10</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-10.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 11</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-11.pdf" class="download-btn">Download PDF</a>
+            </article>
+
+            <article class="download-card">
+              <div class="download-icon">PDF</div>
+              <h3>Document 12</h3>
+              <p>Voeg hier later uw brochure, technische fiche of productdocument toe.</p>
+              <a href="/aprojec/pdfs/document-12.pdf" class="download-btn">Download PDF</a>
+            </article>
+          </div>
         </div>
       </div>
     </div>
@@ -891,23 +1106,26 @@
 
   <section class="section-pad" id="contact">
     <div class="shell">
-      <div class="cta-card">
+      <div class="contact-card">
         <div class="section-head" style="margin-bottom:0;">
           <span class="section-kicker">Contact</span>
-          <h2>Vragen over een product of systeem?</h2>
-          <p>Neem contact op met A-PROJECT voor persoonlijk advies, mogelijkheden en een vrijblijvende offerte.</p>
+          <h2>Interesse in één van onze producten?</h2>
+          <p>
+            Neem contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte.
+            Wij helpen u graag bij het kiezen van het juiste systeem voor uw woning of project.
+          </p>
         </div>
 
-        <div class="cta-actions">
+        <div class="contact-actions">
           <a href="tel:+31628255738" class="btn btn-dark">Bel: +31 6 28255738</a>
           <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
           <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
         </div>
 
-        <div class="cta-pills">
-          <span class="cta-pill">PDF brochures</span>
-          <span class="cta-pill">Persoonlijk advies</span>
-          <span class="cta-pill">Vrijblijvende offerte</span>
+        <div class="contact-pills">
+          <span class="contact-pill">100+ reviews</span>
+          <span class="contact-pill">Vrijblijvende offerte</span>
+          <span class="contact-pill">Persoonlijk advies</span>
         </div>
       </div>
     </div>
@@ -919,7 +1137,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="brand" style="min-width:auto;">
-              <img src="./images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
               <span class="brand-name">A-PROJECT</span>
             </div>
             <p>
@@ -934,7 +1152,7 @@
               <a href="/aprojec/index.html#over-ons">Over ons</a>
               <a href="/aprojec/index.html#waarom-wij">Waarom wij?</a>
               <a href="/aprojec/realisaties.html">Realisaties</a>
-              <a href="/aprojec/onzediensten.html">Onze Diensten</a>
+              <a href="/aprojec/onzediensten.html">Onze diensten</a>
               <a href="/aprojec/producten.html">Producten</a>
               <a href="#contact">Contact</a>
             </div>
@@ -962,8 +1180,8 @@
         <div class="footer-bottom">
           <div>© 2026 A-PROJECT. Alle rechten voorbehouden.</div>
           <div class="footer-badges">
-            <span class="footer-badge">PDF Downloads</span>
-            <span class="footer-badge">Premium Kwaliteit</span>
+            <span class="footer-badge">100+ Reviews</span>
+            <span class="footer-badge">Premium Afwerking</span>
             <span class="footer-badge">Vrijblijvende Offerte</span>
           </div>
         </div>
@@ -976,125 +1194,6 @@
   </a>
 
   <script>
-   const allFiles = [
-  "Aluplast.colourPL.pdf",
-  "Aluprof.colourENG.pdf",
-  "Buitendeuren.pdf",
-  "Drzwi.pdf",
-  "Entrance-door_EN.pdf",
-  "Gealan.colourPL.pdf",
-  "PVC.alles.NL.pdf",
-  "PVC.and.all.enEN.pdf",
-  "PVC.and.ALL.pl.pdf",
-  "Rolety_PL.pdf",
-  "Roller-shutter_EN.pdf",
-  "Rolluiken_NL.pdf"
-];
-
-function detectLang(file) {
-  if (file.toLowerCase().includes("pl")) return "pl";
-  if (file.toLowerCase().includes("en")) return "en";
-  if (file.toLowerCase().includes("nl")) return "nl";
-  return "nl";
-}
-
-function formatTitle(file) {
-  return file
-    .replace(".pdf", "")
-    .replace(/[_\.]/g, " ")
-    .replace(/\b(pl|en|nl)\b/gi, "")
-    .trim();
-}
-
-const productFiles = {
-  nl: [],
-  en: [],
-  pl: []
-};
-
-allFiles.forEach(file => {
-  const lang = detectLang(file);
-
-  productFiles[lang].push({
-    title: formatTitle(file),
-    text: "Bekijk productinformatie en specificaties.",
-    size: "PDF",
-    category: "Product",
-    view: `./pdf/${file}`,
-    download: `./pdf/${file}`
-  });
-});
-
-    const languageMeta = [
-      {
-        key: "nl",
-        title: "Nederlands",
-        sub: "Nederlandstalige productbestanden en brochures.",
-        badge: "NL",
-        theme: "light"
-      },
-      {
-        key: "en",
-        title: "English",
-        sub: "English product files and downloadable brochures.",
-        badge: "EN",
-        theme: "dark"
-      },
-      {
-        key: "pl",
-        title: "Polski",
-        sub: "Polskie katalogi produktowe i pliki do pobrania.",
-        badge: "PL",
-        theme: "light"
-      }
-    ];
-
-    const langSections = document.getElementById("langSections");
-
-    function buildProductSections() {
-      languageMeta.forEach((lang, index) => {
-        const files = productFiles[lang.key] || [];
-
-        const section = document.createElement("article");
-        section.className = `lang-block ${lang.theme} reveal`;
-
-        const cards = files.map(file => `
-          <div class="pdf-card">
-            <div class="pdf-card-top">
-              <div class="pdf-icon">PDF</div>
-              <h3 class="pdf-title">${file.title}</h3>
-              <p class="pdf-text">${file.text}</p>
-              <div class="pdf-meta">
-                <span class="pdf-pill">${file.category}</span>
-                <span class="pdf-pill">${file.size}</span>
-              </div>
-            </div>
-            <div class="pdf-actions">
-              <a class="btn ${lang.theme === "dark" ? "btn-light" : "btn-dark"}" href="${file.view}" target="_blank" rel="noopener">Bekijken</a>
-              <a class="btn ${lang.theme === "dark" ? "btn-ghost" : "btn-light"}" href="${file.download}" download>Download PDF</a>
-            </div>
-          </div>
-        `).join("");
-
-        section.innerHTML = `
-          <div class="lang-top">
-            <div>
-              <h3 class="lang-title">${lang.title}</h3>
-              <p class="lang-sub">${lang.sub}</p>
-            </div>
-            <span class="lang-badge">${lang.badge}</span>
-          </div>
-          <div class="pdf-grid">
-            ${cards}
-          </div>
-        `;
-
-        langSections.appendChild(section);
-      });
-    }
-
-    // buildProductSections();
-
     document.addEventListener("DOMContentLoaded", function () {
       const menuToggle = document.getElementById("menuToggle");
       const mobileNav = document.getElementById("mobileNav");
@@ -1112,17 +1211,6 @@ allFiles.forEach(file => {
           if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
         });
       });
-
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll(".reveal").forEach(item => revealObserver.observe(item));
     });
   </script>
 </body>
