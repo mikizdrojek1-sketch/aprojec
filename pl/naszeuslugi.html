@@ -1,1 +1,1065 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A-PROJECT | Nasze usługi</title>
+  <meta name="description" content="Poznaj usługi A-PROJECT: doradztwo i rozwiązania na miarę, zamówienie i dostawa, okna i drzwi, drzwi wejściowe, drzwi przesuwne, totalne metamorfozy, rolety i moskitiery oraz najnowsze realizacje." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#151617;
+      --bg-2:#111213;
+      --panel:#171819;
+      --panel-2:#1B1C1E;
+      --light:#ECECEE;
+      --white:#FFFFFF;
+      --text:#F7F7F8;
+      --muted:rgba(255,255,255,.72);
+      --muted-2:rgba(255,255,255,.52);
+      --dark-text:#111214;
+      --dark-muted:rgba(17,18,20,.68);
+      --line:rgba(255,255,255,.10);
+      --line-2:rgba(255,255,255,.14);
+      --line-dark:rgba(0,0,0,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.22);
+      --shadow-soft:0 16px 40px rgba(0,0,0,.12);
+      --radius-sm:10px;
+      --radius-md:14px;
+      --radius-lg:18px;
+      --radius-xl:24px;
+      --radius-2xl:28px;
+      --section-max:1520px;
+    }
 
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#ececef;
+      color:var(--dark-text);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font:inherit}
+
+    .shell{
+      width:min(var(--section-max), calc(100% - 52px));
+      margin:0 auto;
+    }
+
+    .section-block{padding:34px 0 0}
+    .section-pad{padding:24px 0 0}
+
+    .section-card{
+      border-radius:var(--radius-2xl);
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .section-light{
+      background:#efeff1;
+      color:var(--dark-text);
+    }
+
+    .section-dark{
+      background:linear-gradient(180deg,#161719 0%, #111214 100%);
+      color:var(--text);
+    }
+
+    .section-inner{
+      padding:54px 36px;
+    }
+
+    .section-kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .section-light .section-kicker{color:rgba(17,18,20,.48)}
+    .section-dark .section-kicker{color:rgba(255,255,255,.54)}
+
+    .section-head{
+      max-width:900px;
+      margin-bottom:28px;
+    }
+
+    .section-head h1,
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(32px, 3.8vw, 58px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:800;
+    }
+
+    .section-head p{
+      margin:0;
+      font-size:17px;
+      line-height:1.78;
+    }
+
+    .section-light .section-head p{color:var(--dark-muted)}
+    .section-dark .section-head p{color:var(--muted)}
+
+    .page-top{
+      background:#ececef;
+      padding:0;
+    }
+
+    .top-shell{
+      width:100%;
+      margin:0;
+      position:relative;
+      border-radius:0;
+      overflow:hidden;
+      background:#111;
+      box-shadow:none;
+    }
+
+    .site-header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:30;
+      padding:0;
+    }
+
+    .header-bar{
+      min-height:78px;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 26px;
+      border-radius:0;
+      background:rgba(18,19,20,.78);
+      border:none;
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      box-shadow:none;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:auto;
+      flex-shrink:0;
+    }
+
+    .brand-logo{
+      display:block;
+      width:auto;
+      height:42px;
+      max-width:none;
+      object-fit:contain;
+      flex-shrink:0;
+    }
+
+    .brand-name{
+      color:#fff;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.11em;
+      white-space:nowrap;
+      line-height:1;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:34px;
+      flex:1;
+    }
+
+    .nav a{
+      color:rgba(255,255,255,.94);
+      font-size:14px;
+      font-weight:500;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .nav a:hover{opacity:.76}
+
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:230px;
+      justify-content:flex-end;
+      flex-shrink:0;
+    }
+
+    .lang-link{
+      font-size:22px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:.22s ease;
+    }
+
+    .lang-link:hover{transform:translateY(-1px)}
+
+    .menu-toggle{
+      display:none;
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:#fff;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+    }
+
+    .mobile-nav{
+      position:absolute;
+      top:78px;
+      left:0;
+      right:0;
+      z-index:25;
+      display:none;
+      background:rgba(17,18,20,.98);
+      border:none;
+      border-radius:0;
+      padding:14px 16px 16px;
+      box-shadow:none;
+    }
+
+    .mobile-nav.open{display:block}
+
+    .mobile-nav a{
+      display:block;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      padding:13px 8px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .mobile-nav a:last-child{border-bottom:none}
+
+    .mobile-lang{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .mobile-lang a{
+      border-bottom:none;
+      padding:10px 12px;
+      background:rgba(255,255,255,.07);
+      border-radius:12px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:640px;
+      background:#111;
+      width:100%;
+    }
+
+    .hero-media{
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center center;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.68) 0%, rgba(0,0,0,.46) 30%, rgba(0,0,0,.20) 58%, rgba(0,0,0,.10) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.14) 62%, rgba(0,0,0,.26) 100%);
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:2;
+      min-height:640px;
+      display:flex;
+      align-items:center;
+      padding:138px 72px 70px;
+    }
+
+    .hero-content{
+      max-width:700px;
+      color:#fff;
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:clamp(46px,5vw,72px);
+      line-height:.98;
+      letter-spacing:-.055em;
+      font-weight:800;
+    }
+
+    .hero-text{
+      margin:0 0 28px;
+      font-size:17px;
+      line-height:1.72;
+      color:rgba(255,255,255,.82);
+      max-width:590px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      min-height:54px;
+      padding:0 22px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-dark{
+      background:#161719;
+      color:#fff;
+      border-color:#161719;
+      box-shadow:0 12px 22px rgba(0,0,0,.22);
+    }
+
+    .btn-light{
+      background:#f4f4f5;
+      color:#111214;
+      border-color:#f4f4f5;
+      box-shadow:0 12px 22px rgba(0,0,0,.10);
+    }
+
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.18);
+      box-shadow:none;
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .service-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    .service-media{
+      position:relative;
+      aspect-ratio:16 / 10.2;
+      overflow:hidden;
+      background:#d9d9dc;
+    }
+
+    .service-media img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .45s ease;
+    }
+
+    .service-card:hover .service-media img{
+      transform:scale(1.035);
+    }
+
+    .service-body{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+
+    .service-label{
+      display:inline-block;
+      margin-bottom:14px;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(17,18,20,.48);
+    }
+
+    .service-body h3{
+      margin:0 0 12px;
+      font-size:32px;
+      line-height:1.02;
+      letter-spacing:-.04em;
+      font-weight:800;
+    }
+
+    .service-body p{
+      margin:0 0 18px;
+      font-size:16px;
+      line-height:1.82;
+      color:var(--dark-muted);
+      max-width:96%;
+    }
+
+    .service-actions{
+      margin-top:auto;
+      padding-top:6px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .service-btn{
+      min-height:52px;
+      padding:0 20px;
+      border-radius:12px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+      background:#17181a;
+      color:#fff;
+      border:1px solid #17181a;
+      transition:.22s ease;
+    }
+
+    .service-btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .service-btn-light{
+      background:#f3f3f4;
+      color:#111214;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .service-thumbs{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+      margin-bottom:6px;
+    }
+
+    .service-thumb{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+      aspect-ratio:1.12 / 1;
+      background:#e4e4e6;
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    .service-thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .35s ease;
+    }
+
+    .service-thumb:hover img{
+      transform:scale(1.04);
+    }
+
+    .service-card.facebook-card{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .facebook-card .service-label{
+      color:rgba(255,255,255,.56);
+    }
+
+    .facebook-card .service-body p{
+      color:rgba(255,255,255,.74);
+    }
+
+    .facebook-card .service-btn{
+      background:#fff;
+      color:#111214;
+      border-color:#fff;
+    }
+
+    .contact-card{
+      background:linear-gradient(180deg,#f4f4f5 0%, #ebebed 100%);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:24px;
+      padding:38px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .contact-pills{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .contact-pill{
+      padding:12px 14px;
+      border-radius:12px;
+      background:#17181a;
+      color:#fff;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .site-footer{
+      padding:34px 0 38px;
+      background:#ececef;
+    }
+
+    .footer-shell{
+      background:linear-gradient(180deg,#17181a 0%, #111214 100%);
+      color:#fff;
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.1fr .8fr .8fr .8fr;
+      gap:24px;
+      padding:38px;
+    }
+
+    .footer-brand p{
+      margin:12px 0 0;
+      font-size:15px;
+      line-height:1.8;
+      color:rgba(255,255,255,.72);
+      max-width:420px;
+    }
+
+    .footer-col h4{
+      margin:0 0 14px;
+      font-size:16px;
+      letter-spacing:-.02em;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:10px;
+    }
+
+    .footer-links a,
+    .footer-links span{
+      color:rgba(255,255,255,.72);
+      font-size:15px;
+      line-height:1.7;
+      transition:.22s ease;
+    }
+
+    .footer-links a:hover{color:#fff}
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:22px 38px 28px;
+      border-top:1px solid rgba(255,255,255,.08);
+      color:rgba(255,255,255,.5);
+      font-size:13px;
+    }
+
+    .footer-badges{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-badge{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:#fff;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:999;
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#17181a;
+      color:#fff;
+      box-shadow:0 16px 36px rgba(0,0,0,.28);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:22px;
+      transition:.22s ease;
+    }
+
+    .whatsapp-float:hover{transform:translateY(-2px)}
+
+    @media (max-width:1320px){
+      .nav{gap:24px}
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:1060px){
+      .nav,
+      .header-right .lang-link{
+        display:none;
+      }
+
+      .menu-toggle{display:flex}
+      .header-right{min-width:auto}
+      .hero-inner{padding:132px 34px 56px}
+      .services-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width:760px){
+      .shell{width:min(100%, calc(100% - 22px))}
+      .site-header{padding:0}
+      .header-bar{
+        min-height:70px;
+        width:100%;
+        padding:12px 16px;
+        border-radius:0;
+      }
+
+      .brand{gap:10px}
+      .brand-logo{
+        height:28px;
+        width:auto;
+      }
+
+      .brand-name{font-size:13px}
+
+      .mobile-nav{
+        top:70px;
+        left:0;
+        right:0;
+        border-radius:0;
+        padding:14px 16px 16px;
+      }
+
+      .hero{min-height:560px}
+      .hero-inner{
+        min-height:560px;
+        padding:116px 22px 42px;
+      }
+
+      .hero h1{font-size:44px}
+      .hero-text{font-size:16px}
+
+      .hero-actions,
+      .contact-actions{
+        width:100%;
+      }
+
+      .hero-actions .btn,
+      .contact-actions .btn,
+      .service-btn,
+      .service-btn-light{
+        width:100%;
+      }
+
+      .section-inner,
+      .contact-card,
+      .footer-top{
+        padding:22px;
+      }
+
+      .service-body{padding:22px}
+      .service-body h3{font-size:28px}
+      .service-thumbs{grid-template-columns:1fr 1fr}
+      .footer-top{grid-template-columns:1fr}
+      .footer-bottom{padding:20px 22px 24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page-top">
+    <div class="top-shell">
+      <header class="site-header">
+        <div class="header-bar">
+          <a href="/aprojec/pl/index.html" class="brand" aria-label="A-PROJECT strona główna">
+            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+            <span class="brand-name">A-PROJECT</span>
+          </a>
+
+          <nav class="nav" aria-label="Menu główne">
+            <a href="/aprojec/pl/index.html#over-ons">O nas</a>
+            <a href="/aprojec/pl/index.html#waarom-wij">Dlaczego my?</a>
+            <a href="/aprojec/pl/realisaties.html">Realizacje</a>
+            <a href="/aprojec/pl/uslugi.html">Nasze usługi</a>
+            <a href="/aprojec/pl/producten.html">Produkty</a>
+            <a href="/aprojec/pl/index.html#reviews">Opinie</a>
+            <a href="/aprojec/pl/index.html#subsidie">Dotacja</a>
+            <a href="#contact">Kontakt</a>
+          </nav>
+
+          <div class="header-right">
+            <a class="lang-link" href="/aprojec/onzediensten.html" aria-label="Wersja holenderska">🇳🇱</a>
+            <a class="lang-link" href="/aprojec/en/services.html" aria-label="Wersja angielska">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl/uslugi.html" aria-label="Wersja polska">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-lang">
+          <a href="/aprojec/onzediensten.html">🇳🇱</a>
+          <a href="/aprojec/en/services.html">🇬🇧</a>
+          <a href="/aprojec/pl/uslugi.html">🇵🇱</a>
+        </div>
+        <a href="/aprojec/pl/index.html#over-ons">O nas</a>
+        <a href="/aprojec/pl/index.html#waarom-wij">Dlaczego my?</a>
+        <a href="/aprojec/pl/realisaties.html">Realizacje</a>
+        <a href="/aprojec/pl/uslugi.html">Nasze usługi</a>
+        <a href="/aprojec/pl/producten.html">Produkty</a>
+        <a href="/aprojec/pl/index.html#reviews">Opinie</a>
+        <a href="/aprojec/pl/index.html#subsidie">Dotacja</a>
+        <a href="#contact">Kontakt</a>
+      </div>
+
+      <main>
+        <section class="hero">
+          <div class="hero-media">
+            <img src="/aprojec/images/hero.jpg" alt="Usługi A-PROJECT">
+          </div>
+          <div class="hero-overlay"></div>
+          <div class="hero-inner">
+            <div class="hero-content">
+              <span class="section-kicker" style="color:rgba(255,255,255,.64);">Nasze usługi</span>
+              <h1>Przemyślane rozwiązania dla komfortu, estetyki i trwałości.</h1>
+              <p class="hero-text">
+                Od indywidualnego doradztwa i dostawy, po okna, drzwi, systemy przesuwne, rolety i kompleksowe metamorfozy — A-PROJECT pomaga wybrać wysokiej jakości rozwiązania, które sprawiają, że Twój dom jest piękniejszy, bardziej komfortowy i bardziej funkcjonalny.
+              </p>
+              <div class="hero-actions">
+                <a href="#diensten" class="btn btn-light">Zobacz nasze usługi</a>
+                <a href="#contact" class="btn btn-dark">Skontaktuj się</a>
+                <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <section class="section-block" id="diensten">
+    <div class="shell">
+      <div class="section-card section-light">
+        <div class="section-inner">
+          <div class="section-head">
+            <span class="section-kicker">Usługi</span>
+            <h2>Co możemy zrealizować dla Twojego domu.</h2>
+            <p>
+              Każde rozwiązanie skupia się na starannym wykończeniu, solidnej izolacji, większym codziennym komforcie oraz wyglądzie idealnie dopasowanym do charakteru Twojego domu.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten1.jpeg" alt="Doradztwo i rozwiązania na miarę">
+              </div>
+              <div class="service-body">
+                <span class="service-label">01 — Doradztwo i rozwiązania na miarę</span>
+                <h3>Indywidualne doradztwo dla najlepszego rozwiązania dopasowanego do Ciebie.</h3>
+                <p>
+                  Nie każdy dom wymaga takiego samego podejścia. Dlatego doradzamy w zakresie stylu, izolacji, wymiarów i wykończenia, aby efekt końcowy idealnie odpowiadał Twoim oczekiwaniom i sytuacji.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Skontaktuj się</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten2.jpeg" alt="Złożenie zamówienia i dostawa">
+              </div>
+              <div class="service-body">
+                <span class="service-label">02 — Złożenie zamówienia i dostawa</span>
+                <h3>Od oferty po zamówienie i terminową dostawę.</h3>
+                <p>
+                  Oferujemy kompleksową obsługę – od przygotowania dopasowanej oferty, przez złożenie zamówienia, aż po terminową dostawę. Stawiamy na przejrzystość, wysoką jakość i sprawną realizację na każdym etapie.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Poproś o ofertę</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten3.jpeg" alt="Okna i drzwi">
+              </div>
+              <div class="service-body">
+                <span class="service-label">03 — Okna i drzwi</span>
+                <h3>Montaż okien i drzwi.</h3>
+                <p>
+                  Wybierz trwałe rozwiązania, które nie tylko nowocześnie wyglądają, ale również zwiększają komfort, ograniczają straty ciepła i nadają Twojemu domowi elegancki, dopracowany wygląd.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Zobacz naszą ofertę</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten4.jpeg" alt="Drzwi wejściowe">
+              </div>
+              <div class="service-body">
+                <span class="service-label">04 — Drzwi wejściowe</span>
+                <h3>Drzwi wejściowe, które łączą design, bezpieczeństwo i trwałość.</h3>
+                <p>
+                  To wizytówka Twojego domu – dlatego powinny nie tylko świetnie się prezentować, ale także zapewniać wysoki poziom bezpieczeństwa i solidność na lata. Dobieramy rozwiązania, które łączą estetykę z funkcjonalnością i komfortem użytkowania.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Zobacz naszą ofertę</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten5.jpeg" alt="Drzwi przesuwne">
+              </div>
+              <div class="service-body">
+                <span class="service-label">05 — Drzwi przesuwne</span>
+                <h3>Drzwi przesuwne, które dodają światła, przestrzeni i elegancji.</h3>
+                <p>
+                  Dzięki odpowiednio dobranym drzwiom przesuwnym stworzysz otwarte, przestronne wnętrze oraz płynne połączenie między domem a ogrodem. Efektem jest więcej naturalnego światła i nowoczesny wygląd.
+                </p>
+
+                <div class="service-thumbs">
+                  <div class="service-thumb">
+                    <img src="/aprojec/images/onzediensten51.jpeg" alt="Drzwi przesuwne detal 1">
+                  </div>
+                  <div class="service-thumb">
+                    <img src="/aprojec/images/onzediensten52.jpeg" alt="Drzwi przesuwne detal 2">
+                  </div>
+                </div>
+
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Zobacz naszą ofertę</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten6.jpeg" alt="Totalna metamorfoza">
+              </div>
+              <div class="service-body">
+                <span class="service-label">06 — Totalna metamorfoza</span>
+                <h3>Nowe okna, nowa izolacja, nowa elewacja.</h3>
+                <p>
+                  Panele KERALIT oraz TRESPA całkowicie odmieniły wygląd tego domu. Łączymy energooszczędne rozwiązania z estetycznym wykończeniem, dzięki czemu Twój dom staje się bardziej efektywny, a jednocześnie zyskuje nowoczesny i świeży wygląd.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Zobacz naszą ofertę</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten7.jpeg" alt="Rolety i moskitiery">
+              </div>
+              <div class="service-body">
+                <span class="service-label">07 — Rolety i moskitiery</span>
+                <h3>Zadbamy również o Twój codzienny komfort.</h3>
+                <p>
+                  Moskitiery skutecznie ochronią wnętrze przed owadami, a rolety zapewnią kontrolę nad światłem i ochronę przed nadmiernym nasłonecznieniem. Funkcjonalność połączona z estetyką – dopasowana do Twojego domu.
+                </p>
+                <div class="service-actions">
+                  <a href="#contact" class="service-btn">Skontaktuj się</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="service-card facebook-card">
+              <div class="service-media">
+                <img src="/aprojec/images/onzediensten8.jpeg" alt="Obserwuj A-PROJECT na Facebooku">
+              </div>
+              <div class="service-body">
+                <span class="service-label">08 — Follow us on Facebook</span>
+                <h3>Bądź z nami na bieżąco.</h3>
+                <p>
+                  Zaobserwuj nas na Facebooku i zobacz nasze najnowsze realizacje oraz inspiracje.
+                </p>
+                <div class="service-actions">
+                  <a href="https://www.facebook.com/share/18RQeJhjci" target="_blank" rel="noopener" class="service-btn">Obserwuj nas na Facebooku</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="shell">
+      <div class="contact-card">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="section-kicker">Kontakt</span>
+          <h2>Interesuje Cię jedna z naszych usług?</h2>
+          <p>
+            Skontaktuj się z A-PROJECT, aby uzyskać indywidualne doradztwo i niezobowiązującą ofertę. Chętnie pomożemy Ci dobrać rozwiązanie dopasowane do Twojego domu i oczekiwań.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a href="tel:+31628255738" class="btn btn-dark">Zadzwoń: +31 6 28255738</a>
+          <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
+          <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
+        </div>
+
+        <div class="contact-pills">
+          <span class="contact-pill">100+ opinii</span>
+          <span class="contact-pill">Niezobowiązująca oferta</span>
+          <span class="contact-pill">Indywidualne doradztwo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-shell">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand" style="min-width:auto;">
+              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <span class="brand-name">A-PROJECT</span>
+            </div>
+            <p>
+              A-PROJECT to wysokiej jakości okna plastikowe, drzwi i systemy przesuwne o nowoczesnym wyglądzie, bardzo dobrej izolacji i fachowym montażu.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Nawigacja</h4>
+            <div class="footer-links">
+              <a href="/aprojec/pl/index.html#over-ons">O nas</a>
+              <a href="/aprojec/pl/index.html#waarom-wij">Dlaczego my?</a>
+              <a href="/aprojec/pl/realisaties.html">Realizacje</a>
+              <a href="/aprojec/pl/uslugi.html">Nasze usługi</a>
+              <a href="/aprojec/pl/producten.html">Produkty</a>
+              <a href="#contact">Kontakt</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Kontakt</h4>
+            <div class="footer-links">
+              <a href="tel:+31628255738">+31 6 28255738</a>
+              <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
+              <span>Serooskerkestraat 50, 5035GH Tilburg</span>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Firma</h4>
+            <div class="footer-links">
+              <span>KVK: 65884949</span>
+              <span>100+ opinii</span>
+              <span>Jakość, obsługa i wykończenie</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© 2026 A-PROJECT. Wszelkie prawa zastrzeżone.</div>
+          <div class="footer-badges">
+            <span class="footer-badge">100+ Opinii</span>
+            <span class="footer-badge">Premium Wykończenie</span>
+            <span class="footer-badge">Niezobowiązująca Oferta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/31628255738" target="_blank" rel="noopener" aria-label="WhatsApp"> ✆ </a>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = mobileNav.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileNav) mobileNav.classList.remove("open");
+          if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
