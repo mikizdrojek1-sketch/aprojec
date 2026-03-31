@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A-PROJECT | PVC window frames, doors, sliding doors, shutters and insect screens</title>
-  <meta name="description" content="A-PROJECT specializes in the complete replacement of window frames, doors, sliding systems, shutters and insect screens. Personal advice, high-quality products and professional installation according to Dutch market standards." />
+  <title>A-PROJECT | Kunststof kozijnen, deuren, schuifpuien, rolluiken en horren</title>
+  <meta name="description" content="A-PROJECT is gespecialiseerd in de complete vervanging van kozijnen, deuren, schuifsystemen, rolluiken en horren. Persoonlijk advies, hoogwaardige producten en vakkundige montage volgens de Nederlandse marktstandaard." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -214,32 +214,19 @@
     }
 
     .lang-link{
-      min-width:48px;
-      height:44px;
-      padding:0 14px;
-      border-radius:14px;
-      background:rgba(255,255,255,.18);
-      border:1px solid rgba(255,255,255,.28);
-      box-shadow:0 10px 24px rgba(0,0,0,.18);
-      font-size:20px;
+      font-size:22px;
       line-height:1;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      color:#fff;
-      font-weight:700;
-      letter-spacing:.08em;
       transition:.22s ease;
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
+      background:transparent;
+      border:none;
+      box-shadow:none;
+      padding:0;
     }
 
-    .lang-link:hover{
-      color:#fff;
-      background:rgba(255,255,255,.28);
-      border-color:rgba(255,255,255,.42);
-      transform:translateY(-1px);
-    }
+    .lang-link:hover{transform:translateY(-1px)}
 
     .menu-toggle{
       display:none;
@@ -284,15 +271,22 @@
 
     .mobile-lang{
       display:flex;
-      gap:10px;
+      gap:12px;
       margin-bottom:10px;
+      align-items:center;
     }
 
     .mobile-lang a{
       border-bottom:none;
-      padding:10px 12px;
-      background:rgba(255,255,255,.07);
-      border-radius:12px;
+      padding:0;
+      background:transparent;
+      border-radius:0;
+      box-shadow:none;
+      font-size:22px;
+      line-height:1;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
     }
 
     /* HERO */
@@ -434,47 +428,64 @@
     .gallery-card{
       background:#e8e8ea;
       border-radius:28px;
-      padding:20px;
+      padding:34px;
       box-shadow:var(--shadow-soft);
     }
 
-    .gallery-masonry{
-      column-count:3;
-      column-gap:16px;
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1.18fr .82fr;
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .gallery-feature{
+      min-height:760px;
+    }
+
+    .gallery-right-stack{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:14px;
+    }
+
+    .gallery-half{
+      min-height:373px;
+    }
+
+    .gallery-bottom{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
     }
 
     .gallery-item{
       position:relative;
-      display:inline-block;
-      width:100%;
-      margin:0 0 16px;
       overflow:hidden;
       background:#d9d9dc;
-      border-radius:22px;
-      break-inside:avoid;
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
+      border-radius:0;
     }
 
     .gallery-item::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.08) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.12) 100%);
       pointer-events:none;
     }
 
     .gallery-item img{
       width:100%;
-      height:auto;
-      object-fit:contain;
-      object-position:center center;
-      display:block;
-      transition:.22s ease;
-      background:#d9d9dc;
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
     }
 
-    .gallery-item:hover img{
-      transform:scale(1.01);
+    .gallery-item:hover img{transform:scale(1.03)}
+
+    .gallery-small{
+      min-height:240px;
     }
 
     /* QUICK CTA */
@@ -909,34 +920,11 @@
       box-shadow:var(--shadow-soft);
     }
 
-    .contact-steps-link{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:54px;
-      padding:0 30px;
-      margin-top:22px;
-      margin-bottom:14px;
-      background:#f2c300;
-      color:#d82424;
-      font-size:30px;
-      font-weight:900;
-      letter-spacing:.05em;
-      text-transform:uppercase;
-      border-radius:999px;
-      box-shadow:0 10px 24px rgba(0,0,0,.10);
-      transition:.22s ease;
-    }
-
-    .contact-steps-link:hover{
-      transform:translateY(-1px);
-    }
-
     .contact-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:0;
+      margin-top:26px;
     }
 
     .contact-pills{
@@ -1101,8 +1089,8 @@
         grid-template-columns:repeat(2,1fr);
       }
 
-      .gallery-masonry{
-        column-count:2;
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
       }
 
       .footer-top{
@@ -1111,6 +1099,18 @@
     }
 
     @media (max-width:1180px){
+      .gallery-feature{
+        min-height:640px;
+      }
+
+      .gallery-half{
+        min-height:313px;
+      }
+
+      .gallery-bottom{
+        grid-template-columns:repeat(2,1fr);
+      }
+
       .quick-offer-inner{
         grid-template-columns:1fr;
         align-items:flex-start;
@@ -1143,10 +1143,24 @@
         padding:138px 34px 56px;
       }
 
+      .gallery-grid,
       .about-grid,
       .subsidy-grid,
       .contact-meta{
         grid-template-columns:1fr;
+      }
+
+      .gallery-right-stack{
+        grid-template-rows:auto;
+        grid-template-columns:1fr 1fr;
+      }
+
+      .gallery-feature{
+        min-height:520px;
+      }
+
+      .gallery-half{
+        min-height:300px;
       }
 
       .why-grid{
@@ -1245,13 +1259,31 @@
         padding:22px;
       }
 
-      .gallery-masonry{
-        column-count:1;
-        column-gap:0;
+      .gallery-grid{
+        gap:12px;
       }
 
-      .gallery-item{
-        margin-bottom:12px;
+      .gallery-right-stack{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .gallery-feature{
+        min-height:380px;
+      }
+
+      .gallery-half{
+        min-height:240px;
+      }
+
+      .gallery-bottom{
+        margin-top:12px;
+        grid-template-columns:1fr;
+        gap:12px;
+      }
+
+      .gallery-small{
+        min-height:220px;
       }
 
       .quick-offer-inner{
@@ -1275,15 +1307,6 @@
       .reviews-score{
         min-width:0;
         width:100%;
-      }
-
-      .contact-steps-link{
-        width:100%;
-        padding:0 20px;
-        font-size:24px;
-        min-height:50px;
-        margin-top:18px;
-        margin-bottom:12px;
       }
 
       .contact-actions .btn{
@@ -1314,69 +1337,69 @@
     <div class="top-shell reveal">
       <header class="site-header">
         <div class="header-bar">
-          <a href="#top" class="brand" aria-label="A-PROJECT home">
+          <a href="./index.html" class="brand" aria-label="A-PROJECT home">
             <img src="images/logo.png" class="brand-logo" alt="A-PROJECT logo">
             <span class="brand-name">A-PROJECT</span>
           </a>
 
-          <nav class="nav" aria-label="Main menu">
-            <a href="#about-us">About us</a>
-            <a href="#why-us">Why us?</a>
-            <a href="./projects.html">Projects</a>
-            <a href="./services.html">Services</a>
-            <a href="./products.html">Products</a>
+          <nav class="nav" aria-label="Hoofdmenu">
+            <a href="#over-ons">Over ons</a>
+            <a href="#waarom-wij">Waarom wij?</a>
+            <a href="./realisaties.html">Realisaties</a>
+            <a href="./onzediensten.html">Onze Diensten</a>
+            <a href="./producten.html">Producten</a>
             <a href="#reviews">Reviews</a>
-            <a href="#subsidy">Subsidy</a>
+            <a href="#subsidie">Subsidie</a>
             <a href="#contact">Contact</a>
           </nav>
 
           <div class="header-right">
-            <a class="lang-link" href="./index.html" aria-label="Dutch version">🇳🇱</a>
-            <a class="lang-link" href="./en/" aria-label="English version">🇬🇧</a>
-            <a class="lang-link" href="./pl/" aria-label="Polish version">🇵🇱</a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+            <a class="lang-link" href="./index.html" aria-label="Nederlandse versie">🇳🇱</a>
+            <a class="lang-link" href="./en/index.html" aria-label="Engelse versie">🇬🇧</a>
+            <a class="lang-link" href="./pl/index.html" aria-label="Poolse versie">🇵🇱</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu openen" aria-expanded="false">☰</button>
           </div>
         </div>
       </header>
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-lang">
-          <a href="./index.html">🇳🇱</a>
-          <a href="./en/">🇬🇧</a>
-          <a href="./pl/">🇵🇱</a>
+          <a href="./index.html" aria-label="Nederlandse versie">🇳🇱</a>
+          <a href="./en/index.html" aria-label="Engelse versie">🇬🇧</a>
+          <a href="./pl/index.html" aria-label="Poolse versie">🇵🇱</a>
         </div>
-        <a href="#about-us">About us</a>
-        <a href="#why-us">Why us?</a>
-        <a href="./projects.html">Projects</a>
-        <a href="./services.html">Services</a>
-        <a href="./products.html">Products</a>
+        <a href="#over-ons">Over ons</a>
+        <a href="#waarom-wij">Waarom wij?</a>
+        <a href="./realisaties.html">Realisaties</a>
+        <a href="./onzediensten.html">Onze Diensten</a>
+        <a href="./producten.html">Producten</a>
         <a href="#reviews">Reviews</a>
-        <a href="#subsidy">Subsidy</a>
+        <a href="#subsidie">Subsidie</a>
         <a href="#contact">Contact</a>
       </div>
 
       <main id="top">
         <section class="hero">
           <div class="hero-media">
-            <img src="images/przesuwaneokna.jpg" alt="Modern home with black window frames and a large sliding door">
+            <img src="images/przesuwaneokna.jpg" alt="Moderne woning met zwarte kozijnen en grote schuifpui">
           </div>
           <div class="hero-overlay"></div>
 
           <div class="hero-inner">
             <div class="hero-content">
-              <h1>Your new window frames and doors are here!</h1>
-              <p class="hero-subtitle">Window frame replacement in Tilburg</p>
-              <p class="hero-text">Fast, professional and reliable.</p>
+              <h1>Jouw nieuwe kozijnen en deuren zijn er!</h1>
+              <p class="hero-subtitle">Kozijnen vervangen in Tilburg</p>
+              <p class="hero-text">Snel, professioneel en betrouwbaar.</p>
 
               <div class="hero-questions">
-                <div class="hero-question">Ready for new window frames with a modern appearance?</div>
-                <div class="hero-question">Better insulation and lower energy costs?</div>
-                <div class="hero-question">Looking for a reliable specialist who works neatly?</div>
+                <div class="hero-question">Toe aan nieuwe kozijnen met een moderne uitstraling?</div>
+                <div class="hero-question">Beter isoleren en besparen op energiekosten?</div>
+                <div class="hero-question">Op zoek naar een betrouwbare vakman die netjes werkt?</div>
               </div>
 
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-dark">Request a quote</a>
-                <a href="tel:+31628255738" class="btn btn-light">Call now</a>
+                <a href="#contact" class="btn btn-dark">Offerte aanvragen</a>
+                <a href="tel:+31628255738" class="btn btn-light">Bel direct</a>
                 <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
               </div>
             </div>
@@ -1388,33 +1411,33 @@
     <section class="gallery-wrap" id="gallery-top">
       <div class="reveal">
         <div class="gallery-card">
-          <div class="gallery-masonry">
-            <article class="gallery-item">
-              <img src="images/glowna1.jpeg" alt="A-PROJECT project with modern window frames and doors" loading="lazy">
+          <div class="gallery-grid">
+            <article class="gallery-item gallery-feature">
+              <img src="images/glowna1.jpeg" alt="A-PROJECT project met moderne kozijnen en deuren" loading="lazy">
             </article>
 
-            <article class="gallery-item">
-              <img src="images/glowna2.jpeg" alt="Modern window frame project by A-PROJECT" loading="lazy">
-            </article>
+            <div class="gallery-right-stack">
+              <article class="gallery-item gallery-half">
+                <img src="images/glowna2.jpeg" alt="Modern kozijnproject van A-PROJECT" loading="lazy">
+              </article>
+              <article class="gallery-item gallery-half">
+                <img src="images/glowna3.jpeg" alt="Afwerking van kozijnen en deuren door A-PROJECT" loading="lazy">
+              </article>
+            </div>
+          </div>
 
-            <article class="gallery-item">
-              <img src="images/glowna3.jpeg" alt="Finishing of window frames and doors by A-PROJECT" loading="lazy">
+          <div class="gallery-bottom">
+            <article class="gallery-item gallery-small">
+              <img src="images/glowna4.jpeg" alt="Moderne schuifpui in woning" loading="lazy">
             </article>
-
-            <article class="gallery-item">
-              <img src="images/glowna4.jpeg" alt="Modern sliding door in a home" loading="lazy">
+            <article class="gallery-item gallery-small">
+              <img src="images/glowna5.jpeg" alt="Nieuwe kozijnen en ramen in woning" loading="lazy">
             </article>
-
-            <article class="gallery-item">
-              <img src="images/glowna5.jpeg" alt="New window frames and windows in a home" loading="lazy">
+            <article class="gallery-item gallery-small">
+              <img src="images/glowna6.jpeg" alt="Strakke montage en premium afwerking" loading="lazy">
             </article>
-
-            <article class="gallery-item">
-              <img src="images/glowna6.jpeg" alt="Clean installation and premium finishing" loading="lazy">
-            </article>
-
-            <article class="gallery-item">
-              <img src="images/glowna7.jpeg" alt="Window frames and doors according to Dutch market standards" loading="lazy">
+            <article class="gallery-item gallery-small">
+              <img src="images/glowna7.jpeg" alt="Kozijnen en deuren volgens Nederlandse standaard" loading="lazy">
             </article>
           </div>
         </div>
@@ -1429,14 +1452,14 @@
           <div class="quick-offer-copy">
             <div class="quick-offer-label">
               <span class="quick-offer-badge">3</span>
-              <span>Quick quote</span>
+              <span>Snelle offerte</span>
             </div>
-            <h2>Quick quote in 3 steps.</h2>
-            <p>Send your photos and approximate measurements, share your preferences and schedule an appointment. This way you will quickly receive a personal quote without unnecessary back-and-forth emails.</p>
+            <h2>Snelle offerte in 3 stappen.</h2>
+            <p>Stuur uw foto’s en globale maten, geef uw wensen door en plan een afspraak. Zo ontvangt u snel een persoonlijke offerte zonder onnodig heen en weer mailen.</p>
           </div>
 
           <div class="quick-offer-actions">
-            <a href="#process" class="btn btn-light">See how it works</a>
+            <a href="#werkwijze" class="btn btn-light">Bekijk hoe het werkt</a>
           </div>
         </div>
       </div>
@@ -1445,30 +1468,30 @@
 
   <section class="section-block">
     <div class="shell">
-      <div class="section-card section-dark reveal" id="about-us">
+      <div class="section-card section-dark reveal" id="over-ons">
         <div class="section-inner">
           <div class="section-head">
-            <span class="section-kicker">About us</span>
-            <h2>Quality, precision and a personal approach.</h2>
-            <p>A-PROJECT – quality you can trust. We specialize in the complete replacement of window frames, doors, sliding systems, shutters and insect screens, with solutions that match the standards of the Dutch market.</p>
+            <span class="section-kicker">Over ons</span>
+            <h2>Kwaliteit, precisie en een persoonlijke aanpak.</h2>
+            <p>A-PROJECT – kwaliteit waarop u kunt vertrouwen. Wij zijn gespecialiseerd in de complete vervanging van kozijnen, deuren, schuifsystemen, rolluiken en horren, met oplossingen die aansluiten op de standaarden van de Nederlandse markt.</p>
           </div>
 
           <div class="about-grid">
             <div class="about-card">
-              <p>We choose only high-quality products and materials, combined with precise installation. This means the final result not only looks clean, but above all gives you maximum insulation, comfort and long-term durability.</p>
-              <p>We approach every project individually. From the first consultation and quote to the order, delivery, professional installation and complete finishing, we think along with you about the best solution for your home.</p>
-              <p>With A-PROJECT, you do not get a standard approach, but a process tailored to your wishes, the style of your home and the result you have in mind.</p>
+              <p>Wij kiezen uitsluitend voor hoogwaardige producten en materialen, gecombineerd met een nauwkeurige montage. Zo ziet het eindresultaat er niet alleen strak uit, maar profiteert u vooral van maximale isolatie, comfort en duurzaamheid voor de lange termijn.</p>
+              <p>Elk project benaderen wij individueel. Vanaf het eerste advies en de offerte tot de bestelling, levering, professionele montage en volledige afwerking denken wij mee over de beste oplossing voor uw woning.</p>
+              <p>Bij A-PROJECT krijgt u geen standaard aanpak, maar een traject dat is afgestemd op uw wensen, de stijl van uw woning en het resultaat dat u voor ogen heeft.</p>
 
               <div class="about-badges">
-                <span class="about-badge">Personal approach</span>
-                <span class="about-badge">High-quality products</span>
-                <span class="about-badge">Precise installation</span>
-                <span class="about-badge">Dutch market standard</span>
+                <span class="about-badge">Individuele aanpak</span>
+                <span class="about-badge">Hoogwaardige producten</span>
+                <span class="about-badge">Precieze montage</span>
+                <span class="about-badge">Nederlandse marktstandaard</span>
               </div>
             </div>
 
             <div class="about-image">
-              <img src="images/overons.jpeg" alt="Modern project by A-PROJECT" loading="lazy">
+              <img src="images/hero2.jpg" alt="Modern project van A-PROJECT" loading="lazy">
             </div>
           </div>
         </div>
@@ -1478,37 +1501,37 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-light reveal" id="why-us">
+      <div class="section-card section-light reveal" id="waarom-wij">
         <div class="section-inner">
           <div class="section-head">
-            <span class="section-kicker">Why us?</span>
-            <h2>Why customers choose A-PROJECT.</h2>
-            <p>Quality in the product, precision in installation and a personal approach from start to finish. That is what customers value us for.</p>
+            <span class="section-kicker">Waarom wij?</span>
+            <h2>Waarom klanten kiezen voor A-PROJECT.</h2>
+            <p>Kwaliteit in product, precisie in montage en een persoonlijke aanpak van begin tot eind. Dat is waar klanten ons om waarderen.</p>
           </div>
 
           <div class="why-grid">
             <article class="why-card">
               <div class="why-icon">✓</div>
-              <h3>High quality</h3>
-              <p>We work exclusively with high-quality window frames, doors and materials that provide an elegant appearance, excellent insulation and durability for years of living comfort.</p>
+              <h3>Hoge kwaliteit</h3>
+              <p>Wij werken uitsluitend met hoogwaardige kozijnen, deuren en materialen die zorgen voor een elegante uitstraling, uitstekende isolatie en duurzaamheid voor jarenlang wooncomfort.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">⏱</div>
-              <h3>Clear communication</h3>
-              <p>We keep the process structured and clear. You know exactly where you stand, receive honest advice and can count on short lines of communication throughout the entire process.</p>
+              <h3>Duidelijke communicatie</h3>
+              <p>Wij houden het proces overzichtelijk en helder. U weet waar u aan toe bent, krijgt eerlijk advies en kunt rekenen op korte lijnen tijdens het hele traject.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">◆</div>
-              <h3>Precision finishing</h3>
-              <p>We pay attention to every detail. Not only the product matters, but also the installation, the finishing and the overall look that perfectly matches your home.</p>
+              <h3>Afwerking met precisie</h3>
+              <p>Wij letten op elk detail. Niet alleen het product telt, maar ook de montage, de afwerking en het totaalbeeld dat perfect aansluit op uw woning.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">★</div>
-              <h3>Customer satisfaction</h3>
-              <p>We have many satisfied customers who gladly recommend our services. Upon request, you can even ask about their experiences, because we believe in quality that speaks for itself.</p>
+              <h3>Klanttevredenheid</h3>
+              <p>Wij hebben veel tevreden klanten die onze diensten graag aanbevelen. Op verzoek kunt u zelfs naar ervaringen vragen, want wij geloven in kwaliteit die voor zichzelf spreekt.</p>
             </article>
           </div>
         </div>
@@ -1518,24 +1541,24 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-dark reveal" id="process">
+      <div class="section-card section-dark reveal" id="werkwijze">
         <div class="section-inner">
           <div class="section-head">
-            <span class="section-kicker">How do we work?</span>
-            <h2>A clear process from first contact to completion.</h2>
-            <p>We provide a structured and efficient collaboration, so you know exactly what to expect and the final result fits your home perfectly.</p>
+            <span class="section-kicker">Hoe werken wij?</span>
+            <h2>Een duidelijk proces van eerste contact tot realisatie.</h2>
+            <p>Wij zorgen voor een overzichtelijke en efficiënte samenwerking, zodat u precies weet wat u kunt verwachten en het eindresultaat perfect aansluit op uw woning.</p>
           </div>
 
           <div class="section-head" style="margin-top:-4px; margin-bottom:28px;">
-            <p><strong>Receive a quote in 3 simple steps:</strong></p>
+            <p><strong>Ontvang een offerte in 3 eenvoudige stappen:</strong></p>
           </div>
 
           <div class="process-grid">
             <article class="process-card">
               <div class="process-num">01</div>
-              <h3>Send photos and measurements</h3>
-              <p>Send photos of your current windows, doors or sliding systems together with the approximate dimensions. This immediately gives us a good first impression of your situation.</p>
-              <p>We always take the exact measurements before the final order, so everything fits perfectly.</p>
+              <h3>Stuur foto’s en maten</h3>
+              <p>Stuur foto’s van uw huidige ramen, deuren of schuifsystemen samen met de globale afmetingen. Zo krijgen wij direct een goed eerste beeld van uw situatie.</p>
+              <p>De exacte inmeting verzorgen wij altijd vóór de definitieve bestelling, zodat alles perfect aansluit.</p>
               <div class="process-contact">
                 📩 <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
               </div>
@@ -1543,16 +1566,16 @@
 
             <article class="process-card">
               <div class="process-num">02</div>
-              <h3>Share your preferences</h3>
-              <p>Let us know what changes you want: the layout of the frames, the colour on the inside and outside, and any extras such as shutters or insect screens.</p>
-              <p>This allows us to tailor the quote directly to your home, style and expectations.</p>
+              <h3>Geef uw wensen door</h3>
+              <p>Laat ons weten welke veranderingen u wilt: de indeling van de kozijnen, de kleur aan de binnen- en buitenzijde en eventuele extra’s zoals rolluiken of horren.</p>
+              <p>Zo kunnen wij de offerte meteen afstemmen op uw woning, stijl en verwachtingen.</p>
             </article>
 
             <article class="process-card">
               <div class="process-num">03</div>
-              <h3>Schedule an appointment</h3>
-              <p>We schedule an appointment to go through everything together, advise on the best solutions and further refine the quote into a concrete and suitable proposal.</p>
-              <p>Personal contact is central here, so you can make your decision with confidence.</p>
+              <h3>Plan een afspraak</h3>
+              <p>We plannen een afspraak om alles samen door te nemen, de beste oplossingen te adviseren en de offerte verder te verfijnen tot een concreet en passend voorstel.</p>
+              <p>Persoonlijk contact staat hierbij centraal, zodat u met vertrouwen een keuze kunt maken.</p>
               <div class="process-contact">
                 📞 <a href="tel:+31628255738">+31 6 28255738</a>
               </div>
@@ -1570,61 +1593,61 @@
           <div class="reviews-top">
             <div class="section-head" style="margin:0;">
               <span class="section-kicker">Reviews</span>
-              <h2>More than 100 satisfied customers.</h2>
-              <p>Customers appreciate our neat way of working, clear communication and the quality of the final result. We build that trust project by project.</p>
+              <h2>Meer dan 100 tevreden klanten.</h2>
+              <p>Klanten waarderen onze nette werkwijze, heldere communicatie en de kwaliteit van het eindresultaat. Dat vertrouwen bouwen wij project voor project op.</p>
             </div>
 
             <div class="reviews-score">
               <strong>5.0/5</strong>
-              <p>100% satisfied customers based on 100+ reviews and recommendations.</p>
+              <p>100% tevreden klanten op basis van 100+ reviews en aanbevelingen.</p>
             </div>
           </div>
 
           <div class="reviews-grid">
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">A very professional company. Everything was clearly explained, the installation was precise and the final result turned out truly beautiful.</p>
+              <p class="review-text">Zeer professioneel bedrijf. Alles werd netjes uitgelegd, de montage was strak en het eindresultaat is echt prachtig geworden.</p>
               <div class="review-author">
                 <div class="review-avatar">MV</div>
                 <div>
                   <strong>Mark Verhoeven</strong>
-                  <span>Satisfied customer</span>
+                  <span>Tevreden klant</span>
                 </div>
               </div>
             </article>
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Fast communication, a clear quote and top quality. Our new window frames really make a huge difference in appearance and comfort.</p>
+              <p class="review-text">Snelle communicatie, duidelijke offerte en topkwaliteit. Onze nieuwe kozijnen maken echt een enorm verschil in uitstraling en comfort.</p>
               <div class="review-author">
                 <div class="review-avatar">SL</div>
                 <div>
                   <strong>Sanne de Leeuw</strong>
-                  <span>Satisfied customer</span>
+                  <span>Tevreden klant</span>
                 </div>
               </div>
             </article>
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Appointments were perfectly kept and everything was finished extremely neatly. Absolutely a company we recommend without hesitation.</p>
+              <p class="review-text">Afspraken werden perfect nagekomen en alles is ontzettend netjes afgewerkt. Absoluut een bedrijf dat wij zonder twijfel aanbevelen.</p>
               <div class="review-author">
                 <div class="review-avatar">JB</div>
                 <div>
                   <strong>Jeroen Bakker</strong>
-                  <span>Satisfied customer</span>
+                  <span>Tevreden klant</span>
                 </div>
               </div>
             </article>
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">From advice to delivery, everything went smoothly. Beautiful products, professional people and above all a lot of attention to detail. Very satisfied.</p>
+              <p class="review-text">Van advies tot oplevering liep alles soepel. Mooie producten, nette mensen en vooral veel aandacht voor detail. Erg tevreden.</p>
               <div class="review-author">
                 <div class="review-avatar">ND</div>
                 <div>
                   <strong>Naomi Dijkstra</strong>
-                  <span>Satisfied customer</span>
+                  <span>Tevreden klant</span>
                 </div>
               </div>
             </article>
@@ -1636,34 +1659,34 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-dark reveal" id="subsidy">
+      <div class="section-card section-dark reveal" id="subsidie">
         <div class="section-inner">
           <div class="subsidy-grid">
             <div class="subsidy-panel">
-              <span class="section-kicker">Subsidy</span>
-              <h2>You may be eligible for subsidy on insulating improvements.</h2>
-              <p>In many situations, new insulating window frames or doors can contribute to energy savings and may qualify under existing schemes. We are happy to think along with you about the possibilities.</p>
+              <span class="section-kicker">Subsidie</span>
+              <h2>Mogelijk profiteren van subsidie op isolerende verbeteringen.</h2>
+              <p>In veel situaties kunnen nieuwe isolerende kozijnen of deuren bijdragen aan energiebesparing en mogelijk in aanmerking komen binnen bestaande regelingen. Wij denken graag met u mee over de mogelijkheden.</p>
 
               <div class="subsidy-list">
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Advice on insulating solutions that suit your home.</span>
+                  <span>Advies over isolerende oplossingen die passen bij uw woning.</span>
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Insight into which improvements may be relevant for energy savings.</span>
+                  <span>Inzicht in welke verbeteringen relevant kunnen zijn voor energiebesparing.</span>
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Clear guidance toward a suitable choice and quote.</span>
+                  <span>Heldere begeleiding richting een passende keuze en offerte.</span>
                 </div>
               </div>
 
-              <a href="#contact" class="btn btn-light">Ask about the possibilities</a>
+              <a href="#contact" class="btn btn-light">Vraag naar de mogelijkheden</a>
             </div>
 
             <div class="subsidy-image">
-              <img src="images/hero3.jpg" alt="Project with modern windows and doors" loading="lazy">
+              <img src="images/hero3.jpg" alt="Project met moderne ramen en deuren" loading="lazy">
             </div>
           </div>
         </div>
@@ -1676,28 +1699,26 @@
       <div class="contact-card reveal">
         <div class="section-head" style="margin-bottom:0;">
           <span class="section-kicker">Contact</span>
-          <h2>Ready for a stylish upgrade of your home?</h2>
-          <p>Contact A-PROJECT today for personal advice and a free quote. We are happy to help you with a solution that suits your home, wishes and budget.</p>
+          <h2>Klaar voor een stijlvolle upgrade van uw woning?</h2>
+          <p>Neem vandaag nog contact op met A-PROJECT voor persoonlijk advies en een vrijblijvende offerte. Wij helpen u graag met een oplossing die past bij uw woning, wensen en budget.</p>
         </div>
 
-        <a href="#process" class="contact-steps-link">3 Steps</a>
-
         <div class="contact-actions">
-          <a href="tel:+31628255738" class="btn btn-dark">Call: +31 6 28255738</a>
+          <a href="tel:+31628255738" class="btn btn-dark">Bel: +31 6 28255738</a>
           <a href="mailto:a.project.contact@gmail.com" class="btn btn-light">a.project.contact@gmail.com</a>
           <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
         </div>
 
         <div class="contact-pills">
           <span class="contact-pill">★★★★★ 100+ reviews</span>
-          <span class="contact-pill">Fast response &amp; personal advice</span>
-          <span class="contact-pill">Free tailored quote</span>
+          <span class="contact-pill">Snelle reactie &amp; persoonlijk advies</span>
+          <span class="contact-pill">Vrijblijvende offerte op maat</span>
         </div>
 
         <div class="contact-meta">
           <div class="contact-meta-card">
-            <h4>Company details</h4>
-            <p>Chamber of Commerce number: 65884949</p>
+            <h4>Bedrijfsgegevens</h4>
+            <p>KVK nummer: 65884949</p>
             <p>Serooskerkestraat 50<br>5035GH Tilburg</p>
           </div>
 
@@ -1721,21 +1742,21 @@
               <span class="brand-name">A-PROJECT</span>
             </div>
             <p>
-              A-PROJECT stands for high-quality window frames, doors, sliding doors, shutters and insect screens
-              with a modern appearance, strong insulation and professional installation.
+              A-PROJECT staat voor hoogwaardige kozijnen, deuren, schuifpuien, rolluiken en horren
+              met een moderne uitstraling, sterke isolatie en vakkundige montage.
             </p>
           </div>
 
           <div class="footer-col">
-            <h4>Navigation</h4>
+            <h4>Navigatie</h4>
             <div class="footer-links">
-              <a href="#about-us">About us</a>
-              <a href="#why-us">Why us?</a>
-              <a href="./projects.html">Projects</a>
-              <a href="./services.html">Services</a>
-              <a href="./products.html">Products</a>
+              <a href="#over-ons">Over ons</a>
+              <a href="#waarom-wij">Waarom wij?</a>
+              <a href="./realisaties.html">Realisaties</a>
+              <a href="./onzediensten.html">Onze Diensten</a>
+              <a href="./producten.html">Producten</a>
               <a href="#reviews">Reviews</a>
-              <a href="#subsidy">Subsidy</a>
+              <a href="#subsidie">Subsidie</a>
               <a href="#contact">Contact</a>
             </div>
           </div>
@@ -1750,21 +1771,21 @@
           </div>
 
           <div class="footer-col">
-            <h4>Company</h4>
+            <h4>Bedrijf</h4>
             <div class="footer-links">
               <span>KVK: 65884949</span>
               <span>100+ reviews</span>
-              <span>Quality, service and finishing</span>
+              <span>Kwaliteit, service en afwerking</span>
             </div>
           </div>
         </div>
 
         <div class="footer-bottom">
-          <div>© 2026 A-PROJECT. All rights reserved.</div>
+          <div>© 2026 A-PROJECT. Alle rechten voorbehouden.</div>
           <div class="footer-badges">
             <span class="footer-badge">100+ Reviews</span>
-            <span class="footer-badge">Premium Finishing</span>
-            <span class="footer-badge">Free Quote</span>
+            <span class="footer-badge">Premium Afwerking</span>
+            <span class="footer-badge">Vrijblijvende Offerte</span>
           </div>
         </div>
       </div>
