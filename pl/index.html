@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A-PROJECT | Okna plastikowe, drzwi, drzwi przesuwne, rolety i moskitiery</title>
-  <meta name="description" content="A-PROJECT specjalizuje się w kompleksowej wymianie okien, drzwi, systemów przesuwnych, rolet i moskitier. Indywidualne doradztwo, wysokiej jakości produkty i fachowy montaż zgodny ze standardami rynku holenderskiego." />
+  <title>A-PROJECT | Okna PVC, drzwi, drzwi przesuwne, rolety i moskitiery</title>
+  <meta name="description" content="A-PROJECT specjalizuje się w kompleksowej wymianie okien, drzwi, systemów przesuwnych, rolet i moskitier. Indywidualne doradztwo, wysokiej jakości produkty i profesjonalny montaż zgodny ze standardami rynku holenderskiego." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -218,10 +218,16 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      color:rgba(255,255,255,.88);
+      font-weight:700;
+      letter-spacing:.08em;
       transition:.22s ease;
     }
 
-    .lang-link:hover{transform:translateY(-1px)}
+    .lang-link:hover{
+      color:#fff;
+      transform:translateY(-1px);
+    }
 
     .menu-toggle{
       display:none;
@@ -419,59 +425,50 @@
     }
 
     .gallery-grid{
-      display:grid;
-      grid-template-columns:1.18fr .82fr;
-      gap:14px;
-      align-items:stretch;
-    }
-
-    .gallery-feature{
-      min-height:760px;
-    }
-
-    .gallery-right-stack{
-      display:grid;
-      grid-template-rows:1fr 1fr;
-      gap:14px;
-    }
-
-    .gallery-half{
-      min-height:373px;
-    }
-
-    .gallery-bottom{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
+      column-count:3;
+      column-gap:14px;
     }
 
     .gallery-item{
       position:relative;
+      display:inline-block;
+      width:100%;
+      margin:0 0 14px;
       overflow:hidden;
-      background:#d9d9dc;
+      background:transparent;
       border-radius:0;
+      break-inside:avoid;
+      -webkit-column-break-inside:avoid;
+      page-break-inside:avoid;
     }
 
     .gallery-item::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.12) 100%);
-      pointer-events:none;
+      content:none;
     }
 
     .gallery-item img{
+      display:block;
       width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .5s ease;
+      height:auto;
+      object-fit:unset;
+      object-position:center center;
+      transition:none;
     }
 
-    .gallery-item:hover img{transform:scale(1.03)}
+    .gallery-item:hover img{
+      transform:none;
+    }
 
+    .gallery-feature,
+    .gallery-half,
     .gallery-small{
-      min-height:240px;
+      aspect-ratio:auto;
+      min-height:auto;
+    }
+
+    .gallery-right-stack,
+    .gallery-bottom{
+      display:contents;
     }
 
     .quick-offer-wrap{
@@ -899,11 +896,34 @@
       box-shadow:var(--shadow-soft);
     }
 
+    .contact-steps-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 30px;
+      margin-top:22px;
+      margin-bottom:14px;
+      background:#f2c300;
+      color:#d82424;
+      font-size:30px;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      border-radius:999px;
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+      transition:.22s ease;
+    }
+
+    .contact-steps-link:hover{
+      transform:translateY(-1px);
+    }
+
     .contact-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:26px;
+      margin-top:0;
     }
 
     .contact-pills{
@@ -1067,26 +1087,15 @@
         grid-template-columns:repeat(2,1fr);
       }
 
-      .gallery-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
       .footer-top{
         grid-template-columns:1fr 1fr;
       }
     }
 
     @media (max-width:1180px){
-      .gallery-feature{
-        min-height:640px;
-      }
-
-      .gallery-half{
-        min-height:313px;
-      }
-
-      .gallery-bottom{
-        grid-template-columns:repeat(2,1fr);
+      .gallery-grid{
+        column-count:2;
+        column-gap:14px;
       }
 
       .quick-offer-inner{
@@ -1121,24 +1130,10 @@
         padding:138px 34px 56px;
       }
 
-      .gallery-grid,
       .about-grid,
       .subsidy-grid,
       .contact-meta{
         grid-template-columns:1fr;
-      }
-
-      .gallery-right-stack{
-        grid-template-rows:auto;
-        grid-template-columns:1fr 1fr;
-      }
-
-      .gallery-feature{
-        min-height:520px;
-      }
-
-      .gallery-half{
-        min-height:300px;
       }
 
       .why-grid{
@@ -1238,30 +1233,12 @@
       }
 
       .gallery-grid{
-        gap:12px;
+        column-count:1;
+        column-gap:0;
       }
 
-      .gallery-right-stack{
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-
-      .gallery-feature{
-        min-height:380px;
-      }
-
-      .gallery-half{
-        min-height:240px;
-      }
-
-      .gallery-bottom{
-        margin-top:12px;
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-
-      .gallery-small{
-        min-height:220px;
+      .gallery-item{
+        margin:0 0 12px;
       }
 
       .quick-offer-inner{
@@ -1285,6 +1262,15 @@
       .reviews-score{
         min-width:0;
         width:100%;
+      }
+
+      .contact-steps-link{
+        width:100%;
+        padding:0 20px;
+        font-size:24px;
+        min-height:50px;
+        margin-top:18px;
+        margin-bottom:12px;
       }
 
       .contact-actions .btn{
@@ -1315,26 +1301,26 @@
     <div class="top-shell reveal">
       <header class="site-header">
         <div class="header-bar">
-          <a href="#top" class="brand" aria-label="A-PROJECT strona główna">
-            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+          <a href="/aprojec/pl/" class="brand" aria-label="Strona główna A-PROJECT">
+            <img src="/aprojec/images/logo.png" class="brand-logo" alt="Logo A-PROJECT">
             <span class="brand-name">A-PROJECT</span>
           </a>
 
           <nav class="nav" aria-label="Menu główne">
-            <a href="#over-ons">O nas</a>
-            <a href="#waarom-wij">Dlaczego my?</a>
-            <a href="./realizacje.html">Realizacje</a>
-            <a href="./naszeuslugi.html">Nasze usługi</a>
-            <a href="./produkty.html">Produkty</a>
-            <a href="#reviews">Opinie</a>
-            <a href="#subsidie">Dofinansowanie</a>
-            <a href="#contact">Kontakt</a>
+            <a href="#o-nas">O nas</a>
+            <a href="#dlaczego-my">Dlaczego my?</a>
+            <a href="/aprojec/pl/projekty">Projekty</a>
+            <a href="/aprojec/pl/naszeuslugi">Nasze usługi</a>
+            <a href="/aprojec/pl/produkty">Produkty</a>
+            <a href="#opinie">Opinie</a>
+            <a href="#dotacje">Dotacje</a>
+            <a href="#kontakt">Kontakt</a>
           </nav>
 
           <div class="header-right">
-            <a class="lang-link" href="../index.html" aria-label="Wersja niderlandzka">🇳🇱</a>
-            <a class="lang-link" href="../en/index.html" aria-label="Wersja angielska">🇬🇧</a>
-            <a class="lang-link" href="./index.html" aria-label="Wersja polska">🇵🇱</a>
+            <a class="lang-link" href="/aprojec/" aria-label="Wersja holenderska">🇳🇱</a>
+            <a class="lang-link" href="/aprojec/en/" aria-label="Wersja angielska">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl/" aria-label="Wersja polska">🇵🇱</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
           </div>
         </div>
@@ -1342,41 +1328,41 @@
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-lang">
-          <a href="../index.html">🇳🇱</a>
-          <a href="../en/index.html">🇬🇧</a>
-          <a href="./index.html">🇵🇱</a>
+          <a href="/aprojec/">🇳🇱</a>
+          <a href="/aprojec/en/">🇬🇧</a>
+          <a href="/aprojec/pl/">🇵🇱</a>
         </div>
-        <a href="#over-ons">O nas</a>
-        <a href="#waarom-wij">Dlaczego my?</a>
-        <a href="./realizacje.html">Realizacje</a>
-        <a href="./naszeuslugi.html">Nasze usługi</a>
-        <a href="./produkty.html">Produkty</a>
-        <a href="#reviews">Opinie</a>
-        <a href="#subsidie">Dofinansowanie</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#dlaczego-my">Dlaczego my?</a>
+        <a href="/aprojec/pl/projekty">Projekty</a>
+        <a href="/aprojec/pl/naszeuslugi">Nasze usługi</a>
+        <a href="/aprojec/pl/produkty">Produkty</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#dotacje">Dotacje</a>
+        <a href="#kontakt">Kontakt</a>
       </div>
 
       <main id="top">
         <section class="hero">
           <div class="hero-media">
-            <img src="/aprojec/images/przesuwaneokna.jpg" alt="Nowoczesny dom z czarnymi oknami i dużym systemem przesuwnym">
+            <img src="/aprojec/images/przesuwaneokna.jpg" alt="Nowoczesny dom z czarnymi ramami okiennymi i dużymi drzwiami przesuwnymi">
           </div>
           <div class="hero-overlay"></div>
 
           <div class="hero-inner">
             <div class="hero-content">
-              <h1>Twoje nowe okna i drzwi są na wyciągnięcie ręki!</h1>
+              <h1>Twoje nowe okna i drzwi są już tutaj!</h1>
               <p class="hero-subtitle">Wymiana okien w Tilburg</p>
-              <p class="hero-text">Szybko, profesjonalnie i solidnie.</p>
+              <p class="hero-text">Szybko, profesjonalnie i niezawodnie.</p>
 
               <div class="hero-questions">
-                <div class="hero-question">Chcesz wymienić okna na nowoczesne i estetyczne?</div>
-                <div class="hero-question">Lepiej zaizolować dom i obniżyć koszty energii?</div>
-                <div class="hero-question">Szukasz sprawdzonej firmy, która pracuje dokładnie i terminowo?</div>
+                <div class="hero-question">Szukasz nowych okien o nowoczesnym wyglądzie?</div>
+                <div class="hero-question">Chcesz lepiej izolować dom i oszczędzać na kosztach energii?</div>
+                <div class="hero-question">Potrzebujesz rzetelnego fachowca, który pracuje dokładnie i estetycznie?</div>
               </div>
 
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-dark">Poproś o ofertę</a>
+                <a href="#kontakt" class="btn btn-dark">Poproś o wycenę</a>
                 <a href="tel:+31628255738" class="btn btn-light">Zadzwoń teraz</a>
                 <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
               </div>
@@ -1390,32 +1376,32 @@
       <div class="reveal">
         <div class="gallery-card">
           <div class="gallery-grid">
-            <article class="gallery-item gallery-feature">
+            <article class="gallery-item">
               <img src="/aprojec/images/glowna1.jpeg" alt="Realizacja A-PROJECT z nowoczesnymi oknami i drzwiami" loading="lazy">
             </article>
 
-            <div class="gallery-right-stack">
-              <article class="gallery-item gallery-half">
-                <img src="/aprojec/images/glowna2.jpeg" alt="Nowoczesna realizacja okien A-PROJECT" loading="lazy">
-              </article>
-              <article class="gallery-item gallery-half">
-                <img src="/aprojec/images/glowna3.jpeg" alt="Wykończenie okien i drzwi przez A-PROJECT" loading="lazy">
-              </article>
-            </div>
-          </div>
+            <article class="gallery-item">
+              <img src="/aprojec/images/glowna2.jpeg" alt="Nowoczesna realizacja okien A-PROJECT" loading="lazy">
+            </article>
 
-          <div class="gallery-bottom">
-            <article class="gallery-item gallery-small">
+            <article class="gallery-item">
+              <img src="/aprojec/images/glowna3.jpeg" alt="Wykończenie okien i drzwi wykonane przez A-PROJECT" loading="lazy">
+            </article>
+
+            <article class="gallery-item">
               <img src="/aprojec/images/glowna4.jpeg" alt="Nowoczesne drzwi przesuwne w domu" loading="lazy">
             </article>
-            <article class="gallery-item gallery-small">
+
+            <article class="gallery-item">
               <img src="/aprojec/images/glowna5.jpeg" alt="Nowe okna i ramy w domu" loading="lazy">
             </article>
-            <article class="gallery-item gallery-small">
+
+            <article class="gallery-item">
               <img src="/aprojec/images/glowna6.jpeg" alt="Precyzyjny montaż i premium wykończenie" loading="lazy">
             </article>
-            <article class="gallery-item gallery-small">
-              <img src="/aprojec/images/glowna7.jpeg" alt="Okna i drzwi zgodne ze standardem rynku holenderskiego" loading="lazy">
+
+            <article class="gallery-item">
+              <img src="/aprojec/images/glowna7.jpeg" alt="Okna i drzwi zgodne ze standardem holenderskim" loading="lazy">
             </article>
           </div>
         </div>
@@ -1430,14 +1416,14 @@
           <div class="quick-offer-copy">
             <div class="quick-offer-label">
               <span class="quick-offer-badge">3</span>
-              <span>Szybka oferta</span>
+              <span>Szybka wycena</span>
             </div>
-            <h2>Szybka oferta w 3 krokach.</h2>
-            <p>Wyślij zdjęcia i orientacyjne wymiary, opisz swoje oczekiwania i umów spotkanie. Dzięki temu szybko otrzymasz indywidualną ofertę bez zbędnej wymiany wiadomości.</p>
+            <h2>Otrzymaj szybką wycenę w 3 krokach.</h2>
+            <p>Wyślij zdjęcia i orientacyjne wymiary, opisz swoje potrzeby i umów spotkanie. Dzięki temu szybko otrzymasz indywidualną ofertę bez zbędnej wymiany wielu wiadomości.</p>
           </div>
 
           <div class="quick-offer-actions">
-            <a href="#werkwijze" class="btn btn-light">Zobacz jak to działa</a>
+            <a href="#proces" class="btn btn-light">Zobacz jak to działa</a>
           </div>
         </div>
       </div>
@@ -1446,23 +1432,23 @@
 
   <section class="section-block">
     <div class="shell">
-      <div class="section-card section-dark reveal" id="over-ons">
+      <div class="section-card section-dark reveal" id="o-nas">
         <div class="section-inner">
           <div class="section-head">
             <span class="section-kicker">O nas</span>
             <h2>Jakość, precyzja i indywidualne podejście.</h2>
-            <p>A-PROJECT to jakość, na której możesz polegać. Specjalizujemy się w kompleksowej wymianie okien, drzwi, systemów przesuwnych, rolet i moskitier, oferując rozwiązania dopasowane do standardów rynku holenderskiego.</p>
+            <p>A-PROJECT to jakość, której możesz zaufać. Specjalizujemy się w kompleksowej wymianie okien, drzwi, systemów przesuwnych, rolet i moskitier, oferując rozwiązania dopasowane do standardów rynku holenderskiego.</p>
           </div>
 
           <div class="about-grid">
             <div class="about-card">
-              <p>Stawiamy wyłącznie na wysokiej jakości produkty i materiały, połączone z precyzyjnym montażem. Dzięki temu efekt końcowy nie tylko wygląda estetycznie, ale przede wszystkim zapewnia maksymalną izolację, komfort i trwałość na długie lata.</p>
-              <p>Do każdego projektu podchodzimy indywidualnie. Od pierwszego doradztwa i przygotowania oferty, przez zamówienie, dostawę i profesjonalny montaż, aż po końcowe wykończenie — pomagamy dobrać najlepsze rozwiązanie do Twojego domu.</p>
-              <p>W A-PROJECT nie otrzymujesz standardowego schematu, ale realizację dopasowaną do Twoich oczekiwań, stylu budynku i efektu, jaki chcesz osiągnąć.</p>
+              <p>Pracujemy wyłącznie na wysokiej jakości produktach i materiałach, w połączeniu z precyzyjnym montażem. Dzięki temu efekt końcowy nie tylko wygląda estetycznie i nowocześnie, ale zapewnia także doskonałą izolację, komfort oraz trwałość na długie lata.</p>
+              <p>Do każdego projektu podchodzimy indywidualnie. Od pierwszej konsultacji i wyceny, przez zamówienie i dostawę, aż po profesjonalny montaż i finalne wykończenie, pomagamy dobrać najlepsze rozwiązanie do Twojego domu.</p>
+              <p>W A-PROJECT nie otrzymujesz standardowego, szablonowego podejścia, ale proces dopasowany do Twoich oczekiwań, stylu nieruchomości i efektu, który chcesz osiągnąć.</p>
 
               <div class="about-badges">
                 <span class="about-badge">Indywidualne podejście</span>
-                <span class="about-badge">Wysokiej jakości produkty</span>
+                <span class="about-badge">Wysoka jakość produktów</span>
                 <span class="about-badge">Precyzyjny montaż</span>
                 <span class="about-badge">Standard rynku holenderskiego</span>
               </div>
@@ -1479,37 +1465,37 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-light reveal" id="waarom-wij">
+      <div class="section-card section-light reveal" id="dlaczego-my">
         <div class="section-inner">
           <div class="section-head">
             <span class="section-kicker">Dlaczego my?</span>
             <h2>Dlaczego klienci wybierają A-PROJECT.</h2>
-            <p>Jakość produktów, precyzja montażu i indywidualne podejście od początku do końca. Właśnie za to cenią nas nasi klienci.</p>
+            <p>Jakość w każdym produkcie, precyzja w każdym montażu i indywidualne podejście od początku do końca. To właśnie najbardziej cenią nasi klienci.</p>
           </div>
 
           <div class="why-grid">
             <article class="why-card">
               <div class="why-icon">✓</div>
               <h3>Wysoka jakość</h3>
-              <p>Pracujemy wyłącznie na wysokiej klasy oknach, drzwiach i materiałach, które zapewniają elegancki wygląd, bardzo dobrą izolację oraz trwałość na długie lata użytkowania.</p>
+              <p>Pracujemy wyłącznie na wysokiej jakości oknach, drzwiach i materiałach, które zapewniają elegancki wygląd, doskonałą izolację i komfort użytkowania na długie lata.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">⏱</div>
               <h3>Jasna komunikacja</h3>
-              <p>Dbamy o przejrzysty i uporządkowany proces. Wiesz, czego się spodziewać, otrzymujesz uczciwe doradztwo i możesz liczyć na sprawny kontakt na każdym etapie realizacji.</p>
+              <p>Dbamy o przejrzysty i prosty proces współpracy. Zawsze wiesz, czego się spodziewać, otrzymujesz uczciwe doradztwo i masz bezpośredni kontakt na każdym etapie realizacji.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">◆</div>
               <h3>Precyzyjne wykończenie</h3>
-              <p>Zwracamy uwagę na każdy detal. Liczy się nie tylko sam produkt, ale także montaż, wykończenie i końcowy efekt, który idealnie pasuje do Twojego domu.</p>
+              <p>Zwracamy uwagę na każdy detal. Liczy się nie tylko sam produkt, ale również jakość montażu, wykończenie i końcowy wygląd całej realizacji.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">★</div>
               <h3>Zadowolenie klientów</h3>
-              <p>Mamy wielu zadowolonych klientów, którzy chętnie polecają nasze usługi dalej. Na życzenie możesz również zapytać o ich doświadczenia, bo wierzymy w jakość, która broni się sama.</p>
+              <p>Mamy wielu zadowolonych klientów, którzy chętnie polecają nasze usługi. Na życzenie możesz zapytać o ich opinie, bo wierzymy, że jakość broni się sama.</p>
             </article>
           </div>
         </div>
@@ -1519,24 +1505,24 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-dark reveal" id="werkwijze">
+      <div class="section-card section-dark reveal" id="proces">
         <div class="section-inner">
           <div class="section-head">
-            <span class="section-kicker">Jak pracujemy?</span>
-            <h2>Przejrzysty proces od pierwszego kontaktu do realizacji.</h2>
-            <p>Dbamy o jasną i sprawną współpracę, abyś dokładnie wiedział, czego się spodziewać, a efekt końcowy idealnie pasował do Twojego domu.</p>
+            <span class="section-kicker">Jak pracujemy</span>
+            <h2>Jasny proces od pierwszego kontaktu do realizacji.</h2>
+            <p>Zapewniamy przejrzystą i sprawną współpracę, dzięki której dokładnie wiesz, czego się spodziewać, a efekt końcowy idealnie pasuje do Twojego domu.</p>
           </div>
 
           <div class="section-head" style="margin-top:-4px; margin-bottom:28px;">
-            <p><strong>Otrzymaj ofertę w 3 prostych krokach:</strong></p>
+            <p><strong>Otrzymaj wycenę w 3 prostych krokach:</strong></p>
           </div>
 
           <div class="process-grid">
             <article class="process-card">
               <div class="process-num">01</div>
               <h3>Wyślij zdjęcia i wymiary</h3>
-              <p>Wyślij zdjęcia obecnych okien, drzwi lub systemów przesuwnych wraz z orientacyjnymi wymiarami. Dzięki temu od razu otrzymamy dobry wstępny obraz Twojej sytuacji.</p>
-              <p>Dokładny pomiar wykonujemy zawsze przed finalnym zamówieniem, aby wszystko było perfekcyjnie dopasowane.</p>
+              <p>Wyślij nam zdjęcia swoich obecnych okien, drzwi lub systemów przesuwnych wraz z orientacyjnymi wymiarami. Dzięki temu od razu uzyskamy jasny obraz Twojej sytuacji.</p>
+              <p>Dokładny pomiar wykonujemy zawsze przed finalnym zamówieniem, aby wszystko było idealnie dopasowane.</p>
               <div class="process-contact">
                 📩 <a href="mailto:a.project.contact@gmail.com">a.project.contact@gmail.com</a>
               </div>
@@ -1544,16 +1530,16 @@
 
             <article class="process-card">
               <div class="process-num">02</div>
-              <h3>Opisz swoje oczekiwania</h3>
-              <p>Daj nam znać, jakie zmiany chcesz wprowadzić: układ okien, kolor od zewnątrz i od wewnątrz oraz ewentualne dodatki, takie jak rolety czy moskitiery.</p>
-              <p>Dzięki temu od razu przygotujemy ofertę dopasowaną do Twojego domu, stylu i oczekiwań.</p>
+              <h3>Opisz swoje potrzeby</h3>
+              <p>Daj nam znać, jakie zmiany chcesz wprowadzić: układ okien, kolor od wewnątrz i z zewnątrz oraz dodatkowe elementy, takie jak rolety czy moskitiery.</p>
+              <p>Dzięki temu możemy dopasować ofertę bezpośrednio do Twojego domu, stylu i oczekiwań.</p>
             </article>
 
             <article class="process-card">
               <div class="process-num">03</div>
               <h3>Umów spotkanie</h3>
-              <p>Umawiamy spotkanie, aby wspólnie omówić wszystkie szczegóły, doradzić najlepsze rozwiązania i dopracować ofertę do konkretnej, dobrze dopasowanej propozycji.</p>
-              <p>Stawiamy na bezpośredni kontakt, abyś mógł podjąć decyzję z pełnym przekonaniem.</p>
+              <p>Umawiamy spotkanie, aby wspólnie wszystko omówić, doradzić najlepsze rozwiązania i dopracować ofertę do konkretnej, dopasowanej propozycji.</p>
+              <p>Osobisty kontakt jest dla nas bardzo ważny, abyś mógł podjąć decyzję z pełnym przekonaniem.</p>
               <div class="process-contact">
                 📞 <a href="tel:+31628255738">+31 6 28255738</a>
               </div>
@@ -1566,25 +1552,25 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-light reveal" id="reviews">
+      <div class="section-card section-light reveal" id="opinie">
         <div class="section-inner">
           <div class="reviews-top">
             <div class="section-head" style="margin:0;">
               <span class="section-kicker">Opinie</span>
               <h2>Ponad 100 zadowolonych klientów.</h2>
-              <p>Klienci doceniają nas za estetyczną pracę, jasną komunikację i wysoką jakość końcowego efektu. Tak właśnie budujemy zaufanie — realizacja po realizacji.</p>
+              <p>Klienci doceniają nasz uporządkowany sposób pracy, jasną komunikację i jakość efektu końcowego. To zaufanie budujemy projekt po projekcie.</p>
             </div>
 
             <div class="reviews-score">
               <strong>5.0/5</strong>
-              <p>100% zadowolonych klientów na podstawie 100+ opinii i poleceń.</p>
+              <p>100% zadowolonych klientów na podstawie ponad 100 opinii i rekomendacji.</p>
             </div>
           </div>
 
           <div class="reviews-grid">
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Bardzo profesjonalna firma. Wszystko zostało dokładnie wyjaśnione, montaż był estetyczny, a efekt końcowy naprawdę robi wrażenie.</p>
+              <p class="review-text">Bardzo profesjonalna firma. Wszystko zostało jasno wyjaśnione, montaż był wykonany bardzo starannie, a efekt końcowy wygląda naprawdę pięknie.</p>
               <div class="review-author">
                 <div class="review-avatar">MV</div>
                 <div>
@@ -1596,7 +1582,7 @@
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Szybki kontakt, przejrzysta oferta i świetna jakość. Nasze nowe okna naprawdę zrobiły ogromną różnicę pod względem wyglądu i komfortu.</p>
+              <p class="review-text">Szybki kontakt, przejrzysta wycena i świetna jakość. Nasze nowe okna zrobiły ogromną różnicę zarówno pod względem wyglądu, jak i komfortu.</p>
               <div class="review-author">
                 <div class="review-avatar">SL</div>
                 <div>
@@ -1608,7 +1594,7 @@
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Wszystkie ustalenia zostały dotrzymane, a wykończenie wykonano bardzo starannie. Zdecydowanie firma, którą bez wahania polecamy.</p>
+              <p class="review-text">Wszystkie ustalenia zostały dotrzymane, a całość została bardzo estetycznie wykończona. To firma, którą bez wahania możemy polecić.</p>
               <div class="review-author">
                 <div class="review-avatar">JB</div>
                 <div>
@@ -1620,7 +1606,7 @@
 
             <article class="review-card">
               <div class="review-stars">★★★★★</div>
-              <p class="review-text">Od doradztwa po finalny montaż wszystko przebiegło sprawnie. Świetne produkty, porządna ekipa i duża dbałość o szczegóły. Jesteśmy bardzo zadowoleni.</p>
+              <p class="review-text">Od doradztwa po zakończenie realizacji wszystko przebiegło bardzo sprawnie. Piękne produkty, profesjonalni ludzie i ogromna dbałość o szczegóły. Jesteśmy bardzo zadowoleni.</p>
               <div class="review-author">
                 <div class="review-avatar">ND</div>
                 <div>
@@ -1637,22 +1623,22 @@
 
   <section class="section-pad">
     <div class="shell">
-      <div class="section-card section-dark reveal" id="subsidie">
+      <div class="section-card section-dark reveal" id="dotacje">
         <div class="section-inner">
           <div class="subsidy-grid">
             <div class="subsidy-panel">
-              <span class="section-kicker">Dofinansowanie</span>
-              <h2>Możesz skorzystać z dofinansowania na rozwiązania poprawiające izolację.</h2>
-              <p>W wielu przypadkach nowe, dobrze izolujące okna lub drzwi mogą przyczynić się do oszczędności energii i kwalifikować się do istniejących programów wsparcia. Chętnie pomożemy Ci sprawdzić dostępne możliwości.</p>
+              <span class="section-kicker">Dotacje</span>
+              <h2>Możesz skorzystać z dotacji na poprawę izolacji.</h2>
+              <p>W wielu przypadkach nowe, izolujące okna lub drzwi mogą przyczyniać się do oszczędności energii i kwalifikować się do istniejących programów. Chętnie pomożemy Ci sprawdzić dostępne możliwości.</p>
 
               <div class="subsidy-list">
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Doradztwo w zakresie rozwiązań izolacyjnych dopasowanych do Twojego domu.</span>
+                  <span>Doradztwo w zakresie rozwiązań izolacyjnych dopasowanych do Twojej nieruchomości.</span>
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Lepszy wgląd w to, które ulepszenia mogą realnie wpłynąć na oszczędność energii.</span>
+                  <span>Wskazanie, które ulepszenia mogą mieć znaczenie dla oszczędzania energii.</span>
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
@@ -1660,7 +1646,7 @@
                 </div>
               </div>
 
-              <a href="#contact" class="btn btn-light">Zapytaj o możliwości</a>
+              <a href="#kontakt" class="btn btn-light">Zapytaj o możliwości</a>
             </div>
 
             <div class="subsidy-image">
@@ -1672,14 +1658,16 @@
     </div>
   </section>
 
-  <section class="section-pad" id="contact">
+  <section class="section-pad" id="kontakt">
     <div class="shell">
       <div class="contact-card reveal">
         <div class="section-head" style="margin-bottom:0;">
           <span class="section-kicker">Kontakt</span>
           <h2>Gotowy na stylową metamorfozę swojego domu?</h2>
-          <p>Skontaktuj się z A-PROJECT już dziś, aby otrzymać indywidualne doradztwo i niezobowiązującą ofertę. Chętnie pomożemy Ci dobrać rozwiązanie dopasowane do domu, oczekiwań i budżetu.</p>
+          <p>Skontaktuj się z A-PROJECT już dziś, aby otrzymać indywidualne doradztwo i niezobowiązującą wycenę. Chętnie pomożemy Ci znaleźć rozwiązanie dopasowane do Twojego domu, potrzeb i budżetu.</p>
         </div>
+
+        <a href="#proces" class="contact-steps-link">3 Kroki</a>
 
         <div class="contact-actions">
           <a href="tel:+31628255738" class="btn btn-dark">Zadzwoń: +31 6 28255738</a>
@@ -1690,13 +1678,13 @@
         <div class="contact-pills">
           <span class="contact-pill">★★★★★ 100+ opinii</span>
           <span class="contact-pill">Szybka odpowiedź i indywidualne doradztwo</span>
-          <span class="contact-pill">Niezobowiązująca oferta na miarę</span>
+          <span class="contact-pill">Niezobowiązująca wycena na miarę</span>
         </div>
 
         <div class="contact-meta">
           <div class="contact-meta-card">
             <h4>Dane firmy</h4>
-            <p>KVK numer: 65884949</p>
+            <p>KVK: 65884949</p>
             <p>Serooskerkestraat 50<br>5035GH Tilburg</p>
           </div>
 
@@ -1716,26 +1704,26 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="brand" style="min-width:auto;">
-              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <img src="/aprojec/images/logo.png" class="brand-logo" alt="Logo A-PROJECT">
               <span class="brand-name">A-PROJECT</span>
             </div>
             <p>
               A-PROJECT to wysokiej jakości okna, drzwi, drzwi przesuwne, rolety i moskitiery
-              o nowoczesnym wyglądzie, wysokiej izolacyjności i fachowym montażu.
+              o nowoczesnym wyglądzie, bardzo dobrej izolacji i profesjonalnym montażu.
             </p>
           </div>
 
           <div class="footer-col">
             <h4>Nawigacja</h4>
             <div class="footer-links">
-              <a href="#over-ons">O nas</a>
-              <a href="#waarom-wij">Dlaczego my?</a>
-              <a href="./realizacje.html">Realizacje</a>
-              <a href="./naszeuslugi.html">Nasze usługi</a>
-              <a href="./produkty.html">Produkty</a>
-              <a href="#reviews">Opinie</a>
-              <a href="#subsidie">Dofinansowanie</a>
-              <a href="#contact">Kontakt</a>
+              <a href="#o-nas">O nas</a>
+              <a href="#dlaczego-my">Dlaczego my?</a>
+              <a href="/aprojec/pl/projekty">Projekty</a>
+              <a href="/aprojec/pl/naszeuslugi">Nasze usługi</a>
+              <a href="/aprojec/pl/produkty">Produkty</a>
+              <a href="#opinie">Opinie</a>
+              <a href="#dotacje">Dotacje</a>
+              <a href="#kontakt">Kontakt</a>
             </div>
           </div>
 
@@ -1763,7 +1751,7 @@
           <div class="footer-badges">
             <span class="footer-badge">100+ Opinii</span>
             <span class="footer-badge">Premium Wykończenie</span>
-            <span class="footer-badge">Niezobowiązująca Oferta</span>
+            <span class="footer-badge">Niezobowiązująca Wycena</span>
           </div>
         </div>
       </div>
