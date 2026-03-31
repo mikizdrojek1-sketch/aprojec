@@ -214,15 +214,32 @@
     }
 
     .lang-link{
-      font-size:22px;
+      min-width:48px;
+      height:44px;
+      padding:0 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      font-size:20px;
       line-height:1;
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      color:#fff;
+      font-weight:700;
+      letter-spacing:.08em;
       transition:.22s ease;
+      backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
     }
 
-    .lang-link:hover{transform:translateY(-1px)}
+    .lang-link:hover{
+      color:#fff;
+      background:rgba(255,255,255,.28);
+      border-color:rgba(255,255,255,.42);
+      transform:translateY(-1px);
+    }
 
     .menu-toggle{
       display:none;
@@ -417,64 +434,47 @@
     .gallery-card{
       background:#e8e8ea;
       border-radius:28px;
-      padding:34px;
+      padding:20px;
       box-shadow:var(--shadow-soft);
     }
 
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:1.18fr .82fr;
-      gap:14px;
-      align-items:stretch;
-    }
-
-    .gallery-feature{
-      min-height:760px;
-    }
-
-    .gallery-right-stack{
-      display:grid;
-      grid-template-rows:1fr 1fr;
-      gap:14px;
-    }
-
-    .gallery-half{
-      min-height:373px;
-    }
-
-    .gallery-bottom{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
+    .gallery-masonry{
+      column-count:3;
+      column-gap:16px;
     }
 
     .gallery-item{
       position:relative;
+      display:inline-block;
+      width:100%;
+      margin:0 0 16px;
       overflow:hidden;
       background:#d9d9dc;
-      border-radius:0;
+      border-radius:22px;
+      break-inside:avoid;
+      box-shadow:0 12px 30px rgba(0,0,0,.08);
     }
 
     .gallery-item::after{
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.12) 100%);
+      background:linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.08) 100%);
       pointer-events:none;
     }
 
     .gallery-item img{
       width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:transform .5s ease;
+      height:auto;
+      object-fit:contain;
+      object-position:center center;
+      display:block;
+      transition:.22s ease;
+      background:#d9d9dc;
     }
 
-    .gallery-item:hover img{transform:scale(1.03)}
-
-    .gallery-small{
-      min-height:240px;
+    .gallery-item:hover img{
+      transform:scale(1.01);
     }
 
     /* QUICK CTA */
@@ -909,11 +909,34 @@
       box-shadow:var(--shadow-soft);
     }
 
+    .contact-steps-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 30px;
+      margin-top:22px;
+      margin-bottom:14px;
+      background:#f2c300;
+      color:#d82424;
+      font-size:30px;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      border-radius:999px;
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+      transition:.22s ease;
+    }
+
+    .contact-steps-link:hover{
+      transform:translateY(-1px);
+    }
+
     .contact-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:26px;
+      margin-top:0;
     }
 
     .contact-pills{
@@ -1078,8 +1101,8 @@
         grid-template-columns:repeat(2,1fr);
       }
 
-      .gallery-grid{
-        grid-template-columns:1fr 1fr;
+      .gallery-masonry{
+        column-count:2;
       }
 
       .footer-top{
@@ -1088,18 +1111,6 @@
     }
 
     @media (max-width:1180px){
-      .gallery-feature{
-        min-height:640px;
-      }
-
-      .gallery-half{
-        min-height:313px;
-      }
-
-      .gallery-bottom{
-        grid-template-columns:repeat(2,1fr);
-      }
-
       .quick-offer-inner{
         grid-template-columns:1fr;
         align-items:flex-start;
@@ -1132,24 +1143,10 @@
         padding:138px 34px 56px;
       }
 
-      .gallery-grid,
       .about-grid,
       .subsidy-grid,
       .contact-meta{
         grid-template-columns:1fr;
-      }
-
-      .gallery-right-stack{
-        grid-template-rows:auto;
-        grid-template-columns:1fr 1fr;
-      }
-
-      .gallery-feature{
-        min-height:520px;
-      }
-
-      .gallery-half{
-        min-height:300px;
       }
 
       .why-grid{
@@ -1248,31 +1245,13 @@
         padding:22px;
       }
 
-      .gallery-grid{
-        gap:12px;
+      .gallery-masonry{
+        column-count:1;
+        column-gap:0;
       }
 
-      .gallery-right-stack{
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-
-      .gallery-feature{
-        min-height:380px;
-      }
-
-      .gallery-half{
-        min-height:240px;
-      }
-
-      .gallery-bottom{
-        margin-top:12px;
-        grid-template-columns:1fr;
-        gap:12px;
-      }
-
-      .gallery-small{
-        min-height:220px;
+      .gallery-item{
+        margin-bottom:12px;
       }
 
       .quick-offer-inner{
@@ -1296,6 +1275,15 @@
       .reviews-score{
         min-width:0;
         width:100%;
+      }
+
+      .contact-steps-link{
+        width:100%;
+        padding:0 20px;
+        font-size:24px;
+        min-height:50px;
+        margin-top:18px;
+        margin-bottom:12px;
       }
 
       .contact-actions .btn{
@@ -1326,26 +1314,26 @@
     <div class="top-shell reveal">
       <header class="site-header">
         <div class="header-bar">
-          <a href="/aprojec/en/index.html#top" class="brand" aria-label="A-PROJECT home">
-            <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+          <a href="#top" class="brand" aria-label="A-PROJECT home">
+            <img src="images/logo.png" class="brand-logo" alt="A-PROJECT logo">
             <span class="brand-name">A-PROJECT</span>
           </a>
 
           <nav class="nav" aria-label="Main menu">
-            <a href="/aprojec/en/index.html#about-us">About us</a>
-            <a href="/aprojec/en/index.html#why-us">Why us?</a>
-            <a href="/aprojec/en/projects.html">Projects</a>
-            <a href="/aprojec/en/services.html">Services</a>
-            <a href="/aprojec/en/products.html">Products</a>
-            <a href="/aprojec/en/index.html#reviews">Reviews</a>
-            <a href="/aprojec/en/index.html#subsidy">Subsidy</a>
-            <a href="/aprojec/en/index.html#contact">Contact</a>
+            <a href="#about-us">About us</a>
+            <a href="#why-us">Why us?</a>
+            <a href="/aprojec/projects">Projects</a>
+            <a href="/aprojec/services">Services</a>
+            <a href="/aprojec/products">Products</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#subsidy">Subsidy</a>
+            <a href="#contact">Contact</a>
           </nav>
 
           <div class="header-right">
-            <a class="lang-link" href="/aprojec/index.html" aria-label="Dutch version">🇳🇱</a>
-            <a class="lang-link" href="/aprojec/en/index.html" aria-label="English version">🇬🇧</a>
-            <a class="lang-link" href="/aprojec/pl/index.html" aria-label="Polish version">🇵🇱</a>
+            <a class="lang-link" href="/aprojec/" aria-label="Dutch version">🇳🇱</a>
+            <a class="lang-link" href="/aprojec/en" aria-label="English version">🇬🇧</a>
+            <a class="lang-link" href="/aprojec/pl" aria-label="Polish version">🇵🇱</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
           </div>
         </div>
@@ -1353,24 +1341,24 @@
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-lang">
-          <a href="/aprojec/index.html">🇳🇱</a>
-          <a href="/aprojec/en/index.html">🇬🇧</a>
-          <a href="/aprojec/pl/index.html">🇵🇱</a>
+          <a href="/aprojec/">🇳🇱</a>
+          <a href="/aprojec/en">🇬🇧</a>
+          <a href="/aprojec/pl">🇵🇱</a>
         </div>
-        <a href="/aprojec/en/index.html#about-us">About us</a>
-        <a href="/aprojec/en/index.html#why-us">Why us?</a>
-        <a href="/aprojec/en/projects.html">Projects</a>
-        <a href="/aprojec/en/services.html">Services</a>
-        <a href="/aprojec/en/products.html">Products</a>
-        <a href="/aprojec/en/index.html#reviews">Reviews</a>
-        <a href="/aprojec/en/index.html#subsidy">Subsidy</a>
-        <a href="/aprojec/en/index.html#contact">Contact</a>
+        <a href="#about-us">About us</a>
+        <a href="#why-us">Why us?</a>
+        <a href="/aprojec/projects">Projects</a>
+        <a href="/aprojec/services">Services</a>
+        <a href="/aprojec/products">Products</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#subsidy">Subsidy</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <main id="top">
         <section class="hero">
           <div class="hero-media">
-            <img src="/aprojec/images/przesuwaneokna.jpg" alt="Modern home with black window frames and a large sliding door">
+            <img src="images/przesuwaneokna.jpg" alt="Modern home with black window frames and a large sliding door">
           </div>
           <div class="hero-overlay"></div>
 
@@ -1381,13 +1369,13 @@
               <p class="hero-text">Fast, professional and reliable.</p>
 
               <div class="hero-questions">
-                <div class="hero-question">Ready for new window frames with a modern look?</div>
-                <div class="hero-question">Better insulation and save on energy costs?</div>
+                <div class="hero-question">Ready for new window frames with a modern appearance?</div>
+                <div class="hero-question">Better insulation and lower energy costs?</div>
                 <div class="hero-question">Looking for a reliable specialist who works neatly?</div>
               </div>
 
               <div class="hero-actions">
-                <a href="/aprojec/en/index.html#contact" class="btn btn-dark">Request a quote</a>
+                <a href="#contact" class="btn btn-dark">Request a quote</a>
                 <a href="tel:+31628255738" class="btn btn-light">Call now</a>
                 <a href="https://wa.me/31628255738" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp</a>
               </div>
@@ -1400,33 +1388,33 @@
     <section class="gallery-wrap" id="gallery-top">
       <div class="reveal">
         <div class="gallery-card">
-          <div class="gallery-grid">
-            <article class="gallery-item gallery-feature">
-              <img src="/aprojec/images/glowna1.jpeg" alt="A-PROJECT project with modern window frames and doors" loading="lazy">
+          <div class="gallery-masonry">
+            <article class="gallery-item">
+              <img src="images/glowna1.jpeg" alt="A-PROJECT project with modern window frames and doors" loading="lazy">
             </article>
 
-            <div class="gallery-right-stack">
-              <article class="gallery-item gallery-half">
-                <img src="/aprojec/images/glowna2.jpeg" alt="Modern window frame project by A-PROJECT" loading="lazy">
-              </article>
-              <article class="gallery-item gallery-half">
-                <img src="/aprojec/images/glowna3.jpeg" alt="Finishing of window frames and doors by A-PROJECT" loading="lazy">
-              </article>
-            </div>
-          </div>
+            <article class="gallery-item">
+              <img src="images/glowna2.jpeg" alt="Modern window frame project by A-PROJECT" loading="lazy">
+            </article>
 
-          <div class="gallery-bottom">
-            <article class="gallery-item gallery-small">
-              <img src="/aprojec/images/glowna4.jpeg" alt="Modern sliding door in a home" loading="lazy">
+            <article class="gallery-item">
+              <img src="images/glowna3.jpeg" alt="Finishing of window frames and doors by A-PROJECT" loading="lazy">
             </article>
-            <article class="gallery-item gallery-small">
-              <img src="/aprojec/images/glowna5.jpeg" alt="New window frames and windows in a home" loading="lazy">
+
+            <article class="gallery-item">
+              <img src="images/glowna4.jpeg" alt="Modern sliding door in a home" loading="lazy">
             </article>
-            <article class="gallery-item gallery-small">
-              <img src="/aprojec/images/glowna6.jpeg" alt="Clean installation and premium finishing" loading="lazy">
+
+            <article class="gallery-item">
+              <img src="images/glowna5.jpeg" alt="New window frames and windows in a home" loading="lazy">
             </article>
-            <article class="gallery-item gallery-small">
-              <img src="/aprojec/images/glowna7.jpeg" alt="Window frames and doors according to Dutch market standards" loading="lazy">
+
+            <article class="gallery-item">
+              <img src="images/glowna6.jpeg" alt="Clean installation and premium finishing" loading="lazy">
+            </article>
+
+            <article class="gallery-item">
+              <img src="images/glowna7.jpeg" alt="Window frames and doors according to Dutch market standards" loading="lazy">
             </article>
           </div>
         </div>
@@ -1444,11 +1432,11 @@
               <span>Quick quote</span>
             </div>
             <h2>Quick quote in 3 steps.</h2>
-            <p>Send your photos and approximate measurements, share your preferences and schedule an appointment. This way you quickly receive a personal quote without unnecessary back-and-forth emails.</p>
+            <p>Send your photos and approximate measurements, share your preferences and schedule an appointment. This way you will quickly receive a personal quote without unnecessary back-and-forth emails.</p>
           </div>
 
           <div class="quick-offer-actions">
-            <a href="/aprojec/en/index.html#process" class="btn btn-light">See how it works</a>
+            <a href="#process" class="btn btn-light">See how it works</a>
           </div>
         </div>
       </div>
@@ -1462,7 +1450,7 @@
           <div class="section-head">
             <span class="section-kicker">About us</span>
             <h2>Quality, precision and a personal approach.</h2>
-            <p>A-PROJECT – quality you can trust. We specialize in the complete replacement of window frames, doors, sliding systems, shutters and insect screens, with solutions that match Dutch market standards.</p>
+            <p>A-PROJECT stands for quality you can trust. We specialize in the complete replacement of window frames, doors, sliding systems, shutters and insect screens, with solutions that match the standards of the Dutch market.</p>
           </div>
 
           <div class="about-grid">
@@ -1480,7 +1468,7 @@
             </div>
 
             <div class="about-image">
-              <img src="/aprojec/images/overons.jpeg" alt="Modern project by A-PROJECT" loading="lazy">
+              <img src="images/overons.jpeg" alt="Modern project by A-PROJECT" loading="lazy">
             </div>
           </div>
         </div>
@@ -1508,19 +1496,19 @@
             <article class="why-card">
               <div class="why-icon">⏱</div>
               <h3>Clear communication</h3>
-              <p>We keep the process structured and clear. You know where you stand, receive honest advice and can count on short lines of communication throughout the entire process.</p>
+              <p>We keep the process structured and clear. You know exactly where you stand, receive honest advice and can count on short lines of communication throughout the entire process.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">◆</div>
               <h3>Precision finishing</h3>
-              <p>We pay attention to every detail. Not only the product matters, but also the installation, the finishing and the overall appearance that perfectly matches your home.</p>
+              <p>We pay attention to every detail. Not only the product matters, but also the installation, the finishing and the overall look that perfectly matches your home.</p>
             </article>
 
             <article class="why-card">
               <div class="why-icon">★</div>
               <h3>Customer satisfaction</h3>
-              <p>We have many satisfied customers who gladly recommend our services. Upon request, you can even ask about experiences, because we believe in quality that speaks for itself.</p>
+              <p>We have many satisfied customers who gladly recommend our services. Upon request, you can even ask about their experiences, because we believe in quality that speaks for itself.</p>
             </article>
           </div>
         </div>
@@ -1556,7 +1544,7 @@
             <article class="process-card">
               <div class="process-num">02</div>
               <h3>Share your preferences</h3>
-              <p>Let us know what changes you want: the layout of the window frames, the colour on the inside and outside, and any extras such as shutters or insect screens.</p>
+              <p>Let us know what changes you want: the layout of the frames, the colour on the inside and outside, and any extras such as shutters or insect screens.</p>
               <p>This allows us to tailor the quote directly to your home, style and expectations.</p>
             </article>
 
@@ -1653,7 +1641,7 @@
           <div class="subsidy-grid">
             <div class="subsidy-panel">
               <span class="section-kicker">Subsidy</span>
-              <h2>You may be eligible for subsidy for insulating improvements.</h2>
+              <h2>You may be eligible for subsidy on insulating improvements.</h2>
               <p>In many situations, new insulating window frames or doors can contribute to energy savings and may qualify under existing schemes. We are happy to think along with you about the possibilities.</p>
 
               <div class="subsidy-list">
@@ -1667,15 +1655,15 @@
                 </div>
                 <div class="subsidy-item">
                   <span class="subsidy-check">✓</span>
-                  <span>Clear guidance towards a suitable choice and quote.</span>
+                  <span>Clear guidance toward a suitable choice and quote.</span>
                 </div>
               </div>
 
-              <a href="/aprojec/en/index.html#contact" class="btn btn-light">Ask about the possibilities</a>
+              <a href="#contact" class="btn btn-light">Ask about the possibilities</a>
             </div>
 
             <div class="subsidy-image">
-              <img src="/aprojec/images/hero3.jpg" alt="Project with modern windows and doors" loading="lazy">
+              <img src="images/hero3.jpg" alt="Project with modern windows and doors" loading="lazy">
             </div>
           </div>
         </div>
@@ -1691,6 +1679,8 @@
           <h2>Ready for a stylish upgrade of your home?</h2>
           <p>Contact A-PROJECT today for personal advice and a free quote. We are happy to help you with a solution that suits your home, wishes and budget.</p>
         </div>
+
+        <a href="#process" class="contact-steps-link">3 Steps</a>
 
         <div class="contact-actions">
           <a href="tel:+31628255738" class="btn btn-dark">Call: +31 6 28255738</a>
@@ -1727,7 +1717,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="brand" style="min-width:auto;">
-              <img src="/aprojec/images/logo.png" class="brand-logo" alt="A-PROJECT logo">
+              <img src="images/logo.png" class="brand-logo" alt="A-PROJECT logo">
               <span class="brand-name">A-PROJECT</span>
             </div>
             <p>
@@ -1739,14 +1729,14 @@
           <div class="footer-col">
             <h4>Navigation</h4>
             <div class="footer-links">
-              <a href="/aprojec/en/index.html#about-us">About us</a>
-              <a href="/aprojec/en/index.html#why-us">Why us?</a>
-              <a href="/aprojec/en/projects.html">Projects</a>
-              <a href="/aprojec/en/services.html">Services</a>
-              <a href="/aprojec/en/products.html">Products</a>
-              <a href="/aprojec/en/index.html#reviews">Reviews</a>
-              <a href="/aprojec/en/index.html#subsidy">Subsidy</a>
-              <a href="/aprojec/en/index.html#contact">Contact</a>
+              <a href="#about-us">About us</a>
+              <a href="#why-us">Why us?</a>
+              <a href="/aprojec/projects">Projects</a>
+              <a href="/aprojec/services">Services</a>
+              <a href="/aprojec/products">Products</a>
+              <a href="#reviews">Reviews</a>
+              <a href="#subsidy">Subsidy</a>
+              <a href="#contact">Contact</a>
             </div>
           </div>
 
