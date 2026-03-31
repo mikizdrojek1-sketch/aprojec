@@ -296,6 +296,8 @@
       height:100%;
       object-fit:cover;
       object-position:center center;
+      transform:scale(0.92);
+      transform-origin:center center;
     }
 
     .hero-overlay{
@@ -454,6 +456,9 @@
       overflow:hidden;
       background:#d9d9dc;
       border-radius:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .gallery-item::after{
@@ -467,11 +472,12 @@
     .gallery-item img{
       width:100%;
       height:100%;
-      object-fit:cover;
-      transition:transform .5s ease;
+      object-fit:contain;
+      object-position:center center;
+      transition:transform .35s ease;
     }
 
-    .gallery-item:hover img{transform:scale(1.03)}
+    .gallery-item:hover img{transform:none}
 
     .gallery-small{
       min-height:240px;
@@ -909,11 +915,34 @@
       box-shadow:var(--shadow-soft);
     }
 
+    .contact-steps-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:54px;
+      padding:0 30px;
+      margin-top:22px;
+      margin-bottom:14px;
+      background:#f2c300;
+      color:#d82424;
+      font-size:30px;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      border-radius:999px;
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+      transition:.22s ease;
+    }
+
+    .contact-steps-link:hover{
+      transform:translateY(-1px);
+    }
+
     .contact-actions{
       display:flex;
       gap:12px;
       flex-wrap:wrap;
-      margin-top:26px;
+      margin-top:0;
     }
 
     .contact-pills{
@@ -1296,6 +1325,15 @@
       .reviews-score{
         min-width:0;
         width:100%;
+      }
+
+      .contact-steps-link{
+        width:100%;
+        padding:0 20px;
+        font-size:24px;
+        min-height:50px;
+        margin-top:18px;
+        margin-bottom:12px;
       }
 
       .contact-actions .btn{
@@ -1691,6 +1729,8 @@
           <h2>Ready for a stylish upgrade of your home?</h2>
           <p>Contact A-PROJECT today for personal advice and a free quote. We are happy to help you with a solution that suits your home, wishes and budget.</p>
         </div>
+
+        <a href="#process" class="contact-steps-link">3 Steps</a>
 
         <div class="contact-actions">
           <a href="tel:+31628255738" class="btn btn-dark">Call: +31 6 28255738</a>
